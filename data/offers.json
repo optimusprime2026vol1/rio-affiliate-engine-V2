@@ -1,0 +1,19 @@
+{
+  "schema_version": 2,
+  "offers": [
+    {
+      "id": "amazon_home_kitchen",
+      "network": "Amazon Associates India",
+      "category": "Home/Kitchen",
+      "affiliate_url": null,
+      "tracking_id": null,
+      "status": "ACCOUNT_OR_LINK_REQUIRED",
+      "verification": {
+        "commission_rate": "VERIFY_LIVE_BEFORE_USE",
+        "product_price": "VERIFY_LIVE_BEFORE_USE",
+        "availability": "VERIFY_LIVE_BEFORE_USE",
+        "last_verified_at": null
+      }
+    }
+  ]
+}

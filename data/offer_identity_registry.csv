@@ -1,0 +1,7 @@
+offer_id,campaign_id,product_name,merchant,merchant_product_id,variant,canonical_url,creative_product_name,creative_variant,expected_landing_product,expected_landing_variant,identity_status,availability_status,price_checked_at,destination_checked_at,affiliate_status,publish_status,notes
+UNDER_SINK_001,CMP_UNDER_SINK_001,under-sink-organizer,,,,,,,,,UNVERIFIED,UNVERIFIED,,,INACTIVE,BLOCKED,Product/merchant identity must be verified before activation.
+SPICE_RACK_001,CMP_SPICE_RACK_001,spice-rack,,,,,,,,,UNVERIFIED,UNVERIFIED,,,INACTIVE,BLOCKED,Product/merchant identity must be verified before activation.
+TROLLEY_001,CMP_TROLLEY_001,slim-kitchen-trolley,,,,,,,,,UNVERIFIED,UNVERIFIED,,,INACTIVE,BLOCKED,Product/merchant identity must be verified before activation.
+CONTAINER_001,CMP_CONTAINER_001,airtight-containers,,,,,,,,,UNVERIFIED,UNVERIFIED,,,INACTIVE,BLOCKED,Product/merchant identity must be verified before activation.
+DRAWER_001,CMP_DRAWER_001,drawer-organizer,,,,,,,,,UNVERIFIED,UNVERIFIED,,,INACTIVE,BLOCKED,Product/merchant identity must be verified before activation.
+NODRILL_001,CMP_NODRILL_001,no-drill-organizer,,,,,,,,,UNVERIFIED,UNVERIFIED,,,INACTIVE,BLOCKED,Product/merchant identity must be verified before activation.

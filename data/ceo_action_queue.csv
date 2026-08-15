@@ -1,0 +1,5 @@
+severity,owner,action,reason
+WAIT,RIO,Verify real merchant product identities for pilot clusters,Candidate slots exist but no real product records are promotion-ready.
+BLOCKED,RIO,Keep affiliate offers inactive,X→X policy requires verified product/variant/destination before activation.
+LATER,VICKY,Amazon Associates activation / tracking ID,Required only after verified offers are ready for affiliate linking.
+BLOCKED,RIO,Production publish,GitHub/live deployment QA has not yet been completed.
