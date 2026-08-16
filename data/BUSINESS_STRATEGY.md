@@ -38,18 +38,20 @@ already established in this project (16+ years of interior fit-out and
 project experience) -- nothing else about his background has been
 invented.
 
+**Design Infra naming -- DECIDED by Vicky (2026-08-17):** Asked live in
+chat whether to publicly name Design Infra (the turnkey interior company
+this session's AURA project already has as Vicky's real, current business)
+as part of the expert-authority bio. Vicky said **yes, name it**. Updated
+`site/expert/index.html`'s About card to credit "Founder of Design Infra, a
+Delhi NCR turnkey interior design and execution company" -- still marked
+DRAFT/`noindex,nofollow`/unlinked, since the name/title and full bio are
+still pending. This also opens a natural cross-promotion path between RIO
+and AURA (Design Infra) worth revisiting once both are further along.
+
 **Still needed from Vicky before any of this goes public:**
 - Confirmed public name/title for the byline (asked 2026-08-17, deferred by Vicky -- "batayenge baad mein").
 - A real short bio in his own words, or explicit sign-off on a drafted one.
 - Per-pillar content review once real articles are drafted.
-- A decision on whether to name Design Infra (the turnkey interior company
-  this session's AURA project already has as Vicky's real, current
-  business) publicly as part of this bio -- **flagged as an open strategic
-  question, not assumed either way**: linking RIO's expert content to
-  Design Infra could be a strong, honest credibility signal (real, current,
-  operating business) and even a lead-gen bridge between the two AI
-  companies Vicky is running, but it's his call whether he wants that
-  public link made explicit.
 
 ## Strategic pivot flagged by primary research -- decision needed from Vicky
 
