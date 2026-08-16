@@ -1,7 +1,7 @@
 {
-  "product_candidates": 8,
-  "offers": 6,
-  "ready_offers": 6,
+  "product_candidates": 12,
+  "offers": 10,
+  "ready_offers": 10,
   "blocked_offers": 0,
   "rejected_products": 2,
   "content_items": 23,
@@ -10,7 +10,7 @@
   "net_profit_inr": 0,
   "x_to_x_failures": 0,
   "production_verified": false,
-  "discovered_products": 8,
-  "verified_products": 6,
-  "ready_products": 6
+  "discovered_products": 12,
+  "verified_products": 10,
+  "ready_products": 10
 }

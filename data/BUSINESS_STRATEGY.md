@@ -202,21 +202,31 @@ from loosening it.
 
 ## Immediate next actions (in order)
 
-1. Live-verify and publish the 4 pending SCORED candidates the moment
-   Chrome/browser access is available (unchanged from Phase 1).
-2. Draft a short, concrete setup checklist for Vicky covering: EarnKaro
-   signup, Telegram channel creation, AdSense signup -- so these are
-   5-minute tasks whenever he has a moment, not open-ended research for him.
-3. Begin discovery on the 3 newly-queued clusters (bathroom, home-office,
-   balcony storage) using the same DISCOVERY_REQUIRED -> DISCOVERED pipeline
-   already proven on kitchen storage.
-4. Design the Telegram "deal drop" content format (short, reuses RIO's
-   already-verified product data, same no-price-fabrication rules) so it's
-   ready to post the day Vicky's channel exists.
-5. Get Vicky's call on the expert-authority pivot (A vs. B above) before
-   building anything that would use his name/credentials publicly.
-6. Side-by-side the current affiliate-disclosure wording against ASCI's
-   recommended language (see guardrails above) -- low effort, do opportunistically.
+1. DONE (2026-08-16). Live-verify and publish the 4 pending SCORED
+   candidates -- all 4 live-verified and promoted to READY.
+2. DONE (2026-08-16). Setup checklist drafted: `VICKY_SETUP_CHECKLIST.md`
+   (EarnKaro signup, Telegram channel creation, AdSense signup). Waiting on
+   Vicky to actually complete these -- RIO cannot do account creation.
+3. DONE (2026-08-16). Discovery completed for all 3 newly-queued clusters
+   (bathroom storage x2 offers, home-office storage x1, balcony storage x1)
+   -- 4 new candidates live-verified and promoted straight to READY (scores
+   90, 88, 83, 83). 4 new article pages published and linked from the
+   homepage/sitemap. RIO now has 10 READY offers across 10 published
+   commercial articles (up from 6 offers / 7 articles). Two informational
+   working titles in these clusters (priorities 21, 23 in
+   `content_queue.csv`) remain QUEUED -- no product sourced for them yet,
+   deliberately not forced.
+4. DONE (2026-08-16). Telegram "deal drop" content format drafted:
+   `TELEGRAM_DEAL_DROP_FORMAT.md`, ready to use the moment Vicky creates the
+   channel (checklist item 2 above).
+5. STILL PENDING -- Vicky's call on the expert-authority pivot (A vs. B
+   above). Not acted on unilaterally; nothing has been built or published
+   under Vicky's real name/credentials.
+6. DONE (2026-08-16). All 10 offer-bearing article pages and the sitewide
+   `legal/affiliate-disclosure.html` page updated with ASCI-aligned wording
+   ("our recommendation is based on the stated evaluation method, and the
+   commission does not determine the verdict"), appended to the existing
+   disclosure text rather than replacing it.
 
 ## What requires Vicky (do not attempt to substitute or skip)
 
