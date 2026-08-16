@@ -1,16 +1,16 @@
 {
-  "product_candidates": 4,
+  "product_candidates": 8,
   "offers": 6,
-  "ready_offers": 0,
-  "blocked_offers": 6,
-  "rejected_products": 0,
-  "content_items": 17,
+  "ready_offers": 6,
+  "blocked_offers": 0,
+  "rejected_products": 2,
+  "content_items": 23,
   "revenue_inr": 0,
   "cost_inr": 0,
   "net_profit_inr": 0,
   "x_to_x_failures": 0,
   "production_verified": false,
-  "discovered_products": 4,
-  "verified_products": 0,
-  "ready_products": 0
+  "discovered_products": 8,
+  "verified_products": 6,
+  "ready_products": 6
 }
