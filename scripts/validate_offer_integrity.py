@@ -14,7 +14,7 @@ with REG.open(encoding="utf-8", newline="") as f:
             for k in required_identity:
                 if not r[k].strip(): errors.append(f"{oid}: READY but {k} is blank")
             if r["identity_status"]!="VERIFIED": errors.append(f"{oid}: READY but identity_status != VERIFIED")
-            if r["availability_status"]!="AVAILABLE": errors.append(f"{oid}: READY but availability_status != AVAILABLE")
+            if r["availability_status"]!="IN_STOCK": errors.append(f"{oid}: READY but availability_status != IN_STOCK")
             if r["affiliate_status"]!="ACTIVE": errors.append(f"{oid}: READY but affiliate_status != ACTIVE")
             pairs=[
                 ("product",r["creative_product_name"],r["expected_landing_product"]),

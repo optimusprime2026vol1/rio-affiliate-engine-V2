@@ -16,8 +16,8 @@ with P.open(encoding="utf-8",newline="") as f:
             try: score=float(r["commercial_score"])
             except: score=-1
             if score < 70: errors.append(f"{cid}: READY below score threshold")
-            if r["identity_confidence"]!="VERIFIED": errors.append(f"{cid}: READY without VERIFIED identity")
-            if r["availability_observed"]!="AVAILABLE": errors.append(f"{cid}: READY without AVAILABLE status")
+            if r["identity_confidence"]!="VERIFIED_LIVE": errors.append(f"{cid}: READY without VERIFIED_LIVE identity")
+            if r["availability_observed"]!="LIVE_VERIFIED_IN_STOCK": errors.append(f"{cid}: READY without LIVE_VERIFIED_IN_STOCK status")
 if errors:
     print("PRODUCT INTELLIGENCE GATE: FAIL")
     print("\\n".join(errors)); sys.exit(1)
