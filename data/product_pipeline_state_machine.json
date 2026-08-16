@@ -30,6 +30,7 @@
     ],
     "SCORED": [
       "OFFER_MAPPING",
+      "QUARANTINED",
       "REJECTED"
     ],
     "OFFER_MAPPING": [
