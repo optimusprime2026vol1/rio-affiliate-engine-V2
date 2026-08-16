@@ -17,6 +17,40 @@ decision -- this section only extracts what changes RIO's current plan, it
 does not restate the whole paper. Where the two disagree, the primary
 research file wins.
 
+## Strategic pivot -- DECIDED by Vicky (2026-08-17)
+
+Vicky confirmed **Path A**: build the expert-authority vertical under his
+real identity. Also confirmed: start all 4 focus areas together (home
+interior, workspace/office, tools, project-technology), not one at a time;
+build it inside the existing RIO repo as a new section, not a separate
+site/domain.
+
+**Built so far (2026-08-17, Dr. Victor)**: `site/expert/` scaffold --
+hub/About page + 4 focus-area framework pages. Deliberately marked
+`noindex,nofollow` and NOT linked from the site's homepage or navigation
+yet, and clearly labeled DRAFT/FRAMEWORK ONLY throughout. Reason: this
+section carries Vicky's real name and professional credibility, which is a
+different bar than RIO's anonymous product-guide articles -- no specific
+opinion, recommendation, project claim, photo or bio detail goes live under
+his name without him reviewing and approving it first. The framework pages
+describe *scope*, not content, and use only the one biographical fact
+already established in this project (16+ years of interior fit-out and
+project experience) -- nothing else about his background has been
+invented.
+
+**Still needed from Vicky before any of this goes public:**
+- Confirmed public name/title for the byline (asked 2026-08-17, deferred by Vicky -- "batayenge baad mein").
+- A real short bio in his own words, or explicit sign-off on a drafted one.
+- Per-pillar content review once real articles are drafted.
+- A decision on whether to name Design Infra (the turnkey interior company
+  this session's AURA project already has as Vicky's real, current
+  business) publicly as part of this bio -- **flagged as an open strategic
+  question, not assumed either way**: linking RIO's expert content to
+  Design Infra could be a strong, honest credibility signal (real, current,
+  operating business) and even a lead-gen bridge between the two AI
+  companies Vicky is running, but it's his call whether he wants that
+  public link made explicit.
+
 ## Strategic pivot flagged by primary research -- decision needed from Vicky
 
 The research's central recommendation (Section 13.1) is specific to Vicky,
