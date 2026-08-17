@@ -1,0 +1,31 @@
+name: RIO
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'   # heartbeat: every 30 minutes (Vicky, 2026-08-17 via Dr. Victor)
+  issues:
+    types: [opened]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency: rio-state
+
+jobs:
+  heartbeat:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Read owner commands (kill switch / resume / messages), regenerate dashboard, run validators
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/heartbeat.py
+      - name: Commit any changes (NOT [skip ci] — this intentionally re-triggers deploy-pages.yml so the live site reflects the refreshed dashboard)
+        run: |
+          git config user.name "RIO" && git config user.email "rio@rio-affiliate.bot"
+          git add -A && (git diff --cached --quiet || git commit -m "heartbeat: refresh dashboard + validators") && git pull --rebase --autostash && git push
