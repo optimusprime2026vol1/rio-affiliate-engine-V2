@@ -66,14 +66,25 @@ anti-tip anchor straps, cabinet & drawer safety locks, outlet covers).
   low-compliance-risk zone -- not the "Health/wellness" row of the
   opportunity matrix, which the research flags as higher-risk.
 
-**Status as of 2026-08-17**: niche decided and documented. Live product
-discovery/verification (the same live-recheck-before-publish process used
-for every existing RIO offer) is paused because the browser automation tool
-this session uses to verify real Amazon.in listings is temporarily
-disconnected -- **no candidate products will be added to
-`product_candidates.csv` without going through the same live-verification
-process as every other offer**, so nothing gets fabricated or guessed in
-the meantime. Resumes as soon as the browser tool reconnects.
+**Status as of 2026-08-17: LIVE.** Browser tool reconnected same day; niche
+launched with 3 real, live-verified offers, each scored 90+/100 on the
+7-factor rubric and cleared IDENTITY VERIFIED + AVAILABLE + AFFILIATE
+ACTIVE + X->X PASS before publishing:
+- `BABY_CORNERGUARD_001` -- AMAZARA corner guards, ASIN B07NSQFTLH
+- `BABY_SAFETYGATE_001` -- Safe-O-Kid no-drill safety gate (75-95cm/Grey
+  variant explicitly), ASIN B0BHJDRK1G
+- `BABY_CABINETLOCK_001` -- KidDough cabinet/drawer locks, ASIN B0CC36YVXH
+
+A 4th candidate (furniture anti-tip anchor straps) was researched and
+deliberately rejected before scoring -- Amazon.in review evidence for that
+sub-category was too thin (best candidate found had only 56 ratings) to
+clear RIO's evidence bar, so cabinet/drawer locks was substituted instead.
+Following the evidence over a preconceived product list, same discipline as
+every other RIO cluster.
+
+3 new articles published, homepage and sitemap updated, all 5 validators
+pass, dashboard regenerated (13 total READY offers site-wide, up from 10).
+Live and verified on GitHub Pages 2026-08-17.
 
 ## Strategic pivot -- DECIDED by Vicky (2026-08-17)
 
