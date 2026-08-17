@@ -17,6 +17,64 @@ decision -- this section only extracts what changes RIO's current plan, it
 does not restate the whole paper. Where the two disagree, the primary
 research file wins.
 
+## New niche expansion -- DECIDED by Vicky (2026-08-17): "moving ahead with Rio"
+
+Context: separately, Dr. Victor researched 4 zero-cost new-business options
+for the wider AI-company operation (see the growth-plan document sent
+2026-08-17) and scored "clone RIO's proven playbook into a new niche/
+vertical" highest (90/100) because it reuses the already-validated
+discovery -> live-verify -> score -> publish pipeline instead of testing an
+unproven capability. Vicky approved moving ahead and delegated the specific
+niche choice to Dr. Victor ("RIO ka naya niche khud choose kar lo" was
+offered and accepted by "now moving ahead with Rio").
+
+**Niche selected: Baby-proofing & home safety for Indian homes/rented
+flats** (corner guards, no-drill/tension-mounted safety gates, furniture
+anti-tip anchor straps, cabinet & drawer safety locks, outlet covers).
+
+**Why this one, not another category** -- reasoning, not a guess:
+- Stays inside the **same Amazon Associates India account already active**
+  for RIO -- zero new merchant onboarding, zero new credentials, same 5
+  validator scripts, same X->X live-recheck policy, same 7-factor scoring
+  rubric. This is exactly what made "clone the playbook" score higher than
+  starting a new business type from scratch.
+- **Commission**: verified against Amazon.in's current published fee
+  schedule -- Baby Products sits at **5.9%**, the highest rate among the
+  realistic home-adjacent categories checked (Kitchen/Furniture/Home are
+  all 5%, Health & Personal Care 4.7%).
+  [Source](https://affiliate-program.amazon.in/help/operating/advertisingfees/).
+- **Fits the primary market research's own opportunity matrix** (Section
+  6.2 of `AFFILIATE_MARKET_RESEARCH_2019_2026.md`): sits inside "Home
+  improvement, interiors, tools" -- scored "High fit for a domain expert"
+  there, and this sub-niche specifically rewards the same practitioner
+  knowledge (safe anchoring, installation without damaging rented walls)
+  that already made RIO's no-drill storage content credible.
+- **Directly extends RIO's proven angle, doesn't cannibalize it**: the
+  "no-drill / rental-friendly" positioning that already worked for the
+  bathroom and storage clusters applies naturally to tension-mounted safety
+  gates and anchor straps for renters -- same audience trust, new SKUs, not
+  competing with existing articles for the same search terms.
+- **Demand evidence**: real, ongoing search/purchase activity confirmed via
+  live retailer listings (FirstCry, Amazon.in) and existing niche content
+  (Kids Station, Baby Safe House) --
+  [search results checked](https://www.google.com/search?q=baby+proofing+products+India+buying+guide).
+  Competition is real but thin -- mostly product/brand pages and small
+  niche blogs, not large SEO-dominant comparison publishers, which is the
+  same competitive gap RIO's storage content found and won in.
+- **Compliance**: no health claims involved (these are mechanical safety
+  products, not health/medical products), so this stays in RIO's existing
+  low-compliance-risk zone -- not the "Health/wellness" row of the
+  opportunity matrix, which the research flags as higher-risk.
+
+**Status as of 2026-08-17**: niche decided and documented. Live product
+discovery/verification (the same live-recheck-before-publish process used
+for every existing RIO offer) is paused because the browser automation tool
+this session uses to verify real Amazon.in listings is temporarily
+disconnected -- **no candidate products will be added to
+`product_candidates.csv` without going through the same live-verification
+process as every other offer**, so nothing gets fabricated or guessed in
+the meantime. Resumes as soon as the browser tool reconnects.
+
 ## Strategic pivot -- DECIDED by Vicky (2026-08-17)
 
 Vicky confirmed **Path A**: build the expert-authority vertical under his
