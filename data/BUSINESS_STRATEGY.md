@@ -86,6 +86,54 @@ every other RIO cluster.
 pass, dashboard regenerated (13 total READY offers site-wide, up from 10).
 Live and verified on GitHub Pages 2026-08-17.
 
+## Original storage backlog -- completed autonomously (2026-08-17)
+
+Per Vicky's "keep doing your work unless i'm required," Dr. Victor worked
+through the 7 remaining QUEUED/pending items in the original kitchen/
+wardrobe/apartment storage content backlog (predating the baby-safety
+expansion) without further check-ins, since this was pure execution of an
+already-approved playbook on already-approved clusters -- no new strategic
+decision required.
+
+- Priority 4 (under-sink storage) and priority 8 (kitchen counter without
+  cabinets): resolved via the offer-reuse pattern -- new informational
+  article, same already-verified offer, no new product needed.
+- Priority 5 (wardrobe organizers): new offer sourced, `WARDROBE_DRAWERORG_001`
+  (XMART INDIA drawer organizers, ASIN B0DBVV3FYQ, score 83). Honestly the
+  thinnest review base in the portfolio (713 ratings) -- flagged as such in
+  `product_candidates.csv`, not oversold.
+- Priority 9 (under-bed storage): new offer sourced, `UNDERBED_STORAGEBAG_001`
+  (Storite 2-pack moisture-proof bags, ASIN B07B8K3RQK, score 94) -- the
+  highest score and strongest review evidence (28,006 ratings) of any offer
+  in RIO's portfolio to date.
+- Priority 6 (1BHK storage ideas): resolved via reuse -- a zone-by-zone
+  roundup linking 7 already-verified offers across bedroom/kitchen/bathroom/
+  balcony/office, each with its own direct affiliate link.
+- Priority 10 (drawer/cabinet organizers): identified as a near-duplicate of
+  the existing priority-15 article ("Kitchen Drawer Organizers"), which
+  already has a verified offer targeting the same search intent. Marked
+  `MERGED_INTO_P15` in `content_queue.csv` rather than publishing a
+  redundant, self-cannibalizing article.
+- Priority 7 (foldable furniture): new offer sourced, `FOLDABLE_LAPDESK_001`
+  (TARKAN foldable wooden lapdesk, ASIN B07JMWTDBH, score 90). **Integrity
+  catch worth flagging**: the first candidate checked (Etekcity study table,
+  ASIN B0HCVYQS46, 20,461 ratings at 4.7 stars -- the highest headline rating
+  seen all session) was rejected after its AI-generated review summary and
+  several "reviews from other countries" turned out to describe a kitchen
+  food scale, not a laptop table -- clear evidence the ASIN's review history
+  was inherited from an unrelated prior product (a listing/variant hijack).
+  That review volume was not trustworthy evidence and the candidate was
+  disqualified despite the strong headline numbers; a clean, genuinely-
+  evidenced alternative was substituted instead. Documented in full in
+  `product_candidates.csv` review_notes for `CAND_FF_001`.
+
+Result: the original 7-item backlog is now fully cleared (0 remaining
+QUEUED items other than the two informational titles noted above under the
+baby-safety section, which are deliberately unforced). RIO now has 17
+READY offers site-wide across 20 published commercial/informational
+articles. All 5 validators pass; dashboard regenerated; pushed and verified
+live on GitHub Pages 2026-08-17.
+
 ## Strategic pivot -- DECIDED by Vicky (2026-08-17)
 
 Vicky confirmed **Path A**: build the expert-authority vertical under his
