@@ -1,0 +1,36 @@
+{
+ "updated": "2026-08-17T19:26+05:30",
+ "kill_switch": false,
+ "dashboard_regenerated": true,
+ "validators": {
+  "offer_integrity": {
+   "pass": true,
+   "detail": "X→X GATE: PASS"
+  },
+  "product_candidates": {
+   "pass": true,
+   "detail": "PRODUCT INTELLIGENCE GATE: PASS"
+  },
+  "dashboard": {
+   "pass": true,
+   "detail": "CEO DASHBOARD GATE: PASS"
+  },
+  "production_offer_gate": {
+   "pass": true,
+   "detail": "PRODUCTION OFFER GATE: PASS; READY=17"
+  }
+ },
+ "all_validators_pass": true,
+ "counts": {
+  "product_candidates": 19,
+  "ready_offers": 17,
+  "blocked_offers": 0,
+  "rejected_products": 2,
+  "content_items": 27,
+  "revenue_inr": 0,
+  "cost_inr": 0,
+  "net_profit_inr": 0,
+  "production_verified": false
+ },
+ "note_en": "Heartbeat OK — dashboard regenerated, 4/4 validators passing. 17 ready offers, 27 content items, revenue ₹0."
+}
