@@ -9,6 +9,59 @@ Newest entries first. Format: `## <date> — <OPEN|ACKED> — <short title>`.
 
 ---
 
+## 2026-08-17 — OPEN — Distribution push approved: Instagram + Pinterest (organic) + Google AdSense; paid ads explicitly skipped
+
+Vicky wants RIO's traffic pushed harder ("publish ads everywhere"). Clarified
+with him directly what that means and what's already true:
+
+**Correction to earlier assumption — the site was already further along than
+`README.md` said.** Verified live: https://vickykenin-lang.github.io/rio-affiliate-engine/
+is public, has 27 articles, and real Amazon.in affiliate links with
+`tag=rioaffiliate-21` are live and working (spot-checked 4 articles across
+different categories — kitchen, bathroom, storage, wardrobe). robots.txt,
+sitemap.xml and meta robots are all indexing-clean, no SEO blocker found.
+`README.md`'s "Public deployment: not activated" line was stale — corrected
+it to reflect reality and logged Vicky's explicit 2026-08-17 go-ahead for
+public deployment directly in the README's Current Status / Publication
+Gate sections.
+
+**Decided, in priority order:**
+1. Organic — **Instagram** and **Pinterest** business accounts for RIO's
+   brand (separate from AURA's own IG/Pinterest — do not reuse AURA's
+   accounts or tokens for RIO content).
+2. **Google AdSense** — display-ad monetization on the site itself (on top
+   of, not instead of, Amazon affiliate revenue). This is Vicky's own
+   addition, not something Victor suggested — noting that explicitly since
+   it's a new revenue-mechanism decision, not routine execution.
+3. **Paid ads (Google Ads/Meta Ads) — explicitly SKIPPED for now**, Vicky's
+   own choice ("Abhi paid ads skip karo"). Do not start any paid-ads work
+   until he raises it again with an explicit budget.
+
+**Blocked on Vicky (account creation + credentials — cannot be done by an
+operating agent or by Victor, per Section 5's non-negotiables):**
+- Instagram Business account for RIO's brand, converted/linked to a Facebook
+  Page, then a Meta for Developers app → long-lived Page Access Token + the
+  Instagram Business Account ID. Needed as GitHub secrets on
+  `rio-affiliate-engine`: `IG_USER_ID_RIO`, `IG_ACCESS_TOKEN_RIO` (named
+  distinctly from AURA's `IG_USER_ID`/`IG_ACCESS_TOKEN` — different brand,
+  do not collide).
+- Pinterest Business account for RIO's brand, verify the site URL, create a
+  board, then Pinterest Developers → app → access token. Needed as secrets:
+  `PIN_ACCESS_TOKEN_RIO`, `PIN_BOARD_ID_RIO`.
+- Google AdSense signup at adsense.google.com with the RIO site URL —
+  requires Vicky's own tax/payment details, Victor/RIO cannot enter these.
+  Approval can take days. Once approved, the AdSense publisher ID
+  (`ca-pub-...`) is needed to add the ad script to the site template.
+
+**Once any of these secrets/IDs exist**, tell Victor and the corresponding
+piece gets built the same way DeepSeek/Cloudflare were added to AURA:
+a social-publishing script (content source = `data/content_queue.csv` +
+`data/offer_identity_registry.csv`, since RIO has no calendar.json
+equivalent — this itself is new design work, not a copy-paste of AURA's
+publisher.py) for IG/Pinterest, and an AdSense script tag injected into the
+site build for the display-ad piece. Neither has been built yet — no
+accounts exist yet to build against.
+
 ## 2026-08-17 — ACKED — Scope decision: governance layer is the deadline deliverable; product-discovery AI picked for later
 
 Vicky's call, direct: for the "finalize RIO by tomorrow evening" deadline,
