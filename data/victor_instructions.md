@@ -9,7 +9,27 @@ Newest entries first. Format: `## <date> — <OPEN|ACKED> — <short title>`.
 
 ---
 
-## 2026-08-17 — OPEN — Heartbeat automation is now live; start the operating loop
+## 2026-08-17 — ACKED — Scope decision: governance layer is the deadline deliverable; product-discovery AI picked for later
+
+Vicky's call, direct: for the "finalize RIO by tomorrow evening" deadline,
+**scope is the governance layer only** (heartbeat, kill switch, dashboard
+auto-refresh, this mailbox) — already built and live-verified as of this
+entry (see run history on `.github/workflows/rio.yml`, first manual run
+passed all 4 validators). Product discovery / live-verification / content
+drafting automation is explicitly OUT of this deadline — treat it as a
+separate future build, not a "kal evening" blocker.
+
+When that future build starts: **DeepSeek** is the pre-approved choice for
+RIO's product-discovery/content AI (same reasoning as AURA's
+`business_review.py` — already a proven working integration, reuse the
+pattern: `DEEPSEEK_API_KEY` as a GitHub secret, an OpenAI-compatible REST
+client). No key has been added to this repo yet — that still needs Vicky to
+add `DEEPSEEK_API_KEY` as a secret on `rio-affiliate-engine` (can be the
+same key already on `design-infra-marketing`, or a fresh one) before that
+build can start. Do not begin the discovery/verification script until that
+secret exists and Victor confirms go-ahead.
+
+## 2026-08-17 — ACKED — Heartbeat automation is now live; start the operating loop
 
 RIO had zero automation beyond the push-triggered `deploy-pages.yml` static
 deploy — no issue listener, no kill switch, no recurring dashboard refresh.
