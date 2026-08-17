@@ -18,4 +18,31 @@
       trackOutboundClick(el.dataset.offer,el.dataset.placement,disabled?'pending':'active');
     });
   });
+
+  // Sticky mobile "buy" bar: mirrors the first real, already-verified offer
+  // link on an article page so mobile readers always have the CTA in view.
+  // Purely presentational — clones the existing <a>, adds no new data.
+  (function stickyCta(){
+    var mainBtn = document.querySelector('article .card [data-offer]');
+    if(!mainBtn) return;
+    var bar = document.createElement('div');
+    bar.className = 'rio-sticky-cta';
+    var link = mainBtn.cloneNode(true);
+    link.removeAttribute('id');
+    bar.appendChild(link);
+    document.body.appendChild(bar);
+    link.addEventListener('click', function(e){
+      var disabled = link.getAttribute('aria-disabled') === 'true';
+      if (disabled) e.preventDefault();
+      trackOutboundClick(link.dataset.offer, (link.dataset.placement||'')+'_sticky', disabled ? 'pending' : 'active');
+    });
+    function toggle(){
+      var rect = mainBtn.getBoundingClientRect();
+      var offscreen = rect.bottom < 0 || rect.top > (window.innerHeight || document.documentElement.clientHeight);
+      bar.classList.toggle('is-active', offscreen);
+    }
+    toggle();
+    window.addEventListener('scroll', toggle, {passive:true});
+    window.addEventListener('resize', toggle);
+  })();
 })();
