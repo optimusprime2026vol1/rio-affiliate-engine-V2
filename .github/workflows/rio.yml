@@ -5,15 +5,16 @@ on:
     - cron: '*/30 * * * *'   # heartbeat: every 30 minutes (Vicky, 2026-08-17 via Dr. Victor)
     - cron: '0 5 * * *'      # content review: once daily, ~10:30 IST (DeepSeek reviews live articles)
     - cron: '30 5 * * *'     # product discovery: once daily, ~11:00 IST (DeepSeek suggests search queries only)
+    - cron: '30 13 * * *'    # instagram publish: once daily, ~19:00 IST (Vicky, 2026-08-18 via Dr. Victor)
   issues:
     types: [opened]
   workflow_dispatch:
     inputs:
       job:
-        description: 'Which job to run manually (heartbeat / content-review / discover-products / all)'
+        description: 'Which job to run manually (heartbeat / content-review / discover-products / instagram-publish / all)'
         type: choice
         default: heartbeat
-        options: [heartbeat, content-review, discover-products, all]
+        options: [heartbeat, content-review, discover-products, instagram-publish, all]
 
 permissions:
   contents: write
@@ -81,3 +82,24 @@ jobs:
         run: |
           git config user.name "RIO" && git config user.email "rio@rio-affiliate.bot"
           git add -A && (git diff --cached --quiet || git commit -m "discovery: DeepSeek search-query suggestions (DISCOVERY_REQUIRED only)") && git pull --rebase --autostash && git push
+
+  instagram-publish:
+    if: |
+      github.event.schedule == '30 13 * * *' ||
+      (github.event_name == 'workflow_dispatch' && (inputs.job == 'instagram-publish' || inputs.job == 'all'))
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Post the next eligible verified offer to Instagram (@riosallerior) — one per run, skips if kill switch on or validators failing
+        env:
+          IG_USER_ID_RIO: ${{ secrets.IG_USER_ID_RIO }}
+          IG_ACCESS_TOKEN_RIO: ${{ secrets.IG_ACCESS_TOKEN_RIO }}
+        run: python scripts/publish_instagram.py
+        continue-on-error: true
+      - name: Commit publish state + report line (NOT [skip ci] — harmless, data/ isn't part of the site build)
+        run: |
+          git config user.name "RIO" && git config user.email "rio@rio-affiliate.bot"
+          git add -A && (git diff --cached --quiet || git commit -m "instagram: publish run") && git pull --rebase --autostash && git push
