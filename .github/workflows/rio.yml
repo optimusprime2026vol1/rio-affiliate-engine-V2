@@ -4,15 +4,16 @@ on:
   schedule:
     - cron: '*/30 * * * *'   # heartbeat: every 30 minutes (Vicky, 2026-08-17 via Dr. Victor)
     - cron: '0 5 * * *'      # content review: once daily, ~10:30 IST (DeepSeek reviews live articles)
+    - cron: '30 5 * * *'     # product discovery: once daily, ~11:00 IST (DeepSeek suggests search queries only)
   issues:
     types: [opened]
   workflow_dispatch:
     inputs:
       job:
-        description: 'Which job to run manually (heartbeat / content-review / all)'
+        description: 'Which job to run manually (heartbeat / content-review / discover-products / all)'
         type: choice
         default: heartbeat
-        options: [heartbeat, content-review, all]
+        options: [heartbeat, content-review, discover-products, all]
 
 permissions:
   contents: write
@@ -60,3 +61,23 @@ jobs:
         run: |
           git config user.name "RIO" && git config user.email "rio@rio-affiliate.bot"
           git add -A && (git diff --cached --quiet || git commit -m "content review: DeepSeek pass over live articles") && git pull --rebase --autostash && git push
+
+  discover-products:
+    if: |
+      github.event.schedule == '30 5 * * *' ||
+      (github.event_name == 'workflow_dispatch' && (inputs.job == 'discover-products' || inputs.job == 'all'))
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: DeepSeek suggests search queries for content clusters with zero candidates (never a specific ASIN/price/URL — status is always DISCOVERY_REQUIRED, still needs real live verification next)
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: python scripts/discover_products.py
+        continue-on-error: true
+      - name: Commit new DISCOVERY_REQUIRED candidates
+        run: |
+          git config user.name "RIO" && git config user.email "rio@rio-affiliate.bot"
+          git add -A && (git diff --cached --quiet || git commit -m "discovery: DeepSeek search-query suggestions (DISCOVERY_REQUIRED only)") && git pull --rebase --autostash && git push
