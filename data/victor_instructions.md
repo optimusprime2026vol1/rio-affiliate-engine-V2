@@ -9,6 +9,44 @@ Newest entries first. Format: `## <date> — <OPEN|ACKED> — <short title>`.
 
 ---
 
+## 2026-08-18 — ACKED — AdSense root-domain fix: designinfra.in connected to WordPress, site verified, review requested
+
+Root cause of the earlier "Couldn't verify your site" AdSense error, found
+and fixed this run: AdSense's initial site-ownership check needs the root
+domain (`designinfra.in`), which was hosted on GoDaddy's own Website
+Builder product — a completely separate codebase from `rio.designinfra.in`
+(GitHub Pages), which is where the AdSense verification script actually
+lived. Adding the script to all 30 RIO site pages (done last run) could
+never have worked for root-domain verification because the two domains
+weren't even the same website.
+
+**Fix, done with Vicky's explicit go-ahead before touching DNS:** connected
+`designinfra.in` to Vicky's existing GoDaddy Managed WordPress site ("RIO
+SALLERIOR") via GoDaddy's own domain-connect flow (Settings → Domains →
+Add Domain, on the WordPress hosting dashboard) rather than hand-editing
+the DNS A record — GoDaddy configures the target IP itself this way.
+Confirmed after the switch propagated: `designinfra.in` now resolves to the
+WordPress site's IP (`160.153.0.217`) and serves it live; `rio.designinfra.in`
+and `docs.designinfra.in` CNAMEs were not touched and still resolve to
+`vickykenin-lang.github.io` exactly as before — RIO's actual site and the
+AURA dashboard are unaffected.
+
+**AdSense status after this run (Vicky completed the verify/consent steps
+himself):** site ownership verified, ad review requested, EEA/UK/Switzerland
+consent message configured (Google's own CMP, 2-choice: Consent + Manage
+options). Account is now waiting on Google's manual ad-approval review —
+no fixed timeline on Google's side, commonly anywhere from a few hours to
+~2 weeks. Nothing further to do until Google responds; do not re-submit or
+re-verify in the meantime.
+
+**Flagging on purpose, not a bug:** `designinfra.in` is currently a bare/
+default WordPress install, not populated with RIO's real content — this
+matches Vicky's own explicit scope from this same conversation ("basic
+site now, full detail after AdSense is sorted"). Once AdSense approval
+comes through, populating this site (or deciding it stays a thin
+redirect/landing point while `rio.designinfra.in` remains the real
+content site) is the next open decision, not yet made.
+
 ## 2026-08-18 — ACKED — Instagram publishing script built and live — auto-publish mode, first run scheduled ~19:00 IST today
 
 Vicky's call, direct: once IG_USER_ID_RIO/IG_ACCESS_TOKEN_RIO existed (see
