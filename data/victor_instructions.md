@@ -9,6 +9,54 @@ Newest entries first. Format: `## <date> — <OPEN|ACKED> — <short title>`.
 
 ---
 
+## 2026-08-18 — ACKED — Instagram publishing script built and live — auto-publish mode, first run scheduled ~19:00 IST today
+
+Vicky's call, direct: once IG_USER_ID_RIO/IG_ACCESS_TOKEN_RIO existed (see
+the entry below), he asked for the Instagram publishing script to be built
+now, and chose **fully automatic** publishing (no per-post approval step)
+over a manual-review-first option I offered him. Built and pushed this run:
+
+**What's live:**
+- `scripts/publish_instagram.py` (new, stdlib-only — no new dependency,
+matches heartbeat.py/generate_dashboard.py convention; there is no pip
+install step in rio.yml).
+- `instagram-publish` job added to `.github/workflows/rio.yml`, scheduled
+daily ~19:00 IST (`30 13 * * *` UTC), plus manual `workflow_dispatch`.
+- `site/social/*.png` (new, 17 files) — one branded card per currently
+READY+ACTIVE+VERIFIED+IN_STOCK offer in `data/offer_identity_registry.csv`.
+- `data/ig_published.json` (new) — dedup state so no offer is ever posted
+twice; the script always picks the next un-posted eligible offer, one per
+run.
+
+**Important blocker found and worked around, on purpose — read before
+assuming this posts real product photos:** Amazon.in's robots.txt disallows
+scraping product pages, and RIO has no Amazon Product Advertising API
+credentials (that would be a separate founder-level signup, not done).
+So this script does **not** scrape or fabricate a product photo. Instead
+each post uses a pre-rendered branded card (product name + category, pulled
+straight from the same verified registry fields — no invented copy) built
+by me from a shared HTML template. This satisfies the "no fabricated data"
+non-negotiable but means posts are branded cards, not real product
+photography, until Amazon PA-API access exists or Vicky supplies real
+photos. Flagging this as a real product-quality gap, not hiding it.
+
+**Guardrails built in:**
+- Respects the kill switch (`data/control.json`) and the last-known
+validator status (`data/status.json.all_validators_pass`) — will not post
+if either says stop, same rule as heartbeat.py.
+- Every caption includes a plain-language affiliate disclosure
+("Affiliate link... #ad #affiliate") — never a bare undisclosed link.
+- One post per run only — cadence is controlled entirely by the workflow
+schedule, not by the script.
+- New offers added to the registry later will have **no** social card until
+one is generated for them — the script skips (logs, does not post) any
+eligible offer with no matching `site/social/<offer_id>.png`. Generating
+cards for future offers is a follow-up task, not yet automated.
+
+Not yet done: Pinterest and Google AdSense are still fully blocked on Vicky
+per the 2026-08-17 "Distribution push approved" entry below — this entry
+only clears the Instagram-script half of that plan.
+
 ## 2026-08-18 — OPEN — Instagram credentials generated — IG_USER_ID_RIO and IG_ACCESS_TOKEN_RIO now live as GitHub secrets
 
 Vicky completed the Meta for Developers app setup for RIO's Instagram Business
