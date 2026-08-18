@@ -30,6 +30,18 @@ Design constraints, on purpose:
   data/ig_published.json so it is never posted twice.
 - Always includes a plain-language affiliate disclosure in the caption
   (ASCI/FTC-style) — never a bare link with no disclosure.
+- NEVER live-verifies the Amazon listing at post time — cannot, same
+  robots.txt/no-PA-API blocker as the image problem above. It only trusts
+  offer_identity_registry.csv's cached availability_status/
+  destination_checked_at. Added 2026-08-18 after Vicky asked "what if the
+  product goes off Amazon, will I get an error?" — answer: no error, the
+  script never touches Amazon directly, but a stale listing could get
+  posted with a dead/OOS link and nobody would know. STALENESS_DAYS below
+  is the mitigation: an offer whose destination_checked_at is older than
+  that many days is skipped, not posted, until a human re-checks it on
+  Amazon and updates the CSV. This is a deadline-forcing function, not a
+  live check — there is no substitute yet for Vicky/Victor periodically
+  re-verifying offers by hand.
 
 RIO's operating agent should run this via .github/workflows/rio.yml on its
 own schedule; it commits data/ig_published.json (state) and appends a status
@@ -59,6 +71,16 @@ CARD_DIR = os.path.join(ROOT, "site", "social")
 
 GRAPH_VERSION = "v21.0"
 GRAPH_BASE = f"https://graph.facebook.com/{GRAPH_VERSION}"
+
+# An offer whose data/offer_identity_registry.csv "destination_checked_at"
+# is older than this many days is treated as stale and skipped (not
+# posted), even if publish_status/availability_status still say READY/
+# IN_STOCK. This is the only safety net against posting a dead or
+# out-of-stock Amazon link — this script cannot live-check Amazon itself
+# (robots.txt disallows scraping, no PA-API credentials exist). Re-checking
+# a stale offer on Amazon and updating destination_checked_at is a Founder/
+# Victor task, not something this script can do on its own.
+STALENESS_DAYS = 21
 
 IG_USER_ID = os.environ.get("IG_USER_ID_RIO", "")
 IG_ACCESS_TOKEN = os.environ.get("IG_ACCESS_TOKEN_RIO", "")
@@ -123,17 +145,27 @@ def graph_call(path, params, method="POST"):
         raise RuntimeError(f"Graph API {method} {path} failed ({e.code}): {body}") from e
 
 
+def days_since(date_str):
+    """Returns days between date_str (YYYY-MM-DD) and today (IST), or None if unparseable."""
+    try:
+        checked = datetime.strptime(date_str.strip(), "%Y-%m-%d").replace(tzinfo=IST)
+    except Exception:
+        return None
+    return (datetime.now(IST) - checked).days
+
+
 def build_caption(offer):
     name = offer["creative_product_name"]
     cluster = CLUSTER_LABELS.get(offer["offer_id"], "Home Storage")
     url = offer["canonical_url"]
+    checked_at = offer.get("destination_checked_at", "").strip() or "an earlier date"
     return (
         f"{name}\n\n"
         f"Category: {cluster}\n\n"
-        f"Identity and stock re-checked before this post went up "
-        f"(availability_status: {offer['availability_status']}, "
-        f"last checked {offer.get('destination_checked_at', 'recently')}). "
-        f"Full details & the current live price are on Amazon.in:\n{url}\n\n"
+        f"Identity and stock last verified {checked_at} "
+        f"(availability_status on file: {offer['availability_status']}). "
+        f"Prices and stock on Amazon change often — always confirm the current "
+        f"price and availability on the product page before buying. Full details:\n{url}\n\n"
         f"Affiliate link — RIO may earn a small commission on Amazon.in purchases "
         f"made through this link, at no extra cost to you. #ad #affiliate\n\n"
         f"#HomeOrganization #IndianHomes #SpaceSaving #StorageHacks"
@@ -170,9 +202,14 @@ def main():
 
     candidate = None
     skipped_no_card = []
+    skipped_stale = []
     for o in ready:
         oid = o["offer_id"]
         if oid in posted:
+            continue
+        age = days_since(o.get("destination_checked_at", ""))
+        if age is None or age > STALENESS_DAYS:
+            skipped_stale.append(f"{oid} ({'unparseable date' if age is None else f'{age}d old'})")
             continue
         card_path = os.path.join(CARD_DIR, f"{oid}.png")
         if not os.path.isfile(card_path):
@@ -181,6 +218,9 @@ def main():
         candidate = o
         break
 
+    if skipped_stale:
+        print(f"[publish_instagram] destination_checked_at older than {STALENESS_DAYS}d (or unparseable), "
+              f"needs a human re-check on Amazon before it can post: {', '.join(skipped_stale)}")
     if skipped_no_card:
         print(f"[publish_instagram] no social card yet for: {', '.join(skipped_no_card)} — skipped, not posted.")
 
