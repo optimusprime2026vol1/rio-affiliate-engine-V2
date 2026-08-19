@@ -34,10 +34,10 @@
  },
  "note_en": "Heartbeat OK — dashboard regenerated, 4/4 validators passing. 17 ready offers, 27 content items, revenue ₹0.",
  "content_review": {
-  "reviewed_this_run": 21,
-  "errors_this_run": 2,
+  "reviewed_this_run": 23,
+  "errors_this_run": 0,
   "total_articles_in_report": 23,
-  "avg_score": 4.4,
-  "would_trust_count": 10
+  "avg_score": 5.4,
+  "would_trust_count": 17
  }
 }
