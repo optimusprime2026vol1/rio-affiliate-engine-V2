@@ -55,6 +55,7 @@ import sys
 import urllib.error
 import urllib.parse
 import urllib.request
+import time
 from datetime import datetime, timezone, timedelta
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
@@ -64,6 +65,8 @@ OWNER, REPO_NAME = REPO.split("/") if "/" in REPO else ("vickykenin-lang", "rio-
 
 REG_CSV = os.path.join(ROOT, "data", "offer_identity_registry.csv")
 STATE_JSON = os.path.join(ROOT, "data", "ig_published.json")
+APPROVAL_JSON = os.path.join(ROOT, "data", "instagram_approval.json")
+RUN_STATUS_JSON = os.path.join(ROOT, "data", "instagram_run_status.json")
 CONTROL_JSON = os.path.join(ROOT, "data", "control.json")
 STATUS_JSON = os.path.join(ROOT, "data", "status.json")
 REPORT_MD = os.path.join(ROOT, "data", "rio_report_to_victor.md")
@@ -129,6 +132,26 @@ def jsave(path, obj):
         json.dump(obj, f, indent=1, ensure_ascii=False)
 
 
+def save_run_status(status, detail, offer_id=None, posted_count=0, pending_count=0):
+    jsave(RUN_STATUS_JSON, {
+        "updated_at": datetime.now(IST).isoformat(timespec="minutes"),
+        "status": status,
+        "offer_id": offer_id,
+        "detail": detail,
+        "posted_count": posted_count,
+        "pending_count": pending_count,
+    })
+
+
+def update_approval(approvals_doc, offer_id, status, detail=None):
+    approval = approvals_doc.setdefault("approvals", {}).setdefault(offer_id, {})
+    approval["status"] = status
+    approval["updated_at"] = datetime.now(IST).isoformat(timespec="minutes")
+    if detail:
+        approval["last_detail"] = detail
+    jsave(APPROVAL_JSON, approvals_doc)
+
+
 def load_csv(path):
     with open(path, encoding="utf-8", newline="") as f:
         return list(csv.DictReader(f))
@@ -138,7 +161,8 @@ def graph_call(path, params, method="POST"):
     url = f"{GRAPH_BASE}/{path}"
     data = urllib.parse.urlencode(params).encode()
     if method == "GET":
-        req = urllib.request.Request(f"{url}?{data.decode()}", method="GET")
+        separator = "&" if "?" in url else "?"
+        req = urllib.request.Request(f"{url}{separator}{data.decode()}", method="GET")
     else:
         req = urllib.request.Request(url, data=data, method="POST")
     try:
@@ -182,19 +206,25 @@ def build_caption(offer):
 
 def main():
     if not IG_USER_ID or not IG_ACCESS_TOKEN:
-        print("[publish_instagram] IG_USER_ID_RIO / IG_ACCESS_TOKEN_RIO not set — nothing to do.")
-        return 0
+        detail = "IG_USER_ID_RIO / IG_ACCESS_TOKEN_RIO is missing from GitHub Actions secrets."
+        save_run_status("BLOCKED_CREDENTIALS", detail)
+        print(f"[publish_instagram] {detail}")
+        return 2
 
     control = jload(CONTROL_JSON, {"kill_switch": False})
     if control.get("kill_switch"):
-        print("[publish_instagram] kill switch is ON — skipping this run.")
-        return 0
+        detail = "RIO kill switch is ON; Instagram publishing is blocked."
+        save_run_status("BLOCKED_KILL_SWITCH", detail)
+        print(f"[publish_instagram] {detail}")
+        return 2
 
     status = jload(STATUS_JSON, {})
     if status.get("all_validators_pass") is not True:
-        print("[publish_instagram] validators are not known-passing (data/status.json) — "
-              "skipping this run. Nothing should be published while any validator fails.")
-        return 0
+        detail = ("RIO validators are not known-passing; nothing can publish until "
+                  "data/status.json.all_validators_pass is true.")
+        save_run_status("BLOCKED_VALIDATION", detail)
+        print(f"[publish_instagram] {detail}")
+        return 2
 
     offers = load_csv(REG_CSV)
     ready = [
@@ -207,6 +237,9 @@ def main():
 
     state = jload(STATE_JSON, {"posted": {}})
     posted = state.setdefault("posted", {})
+    approvals_doc = jload(APPROVAL_JSON, {"approvals": {}})
+    approvals = approvals_doc.get("approvals", {})
+    approved_states = {"APPROVED", "POST_PENDING", "FAILED_RETRY"}
 
     candidate = None
     skipped_no_card = []
@@ -214,6 +247,8 @@ def main():
     for o in ready:
         oid = o["offer_id"]
         if oid in posted:
+            continue
+        if approvals.get(oid, {}).get("status") not in approved_states:
             continue
         age = days_since(o.get("destination_checked_at", ""))
         if age is None or age > STALENESS_DAYS:
@@ -233,7 +268,23 @@ def main():
         print(f"[publish_instagram] no social card yet for: {', '.join(skipped_no_card)} — skipped, not posted.")
 
     if candidate is None:
-        print("[publish_instagram] no eligible un-posted offer with a ready social card this run.")
+        pending_count = sum(
+            1 for oid, approval in approvals.items()
+            if approval.get("status") in approved_states and oid not in posted
+        )
+        if pending_count and (skipped_stale or skipped_no_card):
+            reasons = []
+            if skipped_stale:
+                reasons.append("stale verification: " + ", ".join(skipped_stale))
+            if skipped_no_card:
+                reasons.append("missing social card: " + ", ".join(skipped_no_card))
+            detail = "Approved post is blocked — " + "; ".join(reasons)
+            save_run_status("BLOCKED_OFFER", detail, posted_count=len(posted), pending_count=pending_count)
+            print(f"[publish_instagram] {detail}")
+            return 2
+        detail = "No eligible Founder-approved, un-posted offer is ready this run."
+        save_run_status("IDLE", detail, posted_count=len(posted), pending_count=pending_count)
+        print(f"[publish_instagram] {detail}")
         return 0
 
     oid = candidate["offer_id"]
@@ -251,29 +302,65 @@ def main():
                     f"content-type {content_type or '(missing)'}"
                 )
     except Exception as exc:
-        raise RuntimeError(
+        error = RuntimeError(
             f"public social card is not reachable at {image_url}; "
             f"Instagram cannot publish it: {exc}"
-        ) from exc
+        )
+        detail = str(error)
+        update_approval(approvals_doc, oid, "FAILED_RETRY", detail)
+        save_run_status("FAILED_RETRY", detail, oid, posted_count=len(posted), pending_count=1)
+        raise error from exc
     caption = build_caption(candidate)
 
+    update_approval(approvals_doc, oid, "POST_PENDING", "Meta publish request started.")
+    save_run_status(
+        "POST_PENDING",
+        "Founder-approved offer is being submitted to Meta.",
+        oid,
+        posted_count=len(posted),
+        pending_count=1,
+    )
     print(f"[publish_instagram] publishing {oid} ({candidate['creative_product_name']}) ...")
 
-    creation = graph_call(
-        f"{IG_USER_ID}/media",
-        {"image_url": image_url, "caption": caption, "access_token": IG_ACCESS_TOKEN},
-    )
-    creation_id = creation.get("id")
-    if not creation_id:
-        raise RuntimeError(f"media creation returned no id: {creation}")
+    try:
+        creation = graph_call(
+            f"{IG_USER_ID}/media",
+            {"image_url": image_url, "caption": caption, "access_token": IG_ACCESS_TOKEN},
+        )
+        creation_id = creation.get("id")
+        if not creation_id:
+            raise RuntimeError(f"media creation returned no id: {creation}")
 
-    published = graph_call(
-        f"{IG_USER_ID}/media_publish",
-        {"creation_id": creation_id, "access_token": IG_ACCESS_TOKEN},
-    )
-    media_id = published.get("id")
-    if not media_id:
-        raise RuntimeError(f"media_publish returned no id: {published}")
+        for _ in range(10):
+            container = graph_call(
+                f"{creation_id}?fields=status_code,status",
+                {"access_token": IG_ACCESS_TOKEN},
+                method="GET",
+            )
+            container_status = container.get("status_code")
+            if container_status == "FINISHED":
+                break
+            if container_status in {"ERROR", "EXPIRED"}:
+                raise RuntimeError(f"Meta media container failed: {container}")
+            time.sleep(3)
+        else:
+            raise RuntimeError("Meta media container did not become ready within 30 seconds.")
+
+        published = graph_call(
+            f"{IG_USER_ID}/media_publish",
+            {"creation_id": creation_id, "access_token": IG_ACCESS_TOKEN},
+        )
+        media_id = published.get("id")
+        if not media_id:
+            raise RuntimeError(f"media_publish returned no id: {published}")
+    except Exception as exc:
+        detail = str(exc)
+        update_approval(approvals_doc, oid, "FAILED_RETRY", detail)
+        save_run_status(
+            "FAILED_RETRY", detail, oid,
+            posted_count=len(posted), pending_count=1,
+        )
+        raise
 
     permalink = None
     try:
@@ -290,6 +377,14 @@ def main():
         "product_name": candidate["creative_product_name"],
     }
     jsave(STATE_JSON, state)
+    update_approval(approvals_doc, oid, "INSTAGRAM_POSTED", f"Meta media ID {media_id}")
+    save_run_status(
+        "INSTAGRAM_POSTED",
+        f"Successfully posted to Instagram as Meta media {media_id}.",
+        oid,
+        posted_count=len(posted),
+        pending_count=0,
+    )
 
     report_line = (
         f"\n- {now} IST — posted **{candidate['creative_product_name']}** "

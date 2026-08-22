@@ -15,7 +15,7 @@ The repository currently contains:
 - 17 Amazon.in offers marked READY with tracking ID `rioaffiliate-21`
 - A heartbeat with real production reachability plus four local commercial validators
 - Daily content QA and product-discovery suggestions
-- Instagram publishing with public-image preflight and deduplication
+- Founder-approved Instagram publishing with explicit status, public-image preflight and deduplication
 
 Do not call the system live, production-ready or earning from local validators alone. Current truth is stored in:
 
@@ -24,6 +24,8 @@ Do not call the system live, production-ready or earning from local validators a
 - `data/dashboard_snapshot.json` — pipeline counts
 - `data/content_review_report.json` — content trust assessment
 - `data/ig_published.json` — confirmed Instagram media IDs/permalinks only
+- `data/instagram_approval.json` — Founder approval and per-offer publish state
+- `data/instagram_run_status.json` — latest real publish outcome or blocker
 
 During the 2026-08-22 audit, both the default GitHub Pages URL and `rio.designinfra.in` returned HTTP 404. Public availability therefore remains unverified until the production gate passes. A private source repository requires a GitHub plan/configuration that supports Pages, or a separate public deployment target.
 

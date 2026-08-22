@@ -1,0 +1,11 @@
+{
+  "approvals": {
+    "UNDER_SINK_001": {
+      "status": "APPROVED",
+      "approved_by": "FOUNDER",
+      "approved_at": "2026-08-22T22:24+05:30",
+      "updated_at": "2026-08-22T22:24+05:30",
+      "note": "Founder-approved end-to-end Instagram automation test."
+    }
+  }
+}

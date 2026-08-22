@@ -26,6 +26,9 @@ SNAPSHOT_JSON = ROOT / "data" / "dashboard_snapshot.json"
 ACTION_QUEUE_CSV = ROOT / "data" / "ceo_action_queue.csv"
 DASHBOARD_HTML = ROOT / "site" / "dashboard" / "index.html"
 PRODUCTION_JSON = ROOT / "data" / "production_status.json"
+IG_APPROVAL_JSON = ROOT / "data" / "instagram_approval.json"
+IG_PUBLISHED_JSON = ROOT / "data" / "ig_published.json"
+IG_RUN_STATUS_JSON = ROOT / "data" / "instagram_run_status.json"
 
 
 def load_csv(path):
@@ -45,6 +48,22 @@ def main():
         production = {"verified": False}
     offers = load_csv(REG_CSV)
     queue = load_csv(QUEUE_CSV)
+    try:
+        ig_approvals = json.loads(IG_APPROVAL_JSON.read_text(encoding="utf-8")).get("approvals", {})
+    except Exception:
+        ig_approvals = {}
+    try:
+        ig_posted = json.loads(IG_PUBLISHED_JSON.read_text(encoding="utf-8")).get("posted", {})
+    except Exception:
+        ig_posted = {}
+    try:
+        ig_run = json.loads(IG_RUN_STATUS_JSON.read_text(encoding="utf-8"))
+    except Exception:
+        ig_run = {"status": "NOT_CONFIGURED", "detail": "Instagram status is unavailable."}
+
+    ig_approved = [oid for oid, a in ig_approvals.items() if a.get("status") == "APPROVED"]
+    ig_pending = [oid for oid, a in ig_approvals.items() if a.get("status") == "POST_PENDING"]
+    ig_failed = [oid for oid, a in ig_approvals.items() if a.get("status") == "FAILED_RETRY"]
 
     ready_offers = [o for o in offers if o["publish_status"] == "READY"]
     blocked_offers = [o for o in offers if o["publish_status"] != "READY"]
@@ -68,6 +87,11 @@ def main():
         "discovered_products": len(discovered_products),
         "verified_products": len(verified_products),
         "ready_products": len(ready_products),
+        "instagram_approved": len(ig_approved),
+        "instagram_post_pending": len(ig_pending),
+        "instagram_posted": len(ig_posted),
+        "instagram_failed": len(ig_failed),
+        "instagram_last_status": ig_run.get("status", "UNKNOWN"),
     }
     SNAPSHOT_JSON.write_text(json.dumps(snapshot, indent=2) + "\n", encoding="utf-8")
 
@@ -124,6 +148,12 @@ def main():
         f"<tr><td class=\"blocked\">{esc(r[0])}</td><td>{esc(r[1])}</td><td>{esc(r[2])}</td><td>{esc(r[3])}</td></tr>"
         for r in rows
     )
+    ig_rows = "".join(
+        f"<tr><td>{esc(oid)}</td><td>{esc(a.get('status', 'UNKNOWN'))}</td>"
+        f"<td>{esc(a.get('approved_by', ''))}</td><td>{esc(a.get('updated_at', ''))}</td>"
+        f"<td>{esc(a.get('last_detail', a.get('note', '')))}</td></tr>"
+        for oid, a in ig_approvals.items()
+    ) or '<tr><td colspan="5">No Instagram approvals yet.</td></tr>'
     badges = "<span class=\"badge\">BUILT</span><span class=\"badge\">LOCAL QA</span>"
     if ready_offers:
         badges += (
@@ -147,7 +177,8 @@ table{{width:100%;border-collapse:collapse;font-size:14px}}th,td{{padding:10px;b
 .badge{{display:inline-block;padding:5px 9px;border:1px solid #bbb;border-radius:999px;margin-right:6px}}
 </style><link rel="canonical" href="https://vickykenin-lang.github.io/rio-affiliate-engine/dashboard/"></head><body><main><h1>RIO CEO Dashboard v2</h1><p class="sub">Single source of truth &middot; Build state, commercial gates, P&amp;L and human actions</p>
 <div>{badges}</div>
-<div class="grid"><section class="card"><span>Product candidates</span><strong>{snapshot['product_candidates']}</strong></section><section class="card"><span>Offers READY</span><strong>{snapshot['ready_offers']}</strong></section><section class="card"><span>Offers BLOCKED</span><strong>{snapshot['blocked_offers']}</strong></section><section class="card"><span>Content queue</span><strong>{snapshot['content_items']}</strong></section><section class="card"><span>Revenue</span><strong>&#8377;{snapshot['revenue_inr']}</strong></section><section class="card"><span>Net P&amp;L</span><strong>&#8377;{snapshot['net_profit_inr']}</strong></section></div>
+<div class="grid"><section class="card"><span>Product candidates</span><strong>{snapshot['product_candidates']}</strong></section><section class="card"><span>Offers READY</span><strong>{snapshot['ready_offers']}</strong></section><section class="card"><span>Instagram Approved</span><strong>{snapshot['instagram_approved']}</strong></section><section class="card"><span>Post Pending</span><strong>{snapshot['instagram_post_pending']}</strong></section><section class="card"><span>Instagram Posted</span><strong>{snapshot['instagram_posted']}</strong></section><section class="card"><span>Instagram Failed</span><strong>{snapshot['instagram_failed']}</strong></section><section class="card"><span>Revenue</span><strong>&#8377;{snapshot['revenue_inr']}</strong></section><section class="card"><span>Net P&amp;L</span><strong>&#8377;{snapshot['net_profit_inr']}</strong></section></div>
+<section class="panel"><h2>Instagram Publishing</h2><p><strong>Latest state:</strong> {esc(ig_run.get('status', 'UNKNOWN'))} &middot; {esc(ig_run.get('detail', ''))}</p><table><tr><th>Offer</th><th>Status</th><th>Approved by</th><th>Updated</th><th>Detail</th></tr>{ig_rows}</table></section>
 <section class="panel"><h2>CEO Action Queue</h2><table><tr><th>Status</th><th>Owner</th><th>Action</th><th>Why</th></tr>{action_rows}</table></section>
 <section class="panel"><h2>X&rarr;X Offer Control</h2><table><tr><th>Offer</th><th>Product</th><th>Identity</th><th>Affiliate</th><th>Publish</th></tr>{xtox_rows}</table></section>
 

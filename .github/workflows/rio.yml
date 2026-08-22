@@ -1,6 +1,10 @@
 name: RIO
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/instagram_approval.json'
   schedule:
     - cron: '*/30 * * * *'   # heartbeat: every 30 minutes (Vicky, 2026-08-17 via Dr. Victor)
     - cron: '0 5 * * *'      # content review: once daily, ~10:30 IST (DeepSeek reviews live articles)
@@ -85,6 +89,7 @@ jobs:
 
   instagram-publish:
     if: |
+      (github.event_name == 'push' && github.actor != 'github-actions[bot]') ||
       github.event.schedule == '30 13 * * *' ||
       (github.event_name == 'workflow_dispatch' && (inputs.job == 'instagram-publish' || inputs.job == 'all'))
     runs-on: ubuntu-latest
@@ -93,12 +98,18 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.x"
-      - name: Post the next eligible verified offer to Instagram (@riosallerior) — one per run, skips if kill switch on or validators failing
+      - name: Post the next Founder-approved verified offer to Instagram (@riosallerior)
+        id: publish
+        continue-on-error: true
         env:
           IG_USER_ID_RIO: ${{ secrets.IG_USER_ID_RIO }}
           IG_ACCESS_TOKEN_RIO: ${{ secrets.IG_ACCESS_TOKEN_RIO }}
         run: python scripts/publish_instagram.py
-      - name: Commit publish state + report line (NOT [skip ci] — harmless, data/ isn't part of the site build)
+      - name: Commit publish state, including real failure reason
+        if: always()
         run: |
           git config user.name "RIO" && git config user.email "rio@rio-affiliate.bot"
           git add -A && (git diff --cached --quiet || git commit -m "instagram: publish run") && git pull --rebase --autostash && git push
+      - name: Keep the Actions result truthful when Meta publish failed
+        if: steps.publish.outcome == 'failure'
+        run: exit 1
