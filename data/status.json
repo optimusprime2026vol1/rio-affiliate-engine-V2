@@ -1,11 +1,11 @@
 {
- "updated": "2026-08-22T20:13+05:30",
+ "updated": "2026-08-22T20:37+05:30",
  "kill_switch": false,
  "dashboard_regenerated": true,
  "validators": {
   "production_live": {
    "pass": false,
-   "detail": "PRODUCTION HEALTH GATE: FAIL\n{\"checked_at\": \"2026-08-22T20:13:15+05:30\", \"base_url\": \"https://vickykenin-lang.github.io/rio-affiliate-engine\", \"verified\": false, \"checks\": {\"homepage_200\": false, \"affiliate_tag_present\": false, \"disclosure_present\": false, \"sitemap_200\": false, \"sitemap_absolute_urls\": false, \"social_card_200\": false}, \"responses\": {\"homepage\": {\"status\": 404, \"url\": \"https://vickykenin-lang.github.io/rio-affiliate-engine/\", \"error\": null}, \"sitemap\": {\"status\": 404, \"url\": \"https://vickykenin-lang.github.io/rio-affiliate-engine/sitemap.xml\", \"error\": null}, \"social_card\": {\"status\": 404, \"url\": \"https://vickykenin-lang.github.io/rio-affiliate-engine/social/UNDER_SINK_001.png\", \"content_type\": \"text/html; charset=utf-8\", \"error\": null}}}"
+   "detail": "PRODUCTION HEALTH GATE: FAIL\n{\"checked_at\": \"2026-08-22T20:37:37+05:30\", \"base_url\": \"https://vickykenin-lang.github.io/rio-affiliate-engine\", \"verified\": false, \"checks\": {\"homepage_200\": false, \"affiliate_tag_present\": false, \"disclosure_present\": false, \"sitemap_200\": false, \"sitemap_absolute_urls\": false, \"social_card_200\": false}, \"responses\": {\"homepage\": {\"status\": 404, \"url\": \"https://vickykenin-lang.github.io/rio-affiliate-engine/\", \"error\": null}, \"sitemap\": {\"status\": 404, \"url\": \"https://vickykenin-lang.github.io/rio-affiliate-engine/sitemap.xml\", \"error\": null}, \"social_card\": {\"status\": 404, \"url\": \"https://vickykenin-lang.github.io/rio-affiliate-engine/social/UNDER_SINK_001.png\", \"content_type\": \"text/html; charset=utf-8\", \"error\": null}}}"
   },
   "offer_integrity": {
    "pass": true,
