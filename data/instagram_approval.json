@@ -1,11 +1,12 @@
 {
-  "approvals": {
-    "UNDER_SINK_001": {
-      "status": "APPROVED",
-      "approved_by": "FOUNDER",
-      "approved_at": "2026-08-22T22:24+05:30",
-      "updated_at": "2026-08-22T22:24+05:30",
-      "note": "Founder-approved end-to-end Instagram automation test."
-    }
+ "approvals": {
+  "UNDER_SINK_001": {
+   "status": "FAILED_RETRY",
+   "approved_by": "FOUNDER",
+   "approved_at": "2026-08-22T22:24+05:30",
+   "updated_at": "2026-08-22T22:59+05:30",
+   "note": "Founder-approved end-to-end Instagram automation test.",
+   "last_detail": "Graph API POST 17841435772670647/media failed (400): {\"error\":{\"message\":\"Invalid OAuth access token - Cannot parse access token\",\"type\":\"OAuthException\",\"code\":190,\"fbtrace_id\":\"AbGQZ5-teQA1RAQKMC6PkuL\"}}"
   }
+ }
 }
