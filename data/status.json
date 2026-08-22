@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-22T17:11+05:30",
+ "updated": "2026-08-22T17:21+05:30",
  "kill_switch": false,
  "dashboard_regenerated": true,
  "validators": {
@@ -18,9 +18,13 @@
   "production_offer_gate": {
    "pass": true,
    "detail": "PRODUCTION OFFER GATE: PASS; READY=17"
+  },
+  "production_live": {
+   "pass": false,
+   "detail": "PRODUCTION HEALTH GATE: FAIL — homepage, sitemap and social card returned HTTP 404 on 2026-08-22."
   }
  },
- "all_validators_pass": true,
+ "all_validators_pass": false,
  "counts": {
   "product_candidates": 32,
   "ready_offers": 17,
@@ -32,7 +36,7 @@
   "net_profit_inr": 0,
   "production_verified": false
  },
- "note_en": "Heartbeat OK — dashboard regenerated, 4/4 validators passing. 17 ready offers, 27 content items, revenue ₹0.",
+ "note_en": "PRODUCTION OFFLINE — local commercial validators pass, but homepage, sitemap and social-card HTTP checks return 404. Instagram and earning claims remain blocked.",
  "content_review": {
   "reviewed_this_run": 23,
   "errors_this_run": 0,
