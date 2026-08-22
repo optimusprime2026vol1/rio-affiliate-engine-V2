@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-22T11:18+05:30",
+ "updated": "2026-08-22T11:45+05:30",
  "kill_switch": false,
  "dashboard_regenerated": true,
  "validators": {
@@ -22,7 +22,7 @@
  },
  "all_validators_pass": true,
  "counts": {
-  "product_candidates": 28,
+  "product_candidates": 32,
   "ready_offers": 17,
   "blocked_offers": 0,
   "rejected_products": 2,
