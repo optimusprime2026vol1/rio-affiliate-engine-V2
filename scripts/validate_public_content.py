@@ -12,6 +12,9 @@ SITE = ROOT / "site"
 errors = []
 warnings = []
 
+IMAGE_REGISTRY = json.loads((ROOT / "data" / "product_image_registry.json").read_text(encoding="utf-8"))
+IMAGE_BY_URL = {item["image_url"]: item for item in IMAGE_REGISTRY["images"]}
+
 snapshot = json.loads((ROOT / "data" / "dashboard_snapshot.json").read_text(encoding="utf-8"))
 review = json.loads((ROOT / "data" / "content_review_report.json").read_text(encoding="utf-8"))
 
@@ -43,9 +46,25 @@ for path in SITE.rglob("*.html"):
         if "tag=rioaffiliate-21" not in href:
             errors.append(f"{rel}: Amazon link missing rioaffiliate-21 tag")
 
-    hotlinks = len(re.findall(r'm\.media-amazon\.com', text))
-    if hotlinks:
-        errors.append(f"{rel}: Amazon media hotlink lacks recorded SiteStripe/PA-API provenance; use a local RIO card")
+    hotlinks = re.findall(r'<img[^>]+\\ssrc="(https://m\\.media-amazon\\.com/[^"]+)"', text)
+    linked_images = re.findall(
+        r'<a class="product-image-link" href="(https://www\\.amazon\\.in/dp/([A-Z0-9]{10})[^"]*)"[^>]*>\\s*<img[^>]+\\ssrc="(https://m\\.media-amazon\\.com/[^"]+)"',
+        text,
+        re.S,
+    )
+    if len(linked_images) != len(hotlinks):
+        errors.append(f"{rel}: every Amazon product image must be wrapped by its direct affiliate product link")
+    for href, asin, image_url in linked_images:
+        record = IMAGE_BY_URL.get(image_url)
+        if not record:
+            errors.append(f"{rel}: Amazon product image is not in data/product_image_registry.json")
+        elif record["asin"] != asin:
+            errors.append(f"{rel}: image ASIN {record['asin']} does not match destination ASIN {asin}")
+        if "tag=rioaffiliate-21" not in href:
+            errors.append(f"{rel}: product image affiliate link is missing rioaffiliate-21 tag")
+    branded_primary = re.findall(r'<img[^>]+\\ssrc="(?:\\.\\./)?social/[A-Z0-9_]+\\.png"', text)
+    if branded_primary:
+        errors.append(f"{rel}: branded fallback card is being used as the primary product image")
 
 articles = review.get("articles", review)
 for article_path, result in articles.items():

@@ -19,6 +19,16 @@
     });
   });
 
+  // Real Amazon product images are primary. Local RIO cards are emergency
+  // fallbacks only, so a temporary media-host failure never leaves a blank card.
+  document.querySelectorAll('img[data-fallback-src]').forEach(function(img){
+    img.addEventListener('error',function(){
+      if(img.dataset.fallbackApplied==='true') return;
+      img.dataset.fallbackApplied='true';
+      img.src=img.dataset.fallbackSrc;
+    });
+  });
+
   // Sticky mobile "buy" bar: mirrors the first real, already-verified offer
   // link on an article page so mobile readers always have the CTA in view.
   // Purely presentational — clones the existing <a>, adds no new data.
