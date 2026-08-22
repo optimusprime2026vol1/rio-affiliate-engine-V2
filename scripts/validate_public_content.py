@@ -60,6 +60,19 @@ if not locs or any(urlparse(loc).scheme not in ("http", "https") or not urlparse
     errors.append("sitemap.xml: every loc must be an absolute URL")
 
 home = (SITE / "index.html").read_text(encoding="utf-8")
+product_cards = re.findall(r'<article class="(?:deal-card|card)">.*?</article>', home, re.S)
+for number, card in enumerate(product_cards, start=1):
+    if "https://www.amazon.in/" not in card or "<img" not in card:
+        continue
+    image_link = re.search(
+        r'<a class="product-image-link" href="(https://www\.amazon\.in/[^"]+)"[^>]*>\s*<img',
+        card,
+        re.S,
+    )
+    if not image_link:
+        errors.append(f"index.html: Amazon product card {number} image must link directly to its verified affiliate URL")
+    elif "tag=rioaffiliate-21" not in image_link.group(1):
+        errors.append(f"index.html: Amazon product card {number} image link is missing rioaffiliate-21 tag")
 for value, label in [
     (snapshot["content_items"], "Content items"),
     (snapshot["ready_offers"], "Verified offers"),
