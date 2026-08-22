@@ -85,8 +85,18 @@ GRAPH_BASE = f"https://graph.facebook.com/{GRAPH_VERSION}"
 # Victor task, not something this script can do on its own.
 STALENESS_DAYS = 21
 
-IG_USER_ID = os.environ.get("IG_USER_ID_RIO", "")
-IG_ACCESS_TOKEN = os.environ.get("IG_ACCESS_TOKEN_RIO", "")
+def clean_secret(value):
+    """Remove common copy/paste wrappers without ever logging the secret."""
+    value = (value or "").strip()
+    if len(value) >= 2 and value[0] == value[-1] and value[0] in {'"', "'"}:
+        value = value[1:-1].strip()
+    if value.casefold().startswith("bearer "):
+        value = value[7:].strip()
+    return value
+
+
+IG_USER_ID = clean_secret(os.environ.get("IG_USER_ID_RIO", ""))
+IG_ACCESS_TOKEN = clean_secret(os.environ.get("IG_ACCESS_TOKEN_RIO", ""))
 PUBLIC_SITE_BASE = os.environ.get(
     "RIO_PUBLIC_SITE_BASE",
     f"https://{OWNER}.github.io/{REPO_NAME}",
