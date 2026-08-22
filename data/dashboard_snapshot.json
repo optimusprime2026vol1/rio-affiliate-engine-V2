@@ -13,9 +13,9 @@
   "discovered_products": 19,
   "verified_products": 17,
   "ready_products": 17,
-  "instagram_approved": 1,
+  "instagram_approved": 0,
   "instagram_post_pending": 0,
   "instagram_posted": 0,
-  "instagram_failed": 0,
-  "instagram_last_status": "APPROVED"
+  "instagram_failed": 1,
+  "instagram_last_status": "FAILED_RETRY"
 }

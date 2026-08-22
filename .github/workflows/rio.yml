@@ -108,6 +108,7 @@ jobs:
       - name: Commit publish state, including real failure reason
         if: always()
         run: |
+          python scripts/generate_dashboard.py
           git config user.name "RIO" && git config user.email "rio@rio-affiliate.bot"
           git add -A && (git diff --cached --quiet || git commit -m "instagram: publish run") && git pull --rebase --autostash && git push
       - name: Keep the Actions result truthful when Meta publish failed
