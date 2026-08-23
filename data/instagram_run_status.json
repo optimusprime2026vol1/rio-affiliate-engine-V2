@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-08-23T16:04+05:30",
- "status": "INSTAGRAM_POSTED",
- "offer_id": "UNDER_SINK_001",
- "detail": "Successfully posted to Instagram as Meta media 17877752013535173.",
+ "updated_at": "2026-08-23T16:07+05:30",
+ "status": "IDLE",
+ "offer_id": null,
+ "detail": "No eligible Founder-approved, un-posted offer is ready this run.",
  "posted_count": 1,
  "pending_count": 0
 }
