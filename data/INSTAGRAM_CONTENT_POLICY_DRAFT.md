@@ -1,6 +1,6 @@
 # RIO Instagram Content Policy — FOUNDER-LOCK DRAFT
 
-Status: **DRAFT — FORMAT MIX + HOOK STRATEGY APPROVED; REMAINING ITEMS PENDING**
+Status: **DRAFT — FORMAT MIX + HOOK STRATEGY + CAPTION LANGUAGE APPROVED; REMAINING ITEMS PENDING**
 
 Purpose: convert existing repository-backed Instagram and product-display rules into one operational policy for Phase 2. No unsupported posting strategy is invented here.
 
@@ -45,7 +45,7 @@ For product-led Instagram creative:
 ## 5. Affiliate disclosure
 Every affiliate/product post must include a clear affiliate disclosure in the caption. Disclosure must not be hidden behind vague wording.
 
-Current publisher wording includes an explicit commission disclosure and `#ad #affiliate`; this principle is retained, while final Founder-approved caption style remains pending.
+Current publisher wording includes an explicit commission disclosure and `#ad #affiliate`; this principle is retained.
 
 ## 6. Deduplication and evidence trail
 - Confirmed posts must not be reposted as the same offer automatically.
@@ -100,40 +100,41 @@ Allowed hook families include, where applicable:
 - **buy/use consideration** — why this product may be worth considering versus doing nothing or using a less suitable setup;
 - **demo/how-to hook** — what the viewer will learn, see, or understand in a Reel/carousel.
 
-Examples of structural hook styles (not fixed copy):
-- “Struggling with ___?”
-- “Why this matters in a small/rented home”
-- “A simple way to solve ___”
-- “Useful if you need ___ without ___”
-- “Before you buy/use ___, check this”
-
-AI chooses the hook dynamically. It is not required to use the same template repeatedly.
+AI chooses the hook dynamically and must not repeat the same template mechanically.
 
 ### Hook integrity guardrail
 The hook is persuasive framing, not permission to exaggerate. It must remain consistent with verified product facts and RIO evidence standards. If the claimed problem/benefit cannot be supported, AI must select a different hook or omit it.
 
-## 9. CURRENT IMPLEMENTATION BLOCKER
+## 9. CAPTION LANGUAGE / TONE — FOUNDER APPROVED
+- Default caption language is **mostly English**.
+- Light, natural **Hinglish** may be used where it improves relatability or clarity for the intended audience.
+- The AI engine may adapt the English/Hinglish balance based on the **audience, content type, product category, hook, and context**.
+- Avoid forced slang, excessive Hindi transliteration, or language switching that reduces clarity.
+- Tone should remain practical, useful, trustworthy, and easy to scan rather than over-salesy.
+- Recommended caption structure, where applicable: **hook -> practical value / 2–3 useful points -> CTA -> disclosure**.
+- For professional/design/AI-tool content, AI may use more professional English; for Indian home/lifestyle problem-solution content, light Hinglish may be used when natural.
+
+## 10. CURRENT IMPLEMENTATION BLOCKER
 The current `scripts/publish_instagram.py` publishes `site/social/<offer_id>.png` branded cards as its Instagram image. Its own comments state that it intentionally does not use real product photos.
 
 That implementation conflicts with the Founder-locked Product Image Policy, which requires the exact verified real product image as the primary product display and allows local RIO cards only as fallback assets.
 
 **Required before autonomous Instagram product publishing is considered production-correct:** refactor the publisher/creative pipeline so the primary Instagram product image comes from the validated exact-product image registry or another Founder-approved exact-product image source. Until then, the branded-card implementation must not be treated as satisfying the locked product-image requirement.
 
-## 10. FOUNDER DECISION PENDING
+## 11. FOUNDER DECISION PENDING
 The following items still require explicit Founder approval before this document becomes FULLY LOCKED:
 
 1. **Visual system** — exact layout, logo placement, typography/text overlay rules, aspect ratio beyond the approved AI hook behavior above.
-2. **Caption style** — short/medium/long; Hinglish/English; practical vs editorial voice.
-3. **CTA** — exact action requested from the viewer.
-4. **Hashtag policy** — number/type; static vs generated.
-5. **Cadence** — posts per week and preferred time windows.
-6. **On-creative data** — whether price/rating/review count should appear on image/video or caption only.
-7. **Approval model** — Founder approval per post/creative vs autonomous publication after policy/validator gates.
-8. **Content mix** — percentage/priority between AI/design/professional content and Home & Living affiliate products.
-9. **Reposting/update policy** — whether the same product may be reposted after a defined cooldown/new angle/new verified price.
+2. **CTA** — exact action requested from the viewer.
+3. **Hashtag policy** — number/type; static vs generated.
+4. **Cadence** — posts per week and preferred time windows.
+5. **On-creative data** — whether price/rating/review count should appear on image/video or caption only.
+6. **Approval model** — Founder approval per post/creative vs autonomous publication after policy/validator gates.
+7. **Content mix** — percentage/priority between AI/design/professional content and Home & Living affiliate products.
+8. **Reposting/update policy** — whether the same product may be reposted after a defined cooldown/new angle/new verified price.
 
-## 11. Phase-2 implementation rule
-Do not expand Instagram autonomous publishing until Sections 9 and 10 are resolved. Phase 2 should then implement the locked creative rules, measure outputs/results, and optimize only within the Founder-approved policy.
+## 12. Phase-2 implementation rule
+Do not expand Instagram autonomous publishing until Sections 10 and 11 are resolved. Phase 2 should then implement the locked creative rules, measure outputs/results, and optimize only within the Founder-approved policy.
 
 ## Sources
 - `INSTAGRAM_AUTOMATION.md`
@@ -144,3 +145,4 @@ Do not expand Instagram autonomous publishing until Sections 9 and 10 are resolv
 ## Founder decision log
 - 2026-08-23: Founder approved the mixed model shown in the sample: single-image for quick deals/product highlights, carousel for guides/comparisons, Reel for demo/problem-solution content.
 - 2026-08-23: Founder approved AI-selected hook/problem-solution framing. AI decides dynamically whether to emphasize why the product matters, the problem it solves, why it is useful/buy-worthy, or another applicable verified angle.
+- 2026-08-23: Founder approved captions to be mostly English, with light Hinglish where natural; AI adapts language to audience and content context.
