@@ -7,6 +7,22 @@ full protocol.
 
 ---
 
+## 2026-08-23 16:02 IST — Kill switch OFF + Instagram resume
+
+**Founder order:** "start karo"
+
+**Actions taken:**
+1. `data/control.json` → kill_switch set to **false**
+2. `IG_ACCESS_TOKEN_RIO` + `IG_USER_ID_RIO` secrets confirmed updated by Founder
+3. `UNDER_SINK_001` re-approved (status → APPROVED) for Instagram retry
+4. Instagram publish workflow will pick this up (push to instagram_approval.json triggers it, or next scheduled run ~19:00 IST)
+
+**Expected next:**
+- Instagram publish attempt for UNDER_SINK_001
+- Result will land in `data/instagram_run_status.json` and `data/ig_published.json`
+
+Telegram integration still pending (bot + secrets not yet provided).
+
 ## 2026-08-23 — RIO 3.0 initiated
 
 **Founder direction**: Move to RIO Version 3.0. Objective will be updated. Initial workflow will be built. Strategy can be refined later.
@@ -19,12 +35,8 @@ full protocol.
 - Non-negotiables unchanged.
 
 **Still blocked / pending Founder**:
-- Kill switch is still ON.
-- Instagram token still invalid.
 - Telegram shift and Grok API autonomous mode require secrets + explicit resume.
 - Expert-authority content under real name still requires Founder sign-off before going public.
-
-No production publishing actions taken while kill switch remains ON.
 
 ## 2026-08-23 — Founder final direction: stop this chat, move to Telegram, Grok API autonomous
 

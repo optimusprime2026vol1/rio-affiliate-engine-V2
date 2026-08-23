@@ -1,5 +1,7 @@
 {
- "kill_switch": true,
- "kill_reason": "Founder-requested production pause on 2026-08-23. Resume only after explicit Founder instruction.",
- "last_test": null
+  "kill_switch": false,
+  "kill_reason": null,
+  "last_test": null,
+  "resumed_at": "2026-08-23T16:02+05:30",
+  "resumed_by": "Founder direct order: start karo"
 }
