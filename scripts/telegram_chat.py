@@ -1,22 +1,17 @@
 #!/usr/bin/env python3
-"""RIO — Telegram conversation agent (Grok-powered).
+"""RIO — Telegram conversation agent (fully automated).
 
-Polls Telegram for new private messages / allowed-chat messages, asks Grok
-(xAI API) for a reply as RIO's operating agent, and sends the reply back.
+Polls Telegram every scheduled cycle, replies as RIO.
+Primary brain: Grok (xAI). If Grok fails (no credits / error), automatically
+falls back to DeepSeek — no manual intervention.
 
-Secrets required:
-  TELEGRAM_BOT_TOKEN_RIO
-  TELEGRAM_CHAT_ID_RIO   (alerts channel; also allowed as a source chat)
-  GROK_API_KEY or XAI_API_KEY
+Secrets:
+  TELEGRAM_BOT_TOKEN_RIO (required)
+  TELEGRAM_CHAT_ID_RIO   (alerts channel; optional allow-list)
+  GROK_API_KEY or XAI_API_KEY (preferred)
+  DEEPSEEK_API_KEY (fallback)
 
-State:
-  data/telegram_chat_state.json  — update offset + short history per chat
-
-Notes:
-- Best UX: message the bot in private DM (not only the channel).
-- GitHub Actions is not real-time; replies land on the next poll cycle
-  (scheduled every 5 minutes, or manual workflow_dispatch).
-- Never logs API keys or tokens.
+State: data/telegram_chat_state.json
 """
 import json
 import os
@@ -34,8 +29,10 @@ CONTROL_PATH = os.path.join(ROOT, "data", "control.json")
 
 GROK_URL = "https://api.x.ai/v1/chat/completions"
 GROK_MODEL = "grok-4.6"
-MAX_HISTORY = 12  # messages kept per chat (user+assistant pairs roughly)
-MAX_REPLY_CHARS = 3500  # Telegram practical limit cushion
+DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
+DEEPSEEK_MODEL = "deepseek-chat"
+MAX_HISTORY = 12
+MAX_REPLY_CHARS = 3500
 
 
 def clean_secret(value):
@@ -50,6 +47,7 @@ ALERT_CHAT_ID = clean_secret(os.environ.get("TELEGRAM_CHAT_ID_RIO", ""))
 GROK_KEY = clean_secret(
     os.environ.get("GROK_API_KEY", "") or os.environ.get("XAI_API_KEY", "")
 )
+DEEPSEEK_KEY = clean_secret(os.environ.get("DEEPSEEK_API_KEY", ""))
 
 
 def jload(path, default):
@@ -105,16 +103,15 @@ def system_prompt():
     counts = status.get("counts") or {}
     return (
         "You are RIO, the operating agent for the rio-affiliate-engine affiliate business.\n"
-        "Founder is Vicky. You report operationally toward Victor/Founder goals.\n"
-        "RIO 3.0 positioning: help Indian interior designers, contractors, and small offices "
-        "use AI tools and practical digital products; supporting layer is verified home/living products.\n"
+        "Founder is Vicky. Speak as RIO. This Telegram chat is the primary Founder interface.\n"
+        "RIO 3.0: help Indian interior designers, contractors, and small offices use AI tools "
+        "and practical digital products; supporting layer is verified home/living products.\n"
         "Objective: ₹10 lakh/month net approved commission (12–24 month realistic frame).\n"
         "Non-negotiables: no fabricated prices/ratings/ASINs; no credential/account creation; "
         "no Founder name on public content without explicit approval; revenue stays ₹0 until real.\n"
-        "Instagram auto-publish is currently paused by Founder (home-storage card style not wanted).\n"
-        "Reply in the same language the user uses (Hindi/English mix is fine). Be direct and practical.\n"
-        "You cannot actually push code or change GitHub from this Telegram loop yet — say so if asked "
-        "to execute repo changes, and describe what should be done.\n"
+        "Instagram auto-publish is paused by Founder (old home-storage card style not wanted).\n"
+        "Reply in the same language the user uses (Hindi/English mix is fine). Be direct.\n"
+        "You cannot push code or change GitHub from this loop — if asked, say what should be done.\n"
         f"Live snapshot (may be minutes old): kill_switch={control.get('kill_switch')}, "
         f"ready_offers={counts.get('ready_offers')}, content_items={counts.get('content_items')}, "
         f"all_validators_pass={status.get('all_validators_pass')}, "
@@ -123,50 +120,80 @@ def system_prompt():
     )
 
 
-def call_grok(history, user_text):
-    if not GROK_KEY:
-        return "Grok API key missing (GROK_API_KEY / XAI_API_KEY). Founder needs to set the secret."
-
+def build_messages(history, user_text):
     messages = [{"role": "system", "content": system_prompt()}]
-    for m in history[-(MAX_HISTORY):]:
+    for m in history[-MAX_HISTORY:]:
         role = m.get("role")
         content = (m.get("content") or "").strip()
         if role in ("user", "assistant") and content:
             messages.append({"role": role, "content": content})
     messages.append({"role": "user", "content": user_text})
+    return messages
 
-    payload = {
-        "model": GROK_MODEL,
-        "messages": messages,
-        "temperature": 0.5,
-    }
+
+def call_chat_api(url, key, model, messages):
+    payload = {"model": model, "messages": messages, "temperature": 0.5}
     data = json.dumps(payload).encode()
     req = urllib.request.Request(
-        GROK_URL,
+        url,
         data=data,
         method="POST",
         headers={
             "Content-Type": "application/json",
-            "Authorization": f"Bearer {GROK_KEY}",
+            "Authorization": f"Bearer {key}",
         },
     )
-    try:
-        with urllib.request.urlopen(req, timeout=90) as r:
-            body = json.load(r)
-        choices = body.get("choices") or []
-        if not choices:
-            return "Grok returned no choices."
-        content = (choices[0].get("message") or {}).get("content") or ""
-        return content.strip() or "(empty reply from Grok)"
-    except urllib.error.HTTPError as e:
-        err = e.read().decode(errors="replace")
-        return f"Grok API error ({e.code}). Check key/model. Detail: {err[:300]}"
-    except Exception as e:
-        return f"Grok call failed: {e}"
+    with urllib.request.urlopen(req, timeout=90) as r:
+        body = json.load(r)
+    choices = body.get("choices") or []
+    if not choices:
+        raise RuntimeError("no choices in response")
+    content = (choices[0].get("message") or {}).get("content") or ""
+    content = content.strip()
+    if not content:
+        raise RuntimeError("empty content")
+    return content
+
+
+def call_llm(history, user_text):
+    """Grok primary → DeepSeek auto-fallback. No manual switch."""
+    messages = build_messages(history, user_text)
+    errors = []
+
+    if GROK_KEY:
+        try:
+            return call_chat_api(GROK_URL, GROK_KEY, GROK_MODEL, messages), "grok"
+        except urllib.error.HTTPError as e:
+            err = e.read().decode(errors="replace")
+            errors.append(f"grok HTTP {e.code}: {err[:200]}")
+        except Exception as e:
+            errors.append(f"grok: {e}")
+
+    if DEEPSEEK_KEY:
+        try:
+            return call_chat_api(DEEPSEEK_URL, DEEPSEEK_KEY, DEEPSEEK_MODEL, messages), "deepseek"
+        except urllib.error.HTTPError as e:
+            err = e.read().decode(errors="replace")
+            errors.append(f"deepseek HTTP {e.code}: {err[:200]}")
+        except Exception as e:
+            errors.append(f"deepseek: {e}")
+
+    if not GROK_KEY and not DEEPSEEK_KEY:
+        return (
+            "No AI key available (GROK_API_KEY / DEEPSEEK_API_KEY). "
+            "Founder must add credits or a working key in GitHub Secrets.",
+            "none",
+        )
+
+    return (
+        "RIO temporarily cannot reach AI APIs.\n"
+        + "\n".join(errors[:3])
+        + "\n\nTry /status. Grok credits may need top-up at console.x.ai.",
+        "error",
+    )
 
 
 def allowed_chat(chat):
-    """Accept private DMs to the bot, plus the configured alerts chat/group."""
     if not chat:
         return False
     chat_id = str(chat.get("id", ""))
@@ -182,21 +209,12 @@ def main():
     if not BOT_TOKEN:
         print("[telegram_chat] missing TELEGRAM_BOT_TOKEN_RIO")
         return 2
-    if not GROK_KEY:
-        print("[telegram_chat] missing GROK_API_KEY / XAI_API_KEY")
-        return 2
 
-    state = jload(
-        STATE_PATH,
-        {"offset": 0, "chats": {}, "updated_at": None},
-    )
+    state = jload(STATE_PATH, {"offset": 0, "chats": {}, "updated_at": None})
     offset = int(state.get("offset") or 0)
 
     try:
-        updates = tg_api(
-            "getUpdates",
-            {"offset": offset, "timeout": 0, "limit": 20},
-        )
+        updates = tg_api("getUpdates", {"offset": offset, "timeout": 0, "limit": 30})
     except Exception as e:
         print(f"[telegram_chat] getUpdates failed: {e}")
         return 1
@@ -222,7 +240,6 @@ def main():
         text = (msg.get("text") or "").strip()
         if not text:
             continue
-        # Ignore messages from bots (including ourselves)
         from_user = msg.get("from") or {}
         if from_user.get("is_bot"):
             continue
@@ -231,15 +248,15 @@ def main():
         chats = state.setdefault("chats", {})
         history = chats.setdefault(chat_id, {}).setdefault("history", [])
 
-        # Optional quick commands without Grok
-        low = text.casefold()
+        low = text.casefold().strip()
         if low in {"/start", "start"}:
             reply = (
-                "RIO yahan hai.\n\n"
-                "Aap seedha message likh sakte ho — main Grok se reply karunga.\n"
-                "Note: GitHub Actions se chal raha hai, isliye reply 1–5 minute late ho sakta hai.\n\n"
+                "RIO online.\n\n"
+                "Yahan seedha baat karo — main auto reply karta hoon.\n"
+                "Poll har ~5 min (GitHub Actions).\n\n"
                 "Commands: /status"
             )
+            engine = "local"
         elif low in {"/status", "status"}:
             status = jload(STATUS_PATH, {})
             counts = status.get("counts") or {}
@@ -250,18 +267,21 @@ def main():
                 f"validators: {status.get('all_validators_pass')}\n"
                 f"ready_offers: {counts.get('ready_offers')}\n"
                 f"content_items: {counts.get('content_items')}\n"
-                f"IG auto-publish: paused (Founder)"
+                f"IG auto-publish: paused (Founder)\n"
+                f"AI: Grok primary, DeepSeek fallback"
             )
+            engine = "local"
         else:
-            reply = call_grok(history, text)
+            reply, engine = call_llm(history, text)
 
         ok = send_message(chat_id, reply)
-        print(f"[telegram_chat] chat={chat_id} ok={ok} text={text[:40]!r}")
+        print(f"[telegram_chat] chat={chat_id} ok={ok} engine={engine} text={text[:40]!r}")
 
         history.append({"role": "user", "content": text})
         history.append({"role": "assistant", "content": reply})
         chats[chat_id]["history"] = history[-MAX_HISTORY:]
         chats[chat_id]["last_at"] = datetime.now(IST).isoformat(timespec="minutes")
+        chats[chat_id]["last_engine"] = engine
         handled += 1
 
     state["updated_at"] = datetime.now(IST).isoformat(timespec="minutes")

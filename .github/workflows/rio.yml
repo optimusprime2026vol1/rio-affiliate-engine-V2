@@ -7,7 +7,7 @@ on:
       - 'data/instagram_approval.json'
   schedule:
     - cron: '*/30 * * * *'   # heartbeat: every 30 minutes
-    - cron: '*/5 * * * *'    # telegram chat poll: every 5 minutes
+    - cron: '*/5 * * * *'    # telegram chat poll: every 5 minutes (automated)
     - cron: '0 5 * * *'      # content review: once daily, ~10:30 IST
     - cron: '30 5 * * *'     # product discovery: once daily, ~11:00 IST
     - cron: '30 13 * * *'    # instagram publish: once daily, ~19:00 IST
@@ -16,7 +16,7 @@ on:
   workflow_dispatch:
     inputs:
       job:
-        description: 'Which job to run manually'
+        description: 'Manual override only (system is automated on schedule)'
         type: choice
         default: heartbeat
         options: [heartbeat, content-review, discover-products, instagram-publish, telegram-test, telegram-chat, all]
@@ -25,8 +25,6 @@ permissions:
   contents: write
   issues: write
 
-concurrency: rio-state
-
 jobs:
   heartbeat:
     if: |
@@ -34,6 +32,9 @@ jobs:
       github.event.schedule == '*/30 * * * *' ||
       (github.event_name == 'workflow_dispatch' && (inputs.job == 'heartbeat' || inputs.job == 'all'))
     runs-on: ubuntu-latest
+    concurrency:
+      group: rio-heartbeat
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -53,6 +54,9 @@ jobs:
       github.event.schedule == '0 5 * * *' ||
       (github.event_name == 'workflow_dispatch' && (inputs.job == 'content-review' || inputs.job == 'all'))
     runs-on: ubuntu-latest
+    concurrency:
+      group: rio-content
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -73,6 +77,9 @@ jobs:
       github.event.schedule == '30 5 * * *' ||
       (github.event_name == 'workflow_dispatch' && (inputs.job == 'discover-products' || inputs.job == 'all'))
     runs-on: ubuntu-latest
+    concurrency:
+      group: rio-discovery
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -94,6 +101,9 @@ jobs:
       github.event.schedule == '30 13 * * *' ||
       (github.event_name == 'workflow_dispatch' && (inputs.job == 'instagram-publish' || inputs.job == 'all'))
     runs-on: ubuntu-latest
+    concurrency:
+      group: rio-instagram
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -136,17 +146,21 @@ jobs:
       github.event.schedule == '*/5 * * * *' ||
       (github.event_name == 'workflow_dispatch' && (inputs.job == 'telegram-chat' || inputs.job == 'all'))
     runs-on: ubuntu-latest
+    concurrency:
+      group: rio-telegram-chat
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.x"
-      - name: Poll Telegram + reply via Grok
+      - name: Poll Telegram + auto reply (Grok → DeepSeek fallback)
         env:
           TELEGRAM_BOT_TOKEN_RIO: ${{ secrets.TELEGRAM_BOT_TOKEN_RIO }}
           TELEGRAM_CHAT_ID_RIO: ${{ secrets.TELEGRAM_CHAT_ID_RIO }}
           GROK_API_KEY: ${{ secrets.GROK_API_KEY }}
           XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: python scripts/telegram_chat.py
       - name: Commit chat state
         run: |
