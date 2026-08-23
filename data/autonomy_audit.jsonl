@@ -1,0 +1,1 @@
+{"timestamp": "2026-08-23T23:06:16+05:30", "request": "What is your next action for system development?", "engine": "bedrock-qwen", "risk": "low", "operations": [], "result": "FAILED_ROLLED_BACK", "changed_paths": [], "validators": [], "error": "operation not allowed: None"}
