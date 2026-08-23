@@ -1,6 +1,6 @@
 # RIO Instagram Content Policy — FOUNDER-LOCK DRAFT
 
-Status: **DRAFT — FORMAT MIX + HOOK STRATEGY + CAPTION LANGUAGE + CTA APPROVED; REMAINING ITEMS PENDING**
+Status: **DRAFT — FORMAT MIX + HOOK STRATEGY + CAPTION LANGUAGE + CTA + MERCHANT BRANDING APPROVED; REMAINING ITEMS PENDING**
 
 Purpose: convert existing repository-backed Instagram and product-display rules into one operational policy for Phase 2. No unsupported posting strategy is invented here.
 
@@ -133,14 +133,26 @@ CTA selection must be contextual, not mechanically fixed across posts.
 - Engagement CTAs must not be used as clickbait unrelated to the product/content.
 - If no useful CTA is appropriate, AI may use a neutral informational close rather than forcing one.
 
-## 11. CURRENT IMPLEMENTATION BLOCKER
+## 11. MERCHANT BRANDING / DESTINATION VISIBILITY — FOUNDER APPROVED
+For standard organic affiliate creatives, RIO does **not** need to visually feature Amazon branding, Amazon logo, or “Amazon” as a dominant merchant label on the image/video.
+
+Default creative behavior:
+- keep the product and user problem/benefit as the visual focus;
+- use neutral CTAs such as **“Check current price”**, **“View product”**, or **“See details”**;
+- the click/landing destination may take the user to the verified Amazon product/affiliate destination;
+- do not imply that RIO is Amazon, is endorsed by Amazon, or that the creative is an official Amazon advertisement;
+- merchant branding may be shown only when it is genuinely useful to the content or required by a specific campaign/policy, not as a default design element.
+
+This visual-minimalism rule does **not** remove the affiliate-disclosure requirement. Where RIO can earn a commission, the required disclosure must remain clear and compliant even if merchant branding is visually de-emphasized.
+
+## 12. CURRENT IMPLEMENTATION BLOCKER
 The current `scripts/publish_instagram.py` publishes `site/social/<offer_id>.png` branded cards as its Instagram image. Its own comments state that it intentionally does not use real product photos.
 
 That implementation conflicts with the Founder-locked Product Image Policy, which requires the exact verified real product image as the primary product display and allows local RIO cards only as fallback assets.
 
 **Required before autonomous Instagram product publishing is considered production-correct:** refactor the publisher/creative pipeline so the primary Instagram product image comes from the validated exact-product image registry or another Founder-approved exact-product image source. Until then, the branded-card implementation must not be treated as satisfying the locked product-image requirement.
 
-## 12. FOUNDER DECISION PENDING
+## 13. FOUNDER DECISION PENDING
 The following items still require explicit Founder approval before this document becomes FULLY LOCKED:
 
 1. **Visual system** — exact layout, logo placement, typography/text overlay rules, aspect ratio beyond the approved AI hook behavior above.
@@ -151,8 +163,8 @@ The following items still require explicit Founder approval before this document
 6. **Content mix** — percentage/priority between AI/design/professional content and Home & Living affiliate products.
 7. **Reposting/update policy** — whether the same product may be reposted after a defined cooldown/new angle/new verified price.
 
-## 13. Phase-2 implementation rule
-Do not expand Instagram autonomous publishing until Sections 11 and 12 are resolved. Phase 2 should then implement the locked creative rules, measure outputs/results, and optimize only within the Founder-approved policy.
+## 14. Phase-2 implementation rule
+Do not expand Instagram autonomous publishing until Sections 12 and 13 are resolved. Phase 2 should then implement the locked creative rules, measure outputs/results, and optimize only within the Founder-approved policy.
 
 ## Sources
 - `INSTAGRAM_AUTOMATION.md`
@@ -165,3 +177,4 @@ Do not expand Instagram autonomous publishing until Sections 11 and 12 are resol
 - 2026-08-23: Founder approved AI-selected hook/problem-solution framing. AI decides dynamically whether to emphasize why the product matters, the problem it solves, why it is useful/buy-worthy, or another applicable verified angle.
 - 2026-08-23: Founder approved captions to be mostly English, with light Hinglish where natural; AI adapts language to audience and content context.
 - 2026-08-23: Founder approved contextual AI-selected CTAs, provided they are truthful, relevant, non-pressuring, and consistent with RIO evidence/urgency rules.
+- 2026-08-24: Founder approved removing Amazon/merchant branding as a default visual element from organic affiliate creatives. Neutral CTA is preferred; the customer sees the merchant after clicking. Required affiliate disclosure remains mandatory where commission can be earned.
