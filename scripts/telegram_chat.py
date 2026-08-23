@@ -1,214 +1,147 @@
 #!/usr/bin/env python3
-"""RIO — Telegram Founder interface.
+"""RIO Telegram Founder interface with guarded autonomous execution.
 
-Claude is PRIMARY for the current test; DeepSeek is permanent fallback and Grok
-remains an optional tertiary fallback. Safe Founder changes execute only through
-the guarded deterministic executor.
+Primary: AWS Bedrock Qwen3 Coder Next
+Fallback 1: DeepSeek
+Fallback 2: AWS Bedrock GLM 4.7 Flash
 """
-import json
-import os
-import sys
-import urllib.error
-import urllib.parse
-import urllib.request
+import json, os, sys, urllib.error, urllib.parse, urllib.request
 from datetime import datetime, timezone, timedelta
-
 from rio_autonomous_executor import execute as execute_plan
 
-ROOT = os.path.join(os.path.dirname(__file__), "..")
-IST = timezone(timedelta(hours=5, minutes=30))
-STATE_PATH = os.path.join(ROOT, "data", "telegram_chat_state.json")
-STATUS_PATH = os.path.join(ROOT, "data", "status.json")
-CONTROL_PATH = os.path.join(ROOT, "data", "control.json")
-CORE_PATH = os.path.join(ROOT, "data", "RIO_3.0_DEFINITION.md")
-POLICY_PATH = os.path.join(ROOT, "data", "AUTONOMY_POLICY.md")
+ROOT=os.path.join(os.path.dirname(__file__),"..")
+IST=timezone(timedelta(hours=5,minutes=30))
+STATE_PATH=os.path.join(ROOT,"data","telegram_chat_state.json")
+STATUS_PATH=os.path.join(ROOT,"data","status.json")
+CONTROL_PATH=os.path.join(ROOT,"data","control.json")
+CORE_PATH=os.path.join(ROOT,"data","RIO_3.0_DEFINITION.md")
+POLICY_PATH=os.path.join(ROOT,"data","AUTONOMY_POLICY.md")
+MAX_HISTORY=12; MAX_REPLY_CHARS=3500
+BEDROCK_REGION="us-east-1"
+BEDROCK_URL=f"https://bedrock-mantle.{BEDROCK_REGION}.api.aws/v1/chat/completions"
+BEDROCK_PRIMARY="qwen.qwen3-coder-next"
+BEDROCK_EMERGENCY="zai.glm-4.7-flash"
+DEEPSEEK_URL="https://api.deepseek.com/chat/completions"; DEEPSEEK_MODEL="deepseek-chat"
 
-ANTHROPIC_URL = "https://api.anthropic.com/v1/messages"
-ANTHROPIC_MODEL = os.environ.get("ANTHROPIC_MODEL_RIO", "claude-sonnet-4-20250514")
-DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
-DEEPSEEK_MODEL = "deepseek-chat"
-GROK_URL = "https://api.x.ai/v1/chat/completions"
-GROK_MODEL = "grok-4.6"
-MAX_HISTORY = 12
-MAX_REPLY_CHARS = 3500
+def clean(v):
+ v=(v or "").strip(); return v[1:-1].strip() if len(v)>=2 and v[0]==v[-1] and v[0] in {'"',"'"} else v
+BOT_TOKEN=clean(os.environ.get("TELEGRAM_BOT_TOKEN_RIO")); ALERT_CHAT_ID=clean(os.environ.get("TELEGRAM_CHAT_ID_RIO")); BEDROCK_KEY=clean(os.environ.get("AWS_BEDROCK_API_KEY")); DEEPSEEK_KEY=clean(os.environ.get("DEEPSEEK_API_KEY"))
 
+def jload(p,d):
+ try:
+  with open(p,encoding="utf-8") as f:return json.load(f)
+ except Exception:return d
 
-def clean_secret(value):
-    value = (value or "").strip()
-    if len(value) >= 2 and value[0] == value[-1] and value[0] in {'"', "'"}:
-        value = value[1:-1].strip()
-    return value
+def read_text(p,limit=14000):
+ try:
+  with open(p,encoding="utf-8") as f:return f.read()[:limit]
+ except Exception:return ""
 
-BOT_TOKEN = clean_secret(os.environ.get("TELEGRAM_BOT_TOKEN_RIO", ""))
-ALERT_CHAT_ID = clean_secret(os.environ.get("TELEGRAM_CHAT_ID_RIO", ""))
-ANTHROPIC_KEY = clean_secret(os.environ.get("ANTHROPIC_API_KEY", ""))
-DEEPSEEK_KEY = clean_secret(os.environ.get("DEEPSEEK_API_KEY", ""))
-GROK_KEY = clean_secret(os.environ.get("GROK_API_KEY", "") or os.environ.get("XAI_API_KEY", ""))
+def jsave(p,o):
+ os.makedirs(os.path.dirname(p),exist_ok=True)
+ with open(p,"w",encoding="utf-8") as f:json.dump(o,f,indent=1,ensure_ascii=False)
 
+def tg_api(method,params=None,http_method="GET"):
+ if not BOT_TOKEN: raise RuntimeError("TELEGRAM_BOT_TOKEN_RIO missing")
+ url=f"https://api.telegram.org/bot{BOT_TOKEN}/{method}"
+ if http_method=="GET":
+  if params:url+="?"+urllib.parse.urlencode(params)
+  req=urllib.request.Request(url,method="GET")
+ else:req=urllib.request.Request(url,data=urllib.parse.urlencode(params or {}).encode(),method="POST")
+ with urllib.request.urlopen(req,timeout=60) as r:return json.load(r)
 
-def jload(path, default):
-    try:
-        with open(path, encoding="utf-8") as f: return json.load(f)
-    except Exception: return default
-
-
-def read_text(path, limit=14000):
-    try:
-        with open(path, encoding="utf-8") as f: return f.read()[:limit]
-    except Exception: return ""
-
-
-def jsave(path, obj):
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f: json.dump(obj, f, indent=1, ensure_ascii=False)
-
-
-def tg_api(method, params=None, http_method="GET"):
-    if not BOT_TOKEN: raise RuntimeError("TELEGRAM_BOT_TOKEN_RIO missing")
-    url = f"https://api.telegram.org/bot{BOT_TOKEN}/{method}"
-    if http_method == "GET":
-        if params: url += "?" + urllib.parse.urlencode(params)
-        req = urllib.request.Request(url, method="GET")
-    else:
-        req = urllib.request.Request(url, data=urllib.parse.urlencode(params or {}).encode(), method="POST")
-    with urllib.request.urlopen(req, timeout=60) as r: return json.load(r)
-
-
-def send_message(chat_id, text):
-    text = (text or "").strip()
-    if not text: return False
-    if len(text) > MAX_REPLY_CHARS: text = text[:MAX_REPLY_CHARS-20] + "\n\n…(truncated)"
-    body = tg_api("sendMessage", {"chat_id": chat_id, "text": text, "disable_web_page_preview": True}, "POST")
-    return bool(body.get("ok"))
-
+def send_message(chat_id,text):
+ text=(text or "").strip()
+ if not text:return False
+ if len(text)>MAX_REPLY_CHARS:text=text[:MAX_REPLY_CHARS-20]+"\n\n…(truncated)"
+ return bool(tg_api("sendMessage",{"chat_id":chat_id,"text":text,"disable_web_page_preview":True},"POST").get("ok"))
 
 def system_prompt():
-    status, control = jload(STATUS_PATH, {}), jload(CONTROL_PATH, {})
-    counts = status.get("counts") or {}
-    core, policy = read_text(CORE_PATH), read_text(POLICY_PATH)
-    return f"""You are RIO, autonomous operating agent for rio-affiliate-engine. Founder is Vicky.
-Telegram is the Founder command interface. The active AI provider may change; never weaken RIO rules because the provider changes.
-Your job is not only to advise: when Founder explicitly asks for a safe system/content/data change, create an execution plan.
+ status=jload(STATUS_PATH,{}); control=jload(CONTROL_PATH,{}); counts=status.get("counts") or {}
+ return f"""You are RIO, autonomous operating agent for rio-affiliate-engine. Founder is Vicky. Telegram is the Founder command interface.
+Never weaken RIO rules because the AI provider changes. For explicit safe system/content/data changes, create an execution plan rather than merely advising.
 
-SOURCE OF TRUTH — RIO CORE:\n{core}\n
-AUTONOMY POLICY:\n{policy}\n
-Live snapshot: kill_switch={control.get('kill_switch')}; ready_offers={counts.get('ready_offers')}; content_items={counts.get('content_items')}; validators={status.get('all_validators_pass')}; updated={status.get('updated')}.
+RIO CORE:\n{read_text(CORE_PATH)}\n
+AUTONOMY POLICY:\n{read_text(POLICY_PATH)}\n
+Live: kill_switch={control.get('kill_switch')}; ready_offers={counts.get('ready_offers')}; content_items={counts.get('content_items')}; validators={status.get('all_validators_pass')}; updated={status.get('updated')}.
 
-Return ONLY valid JSON, no markdown fences, with this schema:
+Return ONLY valid JSON with schema:
 {{"intent":"respond|execute","summary":"...","risk":"low|medium|high","operations":[],"founder_message":"..."}}
-For operations use only:
-{{"op":"write_text","path":"data/... or site/... or scripts/...","content":"complete content"}}
-{{"op":"write_json","path":"data/...","value":{{}}}}
-{{"op":"append_text","path":"data/...","content":"..."}}
-Never request arbitrary shell execution. Never modify protected files. Never put credentials/secrets in files.
-If request needs credentials/account/payment/legal action or protected core/workflow change, intent=respond, risk=high and clearly say VICKY ACTION REQUIRED.
-If user is simply chatting/asking status/advice, intent=respond and operations=[]. Reply in user's language.
+Allowed operations only: write_text, write_json, append_text on allowed data/site/scripts paths. Never request shell commands, credentials, payment/legal/account actions, or protected-file changes. For protected/high-risk work, intent=respond and clearly say VICKY ACTION REQUIRED. Reply in the user's language.
 """
 
+def build_messages(history,user_text):
+ out=[]
+ for m in history[-MAX_HISTORY:]:
+  if m.get("role") in ("user","assistant") and (m.get("content") or "").strip():out.append(m)
+ out.append({"role":"user","content":user_text}); return out
 
-def build_messages(history, user_text):
-    messages=[]
-    for m in history[-MAX_HISTORY:]:
-        if m.get("role") in ("user","assistant") and (m.get("content") or "").strip(): messages.append(m)
-    messages.append({"role":"user","content":user_text})
-    return messages
-
-
-def call_openai_compatible(url, key, model, messages):
-    payload={"model":model,"messages":[{"role":"system","content":system_prompt()}]+messages,"temperature":0.2}
-    req=urllib.request.Request(url,data=json.dumps(payload).encode(),method="POST",headers={"Content-Type":"application/json","Authorization":f"Bearer {key}"})
-    with urllib.request.urlopen(req,timeout=90) as r: body=json.load(r)
-    content=((body.get("choices") or [{}])[0].get("message") or {}).get("content") or ""
-    if not content.strip(): raise RuntimeError("empty content")
-    return content.strip()
-
-
-def call_anthropic(key, messages):
-    payload={"model":ANTHROPIC_MODEL,"max_tokens":4096,"temperature":0.2,"system":system_prompt(),"messages":messages}
-    headers={"Content-Type":"application/json","x-api-key":key,"anthropic-version":"2023-06-01"}
-    req=urllib.request.Request(ANTHROPIC_URL,data=json.dumps(payload).encode(),method="POST",headers=headers)
-    with urllib.request.urlopen(req,timeout=90) as r: body=json.load(r)
-    parts=body.get("content") or []
-    content="".join(str(p.get("text") or "") for p in parts if p.get("type")=="text")
-    if not content.strip(): raise RuntimeError("empty content")
-    return content.strip()
-
+def call_openai_compatible(url,key,model,messages):
+ payload={"model":model,"messages":[{"role":"system","content":system_prompt()}]+messages,"temperature":0.2}
+ req=urllib.request.Request(url,data=json.dumps(payload).encode(),method="POST",headers={"Content-Type":"application/json","Authorization":f"Bearer {key}"})
+ with urllib.request.urlopen(req,timeout=120) as r:body=json.load(r)
+ content=((body.get("choices") or [{}])[0].get("message") or {}).get("content") or ""
+ if not content.strip():raise RuntimeError("empty content")
+ return content.strip()
 
 def parse_plan(raw):
-    text=raw.strip()
-    if text.startswith("```"):
-        text=text.strip("`")
-        if text.lstrip().startswith("json"): text=text.lstrip()[4:].lstrip()
-    obj=json.loads(text)
-    if not isinstance(obj,dict): raise ValueError("plan is not object")
-    return obj
-
+ text=raw.strip()
+ if text.startswith("```"):
+  lines=text.splitlines()
+  if lines and lines[0].startswith("```"):lines=lines[1:]
+  if lines and lines[-1].strip()=="```":lines=lines[:-1]
+  text="\n".join(lines).strip()
+ obj=json.loads(text)
+ if not isinstance(obj,dict):raise ValueError("plan is not object")
+ return obj
 
 def call_llm(history,user_text):
-    messages=build_messages(history,user_text); errors=[]
-    providers=[
-        ("claude", ANTHROPIC_KEY, lambda: call_anthropic(ANTHROPIC_KEY,messages)),
-        ("deepseek", DEEPSEEK_KEY, lambda: call_openai_compatible(DEEPSEEK_URL,DEEPSEEK_KEY,DEEPSEEK_MODEL,messages)),
-        ("grok", GROK_KEY, lambda: call_openai_compatible(GROK_URL,GROK_KEY,GROK_MODEL,messages)),
-    ]
-    for name,key,fn in providers:
-        if not key: continue
-        try: return parse_plan(fn()),name
-        except urllib.error.HTTPError as e: errors.append(f"{name} HTTP {e.code}: {e.read().decode(errors='replace')[:200]}")
-        except Exception as e: errors.append(f"{name}: {e}")
-    return {"intent":"respond","risk":"high","operations":[],"founder_message":"RIO AI unavailable. " + " | ".join(errors[:3])},"error"
-
+ messages=build_messages(history,user_text); errors=[]
+ providers=[
+  ("bedrock-qwen",BEDROCK_KEY,lambda:call_openai_compatible(BEDROCK_URL,BEDROCK_KEY,BEDROCK_PRIMARY,messages)),
+  ("deepseek",DEEPSEEK_KEY,lambda:call_openai_compatible(DEEPSEEK_URL,DEEPSEEK_KEY,DEEPSEEK_MODEL,messages)),
+  ("bedrock-glm",BEDROCK_KEY,lambda:call_openai_compatible(BEDROCK_URL,BEDROCK_KEY,BEDROCK_EMERGENCY,messages)),
+ ]
+ for name,key,fn in providers:
+  if not key:continue
+  try:return parse_plan(fn()),name
+  except urllib.error.HTTPError as e:errors.append(f"{name} HTTP {e.code}: {e.read().decode(errors='replace')[:220]}")
+  except Exception as e:errors.append(f"{name}: {e}")
+ return {"intent":"respond","risk":"high","operations":[],"founder_message":"RIO AI unavailable. "+" | ".join(errors[:3])},"error"
 
 def allowed_chat(chat):
-    if not chat: return False
-    chat_id=str(chat.get("id","")); chat_type=chat.get("type") or ""
-    if ALERT_CHAT_ID: return chat_id == str(ALERT_CHAT_ID)
-    return chat_type == "private"
-
+ if not chat:return False
+ cid=str(chat.get("id",""))
+ return cid==str(ALERT_CHAT_ID) if ALERT_CHAT_ID else (chat.get("type")=="private")
 
 def status_reply():
-    status,control=jload(STATUS_PATH,{}),jload(CONTROL_PATH,{})
-    counts=status.get("counts") or {}
-    configured=[]
-    if ANTHROPIC_KEY: configured.append("Claude")
-    if DEEPSEEK_KEY: configured.append("DeepSeek")
-    if GROK_KEY: configured.append("Grok")
-    return (f"Status @ {status.get('updated','?')}\nkill_switch: {control.get('kill_switch')}\nvalidators: {status.get('all_validators_pass')}\nready_offers: {counts.get('ready_offers')}\ncontent_items: {counts.get('content_items')}\nIG auto-publish: {control.get('instagram_auto_publish')}\nAI primary: Claude\nFallback: DeepSeek -> Grok\nConfigured in this runner: {', '.join(configured) or 'none'}\nautonomous executor: ACTIVE")
-
+ status=jload(STATUS_PATH,{}); control=jload(CONTROL_PATH,{}); counts=status.get("counts") or {}
+ return f"Status @ {status.get('updated','?')}\nkill_switch: {control.get('kill_switch')}\nvalidators: {status.get('all_validators_pass')}\nready_offers: {counts.get('ready_offers')}\ncontent_items: {counts.get('content_items')}\nIG auto-publish: {control.get('instagram_auto_publish')}\nAI primary: Bedrock Qwen3 Coder Next\nFallback: DeepSeek -> Bedrock GLM 4.7 Flash\nautonomous executor: ACTIVE"
 
 def main():
-    if not BOT_TOKEN: print("[telegram_chat] missing TELEGRAM_BOT_TOKEN_RIO"); return 2
-    state=jload(STATE_PATH,{"offset":0,"chats":{},"updated_at":None}); offset=int(state.get("offset") or 0)
-    try: updates=tg_api("getUpdates",{"offset":offset,"timeout":0,"limit":30})
-    except Exception as e: print(f"[telegram_chat] getUpdates failed: {e}"); return 1
-    if not updates.get("ok"): return 1
-    handled=0
-    for upd in updates.get("result") or []:
-        uid=upd.get("update_id")
-        if uid is not None: state["offset"]=max(int(state.get("offset") or 0),int(uid)+1)
-        msg=upd.get("message") or upd.get("edited_message")
-        if not msg or not allowed_chat(msg.get("chat") or {}): continue
-        text=(msg.get("text") or "").strip(); from_user=msg.get("from") or {}
-        if not text or from_user.get("is_bot"): continue
-        chat_id=str((msg.get("chat") or {}).get("id")); chats=state.setdefault("chats",{}); history=chats.setdefault(chat_id,{}).setdefault("history",[])
-        low=text.casefold().strip()
-        if low in {"/start","start"}: reply="RIO online. Claude primary test ACTIVE; DeepSeek fallback. Autonomous guarded executor ACTIVE. Commands: /status"; engine="local"
-        elif low in {"/status","status"}: reply=status_reply(); engine="local"
-        else:
-            plan,engine=call_llm(history,text)
-            if plan.get("intent")=="execute":
-                result=execute_plan(plan,request_summary=text,engine=engine)
-                base=(plan.get("founder_message") or plan.get("summary") or "Execution processed.").strip()
-                changed=", ".join(result.get("changed_paths") or [])
-                if result.get("ok"):
-                    reply=f"✅ COMPLETED [{engine}]\n{base}" + (f"\nChanged: {changed}" if changed else "") + "\nValidators: PASS"
-                else:
-                    reply=f"⚠️ {result.get('status','FAILED')} [{engine}]\n{base}\nBlocker/Error: {result.get('error','unknown')}"
-            else: reply=(plan.get("founder_message") or plan.get("summary") or "RIO received your message.").strip()+f"\n\nAI: {engine}"
-        ok=send_message(chat_id,reply); print(f"[telegram_chat] chat={chat_id} ok={ok} engine={engine} text={text[:40]!r}")
-        history.append({"role":"user","content":text}); history.append({"role":"assistant","content":reply}); chats[chat_id]["history"]=history[-MAX_HISTORY:]
-        chats[chat_id]["last_at"]=datetime.now(IST).isoformat(timespec="minutes"); chats[chat_id]["last_engine"]=engine; handled+=1
-    state["updated_at"]=datetime.now(IST).isoformat(timespec="minutes"); jsave(STATE_PATH,state)
-    print(f"[telegram_chat] done handled={handled} offset={state.get('offset')}"); return 0
+ if not BOT_TOKEN:return 2
+ state=jload(STATE_PATH,{"offset":0,"chats":{},"updated_at":None}); offset=int(state.get("offset") or 0)
+ try:updates=tg_api("getUpdates",{"offset":offset,"timeout":0,"limit":30})
+ except Exception as e:print("getUpdates failed",e);return 1
+ for upd in updates.get("result") or []:
+  uid=upd.get("update_id")
+  if uid is not None:state["offset"]=max(int(state.get("offset") or 0),int(uid)+1)
+  msg=upd.get("message") or upd.get("edited_message")
+  if not msg or not allowed_chat(msg.get("chat") or {}):continue
+  text=(msg.get("text") or "").strip(); usr=msg.get("from") or {}
+  if not text or usr.get("is_bot"):continue
+  chat_id=str((msg.get("chat") or {}).get("id")); chats=state.setdefault("chats",{}); history=chats.setdefault(chat_id,{}).setdefault("history",[]); low=text.casefold().strip()
+  if low in {"/start","start"}:reply="RIO online. Bedrock Qwen primary; DeepSeek + GLM fallbacks. Guarded executor ACTIVE.";engine="local"
+  elif low in {"/status","status"}:reply=status_reply();engine="local"
+  else:
+   send_message(chat_id,"✅ Command received. RIO is processing this now. Primary AI: Bedrock Qwen3 Coder Next.")
+   plan,engine=call_llm(history,text)
+   if plan.get("intent")=="execute":
+    result=execute_plan(plan,request_summary=text,engine=engine); base=(plan.get("founder_message") or plan.get("summary") or "Execution processed.").strip(); changed=", ".join(result.get("changed_paths") or [])
+    if result.get("ok"):reply=f"✅ COMPLETED [{engine}]\n{base}"+(f"\nChanged: {changed}" if changed else "")+"\nValidators: PASS"
+    else:reply=f"⚠️ {result.get('status','FAILED')} [{engine}]\n{base}\nBlocker/Error: {result.get('error','unknown')}"
+   else:reply=(plan.get("founder_message") or plan.get("summary") or "RIO received your message.").strip()+f"\n\nAI: {engine}"
+  send_message(chat_id,reply); history.append({"role":"user","content":text}); history.append({"role":"assistant","content":reply}); chats[chat_id]["history"]=history[-MAX_HISTORY:]; chats[chat_id]["last_at"]=datetime.now(IST).isoformat(timespec="minutes"); chats[chat_id]["last_engine"]=engine
+ state["updated_at"]=datetime.now(IST).isoformat(timespec="minutes");jsave(STATE_PATH,state);return 0
 
-if __name__=="__main__": sys.exit(main())
+if __name__=="__main__":sys.exit(main())
