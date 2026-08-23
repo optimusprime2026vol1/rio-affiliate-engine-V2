@@ -122,6 +122,14 @@ jobs:
           (git diff --cached --quiet || git commit -m "rio webhook: apply validated Founder instruction")
           git pull --rebase --autostash
           git push
+      - name: Persist dashboard failure state only
+        if: failure()
+        run: |
+          git config user.name "RIO" && git config user.email "rio@rio-affiliate.bot"
+          git add data/rio_work_status.json site/rio-dashboard/index.html || true
+          (git diff --cached --quiet || git commit -m "rio dashboard: record command failure")
+          git pull --rebase --autostash
+          git push
       - name: Notify command failure
         if: failure()
         env:
