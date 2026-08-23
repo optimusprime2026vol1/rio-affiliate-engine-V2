@@ -1,6 +1,6 @@
 # RIO Instagram Content Policy — FOUNDER-LOCK DRAFT
 
-Status: **DRAFT — DO NOT TREAT AS FULLY LOCKED UNTIL FOUNDER RESOLVES PENDING ITEMS**
+Status: **DRAFT — FORMAT MIX APPROVED; REMAINING ITEMS PENDING**
 
 Purpose: convert existing repository-backed Instagram and product-display rules into one operational policy for Phase 2. No unsupported posting strategy is invented here.
 
@@ -52,32 +52,71 @@ Current publisher wording includes an explicit commission disclosure and `#ad #a
 - `data/instagram_run_status.json` remains the latest execution/result record.
 - Real Meta/API errors must be retained in failure state for diagnosis.
 
-## 7. CURRENT IMPLEMENTATION BLOCKER
+## 7. FORMAT MIX — FOUNDER APPROVED
+RIO uses a mixed Instagram format model. The format is selected by the content job, not randomly.
+
+### Single-image post
+Use for:
+- quick deals;
+- simple product highlights;
+- fast product/value communication.
+
+Primary focus: **Product + verified value/price where permitted + CTA**.
+
+### Carousel post
+Use for:
+- buying guides;
+- product comparisons;
+- “best of” lists;
+- feature/benefit explanations that require more than one frame.
+
+Primary focus: **Value + information + save/share utility**.
+
+### Reel
+Use for:
+- problem-solution content;
+- demos/how-to;
+- real usage/explanation;
+- product/application stories where motion materially improves understanding.
+
+Primary focus: **Engagement + reach + trust**.
+
+### Format integrity rule
+Regardless of format, RIO must preserve:
+- real exact-product imagery where product-led;
+- exact ASIN/product identity;
+- no fake claims or fake urgency;
+- required affiliate disclosure;
+- value-first communication.
+
+## 8. CURRENT IMPLEMENTATION BLOCKER
 The current `scripts/publish_instagram.py` publishes `site/social/<offer_id>.png` branded cards as its Instagram image. Its own comments state that it intentionally does not use real product photos.
 
 That implementation conflicts with the Founder-locked Product Image Policy, which requires the exact verified real product image as the primary product display and allows local RIO cards only as fallback assets.
 
 **Required before autonomous Instagram product publishing is considered production-correct:** refactor the publisher/creative pipeline so the primary Instagram product image comes from the validated exact-product image registry or another Founder-approved exact-product image source. Until then, the branded-card implementation must not be treated as satisfying the locked product-image requirement.
 
-## 8. FOUNDER DECISION PENDING
-Existing repository sources do not define these items. They must be explicitly resolved before this document becomes FULLY LOCKED:
+## 9. FOUNDER DECISION PENDING
+The following items still require explicit Founder approval before this document becomes FULLY LOCKED:
 
-1. **Format mix** — single image vs carousel vs Reel priority.
-2. **Visual system** — exact layout, logo placement, typography/text overlay rules, aspect ratio.
-3. **Caption style** — short/medium/long; Hinglish/English; practical vs editorial voice.
-4. **CTA** — exact action requested from the viewer.
-5. **Hashtag policy** — number/type; static vs generated.
-6. **Cadence** — posts per week and preferred time windows.
-7. **On-creative data** — whether price/rating/review count should appear on image/video or caption only.
-8. **Approval model** — Founder approval per post/creative vs autonomous publication after policy/validator gates.
-9. **Content mix** — percentage/priority between AI/design/professional content and Home & Living affiliate products.
-10. **Reposting/update policy** — whether the same product may be reposted after a defined cooldown/new angle/new verified price.
+1. **Visual system** — exact layout, logo placement, typography/text overlay rules, aspect ratio.
+2. **Caption style** — short/medium/long; Hinglish/English; practical vs editorial voice.
+3. **CTA** — exact action requested from the viewer.
+4. **Hashtag policy** — number/type; static vs generated.
+5. **Cadence** — posts per week and preferred time windows.
+6. **On-creative data** — whether price/rating/review count should appear on image/video or caption only.
+7. **Approval model** — Founder approval per post/creative vs autonomous publication after policy/validator gates.
+8. **Content mix** — percentage/priority between AI/design/professional content and Home & Living affiliate products.
+9. **Reposting/update policy** — whether the same product may be reposted after a defined cooldown/new angle/new verified price.
 
-## 9. Phase-2 implementation rule
-Do not expand Instagram autonomous publishing until Sections 7 and 8 are resolved. Phase 2 should then implement the locked creative rules, measure outputs/results, and optimize only within the Founder-approved policy.
+## 10. Phase-2 implementation rule
+Do not expand Instagram autonomous publishing until Sections 8 and 9 are resolved. Phase 2 should then implement the locked creative rules, measure outputs/results, and optimize only within the Founder-approved policy.
 
 ## Sources
 - `INSTAGRAM_AUTOMATION.md`
 - `PRODUCT_IMAGE_POLICY.md`
 - `data/TELEGRAM_DEAL_DROP_FORMAT.md` (evidence principles only; Telegram formatting is not automatically an Instagram rule)
 - `scripts/publish_instagram.py` (current implementation behavior)
+
+## Founder decision log
+- 2026-08-23: Founder approved the mixed model shown in the sample: single-image for quick deals/product highlights, carousel for guides/comparisons, Reel for demo/problem-solution content.
