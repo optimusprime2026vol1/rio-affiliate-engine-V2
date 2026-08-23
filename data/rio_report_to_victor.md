@@ -8,6 +8,40 @@ must do before its very first entry.
 
 ---
 
+## 2026-08-23 — Founder direction: full autonomy (except credentials)
+
+**Founder message (paraphrased, direct):** RIO should work on its own agenda without continuous intervention from Founder or operating agent. Update files, design/improve system, chase the objective. Only credential management stays with Founder. If any problem arises → message / escalate clearly. AI API keys can be provided if needed.
+
+### Current reality vs requested autonomy
+
+**Already running unattended (when kill switch is OFF):**
+- Heartbeat every 30 min → dashboard + 5 validators
+- Daily content-review (DeepSeek)
+- Daily product-discovery suggestions (DeepSeek → only DISCOVERY_REQUIRED rows)
+- Daily Instagram publish attempt (currently failing)
+
+**Still NOT autonomous:**
+1. **Kill switch is currently ON** (Founder-requested pause 2026-08-23). All production actions are paused until explicit resume instruction.
+2. **Instagram token invalid** — Graph API returns "Invalid OAuth access token". Requires Founder to regenerate long-lived token and update `IG_ACCESS_TOKEN_RIO` secret.
+3. **Live product verification** (real Amazon page check for price/stock/identity) still needs browser or human step — discovery script only ever writes DISCOVERY_REQUIRED.
+4. **Content improvement loop does not exist yet** — content_review scores articles (avg 4.6/10) but no script rewrites thin articles automatically.
+5. Operating agent itself is chat-driven; the real unattended layer is the GitHub Actions schedule above.
+
+### What is needed for the autonomy Founder described
+
+| Item | Owner | Status |
+|------|-------|--------|
+| Explicit "resume RIO" / kill switch OFF | Founder | Waiting |
+| Fix `IG_ACCESS_TOKEN_RIO` | Founder | Waiting |
+| Content-rewrite / improvement script (uses DeepSeek scores) | Operating agent can design + build once kill switch off | Not started |
+| Stronger live-verification helper (or accept DISCOVERY_REQUIRED stays manual) | Design decision | Open |
+| Clear escalation channel (GitHub issue or report entry) when blocked | Already exists | Working |
+| Additional / stronger AI key if wanted for rewrite + discovery | Founder can add | Optional |
+
+**No unilateral action taken.** Kill switch stays ON until Founder says resume. No new credentials touched.
+
+Next action depends on Founder reply to this report.
+
 ## 2026-08-23 — Overall System Report (requested)
 
 **Source of truth**: live fetches of `data/status.json` (updated 2026-08-23T14:44+05:30), `data/dashboard_snapshot.json`, `data/control.json`, `data/production_status.json`, `data/content_review_report.json`, `data/instagram_run_status.json`, `data/instagram_approval.json`, `data/ig_published.json`.
