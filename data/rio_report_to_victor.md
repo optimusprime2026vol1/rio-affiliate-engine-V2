@@ -8,6 +8,79 @@ must do before its very first entry.
 
 ---
 
+## 2026-08-23 — Overall System Report (requested)
+
+**Source of truth**: live fetches of `data/status.json` (updated 2026-08-23T14:44+05:30), `data/dashboard_snapshot.json`, `data/control.json`, `data/production_status.json`, `data/content_review_report.json`, `data/instagram_run_status.json`, `data/instagram_approval.json`, `data/ig_published.json`.
+
+### 1. System Health
+- **Kill switch**: ON (`true`)
+  - Reason: "Founder-requested production pause on 2026-08-23. Resume only after explicit Founder instruction."
+- **All validators pass**: `true`
+  - production_live: PASS (homepage 200, affiliate tag present, disclosure present, sitemap 200, social card 200)
+  - offer_integrity (X→X): PASS
+  - product_candidates: PASS
+  - dashboard: PASS
+  - production_offer_gate: PASS (READY=17)
+- **Public site**: LIVE and verified at `https://vickykenin-lang.github.io/rio-affiliate-engine/`
+- **Heartbeat**: Last successful run wrote status at 14:44 IST; dashboard regenerated.
+
+### 2. Pipeline Counts (dashboard_snapshot + status)
+| Metric | Value |
+|--------|-------|
+| Product candidates | 35 |
+| Ready offers | 17 |
+| Blocked offers | 0 |
+| Rejected products | 2 |
+| Content items / articles | 27 |
+| Discovered products | 19 |
+| Verified products | 17 |
+| X-to-X failures | 0 |
+| Revenue (approved) | ₹0 |
+| Cost | ₹0 |
+| Net profit | ₹0 |
+
+### 3. Content Quality (DeepSeek content_review)
+- Articles reviewed this cycle: 23
+- Average score: **4.6 / 10**
+- Would trust: **13 / 23**
+- Recurring weaknesses across many articles:
+  - No real price / price range
+  - No exact dimensions / measurements
+  - No honest cons or limitations
+  - No user review excerpts or ratings
+  - No comparison vs alternatives
+  - Several articles still read as thin placeholders
+
+### 4. Instagram Automation
+- Status: **FAILED_RETRY**
+- Last attempt: UNDER_SINK_001 at 2026-08-22T23:01+05:30
+- Error: Graph API 400 — "Invalid OAuth access token - Cannot parse access token" (code 190)
+- Posted count: 0
+- `ig_published.json`: empty `{"posted": {}}`
+- Approval exists for UNDER_SINK_001 (Founder-approved test), but token is broken.
+- **Blocker**: IG_ACCESS_TOKEN_RIO secret is invalid / expired / malformed. Requires Founder to regenerate long-lived token in Meta Developer console and update the GitHub secret.
+
+### 5. Monetisation & Distribution Status
+- Amazon Associates tag `rioaffiliate-21` is active at data layer (17 READY offers).
+- Live site has affiliate links and disclosure (production_live gate passed).
+- EarnKaro account exists (User ID 5551765, already showing ₹30 profit) — integration design still open (no API key available).
+- Google AdSense: site ownership verified, ad review requested, waiting on Google. Root domain (`designinfra.in`) fixed to WordPress; RIO content remains on `rio.designinfra.in` / GitHub Pages.
+- Pinterest: still blocked on Founder credentials.
+- Paid ads: explicitly skipped by Founder.
+
+### 6. Unit Economics (illustrative only)
+- Scenario: 10k monthly sessions, 18% CTR, 4% conversion, ₹1800 AOV, 5% commission → ~₹6,480 gross/month.
+- Note in file: "Illustrative validation scenario, not a forecast or guarantee."
+
+### 7. Open Items / Blockers (for Victor / Founder)
+1. **Kill switch is ON** — all automated publishing and further production actions paused until explicit Founder resume instruction.
+2. **Instagram token broken** — regenerate + update `IG_ACCESS_TOKEN_RIO` secret required before any post can succeed.
+3. Content quality gap: average 4.6/10 and many articles missing concrete product data (price, dimensions, cons). Strengthening content is the highest-leverage next work once kill switch is lifted.
+4. EarnKaro integration design still pending (manual link conversion workflow vs waiting for API).
+5. AdSense still in Google review queue.
+
+No new decisions made by the operating agent. All numbers above are live file values, not inferred.
+
 ## 2026-08-23 — Section 0 verification
 
 Fetched `https://raw.githubusercontent.com/vickykenin-lang/rio-affiliate-engine/main/data/status.json` directly.
