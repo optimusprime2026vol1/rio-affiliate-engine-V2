@@ -1,33 +1,42 @@
-# RIO Affiliate Engine — Production Readiness
+# RIO Affiliate Engine — Version 3.0
 
-India-focused affiliate content engine for compact-home and Home/Kitchen buying guides.
+India-focused affiliate content and authority engine.
 
-## Locked objective
+## Locked objective (RIO 3.0)
 
-RIO's Day-0 objective is affiliate commissions only: build an automated, scalable affiliate business toward ₹10 lakh/month net profit, with a long-term ₹50 lakh+/month goal. Infrastructure, dashboards and content counts enable that objective; they are not business results.
+Build an automated, scalable affiliate business toward **₹10 lakh/month net approved commission**, with a long-term ₹50 lakh+/month goal.
+
+**Primary positioning**:
+Help Indian interior designers, contractors, and small offices use AI tools and practical digital products to design faster, present better, and manage projects more efficiently.
+
+**Supporting layer** (already live):
+Compact-home storage, kitchen/bathroom/wardrobe/balcony organisers, and baby-proofing/home-safety products for Indian rented homes.
+
+Core discipline remains unchanged: **Discovery → Live-verify → Score → Publish**. Nothing goes live without real verification.
+
+Full definition: `data/RIO_3.0_DEFINITION.md`
 
 ## Evidence-backed status
 
 The repository currently contains:
 
 - 27 content items
-- 32 product candidates: 17 READY, 13 DISCOVERY_REQUIRED, 2 REJECTED
+- 35 product candidates: 17 READY, others in discovery/rejected
 - 17 Amazon.in offers marked READY with tracking ID `rioaffiliate-21`
-- A heartbeat with real production reachability plus four local commercial validators
+- A heartbeat with real production reachability plus validators
 - Daily content QA and product-discovery suggestions
-- Founder-approved Instagram publishing with explicit status, public-image preflight and deduplication
+- Founder-approved Instagram publishing (currently blocked on token)
 
-Do not call the system live, production-ready or earning from local validators alone. Current truth is stored in:
+Do not call the system earning from local validators alone. Current truth is stored in:
 
 - `data/status.json` — heartbeat and validator state
-- `data/production_status.json` — real HTTP checks for homepage, sitemap and social-card asset
+- `data/production_status.json` — real HTTP checks
 - `data/dashboard_snapshot.json` — pipeline counts
 - `data/content_review_report.json` — content trust assessment
-- `data/ig_published.json` — confirmed Instagram media IDs/permalinks only
+- `data/ig_published.json` — confirmed Instagram media IDs only
 - `data/instagram_approval.json` — Founder approval and per-offer publish state
 - `data/instagram_run_status.json` — latest real publish outcome or blocker
-
-During the 2026-08-22 audit, both the default GitHub Pages URL and `rio.designinfra.in` returned HTTP 404. Public availability therefore remains unverified until the production gate passes. A private source repository requires a GitHub plan/configuration that supports Pages, or a separate public deployment target.
+- `data/RIO_3.0_DEFINITION.md` — Version 3.0 objective and initial workflow
 
 ## Validate locally
 
@@ -54,3 +63,4 @@ Set `RIO_PUBLIC_SITE_BASE` when a different public deployment URL is selected.
 - Customer review text and star ratings must not be published without an approved Amazon Product Advertising API source and its license requirements.
 - Revenue remains ₹0 until a real Associates report proves approved commission.
 - Paid promotion requires explicit Founder budget approval.
+- No Founder name or professional claim goes public without explicit review and sign-off.
