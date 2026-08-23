@@ -20,6 +20,7 @@ from rio_work_dashboard import record
 ROOT = Path(__file__).resolve().parents[1]
 WORK = ROOT / "data" / "rio_work_status.json"
 SNAPSHOT = ROOT / "data" / "dashboard_snapshot.json"
+STATUS = ROOT / "data" / "status.json"
 CONTROL = ROOT / "data" / "control.json"
 AUDIT = ROOT / "data" / "autonomy_audit.jsonl"
 BOT = (os.environ.get("TELEGRAM_BOT_TOKEN_RIO") or "").strip()
@@ -58,9 +59,13 @@ def main():
     control = jload(CONTROL, {"kill_switch": False})
     memory = jload(WORK, {})
     snapshot = jload(SNAPSHOT, {})
+    health = jload(STATUS, {})
 
     if control.get("kill_switch"):
         print("[autonomous_cycle] skipped: kill switch ON")
+        return 0
+    if health.get("all_validators_pass") is not True:
+        print("[autonomous_cycle] skipped: heartbeat validators are not healthy")
         return 0
     if memory.get("status") == "WORKING":
         print("[autonomous_cycle] skipped: previous work still marked WORKING")
@@ -94,7 +99,7 @@ def main():
         "Prefer the persisted next_task when it is still sensible. Execute only low/medium-risk repository work permitted by the guarded executor. "
         "Do not create accounts, handle credentials, make payments/legal commitments, bypass verification, invent product facts, or weaken validators. "
         "If real Founder action is required, return intent=respond and state the exact blocker/action. "
-        "Your founder_message must include: what task you chose, why, what was changed, and a concrete next_task for the following autonomous cycle. "
+        "Your founder_message must include: what task you chose, why, what was changed, and a concrete next_task for the following autonomous cycle using the literal prefix 'NEXT_TASK:'. "
         "Persistent memory:\n" + json.dumps(memory_context, ensure_ascii=False)
     )
 
@@ -130,7 +135,6 @@ def main():
     changed = result.get("changed_paths") or []
 
     if result.get("ok"):
-        # The model must state the next task. If it does not, next cycle can choose from objective + history.
         next_task = None
         marker = "next_task:"
         low = summary.lower()
