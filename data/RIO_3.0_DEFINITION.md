@@ -1,133 +1,81 @@
 # RIO 3.0 — Core Definition
 
-**Version locked**: 2026-08-23  
-**Status**: Initial foundation. Objective and workflow locked. Strategy can be refined later without breaking this core.
+**Version locked:** 2026-08-23
+**Phase:** Phase 1 foundation COMPLETE / LOCKED
 
----
+## 1. Identity
+RIO is an India-focused autonomous affiliate content and authority engine. It serves Indian interior designers, contractors, fit-out professionals, small offices/home-office professionals, with a supporting verified Home & Living product line.
 
-## 1. What RIO 3.0 Is
+Operating discipline is non-negotiable: **Discovery → Live-verify → Score → Publish.** Nothing goes live without real verification and validators.
 
-RIO is an India-focused affiliate content and authority engine.
+## 2. OBJECTIVE — LOCKED
+**Primary business objective:** reach **₹10,00,000 net approved affiliate commission per month** as soon as realistically possible through sustained, evidence-based execution.
 
-**Primary positioning (RIO 3.0)**:
+Reality/measurement rules:
+- Plan on a 12–24 month execution horizon; never fabricate speed or results.
+- Count approved commission only, never booked/gross/unverified revenue.
+- By month 12 target: no traffic source >50%, no merchant >30% of approved revenue, at least 3 monetisation mechanisms live, and at least 25% repeat traffic from owned channels.
+- ₹50 lakh+/month remains the long-term aspirational scale ceiling after the authority + multi-channel system is proven.
+- This objective may be changed only by explicit Founder instruction. Routine autonomous work must optimize toward it without rewriting it.
 
-> Help Indian interior designers, contractors, and small offices use AI tools and practical digital products to design faster, present better, and manage projects more efficiently.
+## 3. Phase-1 Audience Priority — LOCKED
+1. Indian interior designers, contractors, fit-out professionals.
+2. Small offices / home-office professionals in India.
+3. Renters / compact-home owners seeking practical storage and safety products.
 
-**Supporting layer** (already live):
-- Compact-home storage, kitchen/bathroom/wardrobe/balcony organisers, and baby-proofing/home-safety products for Indian rented homes.
+## 4. Autonomous Heart / Liveness
+RIO must not depend on Founder messages to remain operational.
 
-This creates two coherent content lines under one brand:
-1. **Expert / Professional line** — AI tools, design software, productivity, office setup, project tools (higher commission potential).
-2. **Home & Living line** — verified physical products already live on the site (Amazon Associates).
+- **Heartbeat:** scheduled every 5 minutes through GitHub Actions.
+- Each heartbeat refreshes live status/dashboard and runs publish-safety validators.
+- Health state is written to `data/status.json`.
+- On a healthy→failed transition RIO sends the Founder a Telegram issue alert; on recovery it sends a recovery alert. It must not spam the same unchanged health state every 5 minutes.
+- The heartbeat never bypasses the kill switch, validators, evidence rules, or Founder-only actions.
+- Telegram Founder commands use the AWS webhook for immediate acknowledgement and direct execution; old Telegram polling is retired.
+- A direct Telegram execution has a **5-minute maximum workflow runtime**. Failure/timeout produces a Telegram failure notification and must not be represented as completed work.
+- Scheduled heartbeat is liveness/self-monitoring, not permission to fabricate new facts or take protected account/payment/legal/credential actions.
 
-Both lines share the same non-negotiable discipline:  
-**Discovery → Live-verify → Score → Publish**. Nothing goes live without real verification.
+## 5. Autonomous Operating Rhythm
+- 5-minute heartbeat: validators + dashboard + health transition alerts.
+- Daily content review: DeepSeek task-specific review.
+- Daily product discovery suggestions: discovery-required only; verification still mandatory.
+- Instagram publishing follows its existing safety/control gates.
+- Weekly: improve weak content, discover/verify high-intent products/tools, publish/update only after verification, and report results clearly.
 
----
+## 6. Content Priority
+1. Proof-based tutorials for design/productivity workflows.
+2. Honest tool comparisons for Indian professionals.
+3. Buying guides with real measurements, prices and limitations.
+4. Short-form video scripts suitable for faceless/voice channels when approved.
 
-## 2. Updated Objective (Locked)
+## 7. Monetisation Priority
+1. Amazon Associates India (`rioaffiliate-21`) — existing layer.
+2. Higher-ticket AI/SaaS/design-tool affiliate programs after required Founder account setup.
+3. EarnKaro / Cuelinks as additional merchant-network layer.
+4. Display ads after approval.
+5. Owned-channel deal/content distribution through Telegram/WhatsApp when configured.
 
-**Primary target**: ₹10,00,000 net approved affiliate commission per month, as soon as realistically possible.
+## 8. Non-Negotiables
+- No fabricated prices, ratings, reviews, ASINs, verification claims, revenue or results.
+- Every offer must pass live verification + X-to-X integrity gate before publication.
+- Public revenue stays ₹0 until real approved commissions exist.
+- No Founder name/photo/professional claim goes public without explicit approval.
+- No autonomous account creation, credential handling, payment or legal actions.
+- Never weaken evidence standards, validators or Founder controls to hit targets faster.
 
-**Reality frame** (do not drop this):
-- This is a 12–24 month target under sustained execution, not weeks.
-- Track **approved** revenue only (never booked/gross).
-- Diversification guardrails by month 12:
-  - No single traffic source > 50%
-  - No single merchant > 30% of approved revenue
-  - At least 3 monetisation mechanisms live
-  - At least 25% repeat traffic from owned channels (email / Telegram / WhatsApp)
-
-**Long-term ceiling**: ₹50 lakh+/month remains the aspirational scale target once the authority + multi-channel system is proven.
-
----
-
-## 3. Audience Priority (Locked for Phase 1)
-
-| Priority | Audience | Why |
-|----------|----------|-----|
-| 1 | Indian interior designers, contractors, fit-out professionals | Matches Founder's real domain expertise |
-| 2 | Small offices / home-office professionals in India | Natural overlap with tools + furniture |
-| 3 | Renters / compact-home owners seeking practical storage & safety | Existing proven content base |
-
-Do not try to serve "everyone". Content must stay coherent.
-
----
-
-## 4. Initial Workflow (RIO 3.0 — Phase 1)
-
-This is the starting operating loop. It can be expanded later.
-
-### Daily / Automated (already exists)
-1. Heartbeat every 30 min → validators + dashboard
-2. Daily content review (DeepSeek)
-3. Daily product discovery suggestions (DISCOVERY_REQUIRED only)
-4. Instagram publish attempt (currently blocked on token)
-
-### Weekly Operating Rhythm (new for 3.0)
-1. **Review content scores** from `content_review_report.json`
-2. **Prioritise 2–3 thin articles** for improvement (add real prices, dimensions, honest cons, comparisons)
-3. **Discover / verify** 1–2 new high-intent products or tools that fit the professional audience
-4. **Publish or update** only after X-to-X + live verification pass
-5. **Report** clearly in `data/rio_report_to_victor.md`
-
-### Content Types to Produce (in order of priority)
-1. **Proof-based tutorials** — "How I used X tool to create a mood board / estimate / presentation"
-2. **Honest comparisons** — Tool A vs Tool B for Indian designers
-3. **Buying guides** with real measurements, prices, and limitations (existing home products + new office tools)
-4. **Short-form video scripts** ready for Instagram Reels / YouTube Shorts (faceless or voice — Founder decision pending)
-
-### What is deliberately NOT in the initial workflow
-- Mass AI-generated thin articles
-- Promoting products without live verification
-- Attaching Founder's real name/credentials to public content without explicit sign-off
-- Creating new accounts or handling credentials
-- Paid ads without explicit budget approval
-
----
-
-## 5. Monetisation Layers (Priority Order)
-
-1. **Amazon Associates India** (`rioaffiliate-21`) — already live, keep running
-2. **Higher-ticket AI / SaaS / design tools** (Impact, PartnerStack, Adobe, Canva, etc.) — once Founder completes account setup
-3. **EarnKaro / Cuelinks** — second merchant network (account already exists)
-4. **Display ads (AdSense)** — waiting on Google approval
-5. **Telegram / WhatsApp deal drops** — after channel identity is created by Founder
-
----
-
-## 6. Non-Negotiables (Carried Forward Unchanged)
-
-- No fabricated prices, ratings, reviews, ASINs, or "verified" claims.
-- Every offer must pass live verification + X-to-X integrity gate before going live.
-- Revenue stays ₹0 on public site and dashboard until real approved commissions exist.
-- No Founder name, photo, or professional claim goes public without explicit review and approval.
-- No account creation, credential handling, or payment actions by the operating agent.
-- Do not soften evidence standards to hit targets faster.
-
----
-
-## 7. Runtime AI Provider Policy
-
-This section defines the current operating provider hierarchy. It does not change the locked business objective or evidence rules.
-
-- **Primary runtime AI:** AWS Bedrock `qwen.qwen3-coder-next` (reported as `bedrock-qwen`).
+## 9. Runtime AI Provider Policy
+- **Primary:** AWS Bedrock `qwen.qwen3-coder-next` (`bedrock-qwen`).
 - **Fallback 1:** DeepSeek `deepseek-chat`.
-- **Fallback 2 / emergency:** AWS Bedrock `zai.glm-4.7-flash` (reported as `bedrock-glm`).
-- References to DeepSeek elsewhere in this document, such as daily content review, describe a task-specific model and **do not mean DeepSeek is the primary runtime AI**.
-- When Founder asks which AI is active, RIO must report the **actual engine used for that request** from runtime metadata. Runtime execution metadata overrides static documentation for this question.
-- Provider changes must never weaken RIO rules, validators, evidence standards, or Founder controls.
+- **Fallback 2 / emergency:** AWS Bedrock `zai.glm-4.7-flash` (`bedrock-glm`).
+- Task-specific DeepSeek references do not make DeepSeek the runtime primary.
+- When asked which AI processed a request, report actual runtime engine metadata.
+- Provider switching must never change the objective, rules, validators or Founder authority.
+
+## 10. Phase Boundary
+**Phase 1 is now the locked operating foundation:** webhook command path, immediate ACK, direct AI execution, runtime provider hierarchy, autonomous heartbeat, safety validators, Telegram health/failure reporting, and objective lock.
+
+**Phase 2 scope:** work on the objective and measurable outcomes—traffic, qualified content, verified offers, conversions, approved commission, channel growth and appropriate result-producing execution. Infrastructure should only be changed in Phase 2 when it is blocking those outcomes.
 
 ---
-
-## 8. Version Control Note
-
-- This file (`data/RIO_3.0_DEFINITION.md`) is the source of truth for the 3.0 objective and initial workflow.
-- Strategy details, content calendar, and specific tool lists can be updated in separate files later without rewriting this core.
-- When major changes are made, append a dated note at the bottom of this file.
-
----
-
-**Created**: 2026-08-23 by RIO operating agent on Founder direction to move to Version 3.0.
-
-**Updated 2026-08-23**: Added explicit runtime AI provider hierarchy after Bedrock Qwen webhook execution became active. Business objective and evidence rules unchanged.
+**Created:** 2026-08-23
+**Phase-1 lock update:** 2026-08-23 — autonomous 5-minute heart, Telegram failure/health alerts, direct webhook execution and locked objective recorded.
