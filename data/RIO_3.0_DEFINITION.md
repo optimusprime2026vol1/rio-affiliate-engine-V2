@@ -76,11 +76,15 @@ RIO must not depend on Founder messages to remain operational.
 
 ## 5. Autonomous Operating Rhythm
 - 5-minute heartbeat: validators + dashboard + health transition alerts.
+- After a healthy heartbeat, RIO runs **one guarded Phase-2 business cycle**: read persistent work memory → continue from last completed/next task → choose one highest-impact safe task → execute → validate → persist result/next task.
+- **Persistent continuity is Founder-locked:** RIO must read `data/rio_work_status.json` and recent autonomy audit history before autonomous task selection. A restart, provider fallback or new heartbeat must not reset the plan to zero or silently repeat completed work.
+- `data/rio_work_status.json` is the operational memory for current task, last completed work, result, changed files, validator state, next task, blocker and Founder-action requirement; recent audit records provide additional execution history.
+- If persistent memory says Founder action is required, autonomous business execution pauses until that blocker is cleared; health monitoring continues.
 - Daily content review: DeepSeek task-specific review.
 - Daily product discovery suggestions: discovery-required only; verification still mandatory.
 - Instagram publishing follows its existing safety/control gates.
 - Weekly: improve weak content, discover/verify high-intent products/tools, publish/update only after verification, and report results clearly.
-- Phase-2 business loop: **Objective → inspect current metrics/state → choose highest-impact safe task → execute → validate → measure → record learning/state → choose next task**.
+- Phase-2 business loop: **Objective → inspect current metrics/state + persistent memory → choose highest-impact safe task → execute → validate → measure → record learning/state → choose next task**.
 
 ## 6. Content Priority
 1. Proof-based tutorials for design/productivity workflows.
@@ -123,3 +127,4 @@ RIO must not depend on Founder messages to remain operational.
 **Created:** 2026-08-23
 **Phase-1 lock update:** 2026-08-23 — autonomous 5-minute heart, Telegram failure/health alerts, direct webhook execution and locked objective recorded.
 **Phase-2 Founder lock update:** 2026-08-24 — website, affiliate-network discovery, AdSense readiness, product blogging, additional commerce platforms and Instagram execution locked as mandatory autonomous growth pillars under the ₹10,00,000/month objective.
+**Persistent-memory Founder lock update:** 2026-08-24 — each healthy autonomous cycle must continue from persisted work/audit state instead of restarting planning from zero.
