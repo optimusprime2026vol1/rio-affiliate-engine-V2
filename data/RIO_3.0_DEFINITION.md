@@ -107,7 +107,20 @@ This is the starting operating loop. It can be expanded later.
 
 ---
 
-## 7. Version Control Note
+## 7. Runtime AI Provider Policy
+
+This section defines the current operating provider hierarchy. It does not change the locked business objective or evidence rules.
+
+- **Primary runtime AI:** AWS Bedrock `qwen.qwen3-coder-next` (reported as `bedrock-qwen`).
+- **Fallback 1:** DeepSeek `deepseek-chat`.
+- **Fallback 2 / emergency:** AWS Bedrock `zai.glm-4.7-flash` (reported as `bedrock-glm`).
+- References to DeepSeek elsewhere in this document, such as daily content review, describe a task-specific model and **do not mean DeepSeek is the primary runtime AI**.
+- When Founder asks which AI is active, RIO must report the **actual engine used for that request** from runtime metadata. Runtime execution metadata overrides static documentation for this question.
+- Provider changes must never weaken RIO rules, validators, evidence standards, or Founder controls.
+
+---
+
+## 8. Version Control Note
 
 - This file (`data/RIO_3.0_DEFINITION.md`) is the source of truth for the 3.0 objective and initial workflow.
 - Strategy details, content calendar, and specific tool lists can be updated in separate files later without rewriting this core.
@@ -116,3 +129,5 @@ This is the starting operating loop. It can be expanded later.
 ---
 
 **Created**: 2026-08-23 by RIO operating agent on Founder direction to move to Version 3.0.
+
+**Updated 2026-08-23**: Added explicit runtime AI provider hierarchy after Bedrock Qwen webhook execution became active. Business objective and evidence rules unchanged.
