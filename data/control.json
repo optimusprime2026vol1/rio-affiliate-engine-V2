@@ -1,5 +1,5 @@
 {
-  "kill_switch": true,
-  "kill_reason": "Founder-requested production pause on 2026-08-23. Resume only after explicit Founder instruction.",
-  "last_test": null
+ "kill_switch": true,
+ "kill_reason": "Founder-requested production pause on 2026-08-23. Resume only after explicit Founder instruction.",
+ "last_test": null
 }

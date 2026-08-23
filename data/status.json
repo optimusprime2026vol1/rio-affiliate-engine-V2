@@ -1,6 +1,6 @@
 {
- "updated": "2026-08-23T13:43+05:30",
- "kill_switch": false,
+ "updated": "2026-08-23T14:23+05:30",
+ "kill_switch": true,
  "dashboard_regenerated": true,
  "validators": {
   "production_live": {
@@ -36,7 +36,7 @@
   "net_profit_inr": 0,
   "production_verified": true
  },
- "note_en": "Heartbeat OK — dashboard regenerated, 5/5 validators passing. 17 ready offers, 27 content items, revenue ₹0.",
+ "note_en": "Paused by kill switch. Founder-requested production pause on 2026-08-23. Resume only after explicit Founder instruction.",
  "content_review": {
   "reviewed_this_run": 23,
   "errors_this_run": 0,
