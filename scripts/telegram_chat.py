@@ -1,17 +1,10 @@
 #!/usr/bin/env python3
-"""RIO — Telegram conversation agent (fully automated).
+"""RIO — Telegram conversation agent (LOCKED).
 
-Polls Telegram every scheduled cycle, replies as RIO.
-Primary brain: Grok (xAI). If Grok fails (no credits / error), automatically
-falls back to DeepSeek — no manual intervention.
+DeepSeek is PRIMARY. Grok is fallback only after credits exist.
+Polls every 5 minutes via GitHub Actions. No manual intervention required.
 
-Secrets:
-  TELEGRAM_BOT_TOKEN_RIO (required)
-  TELEGRAM_CHAT_ID_RIO   (alerts channel; optional allow-list)
-  GROK_API_KEY or XAI_API_KEY (preferred)
-  DEEPSEEK_API_KEY (fallback)
-
-State: data/telegram_chat_state.json
+LOCKED 2026-08-23 by Founder order: no further changes from prior chat agent.
 """
 import json
 import os
@@ -27,10 +20,10 @@ STATE_PATH = os.path.join(ROOT, "data", "telegram_chat_state.json")
 STATUS_PATH = os.path.join(ROOT, "data", "status.json")
 CONTROL_PATH = os.path.join(ROOT, "data", "control.json")
 
-GROK_URL = "https://api.x.ai/v1/chat/completions"
-GROK_MODEL = "grok-4.6"
 DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
 DEEPSEEK_MODEL = "deepseek-chat"
+GROK_URL = "https://api.x.ai/v1/chat/completions"
+GROK_MODEL = "grok-4.6"
 MAX_HISTORY = 12
 MAX_REPLY_CHARS = 3500
 
@@ -44,10 +37,10 @@ def clean_secret(value):
 
 BOT_TOKEN = clean_secret(os.environ.get("TELEGRAM_BOT_TOKEN_RIO", ""))
 ALERT_CHAT_ID = clean_secret(os.environ.get("TELEGRAM_CHAT_ID_RIO", ""))
+DEEPSEEK_KEY = clean_secret(os.environ.get("DEEPSEEK_API_KEY", ""))
 GROK_KEY = clean_secret(
     os.environ.get("GROK_API_KEY", "") or os.environ.get("XAI_API_KEY", "")
 )
-DEEPSEEK_KEY = clean_secret(os.environ.get("DEEPSEEK_API_KEY", ""))
 
 
 def jload(path, default):
@@ -156,18 +149,9 @@ def call_chat_api(url, key, model, messages):
 
 
 def call_llm(history, user_text):
-    """Grok primary → DeepSeek auto-fallback. No manual switch."""
+    """DeepSeek PRIMARY. Grok only if DeepSeek fails."""
     messages = build_messages(history, user_text)
     errors = []
-
-    if GROK_KEY:
-        try:
-            return call_chat_api(GROK_URL, GROK_KEY, GROK_MODEL, messages), "grok"
-        except urllib.error.HTTPError as e:
-            err = e.read().decode(errors="replace")
-            errors.append(f"grok HTTP {e.code}: {err[:200]}")
-        except Exception as e:
-            errors.append(f"grok: {e}")
 
     if DEEPSEEK_KEY:
         try:
@@ -178,17 +162,23 @@ def call_llm(history, user_text):
         except Exception as e:
             errors.append(f"deepseek: {e}")
 
-    if not GROK_KEY and not DEEPSEEK_KEY:
+    if GROK_KEY:
+        try:
+            return call_chat_api(GROK_URL, GROK_KEY, GROK_MODEL, messages), "grok"
+        except urllib.error.HTTPError as e:
+            err = e.read().decode(errors="replace")
+            errors.append(f"grok HTTP {e.code}: {err[:200]}")
+        except Exception as e:
+            errors.append(f"grok: {e}")
+
+    if not DEEPSEEK_KEY and not GROK_KEY:
         return (
-            "No AI key available (GROK_API_KEY / DEEPSEEK_API_KEY). "
-            "Founder must add credits or a working key in GitHub Secrets.",
+            "No AI key available (DEEPSEEK_API_KEY / GROK_API_KEY).",
             "none",
         )
 
     return (
-        "RIO temporarily cannot reach AI APIs.\n"
-        + "\n".join(errors[:3])
-        + "\n\nTry /status. Grok credits may need top-up at console.x.ai.",
+        "RIO temporarily cannot reach AI APIs.\n" + "\n".join(errors[:3]),
         "error",
     )
 
@@ -252,8 +242,8 @@ def main():
         if low in {"/start", "start"}:
             reply = (
                 "RIO online.\n\n"
-                "Yahan seedha baat karo — main auto reply karta hoon.\n"
-                "Poll har ~5 min (GitHub Actions).\n\n"
+                "Yahan seedha baat karo.\n"
+                "Auto reply har ~5 min.\n\n"
                 "Commands: /status"
             )
             engine = "local"
@@ -267,8 +257,8 @@ def main():
                 f"validators: {status.get('all_validators_pass')}\n"
                 f"ready_offers: {counts.get('ready_offers')}\n"
                 f"content_items: {counts.get('content_items')}\n"
-                f"IG auto-publish: paused (Founder)\n"
-                f"AI: Grok primary, DeepSeek fallback"
+                f"IG auto-publish: paused\n"
+                f"AI primary: DeepSeek (locked)"
             )
             engine = "local"
         else:
