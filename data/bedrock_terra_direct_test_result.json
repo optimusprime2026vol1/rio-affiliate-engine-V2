@@ -1,0 +1,9 @@
+{
+  "tested_at": "2026-08-23T19:19:07+05:30",
+  "model": "openai.gpt-5.6-terra",
+  "region": "us-east-1",
+  "endpoint": "https://bedrock-mantle.us-east-1.api.aws/v1",
+  "ok": false,
+  "http_status": 401,
+  "error": "{\"error\":{\"code\":\"access_denied\",\"message\":\"openai.gpt-5.6-terra is not available for this account. You can explore other available models on Amazon Bedrock. For additional access options, contact AWS Sales at https://aws.amazon.com/contact-us/sales-support/\",\"param\":null,\"type\":\"permission_denied_error\"}}"
+}
