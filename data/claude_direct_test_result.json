@@ -1,0 +1,7 @@
+{
+  "tested_at": "2026-08-23T18:24:54+05:30",
+  "model": "",
+  "ok": false,
+  "http_status": 401,
+  "error": "{\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CeKiRjmerpRJ4XhP57L33\"}"
+}
