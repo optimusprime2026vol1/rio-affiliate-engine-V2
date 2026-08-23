@@ -1,6 +1,6 @@
 # RIO Instagram Content Policy — FOUNDER-LOCK DRAFT
 
-Status: **DRAFT — FORMAT MIX + HOOK STRATEGY + CAPTION LANGUAGE APPROVED; REMAINING ITEMS PENDING**
+Status: **DRAFT — FORMAT MIX + HOOK STRATEGY + CAPTION LANGUAGE + CTA APPROVED; REMAINING ITEMS PENDING**
 
 Purpose: convert existing repository-backed Instagram and product-display rules into one operational policy for Phase 2. No unsupported posting strategy is invented here.
 
@@ -114,27 +114,45 @@ The hook is persuasive framing, not permission to exaggerate. It must remain con
 - Recommended caption structure, where applicable: **hook -> practical value / 2–3 useful points -> CTA -> disclosure**.
 - For professional/design/AI-tool content, AI may use more professional English; for Indian home/lifestyle problem-solution content, light Hinglish may be used when natural.
 
-## 10. CURRENT IMPLEMENTATION BLOCKER
+## 10. CTA STRATEGY — FOUNDER APPROVED
+RIO's AI engine may autonomously choose the CTA that best matches the post objective, audience intent, content format, and verified destination.
+
+Allowed CTA families include, where applicable:
+- **transactional/intent CTA** — “Check current price”, “View product”, “See current availability”;
+- **research CTA** — “See the full guide”, “Compare before buying”, “Check the detailed comparison”;
+- **engagement CTA** — “Which one would you pick?”, “What problem are you trying to solve?”;
+- **retention CTA** — “Save this for later”, “Share this with someone who needs it”;
+- **navigation CTA** — “Link in bio” or another truthful destination instruction when that destination is actually available.
+
+CTA selection must be contextual, not mechanically fixed across posts.
+
+### CTA guardrails
+- No fake urgency, pressure, countdown language, or unsupported scarcity.
+- Do not say “buy now”, “last chance”, “only X left”, or equivalent unless the underlying urgency/scarcity is genuinely verified and policy-permitted at publish time.
+- CTA must accurately describe the destination/action available to the user.
+- Engagement CTAs must not be used as clickbait unrelated to the product/content.
+- If no useful CTA is appropriate, AI may use a neutral informational close rather than forcing one.
+
+## 11. CURRENT IMPLEMENTATION BLOCKER
 The current `scripts/publish_instagram.py` publishes `site/social/<offer_id>.png` branded cards as its Instagram image. Its own comments state that it intentionally does not use real product photos.
 
 That implementation conflicts with the Founder-locked Product Image Policy, which requires the exact verified real product image as the primary product display and allows local RIO cards only as fallback assets.
 
 **Required before autonomous Instagram product publishing is considered production-correct:** refactor the publisher/creative pipeline so the primary Instagram product image comes from the validated exact-product image registry or another Founder-approved exact-product image source. Until then, the branded-card implementation must not be treated as satisfying the locked product-image requirement.
 
-## 11. FOUNDER DECISION PENDING
+## 12. FOUNDER DECISION PENDING
 The following items still require explicit Founder approval before this document becomes FULLY LOCKED:
 
 1. **Visual system** — exact layout, logo placement, typography/text overlay rules, aspect ratio beyond the approved AI hook behavior above.
-2. **CTA** — exact action requested from the viewer.
-3. **Hashtag policy** — number/type; static vs generated.
-4. **Cadence** — posts per week and preferred time windows.
-5. **On-creative data** — whether price/rating/review count should appear on image/video or caption only.
-6. **Approval model** — Founder approval per post/creative vs autonomous publication after policy/validator gates.
-7. **Content mix** — percentage/priority between AI/design/professional content and Home & Living affiliate products.
-8. **Reposting/update policy** — whether the same product may be reposted after a defined cooldown/new angle/new verified price.
+2. **Hashtag policy** — number/type; static vs generated.
+3. **Cadence** — posts per week and preferred time windows.
+4. **On-creative data** — whether price/rating/review count should appear on image/video or caption only.
+5. **Approval model** — Founder approval per post/creative vs autonomous publication after policy/validator gates.
+6. **Content mix** — percentage/priority between AI/design/professional content and Home & Living affiliate products.
+7. **Reposting/update policy** — whether the same product may be reposted after a defined cooldown/new angle/new verified price.
 
-## 12. Phase-2 implementation rule
-Do not expand Instagram autonomous publishing until Sections 10 and 11 are resolved. Phase 2 should then implement the locked creative rules, measure outputs/results, and optimize only within the Founder-approved policy.
+## 13. Phase-2 implementation rule
+Do not expand Instagram autonomous publishing until Sections 11 and 12 are resolved. Phase 2 should then implement the locked creative rules, measure outputs/results, and optimize only within the Founder-approved policy.
 
 ## Sources
 - `INSTAGRAM_AUTOMATION.md`
@@ -146,3 +164,4 @@ Do not expand Instagram autonomous publishing until Sections 10 and 11 are resol
 - 2026-08-23: Founder approved the mixed model shown in the sample: single-image for quick deals/product highlights, carousel for guides/comparisons, Reel for demo/problem-solution content.
 - 2026-08-23: Founder approved AI-selected hook/problem-solution framing. AI decides dynamically whether to emphasize why the product matters, the problem it solves, why it is useful/buy-worthy, or another applicable verified angle.
 - 2026-08-23: Founder approved captions to be mostly English, with light Hinglish where natural; AI adapts language to audience and content context.
+- 2026-08-23: Founder approved contextual AI-selected CTAs, provided they are truthful, relevant, non-pressuring, and consistent with RIO evidence/urgency rules.
