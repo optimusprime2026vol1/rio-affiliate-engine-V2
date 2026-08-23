@@ -3,5 +3,7 @@
   "kill_reason": null,
   "last_test": null,
   "resumed_at": "2026-08-23T16:02+05:30",
-  "resumed_by": "Founder direct order: start karo"
+  "resumed_by": "Founder direct order: start karo",
+  "instagram_auto_publish": false,
+  "instagram_pause_reason": "Founder feedback 2026-08-23: first post succeeded but current home-storage card content style is not wanted. Pause further IG posts until new content direction is confirmed."
 }
