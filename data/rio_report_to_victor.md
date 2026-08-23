@@ -8,6 +8,33 @@ must do before its very first entry.
 
 ---
 
+## 2026-08-23 — Founder final direction: stop this chat, move to Telegram, Grok API autonomous
+
+**Founder instruction (direct):**
+- Do not continue conversation in this chat window.
+- Remaining work will be done by the API; main agent decides as per objective.
+- Grok API will run everything itself.
+- All further communication shifts to Telegram.
+
+**Current state against this direction:**
+- Telegram integration for RIO does **not** exist yet. Only a content-format draft (`data/TELEGRAM_DEAL_DROP_FORMAT.md`) exists. No bot, no channel automation, no messaging layer.
+- Channel / bot creation is Founder-only (Section 5 non-negotiable).
+- Kill switch is still **ON**.
+- Instagram token is still invalid.
+- No Grok API key is present as a GitHub secret on this repo (DeepSeek key exists and is used by content-review + discovery scripts).
+
+**What Founder must provide before the requested shift can happen:**
+1. Create Telegram bot + channel (or group) himself.
+2. Add as GitHub secrets (names suggested):
+   - `TELEGRAM_BOT_TOKEN_RIO`
+   - `TELEGRAM_CHAT_ID_RIO` (or channel ID)
+3. If Grok is to be the autonomous decision engine: add `GROK_API_KEY` (or equivalent xAI key) as a GitHub secret.
+4. Explicit resume instruction (kill switch OFF) when ready for production actions to resume.
+
+Until the above secrets + resume exist, RIO cannot open a Telegram communication channel or run a Grok-driven autonomous loop. Operating agent will not continue this chat window as instructed.
+
+No credentials touched. No accounts created. No unilateral changes to kill switch.
+
 ## 2026-08-23 — Founder direction: full autonomy (except credentials)
 
 **Founder message (paraphrased, direct):** RIO should work on its own agenda without continuous intervention from Founder or operating agent. Update files, design/improve system, chase the objective. Only credential management stays with Founder. If any problem arises → message / escalate clearly. AI API keys can be provided if needed.
