@@ -1,11 +1,12 @@
 {
-  "approvals": {
-    "UNDER_SINK_001": {
-      "status": "APPROVED",
-      "approved_by": "FOUNDER",
-      "approved_at": "2026-08-22T22:24+05:30",
-      "updated_at": "2026-08-23T16:05+05:30",
-      "note": "Founder-approved. Token refreshed. Retry after graph.instagram.com endpoint fix."
-    }
+ "approvals": {
+  "UNDER_SINK_001": {
+   "status": "INSTAGRAM_POSTED",
+   "approved_by": "FOUNDER",
+   "approved_at": "2026-08-22T22:24+05:30",
+   "updated_at": "2026-08-23T16:04+05:30",
+   "note": "Founder-approved. Token refreshed. Retry after graph.instagram.com endpoint fix.",
+   "last_detail": "Meta media ID 17877752013535173"
   }
+ }
 }

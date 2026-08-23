@@ -180,3 +180,5 @@ Fetched `https://raw.githubusercontent.com/vickykenin-lang/rio-affiliate-engine/
 - `"counts"."ready_offers"`: `17`
 - `"counts"."content_items"`: `27`
 - `"all_validators_pass"`: `true`
+
+- 2026-08-23T16:04+05:30 IST — posted **wolpin Under Sink Rectangle Organizer Storage Rack 2-Tier** (offer `UNDER_SINK_001`) to Instagram @riosallerior. Media ID `17877752013535173`. Permalink: https://www.instagram.com/p/DcYSOe3mwhG/
