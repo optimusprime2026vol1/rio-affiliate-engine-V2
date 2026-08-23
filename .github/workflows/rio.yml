@@ -5,7 +5,6 @@ on:
     branches: [main]
     paths: ['data/instagram_approval.json']
   schedule:
-    - cron: '*/30 * * * *'
     - cron: '*/5 * * * *'
     - cron: '0 5 * * *'
     - cron: '30 5 * * *'
@@ -18,37 +17,29 @@ on:
         description: 'Manual override only'
         type: choice
         default: heartbeat
-        options: [heartbeat, content-review, discover-products, instagram-publish, telegram-test, telegram-chat, telegram-direct, all]
-      command_id:
-        description: 'Webhook command id'
-        required: false
-        type: string
-      chat_id:
-        description: 'Telegram chat id'
-        required: false
-        type: string
-      command_text:
-        description: 'Founder command'
-        required: false
-        type: string
-      callback_url:
-        description: 'RIO callback URL'
-        required: false
-        type: string
+        options: [heartbeat, content-review, discover-products, instagram-publish, telegram-test, telegram-direct, all]
+      command_id: {description: 'Webhook command id', required: false, type: string}
+      chat_id: {description: 'Telegram chat id', required: false, type: string}
+      command_text: {description: 'Founder command', required: false, type: string}
+      callback_url: {description: 'RIO callback URL', required: false, type: string}
 permissions: {contents: write, issues: write}
 jobs:
   heartbeat:
-    if: github.event_name == 'issues' || github.event.schedule == '*/30 * * * *' || (github.event_name == 'workflow_dispatch' && (inputs.job == 'heartbeat' || inputs.job == 'all'))
+    if: github.event_name == 'issues' || github.event.schedule == '*/5 * * * *' || (github.event_name == 'workflow_dispatch' && (inputs.job == 'heartbeat' || inputs.job == 'all'))
     runs-on: ubuntu-latest
+    concurrency: {group: rio-heartbeat, cancel-in-progress: false}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: "3.x"}
-      - env: {GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"}
+      - env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TELEGRAM_BOT_TOKEN_RIO: ${{ secrets.TELEGRAM_BOT_TOKEN_RIO }}
+          TELEGRAM_CHAT_ID_RIO: ${{ secrets.TELEGRAM_CHAT_ID_RIO }}
         run: python scripts/heartbeat.py
       - run: |
           git config user.name "RIO" && git config user.email "rio@rio-affiliate.bot"
-          git add -A && (git diff --cached --quiet || git commit -m "heartbeat: refresh dashboard + validators") && git pull --rebase --autostash && git push
+          git add -A && (git diff --cached --quiet || git commit -m "heartbeat: autonomous health refresh") && git pull --rebase --autostash && git push
   content-review:
     if: github.event.schedule == '0 5 * * *' || (github.event_name == 'workflow_dispatch' && (inputs.job == 'content-review' || inputs.job == 'all'))
     runs-on: ubuntu-latest
@@ -102,29 +93,10 @@ jobs:
         with: {python-version: "3.x"}
       - env: {TELEGRAM_BOT_TOKEN_RIO: "${{ secrets.TELEGRAM_BOT_TOKEN_RIO }}", TELEGRAM_CHAT_ID_RIO: "${{ secrets.TELEGRAM_CHAT_ID_RIO }}"}
         run: python scripts/telegram_notify.py --test
-  telegram-chat:
-    if: github.event.schedule == '*/5 * * * *' || (github.event_name == 'workflow_dispatch' && (inputs.job == 'telegram-chat' || inputs.job == 'all'))
-    runs-on: ubuntu-latest
-    concurrency: {group: rio-telegram-chat, cancel-in-progress: false}
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with: {python-version: "3.x"}
-      - env:
-          TELEGRAM_BOT_TOKEN_RIO: ${{ secrets.TELEGRAM_BOT_TOKEN_RIO }}
-          TELEGRAM_CHAT_ID_RIO: ${{ secrets.TELEGRAM_CHAT_ID_RIO }}
-          AWS_BEDROCK_API_KEY: ${{ secrets.AWS_BEDROCK_API_KEY }}
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-        run: python scripts/telegram_chat.py
-      - run: |
-          git config user.name "RIO" && git config user.email "rio@rio-affiliate.bot"
-          git add data site scripts
-          (git diff --cached --quiet || git commit -m "rio autonomous: apply validated Founder instruction")
-          git pull --rebase --autostash
-          git push
   telegram-direct:
     if: github.event_name == 'workflow_dispatch' && inputs.job == 'telegram-direct'
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     concurrency: {group: rio-telegram-direct, cancel-in-progress: false}
     steps:
       - uses: actions/checkout@v4
@@ -137,16 +109,22 @@ jobs:
           AWS_BEDROCK_API_KEY: ${{ secrets.AWS_BEDROCK_API_KEY }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           RIO_CALLBACK_TOKEN: ${{ secrets.RIO_CALLBACK_TOKEN }}
-          RIO_COMMAND_ID: ${{ inputs.command_id }}
-          RIO_COMMAND_CHAT_ID: ${{ inputs.chat_id }}
-          RIO_COMMAND_TEXT: ${{ inputs.command_text }}
-          RIO_CALLBACK_URL: ${{ inputs.callback_url }}
+          COMMAND_ID: ${{ inputs.command_id }}
+          COMMAND_CHAT_ID: ${{ inputs.chat_id }}
+          COMMAND_TEXT: ${{ inputs.command_text }}
+          CALLBACK_URL: ${{ inputs.callback_url }}
         run: python scripts/telegram_direct_command.py
       - name: Commit validated autonomous changes
-        if: always()
+        if: success()
         run: |
           git config user.name "RIO" && git config user.email "rio@rio-affiliate.bot"
           git add data site scripts
           (git diff --cached --quiet || git commit -m "rio webhook: apply validated Founder instruction")
           git pull --rebase --autostash
           git push
+      - name: Notify command failure
+        if: failure()
+        env:
+          TELEGRAM_BOT_TOKEN_RIO: ${{ secrets.TELEGRAM_BOT_TOKEN_RIO }}
+          TELEGRAM_CHAT_ID_RIO: ${{ secrets.TELEGRAM_CHAT_ID_RIO }}
+        run: python scripts/telegram_notify.py "⚠️ RIO command failed or exceeded the 5-minute execution limit. No unvalidated change should be treated as completed."
