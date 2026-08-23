@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-08-22T23:01+05:30",
+ "updated_at": "2026-08-23T16:03+05:30",
  "status": "FAILED_RETRY",
  "offer_id": "UNDER_SINK_001",
- "detail": "Graph API POST 17841435772670647/media failed (400): {\"error\":{\"message\":\"Invalid OAuth access token - Cannot parse access token\",\"type\":\"OAuthException\",\"code\":190,\"fbtrace_id\":\"AJmksEr-jX8B0EIzafDT4jS\"}}",
+ "detail": "Graph API POST 17841435772670647/media failed (400): {\"error\":{\"message\":\"Invalid OAuth access token - Cannot parse access token\",\"type\":\"OAuthException\",\"code\":190,\"fbtrace_id\":\"AJS34OEd7_DjkZ2HRNO7Viz\"}}",
  "posted_count": 0,
  "pending_count": 1
 }
