@@ -3,8 +3,7 @@ name: RIO
 on:
   push:
     branches: [main]
-    paths:
-      - 'data/instagram_approval.json'
+    paths: ['data/instagram_approval.json']
   schedule:
     - cron: '*/30 * * * *'
     - cron: '*/5 * * * *'
@@ -20,11 +19,7 @@ on:
         type: choice
         default: heartbeat
         options: [heartbeat, content-review, discover-products, instagram-publish, telegram-test, telegram-chat, all]
-
-permissions:
-  contents: write
-  issues: write
-
+permissions: {contents: write, issues: write}
 jobs:
   heartbeat:
     if: github.event_name == 'issues' || github.event.schedule == '*/30 * * * *' || (github.event_name == 'workflow_dispatch' && (inputs.job == 'heartbeat' || inputs.job == 'all'))
@@ -34,73 +29,55 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: "3.x"}
-      - name: Read owner commands, regenerate dashboard, run validators
-        env: {GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"}
+      - env: {GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"}
         run: python scripts/heartbeat.py
-      - name: Commit state changes
-        run: |
+      - run: |
           git config user.name "RIO" && git config user.email "rio@rio-affiliate.bot"
           git add -A && (git diff --cached --quiet || git commit -m "heartbeat: refresh dashboard + validators") && git pull --rebase --autostash && git push
-
   content-review:
     if: github.event.schedule == '0 5 * * *' || (github.event_name == 'workflow_dispatch' && (inputs.job == 'content-review' || inputs.job == 'all'))
     runs-on: ubuntu-latest
-    concurrency: {group: rio-content, cancel-in-progress: false}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: "3.x"}
-      - name: DeepSeek reviews RIO's live articles
-        env: {DEEPSEEK_API_KEY: "${{ secrets.DEEPSEEK_API_KEY }}"}
+      - env: {DEEPSEEK_API_KEY: "${{ secrets.DEEPSEEK_API_KEY }}"}
         run: python scripts/content_review.py
         continue-on-error: true
-      - name: Commit report
-        run: |
+      - run: |
           git config user.name "RIO" && git config user.email "rio@rio-affiliate.bot"
           git add -A && (git diff --cached --quiet || git commit -m "content review: DeepSeek pass over live articles") && git pull --rebase --autostash && git push
-
   discover-products:
     if: github.event.schedule == '30 5 * * *' || (github.event_name == 'workflow_dispatch' && (inputs.job == 'discover-products' || inputs.job == 'all'))
     runs-on: ubuntu-latest
-    concurrency: {group: rio-discovery, cancel-in-progress: false}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: "3.x"}
-      - name: DeepSeek product discovery suggestions
-        env: {DEEPSEEK_API_KEY: "${{ secrets.DEEPSEEK_API_KEY }}"}
+      - env: {DEEPSEEK_API_KEY: "${{ secrets.DEEPSEEK_API_KEY }}"}
         run: python scripts/discover_products.py
         continue-on-error: true
-      - name: Commit new DISCOVERY_REQUIRED candidates
-        run: |
+      - run: |
           git config user.name "RIO" && git config user.email "rio@rio-affiliate.bot"
-          git add -A && (git diff --cached --quiet || git commit -m "discovery: DeepSeek search-query suggestions (DISCOVERY_REQUIRED only)") && git pull --rebase --autostash && git push
-
+          git add -A && (git diff --cached --quiet || git commit -m "discovery: DeepSeek search-query suggestions") && git pull --rebase --autostash && git push
   instagram-publish:
     if: (github.event_name == 'push' && github.actor != 'github-actions[bot]') || github.event.schedule == '30 13 * * *' || (github.event_name == 'workflow_dispatch' && (inputs.job == 'instagram-publish' || inputs.job == 'all'))
     runs-on: ubuntu-latest
-    concurrency: {group: rio-instagram, cancel-in-progress: false}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: "3.x"}
-      - name: Post the next Founder-approved verified offer to Instagram
-        id: publish
+      - id: publish
         continue-on-error: true
-        env:
-          IG_USER_ID_RIO: ${{ secrets.IG_USER_ID_RIO }}
-          IG_ACCESS_TOKEN_RIO: ${{ secrets.IG_ACCESS_TOKEN_RIO }}
+        env: {IG_USER_ID_RIO: "${{ secrets.IG_USER_ID_RIO }}", IG_ACCESS_TOKEN_RIO: "${{ secrets.IG_ACCESS_TOKEN_RIO }}"}
         run: python scripts/publish_instagram.py
-      - name: Commit publish state
-        if: always()
+      - if: always()
         run: |
           python scripts/generate_dashboard.py
           git config user.name "RIO" && git config user.email "rio@rio-affiliate.bot"
           git add -A && (git diff --cached --quiet || git commit -m "instagram: publish run") && git pull --rebase --autostash && git push
-      - name: Keep the Actions result truthful when Meta publish failed
-        if: steps.publish.outcome == 'failure'
+      - if: steps.publish.outcome == 'failure'
         run: exit 1
-
   telegram-test:
     if: github.event_name == 'workflow_dispatch' && (inputs.job == 'telegram-test' || inputs.job == 'all')
     runs-on: ubuntu-latest
@@ -108,12 +85,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: "3.x"}
-      - name: Send Telegram connection test
-        env:
-          TELEGRAM_BOT_TOKEN_RIO: ${{ secrets.TELEGRAM_BOT_TOKEN_RIO }}
-          TELEGRAM_CHAT_ID_RIO: ${{ secrets.TELEGRAM_CHAT_ID_RIO }}
+      - env: {TELEGRAM_BOT_TOKEN_RIO: "${{ secrets.TELEGRAM_BOT_TOKEN_RIO }}", TELEGRAM_CHAT_ID_RIO: "${{ secrets.TELEGRAM_CHAT_ID_RIO }}"}
         run: python scripts/telegram_notify.py --test
-
   telegram-chat:
     if: github.event.schedule == '*/5 * * * *' || (github.event_name == 'workflow_dispatch' && (inputs.job == 'telegram-chat' || inputs.job == 'all'))
     runs-on: ubuntu-latest
@@ -122,13 +95,11 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: "3.x"}
-      - name: Poll Telegram + Claude primary + guarded execution
+      - name: Poll Telegram + Bedrock primary + guarded execution
         env:
           TELEGRAM_BOT_TOKEN_RIO: ${{ secrets.TELEGRAM_BOT_TOKEN_RIO }}
           TELEGRAM_CHAT_ID_RIO: ${{ secrets.TELEGRAM_CHAT_ID_RIO }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          GROK_API_KEY: ${{ secrets.GROK_API_KEY }}
-          XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
+          AWS_BEDROCK_API_KEY: ${{ secrets.AWS_BEDROCK_API_KEY }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: python scripts/telegram_chat.py
       - name: Commit validated autonomous changes + chat/audit state
