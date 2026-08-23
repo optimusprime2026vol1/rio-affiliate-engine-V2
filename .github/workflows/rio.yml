@@ -6,19 +6,19 @@ on:
     paths:
       - 'data/instagram_approval.json'
   schedule:
-    - cron: '*/30 * * * *'   # heartbeat: every 30 minutes (Vicky, 2026-08-17 via Dr. Victor)
-    - cron: '0 5 * * *'      # content review: once daily, ~10:30 IST (DeepSeek reviews live articles)
-    - cron: '30 5 * * *'     # product discovery: once daily, ~11:00 IST (DeepSeek suggests search queries only)
-    - cron: '30 13 * * *'    # instagram publish: once daily, ~19:00 IST (Vicky, 2026-08-18 via Dr. Victor)
+    - cron: '*/30 * * * *'   # heartbeat: every 30 minutes
+    - cron: '0 5 * * *'      # content review: once daily, ~10:30 IST
+    - cron: '30 5 * * *'     # product discovery: once daily, ~11:00 IST
+    - cron: '30 13 * * *'    # instagram publish: once daily, ~19:00 IST
   issues:
     types: [opened]
   workflow_dispatch:
     inputs:
       job:
-        description: 'Which job to run manually (heartbeat / content-review / discover-products / instagram-publish / all)'
+        description: 'Which job to run manually (heartbeat / content-review / discover-products / instagram-publish / telegram-test / all)'
         type: choice
         default: heartbeat
-        options: [heartbeat, content-review, discover-products, instagram-publish, all]
+        options: [heartbeat, content-review, discover-products, instagram-publish, telegram-test, all]
 
 permissions:
   contents: write
@@ -42,7 +42,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/heartbeat.py
-      - name: Commit state changes (GITHUB_TOKEN pushes do not trigger a second workflow; deployment runs explicitly)
+      - name: Commit state changes
         run: |
           git config user.name "RIO" && git config user.email "rio@rio-affiliate.bot"
           git add -A && (git diff --cached --quiet || git commit -m "heartbeat: refresh dashboard + validators") && git pull --rebase --autostash && git push
@@ -57,12 +57,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.x"
-      - name: DeepSeek reviews RIO's live articles as a skeptical Indian online shopper (conversion/trust QA, not product discovery)
+      - name: DeepSeek reviews RIO's live articles
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: python scripts/content_review.py
         continue-on-error: true
-      - name: Commit report (NOT [skip ci] — harmless if it retriggers deploy-pages.yml, data/ isn't part of the site build)
+      - name: Commit report
         run: |
           git config user.name "RIO" && git config user.email "rio@rio-affiliate.bot"
           git add -A && (git diff --cached --quiet || git commit -m "content review: DeepSeek pass over live articles") && git pull --rebase --autostash && git push
@@ -77,7 +77,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.x"
-      - name: DeepSeek suggests search queries for content clusters with zero candidates (never a specific ASIN/price/URL — status is always DISCOVERY_REQUIRED, still needs real live verification next)
+      - name: DeepSeek product discovery suggestions
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: python scripts/discover_products.py
@@ -114,3 +114,18 @@ jobs:
       - name: Keep the Actions result truthful when Meta publish failed
         if: steps.publish.outcome == 'failure'
         run: exit 1
+
+  telegram-test:
+    if: |
+      github.event_name == 'workflow_dispatch' && (inputs.job == 'telegram-test' || inputs.job == 'all')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Send Telegram connection test to RIO Alerts
+        env:
+          TELEGRAM_BOT_TOKEN_RIO: ${{ secrets.TELEGRAM_BOT_TOKEN_RIO }}
+          TELEGRAM_CHAT_ID_RIO: ${{ secrets.TELEGRAM_CHAT_ID_RIO }}
+        run: python scripts/telegram_notify.py --test
