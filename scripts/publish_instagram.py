@@ -72,8 +72,9 @@ STATUS_JSON = os.path.join(ROOT, "data", "status.json")
 REPORT_MD = os.path.join(ROOT, "data", "rio_report_to_victor.md")
 CARD_DIR = os.path.join(ROOT, "site", "social")
 
-GRAPH_VERSION = "v26.0"
-GRAPH_BASE = f"https://graph.facebook.com/{GRAPH_VERSION}"
+GRAPH_VERSION = "v22.0"
+# Instagram Login tokens (start with IGAA...) must use graph.instagram.com.
+# Facebook Login tokens use graph.facebook.com. Auto-detect at runtime.
 
 # An offer whose data/offer_identity_registry.csv "destination_checked_at"
 # is older than this many days is treated as stale and skipped (not
@@ -101,6 +102,12 @@ PUBLIC_SITE_BASE = os.environ.get(
     "RIO_PUBLIC_SITE_BASE",
     f"https://{OWNER}.github.io/{REPO_NAME}",
 ).rstrip("/")
+
+# Detect token type: Instagram Login tokens start with IGAA / IGAAR etc.
+if IG_ACCESS_TOKEN.upper().startswith("IGAA"):
+    GRAPH_BASE = f"https://graph.instagram.com/{GRAPH_VERSION}"
+else:
+    GRAPH_BASE = f"https://graph.facebook.com/{GRAPH_VERSION}"
 
 # Cosmetic-only cluster labels for captions/cards. Not present as a column
 # in offer_identity_registry.csv today — assigned by Victor from the same
@@ -235,6 +242,8 @@ def main():
         save_run_status("BLOCKED_VALIDATION", detail)
         print(f"[publish_instagram] {detail}")
         return 2
+
+    print(f"[publish_instagram] using API base: {GRAPH_BASE}")
 
     offers = load_csv(REG_CSV)
     ready = [
