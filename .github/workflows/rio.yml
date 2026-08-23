@@ -109,10 +109,10 @@ jobs:
           AWS_BEDROCK_API_KEY: ${{ secrets.AWS_BEDROCK_API_KEY }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           RIO_CALLBACK_TOKEN: ${{ secrets.RIO_CALLBACK_TOKEN }}
-          COMMAND_ID: ${{ inputs.command_id }}
-          COMMAND_CHAT_ID: ${{ inputs.chat_id }}
-          COMMAND_TEXT: ${{ inputs.command_text }}
-          CALLBACK_URL: ${{ inputs.callback_url }}
+          RIO_COMMAND_ID: ${{ inputs.command_id }}
+          RIO_COMMAND_CHAT_ID: ${{ inputs.chat_id }}
+          RIO_COMMAND_TEXT: ${{ inputs.command_text }}
+          RIO_CALLBACK_URL: ${{ inputs.callback_url }}
         run: python scripts/telegram_direct_command.py
       - name: Commit validated autonomous changes
         if: success()
@@ -127,4 +127,4 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN_RIO: ${{ secrets.TELEGRAM_BOT_TOKEN_RIO }}
           TELEGRAM_CHAT_ID_RIO: ${{ secrets.TELEGRAM_CHAT_ID_RIO }}
-        run: python scripts/telegram_notify.py "⚠️ RIO command failed or exceeded the 5-minute execution limit. No unvalidated change should be treated as completed."
+        run: python scripts/telegram_notify.py "⚠️ RIO command failed. The direct runner, AI/executor, validation, or workflow may have failed. No unvalidated change should be treated as completed."
