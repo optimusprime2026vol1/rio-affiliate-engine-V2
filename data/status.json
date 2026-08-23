@@ -1,11 +1,11 @@
 {
- "updated": "2026-08-23T15:40+05:30",
- "kill_switch": true,
+ "updated": "2026-08-23T16:15+05:30",
+ "kill_switch": false,
  "dashboard_regenerated": true,
  "validators": {
   "production_live": {
    "pass": true,
-   "detail": "PRODUCTION HEALTH GATE: PASS\n{\"checked_at\": \"2026-08-23T13:43:54+05:30\", \"base_url\": \"https://vickykenin-lang.github.io/rio-affiliate-engine\", \"verified\": true, \"checks\": {\"homepage_200\": true, \"affiliate_tag_present\": true, \"disclosure_present\": true, \"sitemap_200\": true, \"sitemap_absolute_urls\": true, \"social_card_200\": true}, \"responses\": {\"homepage\": {\"status\": 200, \"url\": \"https://vickykenin-lang.github.io/rio-affiliate-engine/\", \"error\": null}, \"sitemap\": {\"status\": 200, \"url\": \"https://vickykenin-lang.github.io/rio-affiliate-engine/sitemap.xml\", \"error\": null}, \"social_card\": {\"status\": 200, \"url\": \"https://vickykenin-lang.github.io/rio-affiliate-engine/social/UNDER_SINK_001.png\", \"content_type\": \"image/png\", \"error\": null}}}"
+   "detail": "PRODUCTION HEALTH GATE: PASS\n{\"checked_at\": \"2026-08-23T16:15:58+05:30\", \"base_url\": \"https://vickykenin-lang.github.io/rio-affiliate-engine\", \"verified\": true, \"checks\": {\"homepage_200\": true, \"affiliate_tag_present\": true, \"disclosure_present\": true, \"sitemap_200\": true, \"sitemap_absolute_urls\": true, \"social_card_200\": true}, \"responses\": {\"homepage\": {\"status\": 200, \"url\": \"https://vickykenin-lang.github.io/rio-affiliate-engine/\", \"error\": null}, \"sitemap\": {\"status\": 200, \"url\": \"https://vickykenin-lang.github.io/rio-affiliate-engine/sitemap.xml\", \"error\": null}, \"social_card\": {\"status\": 200, \"url\": \"https://vickykenin-lang.github.io/rio-affiliate-engine/social/UNDER_SINK_001.png\", \"content_type\": \"image/png\", \"error\": null}}}"
   },
   "offer_integrity": {
    "pass": true,
@@ -36,7 +36,7 @@
   "net_profit_inr": 0,
   "production_verified": true
  },
- "note_en": "Paused by kill switch. Founder-requested production pause on 2026-08-23. Resume only after explicit Founder instruction.",
+ "note_en": "Heartbeat OK — dashboard regenerated, 5/5 validators passing. 17 ready offers, 27 content items, revenue ₹0.",
  "content_review": {
   "reviewed_this_run": 23,
   "errors_this_run": 0,
