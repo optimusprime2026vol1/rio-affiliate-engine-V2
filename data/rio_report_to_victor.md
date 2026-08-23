@@ -8,6 +8,15 @@ must do before its very first entry.
 
 ---
 
+## 2026-08-23 — Section 0 verification
+
+Fetched `https://raw.githubusercontent.com/vickykenin-lang/rio-affiliate-engine/main/data/status.json` directly.
+
+- `"updated"`: `2026-08-23T14:44+05:30`
+- `"counts"."ready_offers"`: `17`
+- `"counts"."content_items"`: `27`
+- `"all_validators_pass"`: `true`
+
 ## 2026-08-18 — Section 0 verification (first entry)
 
 Fetched `https://raw.githubusercontent.com/vickykenin-lang/rio-affiliate-engine/main/data/status.json` directly.
