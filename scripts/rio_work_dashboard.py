@@ -6,7 +6,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 STATE = ROOT / "data" / "rio_work_status.json"
-DASH = ROOT / "site" / "rio-dashboard" / "index.html"
+SITE_DASH = ROOT / "site" / "rio-dashboard" / "index.html"
+PUBLIC_DASH = ROOT / "rio-dashboard" / "index.html"
 IST = timezone(timedelta(hours=5, minutes=30))
 
 
@@ -83,7 +84,6 @@ def record(status, current_task=None, engine=None, changed_files=None, validator
 
 def render(doc=None):
     doc = doc or load()
-    DASH.parent.mkdir(parents=True, exist_ok=True)
     files = doc.get("changed_files") or []
     file_html = "<br>".join(esc(x) for x in files) or "None"
     history = "".join(
@@ -105,9 +105,11 @@ body{{font-family:system-ui;margin:0;background:#f5f5f5;color:#161616}}main{{max
 <section class="panel"><h2>What happens next</h2><p><b>Next task:</b> {esc(doc.get('next_task'))}</p><p><b>Blocker:</b> {esc(doc.get('blocker') or 'None')}</p><p><b>Last updated:</b> {esc(doc.get('updated_at'))}</p></section>
 <section class="panel"><h2>Recent RIO activity</h2><table><tr><th>Time</th><th>Status</th><th>Task</th><th>AI</th></tr>{history}</table></section>
 </main></body></html>'''
-    DASH.write_text(html, encoding="utf-8")
+    for dash in (SITE_DASH, PUBLIC_DASH):
+        dash.parent.mkdir(parents=True, exist_ok=True)
+        dash.write_text(html, encoding="utf-8")
 
 
 if __name__ == "__main__":
     render()
-    print(DASH)
+    print(PUBLIC_DASH)
