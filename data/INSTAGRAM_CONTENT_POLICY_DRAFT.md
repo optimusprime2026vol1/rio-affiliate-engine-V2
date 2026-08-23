@@ -1,6 +1,6 @@
 # RIO Instagram Content Policy — FOUNDER-LOCK DRAFT
 
-Status: **DRAFT — FORMAT MIX APPROVED; REMAINING ITEMS PENDING**
+Status: **DRAFT — FORMAT MIX + HOOK STRATEGY APPROVED; REMAINING ITEMS PENDING**
 
 Purpose: convert existing repository-backed Instagram and product-display rules into one operational policy for Phase 2. No unsupported posting strategy is invented here.
 
@@ -40,6 +40,7 @@ For product-led Instagram creative:
 - Price-sensitive creative must be refreshed/rechecked before publish when the evidence is stale or materially changed.
 - No fake urgency or scarcity claim.
 - If the system cannot verify a claim to the required standard, omit the claim or block the post.
+- Benefit, problem-solution, importance, or purchase/use rationale must be grounded in verified product facts or an explicitly supported use-case; AI must not invent performance, medical/safety, durability, compatibility, or outcome claims.
 
 ## 5. Affiliate disclosure
 Every affiliate/product post must include a clear affiliate disclosure in the caption. Disclosure must not be hidden behind vague wording.
@@ -89,17 +90,39 @@ Regardless of format, RIO must preserve:
 - required affiliate disclosure;
 - value-first communication.
 
-## 8. CURRENT IMPLEMENTATION BLOCKER
+## 8. VISUAL HOOK / PROBLEM-SOLUTION RULE — FOUNDER APPROVED
+RIO's AI engine may autonomously decide the most relevant hook/angle for each creative, based on the verified product and its supported use-case.
+
+Allowed hook families include, where applicable:
+- **problem first** — the practical problem/friction the product is meant to address;
+- **why it matters** — why this product/use-case is useful or important in the target context;
+- **benefit/use rationale** — what practical benefit the user can reasonably expect from the verified product function;
+- **buy/use consideration** — why this product may be worth considering versus doing nothing or using a less suitable setup;
+- **demo/how-to hook** — what the viewer will learn, see, or understand in a Reel/carousel.
+
+Examples of structural hook styles (not fixed copy):
+- “Struggling with ___?”
+- “Why this matters in a small/rented home”
+- “A simple way to solve ___”
+- “Useful if you need ___ without ___”
+- “Before you buy/use ___, check this”
+
+AI chooses the hook dynamically. It is not required to use the same template repeatedly.
+
+### Hook integrity guardrail
+The hook is persuasive framing, not permission to exaggerate. It must remain consistent with verified product facts and RIO evidence standards. If the claimed problem/benefit cannot be supported, AI must select a different hook or omit it.
+
+## 9. CURRENT IMPLEMENTATION BLOCKER
 The current `scripts/publish_instagram.py` publishes `site/social/<offer_id>.png` branded cards as its Instagram image. Its own comments state that it intentionally does not use real product photos.
 
 That implementation conflicts with the Founder-locked Product Image Policy, which requires the exact verified real product image as the primary product display and allows local RIO cards only as fallback assets.
 
 **Required before autonomous Instagram product publishing is considered production-correct:** refactor the publisher/creative pipeline so the primary Instagram product image comes from the validated exact-product image registry or another Founder-approved exact-product image source. Until then, the branded-card implementation must not be treated as satisfying the locked product-image requirement.
 
-## 9. FOUNDER DECISION PENDING
+## 10. FOUNDER DECISION PENDING
 The following items still require explicit Founder approval before this document becomes FULLY LOCKED:
 
-1. **Visual system** — exact layout, logo placement, typography/text overlay rules, aspect ratio.
+1. **Visual system** — exact layout, logo placement, typography/text overlay rules, aspect ratio beyond the approved AI hook behavior above.
 2. **Caption style** — short/medium/long; Hinglish/English; practical vs editorial voice.
 3. **CTA** — exact action requested from the viewer.
 4. **Hashtag policy** — number/type; static vs generated.
@@ -109,8 +132,8 @@ The following items still require explicit Founder approval before this document
 8. **Content mix** — percentage/priority between AI/design/professional content and Home & Living affiliate products.
 9. **Reposting/update policy** — whether the same product may be reposted after a defined cooldown/new angle/new verified price.
 
-## 10. Phase-2 implementation rule
-Do not expand Instagram autonomous publishing until Sections 8 and 9 are resolved. Phase 2 should then implement the locked creative rules, measure outputs/results, and optimize only within the Founder-approved policy.
+## 11. Phase-2 implementation rule
+Do not expand Instagram autonomous publishing until Sections 9 and 10 are resolved. Phase 2 should then implement the locked creative rules, measure outputs/results, and optimize only within the Founder-approved policy.
 
 ## Sources
 - `INSTAGRAM_AUTOMATION.md`
@@ -120,3 +143,4 @@ Do not expand Instagram autonomous publishing until Sections 8 and 9 are resolve
 
 ## Founder decision log
 - 2026-08-23: Founder approved the mixed model shown in the sample: single-image for quick deals/product highlights, carousel for guides/comparisons, Reel for demo/problem-solution content.
+- 2026-08-23: Founder approved AI-selected hook/problem-solution framing. AI decides dynamically whether to emphasize why the product matters, the problem it solves, why it is useful/buy-worthy, or another applicable verified angle.
