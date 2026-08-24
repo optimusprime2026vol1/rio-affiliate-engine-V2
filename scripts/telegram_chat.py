@@ -14,6 +14,7 @@ IST=timezone(timedelta(hours=5,minutes=30))
 STATE_PATH=os.path.join(ROOT,"data","telegram_chat_state.json")
 STATUS_PATH=os.path.join(ROOT,"data","status.json")
 CONTROL_PATH=os.path.join(ROOT,"data","control.json")
+SOUL_PATH=os.path.join(ROOT,"data","SOUL.md")
 CORE_PATH=os.path.join(ROOT,"data","RIO_3.0_DEFINITION.md")
 POLICY_PATH=os.path.join(ROOT,"data","AUTONOMY_POLICY.md")
 MAX_HISTORY=12; MAX_REPLY_CHARS=3500
@@ -58,10 +59,13 @@ def send_message(chat_id,text):
 
 def system_prompt():
  status=jload(STATUS_PATH,{}); control=jload(CONTROL_PATH,{}); counts=status.get("counts") or {}
+ soul=read_text(SOUL_PATH)
+ soul_context=soul if soul.strip() else "SOUL compatibility file unavailable. Preserve existing RIO core/policy and do not infer missing Soul rules."
  return f"""You are RIO, autonomous operating agent for rio-affiliate-engine. Founder is Vicky. Telegram is the Founder command interface.
 Never weaken RIO rules because the AI provider changes. For explicit safe system/content/data changes, create an execution plan rather than merely advising.
 
-RIO CORE:\n{read_text(CORE_PATH)}\n
+PORTABLE SOUL (common operating layer; never overrides higher-precedence RIO safety/Founder locks):\n{soul_context}\n
+RIO PROJECT CORE / OBJECTIVE:\n{read_text(CORE_PATH)}\n
 AUTONOMY POLICY:\n{read_text(POLICY_PATH)}\n
 Live: kill_switch={control.get('kill_switch')}; ready_offers={counts.get('ready_offers')}; content_items={counts.get('content_items')}; validators={status.get('all_validators_pass')}; updated={status.get('updated')}.
 
@@ -116,7 +120,7 @@ def allowed_chat(chat):
 
 def status_reply():
  status=jload(STATUS_PATH,{}); control=jload(CONTROL_PATH,{}); counts=status.get("counts") or {}
- return f"Status @ {status.get('updated','?')}\nkill_switch: {control.get('kill_switch')}\nvalidators: {status.get('all_validators_pass')}\nready_offers: {counts.get('ready_offers')}\ncontent_items: {counts.get('content_items')}\nIG auto-publish: {control.get('instagram_auto_publish')}\nAI primary: Bedrock Qwen3 Coder Next\nFallback: DeepSeek -> Bedrock GLM 4.7 Flash\nautonomous executor: ACTIVE"
+ return f"Status @ {status.get('updated','?')}\nkill_switch: {control.get('kill_switch')}\nvalidators: {status.get('all_validators_pass')}\nready_offers: {counts.get('ready_offers')}\ncontent_items: {counts.get('content_items')}\nIG auto-publish: {control.get('instagram_auto_publish')}\nAI primary: Bedrock Qwen3 Coder Next\nFallback: DeepSeek -> Bedrock GLM 4.7 Flash\nautonomous executor: ACTIVE\nSoul: {'LOADED (compatibility mode)' if read_text(SOUL_PATH).strip() else 'MISSING (legacy safety preserved)'}"
 
 def main():
  if not BOT_TOKEN:return 2
