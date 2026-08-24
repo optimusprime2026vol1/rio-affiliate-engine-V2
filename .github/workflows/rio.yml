@@ -25,13 +25,26 @@ on:
 permissions: {contents: write, issues: write}
 jobs:
   heartbeat:
-    if: github.event_name == 'issues' || github.event.schedule == '*/5 * * * *' || (github.event_name == 'workflow_dispatch' && (inputs.job == 'heartbeat' || inputs.job == 'all'))
+    if: github.event_name == 'issues' || github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && (inputs.job == 'heartbeat' || inputs.job == 'all'))
     runs-on: ubuntu-latest
+    timeout-minutes: 12
     concurrency: {group: rio-heartbeat, cancel-in-progress: false}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: "3.x"}
+      - name: Mark heartbeat runner start
+        run: |
+          python - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          p='data/heartbeat_runner_status.json'
+          try:
+              with open(p,encoding='utf-8') as f:d=json.load(f)
+          except Exception:d={}
+          d.update({'started_at_utc':datetime.now(timezone.utc).isoformat(timespec='seconds'),'event':'${{ github.event_name }}','schedule':'${{ github.event.schedule }}','run_id':'${{ github.run_id }}','state':'RUNNING'})
+          with open(p,'w',encoding='utf-8') as f:json.dump(d,f,indent=2);f.write('\n')
+          PY
       - name: Refresh health and validators
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -45,10 +58,30 @@ jobs:
           AWS_BEDROCK_API_KEY: ${{ secrets.AWS_BEDROCK_API_KEY }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: python scripts/autonomous_business_cycle.py
+      - name: Mark heartbeat runner success
+        if: success()
+        run: |
+          python - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          p='data/heartbeat_runner_status.json'
+          try:
+              with open(p,encoding='utf-8') as f:d=json.load(f)
+          except Exception:d={}
+          d.update({'finished_at_utc':datetime.now(timezone.utc).isoformat(timespec='seconds'),'state':'COMPLETED'})
+          with open(p,'w',encoding='utf-8') as f:json.dump(d,f,indent=2);f.write('\n')
+          PY
       - name: Persist heartbeat and validated autonomous work
+        if: success()
         run: |
           git config user.name "RIO" && git config user.email "rio@rio-affiliate.bot"
           git add -A && (git diff --cached --quiet || git commit -m "heartbeat: health + autonomous Phase-2 cycle") && git pull --rebase --autostash && git push
+      - name: Notify heartbeat failure
+        if: failure()
+        env:
+          TELEGRAM_BOT_TOKEN_RIO: ${{ secrets.TELEGRAM_BOT_TOKEN_RIO }}
+          TELEGRAM_CHAT_ID_RIO: ${{ secrets.TELEGRAM_CHAT_ID_RIO }}
+        run: python scripts/telegram_notify.py "🔴 RIO HEARTBEAT RUNNER FAILED. Health/Soul/autonomous cycle did not complete. Existing safety gates remain in force."
   content-review:
     if: github.event.schedule == '0 5 * * *' || (github.event_name == 'workflow_dispatch' && (inputs.job == 'content-review' || inputs.job == 'all'))
     runs-on: ubuntu-latest
