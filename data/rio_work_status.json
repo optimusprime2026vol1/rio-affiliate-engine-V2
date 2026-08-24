@@ -1,11 +1,11 @@
 {
   "status": "COMPLETED",
-  "current_task": "Checking Instagram posting status and identifying the delay cause",
-  "started_at": "2026-08-24T17:56:30+05:30",
-  "updated_at": "2026-08-24T17:56:31+05:30",
+  "current_task": "RIO will update you automatically only for critical health transitions (healthy→failed or failed→healthy) and when a Founder-only action is genuinely required to unblock autonomous work. Routine progress, completed tasks, or state changes are recorded in persistent memory (`data/rio_work_status.json`, `data/autonomy_audit.jsonl`) and visible to you on request, but do not trigger unsolicited Telegram messages.",
+  "started_at": "2026-08-24T17:58:19+05:30",
+  "updated_at": "2026-08-24T17:58:21+05:30",
   "ai_engine": "bedrock-qwen",
-  "last_completed": "Checking Instagram posting status and identifying the delay cause",
-  "last_result": "Checking Instagram posting status and identifying the delay cause\n\nAI: bedrock-qwen",
+  "last_completed": "RIO will update you automatically only for critical health transitions (healthy→failed or failed→healthy) and when a Founder-only action is genuinely required to unblock autonomous work. Routine progress, completed tasks, or state changes are recorded in persistent memory (`data/rio_work_status.json`, `data/autonomy_audit.jsonl`) and visible to you on request, but do not trigger unsolicited Telegram messages.",
+  "last_result": "You’ll receive Telegram alerts only when:\n1. RIO’s health state changes (e.g., heartbeat failure → recovery), or\n2. Autonomous work hits a Founder-only blocker (account/credential/payment/legal/tax/identity action required).\n\nAll other progress, tasks, and state updates are logged in `data/rio_work_status.json` and `data/autonomy_audit.jsonl` for your review at any time. You can ask anytime—I’m always ready to share details, plans, or next steps.\n\nAI: bedrock-qwen",
   "changed_files": [
     "data/control.json"
   ],
@@ -14,27 +14,6 @@
   "blocker": null,
   "founder_action_needed": false,
   "history": [
-    {
-      "at": "2026-08-24T17:13:56+05:30",
-      "status": "WORKING",
-      "task": "RIO is executing 6 autonomous work fronts (Phase-2 pillars) toward the ₹10,00,000/month affiliate commission objective.",
-      "engine": "bedrock-qwen",
-      "result": null
-    },
-    {
-      "at": "2026-08-24T17:13:56+05:30",
-      "status": "COMPLETED",
-      "task": "RIO is executing 6 autonomous work fronts (Phase-2 pillars) toward the ₹10,00,000/month affiliate commission objective.",
-      "engine": "bedrock-qwen",
-      "result": "I am actively working on **6 autonomous work fronts** (Founder-locked Phase-2 pillars):\n\n1. **Website development** for affiliate-product promotion\n2. **New affiliate networks/platforms** research and expansion\n3. **AdSense/display-ad monetisation** preparation\n4. **Product-led blog/content publishing** (evidence-based, verified)\n5. **Additional commerce platforms** (e.g., Flipkart) evaluation/integration\n6. **Instagram sales/content execution** (verified products, approved policy)\n\nEach heartbeat reads `data/rio_work_status.json` to continue from the last completed task and selects the highest-impact safe next step. I am currently operating in autonomous mode under the ₹10,00,000/month net approved commission objective.\n\nNo other work fronts are active. All work remains subordinate to RIO 3.0 definition, evidence standards, and Founder locks.\n\nAI: bedrock-qwen"
-    },
-    {
-      "at": "2026-08-24T17:14:35+05:30",
-      "status": "WORKING",
-      "task": "Choose highest-impact safe next task from locked Phase-2 objective.",
-      "engine": "selecting",
-      "result": null
-    },
     {
       "at": "2026-08-24T17:14:37+05:30",
       "status": "WORKING",
@@ -153,6 +132,27 @@
       "task": "Checking Instagram posting status and identifying the delay cause",
       "engine": "bedrock-qwen",
       "result": "Checking Instagram posting status and identifying the delay cause\n\nAI: bedrock-qwen"
+    },
+    {
+      "at": "2026-08-24T17:58:19+05:30",
+      "status": "WORKING",
+      "task": "Will update me automatically or I'll ask with you again?",
+      "engine": "selecting",
+      "result": null
+    },
+    {
+      "at": "2026-08-24T17:58:21+05:30",
+      "status": "WORKING",
+      "task": "RIO will update you automatically only for critical health transitions (healthy→failed or failed→healthy) and when a Founder-only action is genuinely required to unblock autonomous work. Routine progress, completed tasks, or state changes are recorded in persistent memory (`data/rio_work_status.json`, `data/autonomy_audit.jsonl`) and visible to you on request, but do not trigger unsolicited Telegram messages.",
+      "engine": "bedrock-qwen",
+      "result": null
+    },
+    {
+      "at": "2026-08-24T17:58:21+05:30",
+      "status": "COMPLETED",
+      "task": "RIO will update you automatically only for critical health transitions (healthy→failed or failed→healthy) and when a Founder-only action is genuinely required to unblock autonomous work. Routine progress, completed tasks, or state changes are recorded in persistent memory (`data/rio_work_status.json`, `data/autonomy_audit.jsonl`) and visible to you on request, but do not trigger unsolicited Telegram messages.",
+      "engine": "bedrock-qwen",
+      "result": "You’ll receive Telegram alerts only when:\n1. RIO’s health state changes (e.g., heartbeat failure → recovery), or\n2. Autonomous work hits a Founder-only blocker (account/credential/payment/legal/tax/identity action required).\n\nAll other progress, tasks, and state updates are logged in `data/rio_work_status.json` and `data/autonomy_audit.jsonl` for your review at any time. You can ask anytime—I’m always ready to share details, plans, or next steps.\n\nAI: bedrock-qwen"
     }
   ]
 }
