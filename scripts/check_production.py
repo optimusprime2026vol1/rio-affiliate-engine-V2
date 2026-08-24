@@ -15,6 +15,7 @@ IST = timezone(timedelta(hours=5, minutes=30))
 BASE = os.environ.get("RIO_PUBLIC_SITE_BASE", "https://vickykenin-lang.github.io/rio-affiliate-engine").rstrip("/")
 OUT = ROOT / "data" / "production_status.json"
 TIMEOUT = 25
+AFFILIATE_CHECK_PATH = "/articles/best-bathroom-storage-organizers-india.html"
 
 def fetch(path):
     url = BASE + path
@@ -31,8 +32,14 @@ checks = {}
 home = fetch("/")
 home_text = home["body"].decode("utf-8", errors="replace")
 checks["homepage_200"] = home["ok"]
-checks["affiliate_tag_present"] = "tag=rioaffiliate-21" in home_text
 checks["disclosure_present"] = "affiliate disclosure" in home_text.casefold()
+
+# Verify the affiliate tag where a real, published affiliate offer actually exists.
+# The homepage is not required to contain a merchant link merely to satisfy health checks.
+affiliate_page = fetch(AFFILIATE_CHECK_PATH)
+affiliate_text = affiliate_page["body"].decode("utf-8", errors="replace")
+checks["affiliate_offer_page_200"] = affiliate_page["ok"]
+checks["affiliate_tag_present"] = affiliate_page["ok"] and "tag=rioaffiliate-21" in affiliate_text
 
 sitemap = fetch("/sitemap.xml")
 checks["sitemap_200"] = sitemap["ok"]
@@ -57,6 +64,7 @@ status = {
     "checks": checks,
     "responses": {
         "homepage": {"status": home.get("status"), "url": home.get("url"), "error": home.get("error")},
+        "affiliate_offer_page": {"status": affiliate_page.get("status"), "url": affiliate_page.get("url"), "error": affiliate_page.get("error")},
         "sitemap": {"status": sitemap.get("status"), "url": sitemap.get("url"), "error": sitemap.get("error")},
         "social_card": {"status": card.get("status"), "url": card.get("url"), "content_type": card.get("content_type"), "error": card.get("error")}
     }
