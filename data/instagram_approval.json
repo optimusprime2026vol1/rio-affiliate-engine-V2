@@ -1,9 +1,9 @@
 {
-  "approvals": {
-    "TROLLEY_001": {
-      "status": "APPROVED",
-      "updated_at": "2026-08-24T21:47+05:30",
-      "last_detail": "Founder explicitly approved Instagram post #3 for publishing in Telegram. Approval restored after guarded executor failures prevented the approval from reaching the canonical Instagram publisher state."
-    }
+ "approvals": {
+  "TROLLEY_001": {
+   "status": "INSTAGRAM_POSTED",
+   "updated_at": "2026-08-24T21:49+05:30",
+   "last_detail": "Meta media ID 17886760158676549"
   }
+ }
 }
