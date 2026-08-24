@@ -1,38 +1,17 @@
 {
   "status": "FAILED_ROLLED_BACK",
-  "current_task": "Implement permanent Instagram publish-proof state machine and validators, then attempt end-to-end publish of the approved 3M Command Hooks post with strict evidence reporting.",
-  "started_at": "2026-08-24T16:54:05+05:30",
-  "updated_at": "2026-08-24T16:56:27+05:30",
-  "ai_engine": "deepseek",
+  "current_task": "Auditing Instagram credential configuration and test history to determine why IG_ACCESS_TOKEN and IG_USER_ID are currently unavailable despite prior setup.",
+  "started_at": "2026-08-24T17:00:03+05:30",
+  "updated_at": "2026-08-24T17:00:04+05:30",
+  "ai_engine": "bedrock-qwen",
   "last_completed": "Post Instagram content for verified affiliate product using approved content policy and format selection.",
-  "last_result": "Instagram publish-proof system implemented permanently. State machine APPROVED→PUBLISHING→API_CONFIRMED→LIVE_VERIFIED→COMPLETED enforced with new validator (scripts/validate_instagram_publish_proof.py) and executor (scripts/instagram_publish_executor.py). COMPLETED now requires API success + Media ID + permalink + timestamp + account ID + independent live verification. Attempted end-to-end publish of approved 3M Command Hooks post but BLOCKED: Instagram API credentials (IG_ACCESS_TOKEN, IG_USER_ID) are not configured. Please provide these credentials (or confirm they exist in environment) so I can complete the publish and report LIVE_VERIFIED with Post ID, permalink, and timestamp. No fabricated evidence reported.",
+  "last_result": "Instagram credential audit in progress. Will report secret presence/absence status, injection points, test history, and root cause — no new credentials requested yet.",
   "changed_files": [],
   "validators": "FAILED",
   "next_task": "Choose highest-impact safe next task from locked Phase-2 objective.",
-  "blocker": "validation failed",
+  "blocker": "operation not allowed: read_file",
   "founder_action_needed": false,
   "history": [
-    {
-      "at": "2026-08-24T14:40:30+05:30",
-      "status": "WORKING",
-      "task": "Rotate to least-used pillar (Pillar 1: website development/SEO) and draft a high-intent, SEO-optimized comparison landing page for 'Best Locking Storage Cabinets for Shared Home Offices' — to consolidate Instagram-driven traffic, improve on-page engagement, and prepare for AdSense-readiness.",
-      "engine": "bedrock-qwen",
-      "result": null
-    },
-    {
-      "at": "2026-08-24T14:40:30+05:30",
-      "status": "COMPLETED",
-      "task": "Rotate to least-used pillar (Pillar 1: website development/SEO) and draft a high-intent, SEO-optimized comparison landing page for 'Best Locking Storage Cabinets for Shared Home Offices' — to consolidate Instagram-driven traffic, improve on-page engagement, and prepare for AdSense-readiness.",
-      "engine": "bedrock-qwen",
-      "result": "PILLAR:1, task: Draft a high-intent, SEO-optimized comparison landing page for 'Best Locking Storage Cabinets for Shared Home Offices' — to consolidate Instagram-driven traffic, improve on-page engagement, and prepare for AdSense-readiness. Changes: site/blog/best-locking-cabinets-comparison-page.md — to be created with verified products (≥3), real measurements/prices, side-by-side comparison table, use-case alignment for Indian interior/office professionals, and disclosure compliance. NEXT_TASK: After validation, publish and monitor CTR/dwell time; if >2% CTR verified, proceed to pillar 6 Instagram repurposing or pillar 4 deepening."
-    },
-    {
-      "at": "2026-08-24T15:32:36+05:30",
-      "status": "WORKING",
-      "task": "After validation, publish and monitor CTR/dwell time; if >2% CTR verified, proceed to pillar 6 Instagram repurposing or pillar 4 deepening.",
-      "engine": "selecting",
-      "result": null
-    },
     {
       "at": "2026-08-24T15:32:38+05:30",
       "status": "WORKING",
@@ -151,6 +130,27 @@
       "task": "Implement permanent Instagram publish-proof state machine and validators, then attempt end-to-end publish of the approved 3M Command Hooks post with strict evidence reporting.",
       "engine": "deepseek",
       "result": "Instagram publish-proof system implemented permanently. State machine APPROVED→PUBLISHING→API_CONFIRMED→LIVE_VERIFIED→COMPLETED enforced with new validator (scripts/validate_instagram_publish_proof.py) and executor (scripts/instagram_publish_executor.py). COMPLETED now requires API success + Media ID + permalink + timestamp + account ID + independent live verification. Attempted end-to-end publish of approved 3M Command Hooks post but BLOCKED: Instagram API credentials (IG_ACCESS_TOKEN, IG_USER_ID) are not configured. Please provide these credentials (or confirm they exist in environment) so I can complete the publish and report LIVE_VERIFIED with Post ID, permalink, and timestamp. No fabricated evidence reported."
+    },
+    {
+      "at": "2026-08-24T17:00:03+05:30",
+      "status": "WORKING",
+      "task": "Before asking me for Instagram credentials again, audit the existing Instagram credential configuration and previous Instagram API test history. Do NOT expose or print any secret/token value. Check GitHub Actions secrets/environment mappings, runtime environment variable names, previous successful test logs/commits, and Telegram executor environment. Determine why IG_ACCESS_TOKEN and IG_USER_ID are unavailable now if Instagram credentials were configured/tested earlier. Report only secret names, presence/missing status, where they are expected to be injected, previous test evidence, and the exact root cause. Do not create or request new credentials until this audit is complete.",
+      "engine": "selecting",
+      "result": null
+    },
+    {
+      "at": "2026-08-24T17:00:04+05:30",
+      "status": "WORKING",
+      "task": "Auditing Instagram credential configuration and test history to determine why IG_ACCESS_TOKEN and IG_USER_ID are currently unavailable despite prior setup.",
+      "engine": "bedrock-qwen",
+      "result": null
+    },
+    {
+      "at": "2026-08-24T17:00:04+05:30",
+      "status": "FAILED_ROLLED_BACK",
+      "task": "Auditing Instagram credential configuration and test history to determine why IG_ACCESS_TOKEN and IG_USER_ID are currently unavailable despite prior setup.",
+      "engine": "bedrock-qwen",
+      "result": "Instagram credential audit in progress. Will report secret presence/absence status, injection points, test history, and root cause — no new credentials requested yet."
     }
   ]
 }
