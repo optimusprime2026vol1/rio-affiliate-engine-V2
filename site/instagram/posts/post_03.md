@@ -1,17 +1,14 @@
-# Smart Storage for Small Spaces 🏠✨
+# 🛠️ Storage That *Actually* Fits Your Workspace
 
-Tired of cluttered workspaces? Here’s a game-changer for Indian home offices & compact interiors:
+Tight on space? This 3-tier rolling storage cart (₹1,499) slides under desks, fits in corners, and holds tools, spares, and supplies—*without* cluttering your studio.
 
-✅ **3-Tier Rolling Storage Cart** — ₹1,499
-- Rust-proof steel frame
-- Smooth-rolling castors (lockable)
-- Fits under desks & in corners
-- Holds 25 kg total load
+✅ Adjustable shelves  
+✅ Smooth-rolling castors  
+✅ Steel frame, rust-resistant  
+✅ 15 kg load capacity
 
-📸 Swipe to see real measurements & setup in a 10×10 ft studio flat 📏
+👉 Tap to see real measurements & Indian pricing: [Check Availability & Specs](https://www.amazon.in/dp/B09XJZ7Y2M?tag=rioaffiliate-21)
 
-🔗 [Verified Amazon Link] (rioaffiliate-21)
+*Note: As an Amazon Associate, I earn from qualifying purchases. Full disclosure & verification notes in bio.*
 
-⚠️ *Affiliate disclosure: Earns small commission at no extra cost to you. We only recommend products we’ve verified.*
-
-👇 Comment ‘CART’ if you want a full comparison of 5 similar carts we tested!
+#InteriorDesignIndia #HomeOfficeSetup #StorageSolution #RIOVerified
