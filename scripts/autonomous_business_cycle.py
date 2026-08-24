@@ -7,7 +7,7 @@ from telegram_chat import call_llm
 from rio_autonomous_executor import execute as execute_plan
 from rio_work_dashboard import record
 
-ROOT=Path(__file__).resolve().parents[1]; WORK=ROOT/'data/rio_work_status.json'; SNAPSHOT=ROOT/'data/dashboard_snapshot.json'; STATUS=ROOT/'data/status.json'; CONTROL=ROOT/'data/control.json'; AUDIT=ROOT/'data/autonomy_audit.jsonl'
+ROOT=Path(__file__).resolve().parents[1]; WORK=ROOT/'data/rio_work_status.json'; SNAPSHOT=ROOT/'data/dashboard_snapshot.json'; STATUS=ROOT/'data/status.json'; CONTROL=ROOT/'data/control.json'; AUDIT=ROOT/'data/autonomy_audit.jsonl'; SOUL_STATUS=ROOT/'data/soul_runtime_status.json'
 IST=timezone(timedelta(hours=5,minutes=30)); BOT=(os.environ.get('TELEGRAM_BOT_TOKEN_RIO') or '').strip(); CHAT=(os.environ.get('TELEGRAM_CHAT_ID_RIO') or '').strip()
 PILLARS={1:'website development/conversion/SEO',2:'new affiliate networks and product opportunities',3:'AdSense readiness and monetization',4:'product-led blog/content',5:'Flipkart or other commerce/platform expansion',6:'Instagram sales/content execution'}
 
@@ -23,6 +23,11 @@ def paused(control):
         if until.tzinfo is None:until=until.replace(tzinfo=IST)
         return datetime.now(IST)<until.astimezone(IST)
     except Exception:return False
+
+def soul_gate():
+    soul=jload(SOUL_STATUS,{})
+    required=(soul.get('valid') is True and soul.get('checks',{}).get('soul_present') is True and soul.get('checks',{}).get('objective_present') is True and soul.get('checks',{}).get('memory_present') is True and soul.get('checks',{}).get('lead_ai_declared') is True)
+    return required,soul
 
 def tail_audit(n=6):
     try:return [json.loads(x) for x in AUDIT.read_text(encoding='utf-8').splitlines()[-n:] if x.strip()]
@@ -61,12 +66,17 @@ def main():
     if control.get('kill_switch') or health.get('all_validators_pass') is not True:return 0
     if paused(control):
         print('[autonomous_cycle] maintenance pause active until',control.get('maintenance_pause_until'));return 0
+    soul_ok,soul=soul_gate()
+    if not soul_ok:
+        reason='SOUL_SOFT_GATE: autonomous business execution withheld because portable Soul runtime is missing/invalid or not bound to Objective, memory, and Lead AI.'
+        record('WAITING',current_task='Soul runtime integrity gate',engine='soul-gate',validators='SOUL_INVALID',result=reason,next_task=memory.get('next_task'),blocker=reason,founder_action_needed=False)
+        print('[autonomous_cycle]',reason,'checks=',json.dumps(soul.get('checks') or {}));return 0
     if memory.get('status')=='WORKING':return 0
     if memory.get('founder_action_needed') or memory.get('status') in {'BLOCKED','VICKY_ACTION_REQUIRED'}:return 0
     done=completed(memory);rp=recent_pillars(memory);counts={p:rp.count(p) for p in PILLARS};lastp=rp[-1] if rp else None;forced_rotate=len(rp)>=2 and rp[-1] is not None and rp[-1]==rp[-2];eligible=[p for p in PILLARS if not(forced_rotate and p==lastp)];min_count=min(counts[p] for p in eligible);priority=[p for p in eligible if counts[p]==min_count]
-    context={'status':memory.get('status','IDLE'),'last_completed':memory.get('last_completed'),'last_result':memory.get('last_result'),'next_task':memory.get('next_task'),'changed_files':memory.get('changed_files') or [],'recent_completed_task_keys':done,'recent_pillars':rp,'pillar_counts_recent':counts,'rotation_priority_pillars':priority,'forced_rotate_away_from':lastp if forced_rotate else None,'recent_history':(memory.get('history') or [])[-14:],'recent_audit':tail_audit(),'business_snapshot':{k:snap.get(k,0) for k in ['ready_offers','blocked_offers','content_items','revenue_inr','net_profit_inr','instagram_posted']}}
-    rules=("AUTONOMOUS PHASE-2 PORTFOLIO CYCLE. Continue persistent memory and choose EXACTLY ONE safe repository task. Six locked pillars are: "+json.dumps(PILLARS)+". Apply scheduling: external waits are WAITING; no repeated/substantially cloned deliverables; max TWO consecutive tasks per pillar then rotate; prefer least-used pillars; max TWO deliverables per product/campaign before switching until new evidence; prioritize expected revenue impact x readiness x evidence; maintain parallel progress; Founder-only gates remain protected. If no safe independent task exists respond WAITING_EXTERNAL:. founder_message must state PILLAR:<1-6>, task, why, changes, NEXT_TASK:. Memory:\n"+json.dumps(context,ensure_ascii=False))
-    record('WORKING',current_task=memory.get('next_task') or 'Selecting diversified Phase-2 task.',engine='selecting',validators='PRECHECK_PASS',founder_action_needed=False);plan,engine=call_llm([],rules);summary=(plan.get('founder_message') or plan.get('summary') or '').strip()
+    context={'soul_runtime':'VALID_SOFT_GATE','status':memory.get('status','IDLE'),'last_completed':memory.get('last_completed'),'last_result':memory.get('last_result'),'next_task':memory.get('next_task'),'changed_files':memory.get('changed_files') or [],'recent_completed_task_keys':done,'recent_pillars':rp,'pillar_counts_recent':counts,'rotation_priority_pillars':priority,'forced_rotate_away_from':lastp if forced_rotate else None,'recent_history':(memory.get('history') or [])[-14:],'recent_audit':tail_audit(),'business_snapshot':{k:snap.get(k,0) for k in ['ready_offers','blocked_offers','content_items','revenue_inr','net_profit_inr','instagram_posted']}}
+    rules=("AUTONOMOUS PHASE-2 PORTFOLIO CYCLE. Portable Soul runtime has passed the execution precheck. Continue persistent memory and choose EXACTLY ONE safe repository task. Six locked pillars are: "+json.dumps(PILLARS)+". Apply scheduling: external waits are WAITING; no repeated/substantially cloned deliverables; max TWO consecutive tasks per pillar then rotate; prefer least-used pillars; max TWO deliverables per product/campaign before switching until new evidence; prioritize expected revenue impact x readiness x evidence; maintain parallel progress; Founder-only gates remain protected. If no safe independent task exists respond WAITING_EXTERNAL:. founder_message must state PILLAR:<1-6>, task, why, changes, NEXT_TASK:. Memory:\n"+json.dumps(context,ensure_ascii=False))
+    record('WORKING',current_task=memory.get('next_task') or 'Selecting diversified Phase-2 task.',engine='selecting',validators='PRECHECK_PASS+SOUL_PASS',founder_action_needed=False);plan,engine=call_llm([],rules);summary=(plan.get('founder_message') or plan.get('summary') or '').strip()
     if plan.get('intent')!='execute':
         if summary.upper().startswith('WAITING_EXTERNAL:'):record('WAITING',current_task=memory.get('next_task') or 'Waiting for external evidence',engine=engine,validators='NOT_RUN',result=summary,next_task=memory.get('next_task'),blocker=None,founder_action_needed=False);return 0
         record('VICKY_ACTION_REQUIRED',current_task=memory.get('next_task') or 'Autonomous continuation',engine=engine,validators='NOT_RUN',result=summary or 'No executable safe task.',blocker=summary,founder_action_needed=True);notify('⚠️ RIO FOUNDER ACTION REQUIRED\n'+summary[:3000]);return 0
