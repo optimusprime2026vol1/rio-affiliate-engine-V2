@@ -2,7 +2,7 @@
   "mode": "hard_fail_closed",
   "hard_fail_closed": true,
   "project_binding": "RIO",
-  "action": "guarded_repository_mutation",
+  "action": "heartbeat_runtime_binding",
   "valid": true,
   "checks": {
     "soul_present": true,
@@ -33,5 +33,5 @@
   "validators_currently_healthy": true,
   "execution_effect": "ALLOWED",
   "diagnostics_allowed": true,
-  "checked_at": "2026-08-25T01:30:40+05:30"
+  "checked_at": "2026-08-25T02:09:47+05:30"
 }

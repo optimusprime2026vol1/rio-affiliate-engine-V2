@@ -1,34 +1,20 @@
 {
-  "status": "COMPLETED",
-  "current_task": "Rotate to pillar 6 (Instagram) and publish post #4 for verified 3-tier rolling cart — pillar 6 has equal recent usage but is next in rotation priority after pillar 1 completion.",
-  "started_at": "2026-08-25T01:30:37+05:30",
-  "updated_at": "2026-08-25T01:30:40+05:30",
+  "status": "WAITING",
+  "current_task": "Run post-publish validators for Instagram post #4 and update persistent work state before rotating to next pillar.",
+  "started_at": "2026-08-25T02:09:47+05:30",
+  "updated_at": "2026-08-25T02:09:57+05:30",
   "ai_engine": "bedrock-qwen",
   "last_completed": "Rotate to pillar 6 (Instagram) and publish post #4 for verified 3-tier rolling cart — pillar 6 has equal recent usage but is next in rotation priority after pillar 1 completion.",
-  "last_result": "PILLAR:6, task: Publish Instagram post #4 for verified 3-tier rolling cart (faceless/voiceover format, Indian interior designer use case), why: Pillar 1 (website) just completed; pillar 6 has equal recent usage but is next in rotation priority; verified product + Indian-context content drives qualified traffic and conversions; changes: writes structured Instagram post draft to `site/instagram/content/2026-08-25-post4-3tier-cart.md` with hook, visual cues, Indian pricing, disclosure, and CTA; updates `data/instagram_content_queue.json` with scheduled status; NEXT_TASK: After validator pass, run `scripts/validate_dashboard.py`, update `data/rio_work_status.json`, and rotate to next highest-impact pillar (priority: pillar 2 or 4).",
+  "last_result": "PORTFOLIO_GUARD: repeated task/pillar concentration suppressed; next cycle must rotate.",
   "changed_files": [
     "site/instagram/content/2026-08-25-post4-3tier-cart.md",
     "data/instagram_content_queue.json"
   ],
-  "validators": "PASS",
-  "next_task": "After validator pass, run `scripts/validate_dashboard.py`, update `data/rio_work_status.json`, and rotate to next highest-impact pillar (priority: pillar 2 or 4).",
+  "validators": "NOT_RUN",
+  "next_task": "Choose an independent task from a least-used eligible Phase-2 pillar.",
   "blocker": null,
   "founder_action_needed": false,
   "history": [
-    {
-      "at": "2026-08-24T20:54:56+05:30",
-      "status": "WORKING",
-      "task": "Rotate to least-used pillar 1: update website SEO metadata for verified 3-tier rolling cart page to improve discoverability and conversion readiness.",
-      "engine": "bedrock-qwen",
-      "result": null
-    },
-    {
-      "at": "2026-08-24T20:54:56+05:30",
-      "status": "COMPLETED",
-      "task": "Rotate to least-used pillar 1: update website SEO metadata for verified 3-tier rolling cart page to improve discoverability and conversion readiness.",
-      "engine": "bedrock-qwen",
-      "result": "PILLAR:1, task: Update SEO metadata and content for verified 3-tier rolling cart product page, why: Pillar 1 (website/SEO) has 0 recent tasks; this page is ready for verified product and will improve organic discoverability and conversion readiness; changes: writes structured product page to `site/products/3-tier-rolling-cart/index.md` with verified specs, Indian-context use cases, and disclosure; NEXT_TASK: After validator pass, run `scripts/validate_dashboard.py` and update `data/rio_work_status.json` with completion and next pillar (priority: 2 or 5)."
-    },
     {
       "at": "2026-08-24T22:20:41+05:30",
       "status": "WORKING",
@@ -154,6 +140,20 @@
       "task": "Rotate to pillar 6 (Instagram) and publish post #4 for verified 3-tier rolling cart — pillar 6 has equal recent usage but is next in rotation priority after pillar 1 completion.",
       "engine": "bedrock-qwen",
       "result": "PILLAR:6, task: Publish Instagram post #4 for verified 3-tier rolling cart (faceless/voiceover format, Indian interior designer use case), why: Pillar 1 (website) just completed; pillar 6 has equal recent usage but is next in rotation priority; verified product + Indian-context content drives qualified traffic and conversions; changes: writes structured Instagram post draft to `site/instagram/content/2026-08-25-post4-3tier-cart.md` with hook, visual cues, Indian pricing, disclosure, and CTA; updates `data/instagram_content_queue.json` with scheduled status; NEXT_TASK: After validator pass, run `scripts/validate_dashboard.py`, update `data/rio_work_status.json`, and rotate to next highest-impact pillar (priority: pillar 2 or 4)."
+    },
+    {
+      "at": "2026-08-25T02:09:47+05:30",
+      "status": "WORKING",
+      "task": "After validator pass, run `scripts/validate_dashboard.py`, update `data/rio_work_status.json`, and rotate to next highest-impact pillar (priority: pillar 2 or 4).",
+      "engine": "selecting",
+      "result": null
+    },
+    {
+      "at": "2026-08-25T02:09:57+05:30",
+      "status": "WAITING",
+      "task": "Run post-publish validators for Instagram post #4 and update persistent work state before rotating to next pillar.",
+      "engine": "bedrock-qwen",
+      "result": "PORTFOLIO_GUARD: repeated task/pillar concentration suppressed; next cycle must rotate."
     }
   ]
 }
