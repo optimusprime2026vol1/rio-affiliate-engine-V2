@@ -1,38 +1,17 @@
 {
-  "status": "COMPLETED",
-  "current_task": "Instagram post visibility timing depends on platform algorithm behavior—not posting time—but RIO can execute the highest-impact verified post *today* if content is ready.",
-  "started_at": "2026-08-24T18:18:55+05:30",
-  "updated_at": "2026-08-24T18:18:57+05:30",
+  "status": "FAILED_ROLLED_BACK",
+  "current_task": "Continuing autonomous Phase-2 business cycle: reading persistent state, selecting highest-impact safe task, executing, validating, and persisting result.",
+  "started_at": "2026-08-24T18:20:28+05:30",
+  "updated_at": "2026-08-24T18:20:44+05:30",
   "ai_engine": "bedrock-qwen",
   "last_completed": "Instagram post visibility timing depends on platform algorithm behavior—not posting time—but RIO can execute the highest-impact verified post *today* if content is ready.",
-  "last_result": "Instagram post visibility is algorithm-driven: it may appear instantly to a small test audience, then scale organically if engagement is strong. There is no guaranteed 'time to appear'—but once published, it can begin reaching users within seconds to minutes.\n\nRIO's current priority is to publish the *most potential post* from the verified content pipeline. To move forward:\n\n1. RIO has already identified candidate posts based on engagement potential, product relevance, and alignment with Phase-2 pillars.\n2. Before publishing, RIO must confirm:\n   - The post passes all Instagram safety/compliance validators (no unverified claims, proper disclosures, image integrity).\n   - The post uses verified product data (price, ASIN, link) from live sources.\n3. If all validators pass, RIO can publish *immediately* via the Founder-approved Instagram workflow.\n\nWould you like RIO to:\n- ✅ Proceed now with the top-potential verified post (if ready in `data/`)?\n- 🔍 Re-run discovery + verification on new high-potential candidates?\n- 📊 Review current top 3 candidates and their engagement metrics first?\n\nNote: RIO never fabricates engagement projections or timing guarantees. Real visibility depends on Instagram’s algorithm, audience behavior, and content resonance.\n\nAI: bedrock-qwen",
+  "last_result": "RIO is starting autonomous Phase-2 business cycle. Reading persistent state to continue from last completed task and select next highest-impact work.",
   "changed_files": [],
-  "validators": "N/A",
+  "validators": "FAILED",
   "next_task": "Choose highest-impact safe next task from locked Phase-2 objective.",
-  "blocker": null,
+  "blocker": "operation not allowed: read_json",
   "founder_action_needed": false,
   "history": [
-    {
-      "at": "2026-08-24T17:56:31+05:30",
-      "status": "WORKING",
-      "task": "Checking Instagram posting status and identifying the delay cause",
-      "engine": "bedrock-qwen",
-      "result": null
-    },
-    {
-      "at": "2026-08-24T17:56:31+05:30",
-      "status": "COMPLETED",
-      "task": "Checking Instagram posting status and identifying the delay cause",
-      "engine": "bedrock-qwen",
-      "result": "Checking Instagram posting status and identifying the delay cause\n\nAI: bedrock-qwen"
-    },
-    {
-      "at": "2026-08-24T17:58:19+05:30",
-      "status": "WORKING",
-      "task": "Will update me automatically or I'll ask with you again?",
-      "engine": "selecting",
-      "result": null
-    },
     {
       "at": "2026-08-24T17:58:21+05:30",
       "status": "WORKING",
@@ -151,6 +130,27 @@
       "task": "Instagram post visibility timing depends on platform algorithm behavior—not posting time—but RIO can execute the highest-impact verified post *today* if content is ready.",
       "engine": "bedrock-qwen",
       "result": "Instagram post visibility is algorithm-driven: it may appear instantly to a small test audience, then scale organically if engagement is strong. There is no guaranteed 'time to appear'—but once published, it can begin reaching users within seconds to minutes.\n\nRIO's current priority is to publish the *most potential post* from the verified content pipeline. To move forward:\n\n1. RIO has already identified candidate posts based on engagement potential, product relevance, and alignment with Phase-2 pillars.\n2. Before publishing, RIO must confirm:\n   - The post passes all Instagram safety/compliance validators (no unverified claims, proper disclosures, image integrity).\n   - The post uses verified product data (price, ASIN, link) from live sources.\n3. If all validators pass, RIO can publish *immediately* via the Founder-approved Instagram workflow.\n\nWould you like RIO to:\n- ✅ Proceed now with the top-potential verified post (if ready in `data/`)?\n- 🔍 Re-run discovery + verification on new high-potential candidates?\n- 📊 Review current top 3 candidates and their engagement metrics first?\n\nNote: RIO never fabricates engagement projections or timing guarantees. Real visibility depends on Instagram’s algorithm, audience behavior, and content resonance.\n\nAI: bedrock-qwen"
+    },
+    {
+      "at": "2026-08-24T18:20:28+05:30",
+      "status": "WORKING",
+      "task": "Yes proceed now",
+      "engine": "selecting",
+      "result": null
+    },
+    {
+      "at": "2026-08-24T18:20:44+05:30",
+      "status": "WORKING",
+      "task": "Continuing autonomous Phase-2 business cycle: reading persistent state, selecting highest-impact safe task, executing, validating, and persisting result.",
+      "engine": "bedrock-qwen",
+      "result": null
+    },
+    {
+      "at": "2026-08-24T18:20:44+05:30",
+      "status": "FAILED_ROLLED_BACK",
+      "task": "Continuing autonomous Phase-2 business cycle: reading persistent state, selecting highest-impact safe task, executing, validating, and persisting result.",
+      "engine": "bedrock-qwen",
+      "result": "RIO is starting autonomous Phase-2 business cycle. Reading persistent state to continue from last completed task and select next highest-impact work."
     }
   ]
 }
