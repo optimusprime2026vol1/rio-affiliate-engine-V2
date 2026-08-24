@@ -1,11 +1,11 @@
 {
- "updated": "2026-08-24T22:20+05:30",
+ "updated": "2026-08-24T22:48+05:30",
  "kill_switch": false,
  "dashboard_regenerated": true,
  "validators": {
   "production_live": {
    "pass": true,
-   "detail": "PRODUCTION HEALTH GATE: PASS\n{\"checked_at\": \"2026-08-24T22:20:41+05:30\", \"base_url\": \"https://vickykenin-lang.github.io/rio-affiliate-engine\", \"verified\": true, \"checks\": {\"homepage_200\": true, \"disclosure_present\": true, \"affiliate_offer_page_200\": true, \"affiliate_tag_present\": true, \"sitemap_200\": true, \"sitemap_absolute_urls\": true, \"social_card_200\": true}, \"responses\": {\"homepage\": {\"status\": 200, \"url\": \"https://vickykenin-lang.github.io/rio-affiliate-engine/\", \"error\": null}, \"affiliate_offer_page\": {\"status\": 200, \"url\": \"https://vickykenin-lang.github.io/rio-affiliate-engine/articles/best-bathroom-storage-organizers-india.html\", \"error\": null}, \"sitemap\": {\"status\": 200, \"url\": \"https://vickykenin-lang.github.io/rio-affiliate-engine/sitemap.xml\", \"error\": null}, \"social_card\": {\"status\": 200, \"url\": \"https://vickykenin-lang.github.io/rio-affiliate-engine/social/UNDER_SINK_001.png\", \"content_type\": \"image/png\", \"error\": null}}}"
+   "detail": "PRODUCTION HEALTH GATE: PASS\n{\"checked_at\": \"2026-08-24T22:49:00+05:30\", \"base_url\": \"https://vickykenin-lang.github.io/rio-affiliate-engine\", \"verified\": true, \"checks\": {\"homepage_200\": true, \"disclosure_present\": true, \"affiliate_offer_page_200\": true, \"affiliate_tag_present\": true, \"sitemap_200\": true, \"sitemap_absolute_urls\": true, \"social_card_200\": true}, \"responses\": {\"homepage\": {\"status\": 200, \"url\": \"https://vickykenin-lang.github.io/rio-affiliate-engine/\", \"error\": null}, \"affiliate_offer_page\": {\"status\": 200, \"url\": \"https://vickykenin-lang.github.io/rio-affiliate-engine/articles/best-bathroom-storage-organizers-india.html\", \"error\": null}, \"sitemap\": {\"status\": 200, \"url\": \"https://vickykenin-lang.github.io/rio-affiliate-engine/sitemap.xml\", \"error\": null}, \"social_card\": {\"status\": 200, \"url\": \"https://vickykenin-lang.github.io/rio-affiliate-engine/social/UNDER_SINK_001.png\", \"content_type\": \"image/png\", \"error\": null}}}"
   },
   "offer_integrity": {
    "pass": true,
@@ -51,10 +51,14 @@
   "bedrock-glm"
  ],
  "soul_runtime": {
-  "mode": "compatibility_observe",
+  "mode": "hard_fail_closed",
   "valid": true,
-  "hard_fail_closed": false,
-  "soul_sha256": "19ae2d0f81e29c549df877fba64ecd48e92907a02548c8227df68b72c572214c",
-  "execution_effect": "NONE"
+  "hard_fail_closed": true,
+  "soul_sha256": "21fc6b43b0ce1faff20664f62458f335637fb0d229dc82ef32790289806a2b83",
+  "objective_sha256": "f97d24f408066e9c92fd013cde65b05588cc4ab1fb8256d55f7bf3a4232a9a4a",
+  "authority_policy_sha256": "20b0a2428bca6d2d28a67a71b673579b536d8734071cfea91bc69d0b6146cc5a",
+  "failed_checks": [],
+  "execution_effect": "ALLOWED",
+  "checked_at": "2026-08-24T22:49:06+05:30"
  }
 }

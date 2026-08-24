@@ -1,19 +1,29 @@
 {
-  "mode": "compatibility_observe",
-  "hard_fail_closed": false,
+  "mode": "hard_fail_closed",
+  "hard_fail_closed": true,
   "project_binding": "RIO",
+  "action": "guarded_repository_mutation",
   "valid": true,
   "checks": {
     "soul_present": true,
     "soul_contract_markers": true,
     "objective_present": true,
+    "objective_lock_markers": true,
+    "authority_policy_present": true,
+    "authority_policy_markers": true,
     "memory_present": true,
     "heartbeat_status_present": true,
     "lead_ai_declared": true,
-    "validators_declared": true
+    "validators_declared": true,
+    "validators_healthy": true,
+    "kill_switch_clear": true
   },
-  "soul_sha256": "19ae2d0f81e29c549df877fba64ecd48e92907a02548c8227df68b72c572214c",
+  "failed_checks": [],
+  "soul_sha256": "21fc6b43b0ce1faff20664f62458f335637fb0d229dc82ef32790289806a2b83",
+  "objective_sha256": "f97d24f408066e9c92fd013cde65b05588cc4ab1fb8256d55f7bf3a4232a9a4a",
+  "authority_policy_sha256": "20b0a2428bca6d2d28a67a71b673579b536d8734071cfea91bc69d0b6146cc5a",
   "objective_path": "data/RIO_3.0_DEFINITION.md",
+  "authority_policy_path": "data/AUTONOMY_POLICY.md",
   "memory_path": "data/rio_work_status.json",
   "lead_ai": "bedrock-qwen",
   "fallbacks": [
@@ -21,5 +31,7 @@
     "bedrock-glm"
   ],
   "validators_currently_healthy": true,
-  "execution_effect": "NONE — observe-only; existing RIO gates remain authoritative"
+  "execution_effect": "ALLOWED",
+  "diagnostics_allowed": true,
+  "checked_at": "2026-08-24T22:49:06+05:30"
 }
