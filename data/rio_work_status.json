@@ -1,38 +1,17 @@
 {
   "status": "FAILED_ROLLED_BACK",
-  "current_task": "Rotate to Pillar 1 (Website development/conversion/SEO) — now least-used pillar (0 recent completed tasks); improve product discovery for verified 3-tier rolling cart by updating product page metadata and internal linking to boost SEO and conversion readiness.",
-  "started_at": "2026-08-25T19:51:37+05:30",
-  "updated_at": "2026-08-25T19:51:49+05:30",
+  "current_task": "Rotate to Pillar 4 (product-led blog/content) — now least-used pillar (0 recent completed tasks); create verified, evidence-based buying guide for 3-tier rolling cart targeting Indian interior designers and small offices.",
+  "started_at": "2026-08-25T20:01:15+05:30",
+  "updated_at": "2026-08-25T20:01:23+05:30",
   "ai_engine": "bedrock-qwen",
   "last_completed": "Create mandatory AdSense policy pages (privacy, about, contact, terms) to unblock AdSense readiness — highest-impact safe task since Pillar 3 assessment identified missing pages as the sole blocker.",
-  "last_result": "PILLAR:1, task: Improve product discovery for verified 3-tier rolling cart by updating metadata and internal linking, why: Pillar 1 has 0 recent completed tasks; this directly supports ₹10,00,000/month objective by boosting SEO and conversion readiness for a high-intent product; changes: writes `data/website_optimization_state.json` and updates `site/products/3-tier-rolling-cart.md` with SEO-optimized content, structured data hints, and disclosure; NEXT_TASK: After validator pass, commit changes and propose next pillar (2, 4–6) for rotation.",
+  "last_result": "PILLAR:4, task: Create verified buying guide for 3-tier rolling cart (Indian interior designers & small offices), why: Pillar 4 has 0 recent completed tasks; this directly supports ₹10,00,000/month objective by creating high-intent, SEO-friendly product-led content that drives qualified traffic and conversions; changes: writes `data/content_publishing_state.json` and `site/products/buying-guide-3-tier-rolling-cart.md` with verified specs, real use cases, and disclosure; NEXT_TASK: After validator pass, commit changes and propose next pillar (2, 5–6) for rotation.",
   "changed_files": [],
   "validators": "FAIL",
   "next_task": "Re-run AdSense readiness validator; if passed, propose next pillar (1, 2, 4–6) for rotation.",
-  "blocker": "empty/null JSON artifact rejected: data/website_optimization_state.json",
+  "blocker": "empty/null JSON artifact rejected: data/content_publishing_state.json",
   "founder_action_needed": false,
   "history": [
-    {
-      "at": "2026-08-25T16:01:41+05:30",
-      "status": "WORKING",
-      "task": "Rotate to Pillar 1 (Website development/conversion/SEO) — least-used pillar with 0 recent completed tasks; improve product discovery for verified 3-tier rolling cart by updating product page metadata and internal linking.",
-      "engine": "bedrock-qwen",
-      "result": null
-    },
-    {
-      "at": "2026-08-25T16:01:41+05:30",
-      "status": "FAILED_ROLLED_BACK",
-      "task": "Rotate to Pillar 1 (Website development/conversion/SEO) — least-used pillar with 0 recent completed tasks; improve product discovery for verified 3-tier rolling cart by updating product page metadata and internal linking.",
-      "engine": "bedrock-qwen",
-      "result": "PILLAR:1, task: Optimize product-page metadata and internal linking for verified 3-tier rolling cart to improve discovery and conversion for Indian interior designers & SOHO professionals, why: Pillar 1 has 0 recent completed tasks; this directly supports ₹10,00,000/month objective by improving organic visibility and conversion for a high-intent verified product; changes: writes structured state to `data/website_optimization_state.json`, updates `site/products/rolling-cart-3-tier.md`, and adds internal links; NEXT_TASK: After validator pass, update `data/rio_work_status.json`, and propose next pillar (2–6) for rotation."
-    },
-    {
-      "at": "2026-08-25T16:32:13+05:30",
-      "status": "WORKING",
-      "task": "Choose highest-impact safe next task from locked Phase-2 objective.",
-      "engine": "selecting",
-      "result": null
-    },
     {
       "at": "2026-08-25T16:32:22+05:30",
       "status": "WORKING",
@@ -151,6 +130,27 @@
       "task": "Rotate to Pillar 1 (Website development/conversion/SEO) — now least-used pillar (0 recent completed tasks); improve product discovery for verified 3-tier rolling cart by updating product page metadata and internal linking to boost SEO and conversion readiness.",
       "engine": "bedrock-qwen",
       "result": "PILLAR:1, task: Improve product discovery for verified 3-tier rolling cart by updating metadata and internal linking, why: Pillar 1 has 0 recent completed tasks; this directly supports ₹10,00,000/month objective by boosting SEO and conversion readiness for a high-intent product; changes: writes `data/website_optimization_state.json` and updates `site/products/3-tier-rolling-cart.md` with SEO-optimized content, structured data hints, and disclosure; NEXT_TASK: After validator pass, commit changes and propose next pillar (2, 4–6) for rotation."
+    },
+    {
+      "at": "2026-08-25T20:01:15+05:30",
+      "status": "WORKING",
+      "task": "Re-run AdSense readiness validator; if passed, propose next pillar (1, 2, 4–6) for rotation.",
+      "engine": "selecting",
+      "result": null
+    },
+    {
+      "at": "2026-08-25T20:01:23+05:30",
+      "status": "WORKING",
+      "task": "Rotate to Pillar 4 (product-led blog/content) — now least-used pillar (0 recent completed tasks); create verified, evidence-based buying guide for 3-tier rolling cart targeting Indian interior designers and small offices.",
+      "engine": "bedrock-qwen",
+      "result": null
+    },
+    {
+      "at": "2026-08-25T20:01:23+05:30",
+      "status": "FAILED_ROLLED_BACK",
+      "task": "Rotate to Pillar 4 (product-led blog/content) — now least-used pillar (0 recent completed tasks); create verified, evidence-based buying guide for 3-tier rolling cart targeting Indian interior designers and small offices.",
+      "engine": "bedrock-qwen",
+      "result": "PILLAR:4, task: Create verified buying guide for 3-tier rolling cart (Indian interior designers & small offices), why: Pillar 4 has 0 recent completed tasks; this directly supports ₹10,00,000/month objective by creating high-intent, SEO-friendly product-led content that drives qualified traffic and conversions; changes: writes `data/content_publishing_state.json` and `site/products/buying-guide-3-tier-rolling-cart.md` with verified specs, real use cases, and disclosure; NEXT_TASK: After validator pass, commit changes and propose next pillar (2, 5–6) for rotation."
     }
   ]
 }
