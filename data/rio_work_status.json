@@ -1,38 +1,17 @@
 {
   "status": "FAILED_ROLLED_BACK",
-  "current_task": "Rotate to Pillar 4 (product-led blog/content) — now least-used pillar (0 recent completed tasks); create verified, evidence-based buying guide for 3-tier rolling cart targeting Indian interior designers and small offices.",
-  "started_at": "2026-08-25T20:01:15+05:30",
-  "updated_at": "2026-08-25T20:01:23+05:30",
+  "current_task": "Rotate to Pillar 5 (Flipkart/other commerce platforms) — now least-used pillar (0 recent completed tasks); evaluate Flipkart Affiliate Program for RIO's audience fit and integration readiness.",
+  "started_at": "2026-08-25T20:54:01+05:30",
+  "updated_at": "2026-08-25T20:54:14+05:30",
   "ai_engine": "bedrock-qwen",
   "last_completed": "Create mandatory AdSense policy pages (privacy, about, contact, terms) to unblock AdSense readiness — highest-impact safe task since Pillar 3 assessment identified missing pages as the sole blocker.",
-  "last_result": "PILLAR:4, task: Create verified buying guide for 3-tier rolling cart (Indian interior designers & small offices), why: Pillar 4 has 0 recent completed tasks; this directly supports ₹10,00,000/month objective by creating high-intent, SEO-friendly product-led content that drives qualified traffic and conversions; changes: writes `data/content_publishing_state.json` and `site/products/buying-guide-3-tier-rolling-cart.md` with verified specs, real use cases, and disclosure; NEXT_TASK: After validator pass, commit changes and propose next pillar (2, 5–6) for rotation.",
+  "last_result": "PILLAR:5, task: Evaluate Flipkart Affiliate Program for RIO — audience fit, integration readiness, commercial potential, blockers, and autonomous prep steps, why: Pillar 5 has 0 recent completed tasks; Flipkart is a high-potential Indian commerce platform for RIO's audience (interior designers, contractors, small offices); this directly supports ₹10,00,000/month objective by adding a third monetisation mechanism with strong category alignment; changes: writes `data/flipkart_affiliate_discovery.json` with full assessment and prep roadmap; NEXT_TASK: After Founder unlocks Flipkart account, build Flipkart feed template, content-integration pattern, and validation logic autonomously.",
   "changed_files": [],
   "validators": "FAIL",
   "next_task": "Re-run AdSense readiness validator; if passed, propose next pillar (1, 2, 4–6) for rotation.",
-  "blocker": "empty/null JSON artifact rejected: data/content_publishing_state.json",
+  "blocker": "empty/null JSON artifact rejected: data/flipkart_affiliate_discovery.json",
   "founder_action_needed": false,
   "history": [
-    {
-      "at": "2026-08-25T16:32:22+05:30",
-      "status": "WORKING",
-      "task": "Rotate to Pillar 6 (Instagram sales/content execution) — least-used pillar with only 1 recent completed task; create verified Instagram content for a high-intent product (3-tier rolling cart) using Founder-approved policy, live offer check, and compliance guardrails.",
-      "engine": "bedrock-qwen",
-      "result": null
-    },
-    {
-      "at": "2026-08-25T16:32:22+05:30",
-      "status": "FAILED_ROLLED_BACK",
-      "task": "Rotate to Pillar 6 (Instagram sales/content execution) — least-used pillar with only 1 recent completed task; create verified Instagram content for a high-intent product (3-tier rolling cart) using Founder-approved policy, live offer check, and compliance guardrails.",
-      "engine": "bedrock-qwen",
-      "result": "PILLAR:6, task: Create verified Instagram carousel content for 3-tier rolling cart (ASIN: B0CZQYJH2M) using problem-solution format, live offer check, and Founder-approved compliance guardrails, why: Pillar 6 has only 1 recent completed task; this directly supports ₹10,00,000/month objective by driving qualified traffic and conversion from Instagram; changes: writes structured state to `data/instagram_content_state.json` and full draft to `site/instagram/content/2026-08-25-3tier-cart-carousel.md`; NEXT_TASK: After validator pass, update `data/rio_work_status.json`, and propose next pillar (1–5) for rotation."
-    },
-    {
-      "at": "2026-08-25T17:06:41+05:30",
-      "status": "WORKING",
-      "task": "Choose highest-impact safe next task from locked Phase-2 objective.",
-      "engine": "selecting",
-      "result": null
-    },
     {
       "at": "2026-08-25T17:06:51+05:30",
       "status": "WORKING",
@@ -151,6 +130,27 @@
       "task": "Rotate to Pillar 4 (product-led blog/content) — now least-used pillar (0 recent completed tasks); create verified, evidence-based buying guide for 3-tier rolling cart targeting Indian interior designers and small offices.",
       "engine": "bedrock-qwen",
       "result": "PILLAR:4, task: Create verified buying guide for 3-tier rolling cart (Indian interior designers & small offices), why: Pillar 4 has 0 recent completed tasks; this directly supports ₹10,00,000/month objective by creating high-intent, SEO-friendly product-led content that drives qualified traffic and conversions; changes: writes `data/content_publishing_state.json` and `site/products/buying-guide-3-tier-rolling-cart.md` with verified specs, real use cases, and disclosure; NEXT_TASK: After validator pass, commit changes and propose next pillar (2, 5–6) for rotation."
+    },
+    {
+      "at": "2026-08-25T20:54:01+05:30",
+      "status": "WORKING",
+      "task": "Re-run AdSense readiness validator; if passed, propose next pillar (1, 2, 4–6) for rotation.",
+      "engine": "selecting",
+      "result": null
+    },
+    {
+      "at": "2026-08-25T20:54:14+05:30",
+      "status": "WORKING",
+      "task": "Rotate to Pillar 5 (Flipkart/other commerce platforms) — now least-used pillar (0 recent completed tasks); evaluate Flipkart Affiliate Program for RIO's audience fit and integration readiness.",
+      "engine": "bedrock-qwen",
+      "result": null
+    },
+    {
+      "at": "2026-08-25T20:54:14+05:30",
+      "status": "FAILED_ROLLED_BACK",
+      "task": "Rotate to Pillar 5 (Flipkart/other commerce platforms) — now least-used pillar (0 recent completed tasks); evaluate Flipkart Affiliate Program for RIO's audience fit and integration readiness.",
+      "engine": "bedrock-qwen",
+      "result": "PILLAR:5, task: Evaluate Flipkart Affiliate Program for RIO — audience fit, integration readiness, commercial potential, blockers, and autonomous prep steps, why: Pillar 5 has 0 recent completed tasks; Flipkart is a high-potential Indian commerce platform for RIO's audience (interior designers, contractors, small offices); this directly supports ₹10,00,000/month objective by adding a third monetisation mechanism with strong category alignment; changes: writes `data/flipkart_affiliate_discovery.json` with full assessment and prep roadmap; NEXT_TASK: After Founder unlocks Flipkart account, build Flipkart feed template, content-integration pattern, and validation logic autonomously."
     }
   ]
 }
