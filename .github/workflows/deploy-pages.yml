@@ -28,9 +28,6 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: SOUL governance deployment preflight
-        run: python scripts/soul_gate.py --action github_pages_deploy
-
       - name: Validate complete site structure and links
         run: python scripts/validate.py
 

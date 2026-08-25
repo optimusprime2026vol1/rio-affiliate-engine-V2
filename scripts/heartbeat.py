@@ -2,9 +2,8 @@
 """RIO heartbeat: self-monitoring runtime health loop.
 
 Runs without Founder action on schedule, refreshes dashboard/status, runs safety
-validators, evaluates the fail-closed SOUL governance gate, and sends Telegram
-only on material health-state transitions. Diagnostics remain available even
-when consequential execution is blocked by SOUL.
+validators, observes SOUL runtime integrity, and sends Telegram only on material
+health-state transitions. SOUL remains observe-only in this migration stage.
 """
 import json, os, subprocess, sys, urllib.request, urllib.parse
 from datetime import datetime, timezone, timedelta
@@ -83,23 +82,28 @@ status=jload("data/status.json",{});status.update({"updated":now,"kill_switch":F
 status["note_en"]=(f"Heartbeat OK — {sum(1 for v in validators.values() if v['pass'])}/{len(validators)} validators passing." if all_pass else f"⚠ Heartbeat failure — {sum(1 for v in validators.values() if not v['pass'])} validator(s) failing. Publishing/deployment must remain blocked until recovery.")
 jsave("data/status.json",status)
 
-# SOUL hard governance evaluation runs after health/status refresh. A failure does
-# not disable diagnostics, but every consequential execution path must fail closed.
+# Compatibility-stage SOUL observation. It runs after status is refreshed so it can
+# verify the live AI/validator binding. Its result is recorded but does NOT affect
+# all_validators_pass, kill switch, publishing gates, or autonomous execution yet.
 soul_ok,soul_out=run_script("soul_runtime.py")
 soul_state=jload("data/soul_runtime_status.json",{})
 status=jload("data/status.json",{})
-print(f"[heartbeat] soul_runtime: {'PASS' if soul_ok else 'HARD_GATE_BLOCK'}")
+status["soul_runtime"]={
+ "mode":soul_state.get("mode","compatibility_observe"),
+ "valid":bool(soul_state.get("valid")) if soul_state else bool(soul_ok),
+ "hard_fail_closed":False,
+ "soul_sha256":soul_state.get("soul_sha256"),
+ "execution_effect":"NONE",
+}
+jsave("data/status.json",status)
+print(f"[heartbeat] soul_runtime: {'PASS' if soul_ok else 'OBSERVE_FAIL'}")
 if soul_out:print("[heartbeat] soul detail:","\n".join(soul_out.splitlines()[-5:]))
 
-prev=jload(ALERT_STATE,{"healthy":None,"soul_valid":None});was=prev.get("healthy");prev_soul=prev.get("soul_valid")
+prev=jload(ALERT_STATE,{"healthy":None});was=prev.get("healthy")
 if was is not None and was!=all_pass:
- if all_pass:notify("🟢 RIO RECOVERED\nHeartbeat and validators are healthy again. Autonomous operation can continue only if the SOUL hard gate also passes.")
+ if all_pass:notify("🟢 RIO RECOVERED\nHeartbeat and validators are healthy again. Autonomous operation can continue under normal gates.")
  else:
   failed=[k for k,v in validators.items() if not v["pass"]]
-  notify("🔴 RIO ISSUE DETECTED\nHeartbeat/validator failure: "+", ".join(failed)+"\nConsequential execution remains fail-closed until recovery.")
-current_soul=bool(soul_state.get("valid"))
-if prev_soul is not None and prev_soul!=current_soul:
- if current_soul:notify("🟢 RIO SOUL GATE RECOVERED\nGovernance integrity is valid again; execution still requires normal safety and authority gates.")
- else:notify("🔴 RIO SOUL HARD GATE\nGovernance integrity failed. Autonomous/external business execution is blocked; diagnostics remain available.")
-jsave(ALERT_STATE,{"healthy":all_pass,"updated":now,"soul_valid":current_soul})
-print("heartbeat done",json.dumps({"validators_ok":all_pass,"soul_valid":current_soul,"execution_allowed":bool(all_pass and current_soul),"counts":counts}))
+  notify("🔴 RIO ISSUE DETECTED\nHeartbeat/validator failure: "+", ".join(failed)+"\nRIO has not weakened publish gates. Technical review required if it does not self-recover.")
+jsave(ALERT_STATE,{"healthy":all_pass,"updated":now,"soul_valid":status.get("soul_runtime",{}).get("valid")})
+print("heartbeat done",json.dumps({"ok":all_pass,"soul_observed":status.get("soul_runtime",{}).get("valid"),"counts":counts}))

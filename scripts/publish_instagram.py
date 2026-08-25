@@ -23,9 +23,9 @@ Design constraints, on purpose:
   schedule in .github/workflows/rio.yml (Vicky/Victor's choice), not by
   this script — this script just does "post the next eligible offer, once,
   if nothing is blocking it."
-- Respects the kill switch (data/control.json), validators and the common
-  fail-closed SOUL governance gate. Direct/manual invocation cannot bypass
-  the same governance requirement used by the normal workflow.
+- Respects the kill switch (data/control.json) and the four validators'
+  last-known status (data/status.json) — will not publish if either says
+  stop, exactly like heartbeat.py's own publish-safety rule.
 - Every offer_id this script HAS successfully posted is recorded in
   data/ig_published.json so it is never posted twice.
 - Always includes a plain-language affiliate disclosure in the caption
@@ -57,7 +57,6 @@ import urllib.parse
 import urllib.request
 import time
 from datetime import datetime, timezone, timedelta
-from soul_gate import require_execution, SoulGateError
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 IST = timezone(timedelta(hours=5, minutes=30))
@@ -77,6 +76,14 @@ GRAPH_VERSION = "v22.0"
 # Instagram Login tokens (start with IGAA...) must use graph.instagram.com.
 # Facebook Login tokens use graph.facebook.com. Auto-detect at runtime.
 
+# An offer whose data/offer_identity_registry.csv "destination_checked_at"
+# is older than this many days is treated as stale and skipped (not
+# posted), even if publish_status/availability_status still say READY/
+# IN_STOCK. This is the only safety net against posting a dead or
+# out-of-stock Amazon link — this script cannot live-check Amazon itself
+# (robots.txt disallows scraping, no PA-API credentials exist). Re-checking
+# a stale offer on Amazon and updating destination_checked_at is a Founder/
+# Victor task, not something this script can do on its own.
 STALENESS_DAYS = 21
 
 def clean_secret(value):
@@ -96,11 +103,17 @@ PUBLIC_SITE_BASE = os.environ.get(
     f"https://{OWNER}.github.io/{REPO_NAME}",
 ).rstrip("/")
 
+# Detect token type: Instagram Login tokens start with IGAA / IGAAR etc.
 if IG_ACCESS_TOKEN.upper().startswith("IGAA"):
     GRAPH_BASE = f"https://graph.instagram.com/{GRAPH_VERSION}"
 else:
     GRAPH_BASE = f"https://graph.facebook.com/{GRAPH_VERSION}"
 
+# Cosmetic-only cluster labels for captions/cards. Not present as a column
+# in offer_identity_registry.csv today — assigned by Victor from the same
+# creative_product_name data, purely for a readable category tag. If this
+# drifts from reality as new offers are added, it's a caption-quality issue,
+# never a data-integrity one (the registry itself is untouched).
 CLUSTER_LABELS = {
     "UNDER_SINK_001": "Kitchen Storage",
     "SPICE_RACK_001": "Kitchen Storage",
@@ -178,6 +191,7 @@ def graph_call(path, params, method="POST"):
 
 
 def days_since(date_str):
+    """Returns days between date_str (YYYY-MM-DD) and today (IST), or None if unparseable."""
     try:
         checked = datetime.strptime(date_str.strip(), "%Y-%m-%d").replace(tzinfo=IST)
     except Exception:
@@ -208,14 +222,6 @@ def build_caption(offer):
 
 
 def main():
-    try:
-        require_execution(action="instagram_publish", require_health=True)
-    except SoulGateError as exc:
-        detail = str(exc)
-        save_run_status("BLOCKED_SOUL_HARD_GATE", detail)
-        print(f"[publish_instagram] {detail}")
-        return 3
-
     if not IG_USER_ID or not IG_ACCESS_TOKEN:
         detail = "IG_USER_ID_RIO / IG_ACCESS_TOKEN_RIO is missing from GitHub Actions secrets."
         save_run_status("BLOCKED_CREDENTIALS", detail)

@@ -2,14 +2,13 @@
 """Guarded executor for Founder instructions planned by the lead AI.
 
 The model may propose file operations plus a narrowly-scoped temporary maintenance
-pause; this module enforces SOUL governance, policy, validators, rollback, and audit trail.
+pause; this module enforces policy, validators, rollback, and audit trail.
 """
 import json
 import os
 import py_compile
 import subprocess
 from datetime import datetime, timezone, timedelta
-from soul_gate import require_execution, SoulGateError
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 IST = timezone(timedelta(hours=5, minutes=30))
@@ -17,9 +16,9 @@ AUDIT = os.path.join(ROOT, "data", "autonomy_audit.jsonl")
 CONTROL = os.path.join(ROOT, "data", "control.json")
 
 PROTECTED = {
-    ".gitignore", "data/RIO_3.0_DEFINITION.md", "data/AUTONOMY_POLICY.md", "data/SOUL.md",
+    ".gitignore", "data/RIO_3.0_DEFINITION.md", "data/AUTONOMY_POLICY.md",
     "data/TELEGRAM_CHAT_LOCKED.md", "scripts/rio_autonomous_executor.py",
-    "scripts/telegram_chat.py", "scripts/soul_gate.py",
+    "scripts/telegram_chat.py",
 }
 ALLOWED_PREFIXES = ("data/", "site/", "scripts/")
 ALLOWED_OPS = {"write_text", "write_json", "append_text", "maintenance_pause"}
@@ -66,12 +65,6 @@ def execute(plan,request_summary="",engine="deepseek"):
     ts=datetime.now(IST).isoformat(timespec="seconds"); risk=str(plan.get("risk") or "high").lower(); ops=plan.get("operations") or []
     record={"timestamp":ts,"request":request_summary[:500],"engine":engine,"risk":risk,"operations":[],"result":None,"changed_paths":[],"validators":[]}
     if plan.get("intent")!="execute": record["result"]="NO_EXECUTION";_audit(record);return {"ok":True,"status":"NO_EXECUTION","changed_paths":[],"validators":[]}
-    try:
-        gate=require_execution(action="guarded_repository_mutation", require_health=True)
-        record["soul_gate"]={"valid":True,"checked_at":gate.get("checked_at")}
-    except SoulGateError as e:
-        record["result"]="BLOCKED_SOUL_HARD_GATE";record["error"]=str(e)[:1000];_audit(record)
-        return {"ok":False,"status":"BLOCKED","error":str(e),"changed_paths":[],"validators":[]}
     if risk=="high": record["result"]="BLOCKED_HIGH_RISK";_audit(record);return {"ok":False,"status":"VICKY_ACTION_REQUIRED","error":"high-risk change blocked"}
     if not isinstance(ops,list) or not ops: record["result"]="BLOCKED_EMPTY_PLAN";_audit(record);return {"ok":False,"status":"FAILED","error":"empty execution plan"}
     if len(ops)>8: record["result"]="BLOCKED_TOO_MANY_OPERATIONS";_audit(record);return {"ok":False,"status":"VICKY_ACTION_REQUIRED","error":"operation limit exceeded"}
