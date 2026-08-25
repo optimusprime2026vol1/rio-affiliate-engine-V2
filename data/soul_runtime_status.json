@@ -1,6 +1,6 @@
 {
-  "mode": "compatibility_observe",
-  "hard_fail_closed": false,
+  "mode": "hard_fail_closed",
+  "hard_fail_closed": true,
   "project_binding": "RIO",
   "valid": true,
   "checks": {
@@ -10,7 +10,8 @@
     "memory_present": true,
     "heartbeat_status_present": true,
     "lead_ai_declared": true,
-    "validators_declared": true
+    "validators_declared": true,
+    "validators_healthy": true
   },
   "soul_sha256": "19ae2d0f81e29c549df877fba64ecd48e92907a02548c8227df68b72c572214c",
   "objective_path": "data/RIO_3.0_DEFINITION.md",
@@ -21,5 +22,5 @@
     "bedrock-glm"
   ],
   "validators_currently_healthy": true,
-  "execution_effect": "NONE — observe-only; existing RIO gates remain authoritative"
+  "execution_effect": "ALLOWED"
 }
