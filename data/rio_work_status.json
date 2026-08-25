@@ -1,40 +1,17 @@
 {
-  "status": "COMPLETED",
-  "current_task": "System health check initiated — no active failures detected.",
-  "started_at": "2026-08-25T08:12:37+05:30",
-  "updated_at": "2026-08-25T08:12:39+05:30",
+  "status": "FAILED_ROLLED_BACK",
+  "current_task": "Resuming autonomous operation after maintenance pause. Checking system health, loading persistent state, and selecting next highest-impact task from the six Phase-2 pillars.",
+  "started_at": "2026-08-25T08:14:05+05:30",
+  "updated_at": "2026-08-25T08:14:07+05:30",
   "ai_engine": "bedrock-qwen",
   "last_completed": "System health check initiated — no active failures detected.",
-  "last_result": "Hello Vicky! System is healthy. Kill switch: OFF. Maintenance pause: expired. Ready offers: 17. Content items: 27. Validators: ACTIVE. Last heartbeat: 2026-08-24T20:54+05:30. No blockers or failures detected. Autonomous Phase-2 execution is ready to resume on next cycle.\n\nAI: bedrock-qwen",
-  "changed_files": [
-    "site/products/3-tier-rolling-cart/index.md"
-  ],
-  "validators": "N/A",
+  "last_result": "✅ Resumed. Loading persistent state (`data/rio_work_status.json`, `data/status.json`, audit log)…\n\nNext step: Identify highest-impact safe task from Phase-2 pillars (website, affiliate networks, AdSense, content, commerce platforms, Instagram) aligned with ₹10L/month objective.\n\nRunning validators…",
+  "changed_files": [],
+  "validators": "FAILED",
   "next_task": "Choose highest-impact safe next task from locked Phase-2 objective.",
-  "blocker": null,
+  "blocker": "maintenance_pause minutes must be 1..240",
   "founder_action_needed": false,
   "history": [
-    {
-      "at": "2026-08-24T18:21:40+05:30",
-      "status": "WORKING",
-      "task": "What happened?",
-      "engine": "selecting",
-      "result": null
-    },
-    {
-      "at": "2026-08-24T18:21:42+05:30",
-      "status": "WORKING",
-      "task": "RIO is operating normally. Last heartbeat at 2026-08-24T17:33+05:30 confirmed healthy status with 17 ready offers, 27 content items, and all validators active. Maintenance pause expired at 17:38+05:30; autonomous execution resumed.",
-      "engine": "bedrock-qwen",
-      "result": null
-    },
-    {
-      "at": "2026-08-24T18:21:42+05:30",
-      "status": "COMPLETED",
-      "task": "RIO is operating normally. Last heartbeat at 2026-08-24T17:33+05:30 confirmed healthy status with 17 ready offers, 27 content items, and all validators active. Maintenance pause expired at 17:38+05:30; autonomous execution resumed.",
-      "engine": "bedrock-qwen",
-      "result": "RIO is healthy and autonomous execution resumed after the maintenance pause expired. Current state: 17 ready offers, 27 content items, all validators active. Next heartbeat in ~3 minutes.\n\nAI: bedrock-qwen"
-    },
     {
       "at": "2026-08-24T18:23:27+05:30",
       "status": "WORKING",
@@ -153,6 +130,27 @@
       "task": "System health check initiated — no active failures detected.",
       "engine": "bedrock-qwen",
       "result": "Hello Vicky! System is healthy. Kill switch: OFF. Maintenance pause: expired. Ready offers: 17. Content items: 27. Validators: ACTIVE. Last heartbeat: 2026-08-24T20:54+05:30. No blockers or failures detected. Autonomous Phase-2 execution is ready to resume on next cycle.\n\nAI: bedrock-qwen"
+    },
+    {
+      "at": "2026-08-25T08:14:05+05:30",
+      "status": "WORKING",
+      "task": "Pls resume.",
+      "engine": "selecting",
+      "result": null
+    },
+    {
+      "at": "2026-08-25T08:14:07+05:30",
+      "status": "WORKING",
+      "task": "Resuming autonomous operation after maintenance pause. Checking system health, loading persistent state, and selecting next highest-impact task from the six Phase-2 pillars.",
+      "engine": "bedrock-qwen",
+      "result": null
+    },
+    {
+      "at": "2026-08-25T08:14:07+05:30",
+      "status": "FAILED_ROLLED_BACK",
+      "task": "Resuming autonomous operation after maintenance pause. Checking system health, loading persistent state, and selecting next highest-impact task from the six Phase-2 pillars.",
+      "engine": "bedrock-qwen",
+      "result": "✅ Resumed. Loading persistent state (`data/rio_work_status.json`, `data/status.json`, audit log)…\n\nNext step: Identify highest-impact safe task from Phase-2 pillars (website, affiliate networks, AdSense, content, commerce platforms, Instagram) aligned with ₹10L/month objective.\n\nRunning validators…"
     }
   ]
 }
