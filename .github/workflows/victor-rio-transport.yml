@@ -1,0 +1,65 @@
+name: Victor RIO Governed Transport
+
+on:
+  workflow_dispatch:
+    inputs:
+      task_id:
+        description: Victor task ID
+        required: true
+        type: string
+      task_type:
+        description: Governed read-only RIO task
+        required: true
+        type: choice
+        options: [STATUS_CHECK, GOVERNANCE_CHECK, PRIORITY_CHECK, STRICT_SUPERVISION_PROBE]
+      payload:
+        description: Strict authority envelope
+        required: false
+        default: '{}'
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  execute:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      VICTOR_RIO_TASK_ID: ${{ inputs.task_id }}
+      VICTOR_RIO_TASK_TYPE: ${{ inputs.task_type }}
+      VICTOR_RIO_TASK_PAYLOAD: ${{ inputs.payload }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Execute read-only governed RIO task
+        run: python scripts/victor_rio_task.py
+      - name: Validate strict revert envelope
+        run: |
+          python - <<'PY'
+          import json, os
+          p=f"integration/results/victor_tasks/{os.environ['VICTOR_RIO_TASK_ID']}.json"
+          d=json.load(open(p,encoding='utf-8')); s=d.get('strict_supervision') or {}
+          required=['status','objective_alignment','solution','next_action','evidence','revert_to_victor','requires_follow_up']
+          missing=[k for k in required if k not in s]
+          if missing: raise SystemExit('STRICT_RIO_REVERT_MISSING:'+','.join(missing))
+          if s.get('revert_to_victor') is not True: raise SystemExit('STRICT_RIO_REVERT_NOT_CONFIRMED')
+          if d.get('public_action_performed') or d.get('objective_changed') or d.get('credential_transfer_performed'):
+              raise SystemExit('RIO_BRIDGE_BOUNDARY_VIOLATION')
+          print('STRICT_RIO_REVERT_ENVELOPE_OK')
+          PY
+      - name: Persist RIO evidence
+        run: |
+          git config user.name "rio-victor-bridge"
+          git config user.email "actions@users.noreply.github.com"
+          git add integration/results/victor_tasks/${VICTOR_RIO_TASK_ID}.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Persist Victor-RIO task evidence ${VICTOR_RIO_TASK_ID}"
+          git pull --rebase --autostash
+          git push
+      - uses: actions/upload-artifact@v4
+        with:
+          name: victor-rio-result-${{ inputs.task_id }}
+          path: integration/results/victor_tasks/${{ inputs.task_id }}.json
+          if-no-files-found: error
