@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """RIO heartbeat: self-monitoring runtime health loop with mandatory SOUL gate."""
-import json, os, subprocess, sys, urllib.request, urllib.parse
+import json, os, subprocess, sys, time, urllib.request, urllib.parse
 from datetime import datetime, timezone, timedelta
 
 ROOT=os.path.join(os.path.dirname(__file__),"..")
@@ -64,6 +64,12 @@ if control.get('kill_switch'):
  status=jload('data/status.json',{});status.update({'updated':now,'kill_switch':True,'note_en':f"Paused by kill switch. {control.get('kill_reason','')}"});jsave('data/status.json',status);sys.exit(0)
 
 production_ok,production_out=run_script('check_production.py')
+if not production_ok:
+ for attempt in range(1,4):
+  print(f'[heartbeat] production check retry {attempt}/3 after transient failure')
+  time.sleep(10)
+  production_ok,production_out=run_script('check_production.py')
+  if production_ok:break
 dash_ok,dash_out=run_script('generate_dashboard.py')
 validator_scripts={'production_live':None,'offer_integrity':'validate_offer_integrity.py','product_candidates':'validate_product_candidates.py','dashboard':'validate_dashboard.py','production_offer_gate':'validate_production_offer_gate.py'}
 validators={}
