@@ -1,0 +1,39 @@
+{
+  "platform": "EarnKaro",
+  "status": "READY_FOR_FOUNDERS_ACCOUNT_SETUP",
+  "verified_offers": [
+    {
+      "merchant": "Amazon Associates India",
+      "offer_id": "rioaffiliate-21",
+      "verified": true,
+      "note": "Already integrated; cross-promotion opportunity for EarnKaro discovery"
+    }
+  ],
+  "audience_fit": {
+    "primary": [
+      "Indian interior designers",
+      "contractors",
+      "fit-out professionals"
+    ],
+    "secondary": [
+      "small offices / home-office professionals",
+      "renters / compact-home owners"
+    ],
+    "verified_by": "existing offer specs and audience priority in RIO_3.0_DEFINITION.md"
+  },
+  "integration_readiness": {
+    "technical": "API/webhook integration possible; requires Founder account approval and API credentials",
+    "content": "Verified offers available; content adaptation guide ready post-approval",
+    "compliance": "EarnKaro disclosure requirements match RIO verification policy",
+    "next_step": "Founder creates EarnKaro account and shares API credentials"
+  },
+  "roadmap": [
+    "Founder creates EarnKaro account and shares API credentials",
+    "Draft EarnKaro disclosure page and content adaptation guide",
+    "Create verified, evidence-based product-led content for top 3 high-intent offers",
+    "Add internal linking from existing product pages",
+    "Monitor conversion and rotate to next pillar after 2 deliverables"
+  ],
+  "impact_estimate": "medium-high — EarnKaro offers high-ticket design tools and SaaS; strong fit for Indian professionals",
+  "last_updated": "2026-08-27T15:36+05:30"
+}
