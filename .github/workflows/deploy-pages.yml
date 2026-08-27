@@ -64,7 +64,7 @@ jobs:
 
   deploy:
     needs: validate
-    if: needs.validate.outputs.production_active == 'true' && vars.RIO_PRODUCTION_STATE == 'ACTIVE'
+    if: needs.validate.outputs.production_active == 'true'
     runs-on: ubuntu-latest
 
     environment:
