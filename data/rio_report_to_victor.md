@@ -184,3 +184,5 @@ Fetched `https://raw.githubusercontent.com/vickykenin-lang/rio-affiliate-engine/
 - 2026-08-23T16:04+05:30 IST — posted **wolpin Under Sink Rectangle Organizer Storage Rack 2-Tier** (offer `UNDER_SINK_001`) to Instagram @riosallerior. Media ID `17877752013535173`. Permalink: https://www.instagram.com/p/DcYSOe3mwhG/
 
 - 2026-08-24T21:49+05:30 IST — posted **Amazon Basics Slim Rolling Storage Rack, 3-Tiered Shelf Plastic Slide-Out Organizer, White** (offer `TROLLEY_001`) to Instagram @riosallerior. Media ID `17886760158676549`. Permalink: https://www.instagram.com/p/Dcbect_ILPL/
+
+- 2026-08-28T04:32+05:30 IST — posted **Amazon Solimo Plastic Revolving Spice Rack Set of 16 Pieces SOKT66** (offer `SPICE_RACK_001`) to Instagram @riosallerior. Media ID `18109466515847072`. Permalink: https://www.instagram.com/p/Dcj651KFo5h/
