@@ -47,7 +47,7 @@ jobs:
   heartbeat:
     needs: production-state
     permissions: {contents: write, issues: write}
-    if: github.event_name == 'issues' || github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && (inputs.job == 'heartbeat' || inputs.job == 'all'))
+    if: github.event_name == 'issues' || github.event_name == 'schedule' || github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && (inputs.job == 'heartbeat' || inputs.job == 'all'))
     runs-on: ubuntu-latest
     timeout-minutes: 12
     concurrency: {group: rio-heartbeat, cancel-in-progress: false}
