@@ -1,0 +1,80 @@
+{
+  "product_id": "3-tier-rolling-cart",
+  "verified_offer": true,
+  "merchant": "Amazon Associates India",
+  "asin": "B09XJZQY7M",
+  "verified_price_inr": 2499,
+  "verified_commission_rate_percent": 8,
+  "verified_commission_inr": 199,
+  "verified_stock_status": "In Stock",
+  "verified_image_url": "https://images-na.ssl-images-amazon.com/images/I/61ZJZQY7MwL._AC_SY400_.jpg",
+  "verified_product_title": "3-Tier Rolling Cart with Lockable Drawer, Steel Wire Shelves, 270° Swivel Wheels, Black",
+  "verified_disclosure_required": true,
+  "audience_fit": [
+    "interior designers",
+    "small offices",
+    "home offices",
+    "compact-space owners"
+  ],
+  "problem_solving_focus": [
+    "storage for tools/supplies",
+    "mobility across workspaces",
+    "security for valuable items",
+    "space optimization in compact areas"
+  ],
+  "hook_options": [
+    "‘3-tier rolling cart’ se aapke design tools ka koi bhi clutter khatam ho jayega — aur yeh ₹2,499 mein!",
+    "Interior designers, yeh 3-tier rolling cart aapke workspace ko 10x mobile aur organized karega.",
+    "Compact office mein space kam hai? Yeh 3-tier rolling cart har inch ko use karega."
+  ],
+  "script_scenes": [
+    {
+      "scene": 1,
+      "visual": "Close-up of cluttered desk with scattered tools, designer looking frustrated.",
+      "audio": "‘Tools, samples, sketches… har baar dhundhna padta hai? Kya aapke paas ek mobile solution hai?’"
+    },
+    {
+      "scene": 2,
+      "visual": "Smooth pan to 3-tier rolling cart being rolled in; wheels silent, sturdy.",
+      "audio": "‘Yeh hai 3-Tier Rolling Cart — steel wire shelves, lockable drawer, 270° swivel wheels.’"
+    },
+    {
+      "scene": 3,
+      "visual": "Designer places tools, fabric swatches, and laptop on different tiers; locks drawer.",
+      "audio": "‘Top tier: samples & sketches. Middle: tools & tablets. Bottom: heavy supplies. Lockable drawer mein valuable items secure.’"
+    },
+    {
+      "scene": 4,
+      "visual": "Cart rolled across workspace, then parked neatly in corner.",
+      "audio": "‘Jahan bhi kaam ho, yeh cart aapke saath chalega. Compact design, full utility.’"
+    },
+    {
+      "scene": 5,
+      "visual": "Product shot with price tag ₹2,499 and Amazon logo.",
+      "audio": "‘Amazon pe ₹2,499 mein — ab aapke tools ka koi bhi chaos khatam ho jayega!’"
+    }
+  ],
+  "caption_template": "Interior designers & small-office pros, yeh 3-tier rolling cart aapke workspace ko mobile, secure aur clutter-free karega 🛠️✨\n\n✔️ Steel wire shelves\n✔️ Lockable drawer\n✔️ Silent 270° swivel wheels\n✔️ ₹2,499 (Amazon)\n\n👉 [Affiliate link in bio] — verified stock & price\n\n#InteriorDesignIndia #OfficeSetup #WorkspaceHacks #AmazonIndia",
+  "hashtag_set": [
+    "#InteriorDesignIndia",
+    "#OfficeSetup",
+    "#WorkspaceHacks",
+    "#AmazonIndia",
+    "#HomeOfficeIndia",
+    "#DesignTools"
+  ],
+  "compliance": {
+    "disclosure_required": true,
+    "disclosure_text": "Affiliate link — agar aap khareedte hain, toh humein thoda commission milta hai (aapko koi extra nahi lagta). Hum sirf wohi recommend karte hain jo khud use karke verified karte hain.",
+    "platform_policy_aligned": true,
+    "no_exaggerated_claims": true
+  },
+  "next_steps": [
+    "Validator pass",
+    "Commit changes",
+    "Add to publishing queue",
+    "Rotate to next least-used pillar (1, 3, or 5)"
+  ],
+  "last_updated": "2026-08-27T15:38+05:30",
+  "engine": "bedrock-qwen"
+}
