@@ -1,9 +1,41 @@
 {
   "schema_version": 1,
-  "production_state": "PARKED",
+  "production_state": "ACTIVE",
   "founder": "Vicky Gautam",
-  "allowed_while_parked": ["READ", "AUDIT", "DOCUMENT", "PLAN", "HEALTH_VALIDATION"],
-  "prohibited_while_parked": ["AUTONOMOUS_BUSINESS_CYCLE", "CONTENT_PRODUCTION", "PRODUCT_DISCOVERY_AUTOMATION", "INSTAGRAM_PUBLISH", "PAID_ACTION", "PRODUCTION_ACTIVATION"],
-  "activation_gate": "EXPLICIT_FOUNDER_APPROVAL_REQUIRED",
-  "github_variable_required_for_active_jobs": "RIO_PRODUCTION_STATE=ACTIVE"
+  "allowed_while_parked": [
+    "READ",
+    "AUDIT",
+    "DOCUMENT",
+    "PLAN",
+    "HEALTH_VALIDATION"
+  ],
+  "prohibited_while_parked": [
+    "AUTONOMOUS_BUSINESS_CYCLE",
+    "CONTENT_PRODUCTION",
+    "PRODUCT_DISCOVERY_AUTOMATION",
+    "INSTAGRAM_PUBLISH",
+    "PAID_ACTION",
+    "PRODUCTION_ACTIVATION"
+  ],
+  "activation_gate": "FOUNDER_APPROVED_2026_08_27",
+  "operating_mode": "ACTIVE_GOVERNED_REVENUE",
+  "activated_by": "Founder Vicky Gautam",
+  "activated_at": "2026-08-27",
+  "primary_agenda": "GENERATE_VERIFIED_APPROVED_REVENUE_AS_SOON_AS_PRACTICALLY_POSSIBLE",
+  "allowed_while_active": [
+    "AUTONOMOUS_BUSINESS_CYCLE",
+    "CONTENT_PRODUCTION_WITH_VALIDATORS",
+    "PRODUCT_DISCOVERY_AND_VERIFICATION",
+    "WEBSITE_AND_CONVERSION_IMPROVEMENT",
+    "FOUNDER_APPROVED_INSTAGRAM_PUBLISH",
+    "REVENUE_EVIDENCE_RECONCILIATION"
+  ],
+  "always_prohibited_without_separate_founder_approval": [
+    "PAID_ACTION",
+    "CREDENTIAL_OR_IDENTITY_ACTION",
+    "LEGAL_OR_TAX_ACCEPTANCE",
+    "OBJECTIVE_OR_AUTHORITY_CHANGE",
+    "UNAPPROVED_PUBLIC_POSTING",
+    "DESTRUCTIVE_OR_IRREVERSIBLE_ACTION"
+  ]
 }
