@@ -38,6 +38,6 @@
     "UNAPPROVED_PUBLIC_POSTING",
     "DESTRUCTIVE_OR_IRREVERSIBLE_ACTION"
   ],
-  "activation_revision": 1,
-  "first_cycle_request": "RUN_IMMEDIATELY"
+  "activation_revision": 2,
+  "first_cycle_request": "RUNNING_PENDING_EVIDENCE"
 }
