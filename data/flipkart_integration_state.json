@@ -1,0 +1,49 @@
+{
+  "status": "READY_FOR_FOUNDERS_ACTION",
+  "last_updated": "2026-08-27T15:32+05:30",
+  "verified_offer_specs": [
+    {
+      "product": "3-tier rolling cart",
+      "merchant": "Amazon India",
+      "verified": true,
+      "audience_fit": [
+        "interior designers",
+        "small offices"
+      ],
+      "conversion_potential": "high",
+      "notes": "Verified via live check on 2026-08-27; same product category likely available on Flipkart via third-party sellers"
+    }
+  ],
+  "audience_fit": {
+    "primary": [
+      "interior designers",
+      "contractors",
+      "fit-out professionals"
+    ],
+    "secondary": [
+      "small offices",
+      "home-office professionals",
+      "renters in compact homes"
+    ],
+    "problem_solved": [
+      "storage in limited space",
+      "mobility for tools/equipment",
+      "modular workspace setup"
+    ]
+  },
+  "integration_readiness": {
+    "technical": "pending Flipkart account approval and API/redirect setup",
+    "content": "Ready to adapt existing product-led content (blog, Instagram) for Flipkart product pages",
+    "compliance": "Pending Flipkart disclosure and policy review — must be completed before publication"
+  },
+  "next_steps": [
+    "Founder action: Create Flipkart Affiliate Network account and approve integration",
+    "RIO to draft Flipkart-specific disclosure page and content adaptation guide",
+    "RIO to prepare content roadmap for Indian interior designers and small offices using verified offers"
+  ],
+  "impact_estimate": {
+    "revenue_diversification": "high — reduces merchant concentration risk",
+    "conversion_opportunity": "medium — depends on Flipkart product availability and CTR lift",
+    "execution_feasibility": "medium — requires Founder account approval"
+  }
+}
