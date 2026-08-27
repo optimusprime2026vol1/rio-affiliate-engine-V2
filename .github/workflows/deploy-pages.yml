@@ -28,6 +28,9 @@ jobs:
         with:
           python-version: "3.x"
 
+      - name: Run repository and workflow governance tests
+        run: python -m unittest discover -s tests -v
+
       - name: Validate complete site structure and links
         run: python scripts/validate.py
 
