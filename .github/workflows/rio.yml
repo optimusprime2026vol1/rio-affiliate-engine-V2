@@ -3,7 +3,9 @@ name: RIO
 on:
   push:
     branches: [main]
-    paths: ['data/instagram_approval.json']
+    paths:
+      - 'data/instagram_approval.json'
+      - 'data/production_control.json'
   schedule:
     - cron: '*/5 * * * *'
     - cron: '0 5 * * *'
