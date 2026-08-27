@@ -5,6 +5,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 WORKFLOW = ROOT / ".github/workflows/rio.yml"
 TRANSPORT = ROOT / ".github/workflows/victor-rio-transport.yml"
+DEPLOY = ROOT / ".github/workflows/deploy-pages.yml"
 CONTROL = ROOT / "data/production_control.json"
 
 class WorkflowGovernanceTests(unittest.TestCase):
@@ -19,6 +20,11 @@ class WorkflowGovernanceTests(unittest.TestCase):
         self.assertNotIn("git add -A", text)
         self.assertIn("permissions: {contents: read}", text)
         self.assertIn("permissions: {contents: write}", text)
+
+    def test_pages_deployment_is_blocked_while_parked(self):
+        text = DEPLOY.read_text(encoding="utf-8")
+        self.assertIn("needs.validate.outputs.production_active == 'true'", text)
+        self.assertIn("vars.RIO_PRODUCTION_STATE == 'ACTIVE'", text)
 
     def test_victor_transport_only_stages_task_evidence(self):
         text = TRANSPORT.read_text(encoding="utf-8")

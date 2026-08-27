@@ -18,6 +18,8 @@ concurrency:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    outputs:
+      production_active: ${{ steps.production_state.outputs.active }}
 
     steps:
       - name: Checkout repository
@@ -27,6 +29,17 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
+
+      - id: production_state
+        name: Read canonical production state
+        run: |
+          python - <<'PY'
+          import json, os
+          state=json.load(open('data/production_control.json',encoding='utf-8')).get('production_state','PARKED')
+          with open(os.environ['GITHUB_OUTPUT'],'a',encoding='utf-8') as f:
+              f.write('active=' + ('true' if state == 'ACTIVE' else 'false') + '\n')
+          print('RIO production state:', state)
+          PY
 
       - name: Run repository and workflow governance tests
         run: python -m unittest discover -s tests -v
@@ -51,6 +64,7 @@ jobs:
 
   deploy:
     needs: validate
+    if: needs.validate.outputs.production_active == 'true' && vars.RIO_PRODUCTION_STATE == 'ACTIVE'
     runs-on: ubuntu-latest
 
     environment:
