@@ -38,7 +38,7 @@
     "UNAPPROVED_PUBLIC_POSTING",
     "DESTRUCTIVE_OR_IRREVERSIBLE_ACTION"
   ],
-  "activation_revision": 4,
-  "first_cycle_request": "RETRY_AFTER_PROMPT_SYNTAX_FIX",
+  "activation_revision": 5,
+  "first_cycle_request": "ZERO_REVENUE_READY_OFFER_PRIORITY_CYCLE",
   "retry_requested_at": "2026-08-27"
 }
