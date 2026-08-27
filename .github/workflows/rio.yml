@@ -98,7 +98,8 @@ jobs:
         if: success()
         run: |
           git config user.name "RIO" && git config user.email "rio@rio-affiliate.bot"
-          git add data/control.json data/inbox.json data/status.json data/dashboard_snapshot.json data/soul_runtime_status.json data/heartbeat_alert_state.json data/heartbeat_runner_status.json data/ceo_action_queue.csv site/dashboard/index.html
+          python scripts/stage_autonomous_changes.py
+          git add data/inbox.json data/soul_runtime_status.json
           (git diff --cached --quiet || git commit -m "heartbeat: governed health state") && git pull --rebase --autostash && git push
       - name: Notify heartbeat failure
         if: failure()
