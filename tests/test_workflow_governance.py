@@ -10,12 +10,14 @@ CONTROL = ROOT / "data/production_control.json"
 
 
 class WorkflowGovernanceTests(unittest.TestCase):
-    def test_rio_active_state_requires_recorded_founder_approval(self):
+    def test_rio_active_state_uses_locked_self_mode_authority(self):
         state = json.loads(CONTROL.read_text(encoding="utf-8"))
         self.assertEqual(state["production_state"], "ACTIVE")
-        self.assertEqual(state["operating_mode"], "ACTIVE_GOVERNED_REVENUE")
+        self.assertEqual(state["operating_mode"], "GOVERNED_SELF_MODE")
         self.assertTrue(str(state["activation_gate"]).startswith("FOUNDER_APPROVED_"))
-        self.assertIn("UNAPPROVED_PUBLIC_POSTING", state["always_prohibited_without_separate_founder_approval"])
+        self.assertEqual(state["founder_approval_gate"], "CREDENTIAL_ADMINISTRATION_ONLY")
+        self.assertIn("ADD_OR_CREATE_CREDENTIAL", state["founder_approval_required_only_for"])
+        self.assertIn("NO_RAW_SECRET_DISCLOSURE", state["mandatory_automatic_controls"])
 
     def test_autonomous_and_publish_jobs_require_canonical_active_gate(self):
         text = WORKFLOW.read_text(encoding="utf-8")

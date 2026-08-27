@@ -259,6 +259,7 @@ def main():
     approvals_doc = jload(APPROVAL_JSON, {"approvals": {}})
     approvals = approvals_doc.get("approvals", {})
     approved_states = {"APPROVED", "POST_PENDING", "FAILED_RETRY"}
+    autonomous_policy_approval = control.get("approval_mode") == "AUTONOMOUS_POLICY_VALIDATED"
 
     candidate = None
     skipped_no_card = []
@@ -267,7 +268,7 @@ def main():
         oid = o["offer_id"]
         if oid in posted:
             continue
-        if approvals.get(oid, {}).get("status") not in approved_states:
+        if not autonomous_policy_approval and approvals.get(oid, {}).get("status") not in approved_states:
             continue
         age = days_since(o.get("destination_checked_at", ""))
         if age is None or age > STALENESS_DAYS:
@@ -287,9 +288,8 @@ def main():
         print(f"[publish_instagram] no social card yet for: {', '.join(skipped_no_card)} — skipped, not posted.")
 
     if candidate is None:
-        pending_count = sum(
-            1 for oid, approval in approvals.items()
-            if approval.get("status") in approved_states and oid not in posted
+        pending_count = sum(1 for o in ready if o.get("offer_id") not in posted) if autonomous_policy_approval else sum(
+            1 for oid, approval in approvals.items() if approval.get("status") in approved_states and oid not in posted
         )
         if pending_count and (skipped_stale or skipped_no_card):
             reasons = []
@@ -301,7 +301,7 @@ def main():
             save_run_status("BLOCKED_OFFER", detail, posted_count=len(posted), pending_count=pending_count)
             print(f"[publish_instagram] {detail}")
             return 2
-        detail = "No eligible Founder-approved, un-posted offer is ready this run."
+        detail = "No eligible policy-validated, un-posted offer is ready this run."
         save_run_status("IDLE", detail, posted_count=len(posted), pending_count=pending_count)
         print(f"[publish_instagram] {detail}")
         return 0
