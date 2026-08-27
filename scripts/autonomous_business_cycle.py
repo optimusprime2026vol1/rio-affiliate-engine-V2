@@ -96,7 +96,15 @@ def main():
         record('VICKY_ACTION_REQUIRED',current_task=memory.get('next_task') or 'Autonomous continuation',engine=engine,validators='NOT_RUN',result=summary or 'No executable safe task.',blocker=summary,founder_action_needed=True);notify('⚠️ RIO FOUNDER ACTION REQUIRED\n'+summary[:3000]);return 0
     chosen=(plan.get('summary') or memory.get('next_task') or 'Autonomous Phase-2 task').strip();ck=' '.join(chosen.lower().split());cp=pillar_for(summary+' '+chosen)
     if ck in done or (forced_rotate and cp==lastp):record('WAITING',current_task=chosen,engine=engine,validators='NOT_RUN',result='PORTFOLIO_GUARD: repeated task/pillar concentration suppressed; next cycle must rotate.',next_task='Choose an independent task from a least-used eligible Phase-2 pillar.',blocker=None,founder_action_needed=False);return 0
-    record('WORKING',current_task=chosen,engine=engine,validators='RUNNING',founder_action_needed=False);result=execute_plan(plan,request_summary='AUTONOMOUS PHASE-2: '+chosen,engine=engine);changed=result.get('changed_paths') or []
+    record('WORKING',current_task=chosen,engine=engine,validators='RUNNING',founder_action_needed=False)
+    result=execute_plan(plan,request_summary='AUTONOMOUS PHASE-2: '+chosen,engine=engine)
+    if not result.get('ok') and ('empty/null JSON artifact' in str(result.get('error')) or 'empty JSON artifact' in str(result.get('error')) or 'empty text artifact' in str(result.get('error'))):
+        repair_rules=rules+"\nPREVIOUS PLAN FAILED STRICT PAYLOAD VALIDATION: "+str(result.get('error'))[:500]+". Return the same safe task once with corrected operation schema. write_json requires non-empty value; write_text/append_text require non-blank content. Do not change the task or authority."
+        retry_plan,retry_engine=call_llm([],repair_rules)
+        if retry_plan.get('intent')=='execute':
+            result=execute_plan(retry_plan,request_summary='AUTONOMOUS PHASE-2 RETRY: '+chosen,engine=retry_engine)
+            engine=retry_engine
+    changed=result.get('changed_paths') or []
     if result.get('ok'):
         nxt=None;low=summary.lower();marker='next_task:'
         if marker in low:nxt=summary[low.rfind(marker)+len(marker):].strip().splitlines()[0][:500] or None
