@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "production_state": "PARKED",
+  "founder": "Vicky Gautam",
+  "allowed_while_parked": ["READ", "AUDIT", "DOCUMENT", "PLAN", "HEALTH_VALIDATION"],
+  "prohibited_while_parked": ["AUTONOMOUS_BUSINESS_CYCLE", "CONTENT_PRODUCTION", "PRODUCT_DISCOVERY_AUTOMATION", "INSTAGRAM_PUBLISH", "PAID_ACTION", "PRODUCTION_ACTIVATION"],
+  "activation_gate": "EXPLICIT_FOUNDER_APPROVAL_REQUIRED",
+  "github_variable_required_for_active_jobs": "RIO_PRODUCTION_STATE=ACTIVE"
+}

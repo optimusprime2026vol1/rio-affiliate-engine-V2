@@ -22,9 +22,10 @@ on:
       chat_id: {description: 'Telegram chat id', required: false, type: string}
       command_text: {description: 'Founder command', required: false, type: string}
       callback_url: {description: 'RIO callback URL', required: false, type: string}
-permissions: {contents: write, issues: write}
+permissions: {contents: read}
 jobs:
   heartbeat:
+    permissions: {contents: write, issues: write}
     if: github.event_name == 'issues' || github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && (inputs.job == 'heartbeat' || inputs.job == 'all'))
     runs-on: ubuntu-latest
     timeout-minutes: 12
@@ -52,6 +53,7 @@ jobs:
           TELEGRAM_CHAT_ID_RIO: ${{ secrets.TELEGRAM_CHAT_ID_RIO }}
         run: python scripts/heartbeat.py
       - name: Continue Phase-2 objective from persistent memory
+        if: vars.RIO_PRODUCTION_STATE == 'ACTIVE'
         env:
           TELEGRAM_BOT_TOKEN_RIO: ${{ secrets.TELEGRAM_BOT_TOKEN_RIO }}
           TELEGRAM_CHAT_ID_RIO: ${{ secrets.TELEGRAM_CHAT_ID_RIO }}
@@ -75,7 +77,8 @@ jobs:
         if: success()
         run: |
           git config user.name "RIO" && git config user.email "rio@rio-affiliate.bot"
-          git add -A && (git diff --cached --quiet || git commit -m "heartbeat: health + autonomous Phase-2 cycle") && git pull --rebase --autostash && git push
+          git add data/control.json data/inbox.json data/status.json data/dashboard_snapshot.json data/soul_runtime_status.json data/heartbeat_alert_state.json data/heartbeat_runner_status.json data/ceo_action_queue.csv site/dashboard/index.html
+          (git diff --cached --quiet || git commit -m "heartbeat: governed health state") && git pull --rebase --autostash && git push
       - name: Notify heartbeat failure
         if: failure()
         env:
@@ -83,7 +86,8 @@ jobs:
           TELEGRAM_CHAT_ID_RIO: ${{ secrets.TELEGRAM_CHAT_ID_RIO }}
         run: python scripts/telegram_notify.py "🔴 RIO HEARTBEAT RUNNER FAILED. Health/Soul/autonomous cycle did not complete. Existing safety gates remain in force."
   content-review:
-    if: github.event.schedule == '0 5 * * *' || (github.event_name == 'workflow_dispatch' && (inputs.job == 'content-review' || inputs.job == 'all'))
+    permissions: {contents: write}
+    if: vars.RIO_PRODUCTION_STATE == 'ACTIVE' && (github.event.schedule == '0 5 * * *' || (github.event_name == 'workflow_dispatch' && (inputs.job == 'content-review' || inputs.job == 'all')))
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -94,9 +98,11 @@ jobs:
         continue-on-error: true
       - run: |
           git config user.name "RIO" && git config user.email "rio@rio-affiliate.bot"
-          git add -A && (git diff --cached --quiet || git commit -m "content review: DeepSeek pass over live articles") && git pull --rebase --autostash && git push
+          git add data/content_review_report.json data/status.json
+          (git diff --cached --quiet || git commit -m "content review: DeepSeek pass over live articles") && git pull --rebase --autostash && git push
   discover-products:
-    if: github.event.schedule == '30 5 * * *' || (github.event_name == 'workflow_dispatch' && (inputs.job == 'discover-products' || inputs.job == 'all'))
+    permissions: {contents: write}
+    if: vars.RIO_PRODUCTION_STATE == 'ACTIVE' && (github.event.schedule == '30 5 * * *' || (github.event_name == 'workflow_dispatch' && (inputs.job == 'discover-products' || inputs.job == 'all')))
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -107,9 +113,11 @@ jobs:
         continue-on-error: true
       - run: |
           git config user.name "RIO" && git config user.email "rio@rio-affiliate.bot"
-          git add -A && (git diff --cached --quiet || git commit -m "discovery: DeepSeek search-query suggestions") && git pull --rebase --autostash && git push
+          git add data/product_candidates.csv product_candidates.csv
+          (git diff --cached --quiet || git commit -m "discovery: DeepSeek search-query suggestions") && git pull --rebase --autostash && git push
   instagram-publish:
-    if: (github.event_name == 'push' && github.actor != 'github-actions[bot]') || github.event.schedule == '30 13 * * *' || (github.event_name == 'workflow_dispatch' && (inputs.job == 'instagram-publish' || inputs.job == 'all'))
+    permissions: {contents: write}
+    if: vars.RIO_PRODUCTION_STATE == 'ACTIVE' && ((github.event_name == 'push' && github.actor != 'github-actions[bot]') || github.event.schedule == '30 13 * * *' || (github.event_name == 'workflow_dispatch' && (inputs.job == 'instagram-publish' || inputs.job == 'all')))
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -123,10 +131,12 @@ jobs:
         run: |
           python scripts/generate_dashboard.py
           git config user.name "RIO" && git config user.email "rio@rio-affiliate.bot"
-          git add -A && (git diff --cached --quiet || git commit -m "instagram: publish run") && git pull --rebase --autostash && git push
+          git add data/ig_published.json data/instagram_approval.json data/instagram_run_status.json data/rio_report_to_victor.md data/dashboard_snapshot.json data/ceo_action_queue.csv site/dashboard/index.html
+          (git diff --cached --quiet || git commit -m "instagram: publish run") && git pull --rebase --autostash && git push
       - if: steps.publish.outcome == 'failure'
         run: exit 1
   telegram-test:
+    permissions: {contents: read}
     if: github.event_name == 'workflow_dispatch' && (inputs.job == 'telegram-test' || inputs.job == 'all')
     runs-on: ubuntu-latest
     steps:
@@ -136,6 +146,7 @@ jobs:
       - env: {TELEGRAM_BOT_TOKEN_RIO: "${{ secrets.TELEGRAM_BOT_TOKEN_RIO }}", TELEGRAM_CHAT_ID_RIO: "${{ secrets.TELEGRAM_CHAT_ID_RIO }}"}
         run: python scripts/telegram_notify.py --test
   telegram-direct:
+    permissions: {contents: write}
     if: github.event_name == 'workflow_dispatch' && inputs.job == 'telegram-direct'
     runs-on: ubuntu-latest
     timeout-minutes: 5
@@ -160,7 +171,7 @@ jobs:
         if: success()
         run: |
           git config user.name "RIO" && git config user.email "rio@rio-affiliate.bot"
-          git add data site scripts rio-dashboard
+          git add data/rio_work_status.json data/status.json data/control.json data/inbox.json site/rio-dashboard/index.html rio-dashboard/index.html
           (git diff --cached --quiet || git commit -m "rio webhook: apply validated Founder instruction")
           git pull --rebase --autostash
           git push
