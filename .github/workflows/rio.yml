@@ -24,7 +24,26 @@ on:
       callback_url: {description: 'RIO callback URL', required: false, type: string}
 permissions: {contents: read}
 jobs:
+  production-state:
+    permissions: {contents: read}
+    runs-on: ubuntu-latest
+    outputs:
+      active: ${{ steps.state.outputs.active }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: state
+        name: Read canonical production state
+        run: |
+          python - <<'PY'
+          import json, os
+          state=json.load(open('data/production_control.json',encoding='utf-8')).get('production_state','PARKED')
+          with open(os.environ['GITHUB_OUTPUT'],'a',encoding='utf-8') as f:
+              f.write('active=' + ('true' if state == 'ACTIVE' else 'false') + '\n')
+          print('RIO production state:', state)
+          PY
+
   heartbeat:
+    needs: production-state
     permissions: {contents: write, issues: write}
     if: github.event_name == 'issues' || github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && (inputs.job == 'heartbeat' || inputs.job == 'all'))
     runs-on: ubuntu-latest
@@ -53,7 +72,7 @@ jobs:
           TELEGRAM_CHAT_ID_RIO: ${{ secrets.TELEGRAM_CHAT_ID_RIO }}
         run: python scripts/heartbeat.py
       - name: Continue Phase-2 objective from persistent memory
-        if: vars.RIO_PRODUCTION_STATE == 'ACTIVE'
+        if: needs.production-state.outputs.active == 'true' && vars.RIO_PRODUCTION_STATE == 'ACTIVE'
         env:
           TELEGRAM_BOT_TOKEN_RIO: ${{ secrets.TELEGRAM_BOT_TOKEN_RIO }}
           TELEGRAM_CHAT_ID_RIO: ${{ secrets.TELEGRAM_CHAT_ID_RIO }}
@@ -86,8 +105,9 @@ jobs:
           TELEGRAM_CHAT_ID_RIO: ${{ secrets.TELEGRAM_CHAT_ID_RIO }}
         run: python scripts/telegram_notify.py "🔴 RIO HEARTBEAT RUNNER FAILED. Health/Soul/autonomous cycle did not complete. Existing safety gates remain in force."
   content-review:
+    needs: production-state
     permissions: {contents: write}
-    if: vars.RIO_PRODUCTION_STATE == 'ACTIVE' && (github.event.schedule == '0 5 * * *' || (github.event_name == 'workflow_dispatch' && (inputs.job == 'content-review' || inputs.job == 'all')))
+    if: needs.production-state.outputs.active == 'true' && vars.RIO_PRODUCTION_STATE == 'ACTIVE' && (github.event.schedule == '0 5 * * *' || (github.event_name == 'workflow_dispatch' && (inputs.job == 'content-review' || inputs.job == 'all')))
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -101,8 +121,9 @@ jobs:
           git add data/content_review_report.json data/status.json
           (git diff --cached --quiet || git commit -m "content review: DeepSeek pass over live articles") && git pull --rebase --autostash && git push
   discover-products:
+    needs: production-state
     permissions: {contents: write}
-    if: vars.RIO_PRODUCTION_STATE == 'ACTIVE' && (github.event.schedule == '30 5 * * *' || (github.event_name == 'workflow_dispatch' && (inputs.job == 'discover-products' || inputs.job == 'all')))
+    if: needs.production-state.outputs.active == 'true' && vars.RIO_PRODUCTION_STATE == 'ACTIVE' && (github.event.schedule == '30 5 * * *' || (github.event_name == 'workflow_dispatch' && (inputs.job == 'discover-products' || inputs.job == 'all')))
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -116,8 +137,9 @@ jobs:
           git add data/product_candidates.csv product_candidates.csv
           (git diff --cached --quiet || git commit -m "discovery: DeepSeek search-query suggestions") && git pull --rebase --autostash && git push
   instagram-publish:
+    needs: production-state
     permissions: {contents: write}
-    if: vars.RIO_PRODUCTION_STATE == 'ACTIVE' && ((github.event_name == 'push' && github.actor != 'github-actions[bot]') || github.event.schedule == '30 13 * * *' || (github.event_name == 'workflow_dispatch' && (inputs.job == 'instagram-publish' || inputs.job == 'all')))
+    if: needs.production-state.outputs.active == 'true' && vars.RIO_PRODUCTION_STATE == 'ACTIVE' && ((github.event_name == 'push' && github.actor != 'github-actions[bot]') || github.event.schedule == '30 13 * * *' || (github.event_name == 'workflow_dispatch' && (inputs.job == 'instagram-publish' || inputs.job == 'all')))
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
