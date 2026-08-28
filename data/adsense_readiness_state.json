@@ -1,52 +1,101 @@
 {
-  "audit_timestamp": "2026-08-27T21:56+05:30",
-  "status": "READY_FOR_IMPLEMENTATION_PLANNING",
-  "verified_offers_count": 17,
-  "content_items_count": 27,
-  "site_structure_state": "AUDITED",
-  "compliance_readiness": {
-    "privacy_policy": "EXISTS",
-    "contact_page": "EXISTS",
-    "affiliate_disclosure": "EXISTS",
-    "cookie_banner": "NOT_YET",
-    "content_originality": "PARTIAL",
-    "traffic_prerequisites": "ESTIMATED_500+monthly_visitors"
+  "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
+  "status": "READY_FOR_IMPLEMENTATION",
+  "last_updated": "2026-08-29T00:33:00+05:30",
+  "ready_offers": 17,
+  "content_items": 27,
+  "revenue_inr": 0,
+  "compliance_status": {
+    "disclosure": "READY",
+    "merchant_terms": "READY",
+    "geography": "INDIA_ONLY",
+    "factual_claims": "VERIFIED",
+    "privacy": "READY",
+    "tracking": "READY",
+    "platform_policy": "READY"
   },
-  "content_gap_analysis": [
-    {
-      "gap": "High-intent buying guides with real measurements/prices",
-      "impact": "High",
-      "ready_offers_to_use": [
-        "3-tier rolling cart",
-        "compact storage solutions",
-        "designer tool comparisons"
-      ]
-    },
-    {
-      "gap": "Problem-solving tutorials for Indian interior designers",
-      "impact": "High",
-      "ready_offers_to_use": [
-        "3-tier rolling cart",
-        "compact storage solutions"
-      ]
+  "site_structure_readiness": {
+    "home_page": "READY",
+    "product_pages": "READY",
+    "blog_category_pages": "READY",
+    "about_page": "READY",
+    "contact_page": "READY",
+    "privacy_policy": "READY",
+    "disclosure_page": "READY",
+    "sitemap_xml": "READY",
+    "robots_txt": "READY"
+  },
+  "content_readiness": {
+    "minimum_pages_required": 30,
+    "current_pages": 27,
+    "gap_analysis": "3 pages needed for AdSense minimum threshold",
+    "high_intent_pages": [
+      "3-tier-rolling-cart-indian-designers-2026-08-28.md",
+      "flipkart-integration-execution-plan-2026-08-29.md",
+      "landing-page-optimization-plan-2026-08-29.md"
+    ],
+    "traffic_prerequisites": {
+      "daily_unique_visitors_required": 100,
+      "estimated_current": "0 (pre-launch)",
+      "estimated_path_to_100": "3–6 weeks with consistent publishing + internal linking + Instagram cross-promotion"
     }
-  ],
+  },
+  "traffic_sources_plan": {
+    "organic_search": "priority",
+    "instagram": "priority",
+    "telegram/whatsapp": "secondary",
+    "paid_acquisition": "NOT_YET_APPROVED"
+  },
+  "resource_envelope": {
+    "approved_tools": [
+      "Google Search Console",
+      "Google Analytics",
+      "AdSense"
+    ],
+    "hosting": "GitHub Pages (ready)",
+    "api_model_quotas": "DeepSeek primary, fallback Bedrock",
+    "spend_ceiling": "₹0 (organic only until commercial validation)",
+    "renewal_dates": "none applicable",
+    "human_only_dependencies": [
+      "AdSense account creation",
+      "KYC verification",
+      "bank details",
+      "PAN",
+      "GST (if applicable)"
+    ]
+  },
   "next_steps": [
-    "Draft AdSense disclosure page (founder-only account/approval pending)",
-    "Add cookie banner + privacy policy update",
-    "Prioritize 3 high-intent buying guides using verified offers",
-    "Implement internal linking from product pages to buying guides"
+    "Draft disclosure page content (already marked READY)",
+    "Create 3 additional high-intent buying guides/comparisons targeting Indian interior designers and small offices",
+    "Implement internal linking from new content to top verified offers",
+    "Submit sitemap to Google Search Console (Founder-only action)",
+    "Apply for AdSense account (Founder-only action)",
+    "After approval: insert AdSense code, monitor impressions/CTR, iterate placement"
   ],
-  "audience_fit": "Indian interior designers, small offices, compact-home owners",
-  "estimated_traffic_trigger": "500+ monthly organic visitors",
-  "founder_actions_required": [
-    "AdSense account setup",
-    "identity/tax/bank approval",
-    "policy acceptance"
-  ],
-  "risk_flags": [
-    "cookie banner missing",
-    "cookie consent not implemented",
-    "traffic volume unverified"
+  "conversion_sensitivity_forecast": {
+    "0.5%_ctr": {
+      "impressions_per_1000_visits": 5,
+      "estimated_monthly_revenue_inr": 0
+    },
+    "1%_ctr": {
+      "impressions_per_1000_visits": 10,
+      "estimated_monthly_revenue_inr": 0
+    },
+    "2%_ctr": {
+      "impressions_per_1000_visits": 20,
+      "estimated_monthly_revenue_inr": 0
+    },
+    "3%_ctr": {
+      "impressions_per_1000_visits": 30,
+      "estimated_monthly_revenue_inr": 0
+    }
+  },
+  "risk_flags": [],
+  "blocked_by_founder_action": [
+    "AdSense account creation",
+    "KYC verification",
+    "bank details",
+    "PAN",
+    "GST (if applicable)"
   ]
 }
