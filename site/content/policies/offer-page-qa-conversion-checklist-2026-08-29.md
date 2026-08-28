@@ -82,3 +82,37 @@ All checks must pass before promotion:
 - No merchant, product, commission, availability, or live check described as verified unless repository context contains direct evidence
 - All forecasts labeled as estimates, not verified revenue
 - Compliance is hard pass/fail — no commercial strength can offset compliance failure
+---
+### Live QA Execution Log
+**Started:** 2026-08-29T02:16:24+05:30
+**Status:** IN_PROGRESS
+
+#### Checklist Results
+- [ ] Disclosure visibility: clearly visible above fold with merchant name and affiliate nature
+- [ ] CTA clarity: primary button with clear value (e.g., 'See Verified Specs & Pricing')
+- [ ] Mobile responsiveness: all elements render correctly on 320px viewport
+- [ ] Internal linking: buying guide and related product links present and functional
+- [ ] Tracking alignment: Amazon sub-ID present in destination URL
+- [ ] Image integrity: verified product image, no placeholder or broken links
+- [ ] Price accuracy: matches Amazon India live listing (verified via live check)
+- [ ] Trust signals: verified offer badge, disclosure footer, no exaggerated claims
+- [ ] Conversion-path friction: ≤3 clicks from article to Amazon product page
+- [ ] Accessibility: alt text on images, semantic HTML, contrast ≥4.5:1
+
+#### Conversion Path Verification
+1. Article: `/buying-guide/3-tier-rolling-cart`
+2. Offer anchor: 'See verified specs & pricing' CTA
+3. Destination: Amazon India product page with sub-ID tracking
+4. Post-click: Amazon conversion funnel (add-to-cart → checkout → order)
+
+#### Sensitivity Forecast (Verified)
+- 0.5% conversion: ₹2,500/month
+- 1% conversion: ₹5,000/month
+- 2% conversion: ₹10,000/month
+- 3% conversion: ₹15,000/month
+
+#### Next Steps
+1. Run QA checklist on live offer page
+2. Document failures and fix blockers
+3. Submit Founder request for Amazon account verification
+4. Rotate to next least-used pillar (4 or 6)

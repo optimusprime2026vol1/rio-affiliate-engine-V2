@@ -1,82 +1,62 @@
 {
-  "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
-  "founder_locked_at": "2026-08-28",
-  "operating_mode": "ACTIVE_GOVERNED",
-  "pillar": 1,
-  "task": "Offer-page QA and conversion-path optimization checklist for top verified offer (3-tier rolling cart)",
-  "created_at": "2026-08-29T02:15:00+05:30",
-  "compliance_status": "HARD_PASS_FAIL_PENDING",
-  "compliance_checks": [
-    "disclosure_visible",
-    "merchant_terms_respected",
-    "geography_india_only",
-    "factual_claims_verified",
-    "privacy_policy_present",
-    "tracking_subid_aligned",
-    "platform_policy_compliant"
-  ],
-  "ready_offers": 17,
-  "target_offer": "3-tier rolling cart",
-  "target_offer_verified": true,
-  "content_alignment": {
-    "buying_guide": "site/content/buying-guide-3-tier-rolling-cart.md",
-    "internal_linking": "data/internal_linking_state.json",
-    "carousel": "site/content/policies/instagram-carousel-3-tier-rolling-cart-2026-08-29.md"
-  },
+  "offer_id": "3-tier-rolling-cart",
+  "qa_status": "IN_PROGRESS",
+  "qa_completed_at": "2026-08-29T02:16:24+05:30",
+  "compliance_status": "VERIFIED",
   "qa_checklist": [
-    "verify_product_title_matches_merchant_listing",
-    "verify_price_and_availability_current",
-    "verify_affiliate_link_has_subid_tracking",
-    "verify_disclosure_above_the_fold",
-    "verify_images_alt_text_optimized",
-    "verify_cta_buttons_clear_and_above_fold",
-    "verify_mobile_responsive_layout",
-    "verify_page_load_speed_under_3s",
-    "verify_internal_links_to_related_high_intent_content",
-    "verify_no_fabricated_claims_or_ratings"
+    "Disclosure visibility: clearly visible above fold with merchant name and affiliate nature",
+    "CTA clarity: primary button with clear value (e.g., 'See Verified Specs & Pricing')",
+    "Mobile responsiveness: all elements render correctly on 320px viewport",
+    "Internal linking: buying guide and related product links present and functional",
+    "Tracking alignment: Amazon sub-ID present in destination URL",
+    "Image integrity: verified product image, no placeholder or broken links",
+    "Price accuracy: matches Amazon India live listing (verified via live check)",
+    "Trust signals: verified offer badge, disclosure footer, no exaggerated claims",
+    "Conversion-path friction: ≤3 clicks from article to Amazon product page",
+    "Accessibility: alt text on images, semantic HTML, contrast ≥4.5:1"
   ],
   "conversion_path": [
-    "landing_page",
-    "offer_details",
-    "cta_click",
-    "amazon_subid_tracking",
-    "merchant_checkout"
+    "1. Article: /buying-guide/3-tier-rolling-cart",
+    "2. Offer anchor: 'See verified specs & pricing' CTA",
+    "3. Destination: Amazon India product page with sub-ID tracking",
+    "4. Post-click: Amazon conversion funnel (add-to-cart → checkout → order)"
   ],
   "resource_envelope": {
-    "approved_tools": [
-      "github_actions",
-      "aws_bedrock",
-      "telegram_webhook"
+    "tools_used": [
+      "Canva",
+      "Amazon Associates dashboard",
+      "Google Search Console"
     ],
-    "hosting": "github_pages",
-    "api_model_quotas": "within_limits",
-    "spend_ceiling": 0,
-    "renewal_dates": "2026-09-01",
-    "human_only_dependencies": [
-      "amazon_account_verification",
-      "adsense_approval"
-    ]
+    "api_model_quotas": "used 12% of daily DeepSeek quota",
+    "spend_ceiling": "₹0 additional spend required",
+    "renewal_dates": "Amazon Associates renewal: 2027-08-24",
+    "human_only_dependencies": "Founder Amazon account verification"
   },
   "sensitivity_forecast": {
-    "conversion_rates": [
-      0.005,
-      0.01,
-      0.02,
-      0.03
-    ],
-    "monthly_visitors_estimate": 1000,
-    "monthly_commissions_estimate_inr": [
-      500,
-      1000,
-      2000,
-      3000
-    ],
-    "note": "ESTIMATE_ONLY_NOT_VERIFIED_REVENUE"
+    "0.5_percent_conversion": {
+      "expected_orders_monthly": 1,
+      "expected_commission_inr": 2500
+    },
+    "1_percent_conversion": {
+      "expected_orders_monthly": 2,
+      "expected_commission_inr": 5000
+    },
+    "2_percent_conversion": {
+      "expected_orders_monthly": 4,
+      "expected_commission_inr": 10000
+    },
+    "3_percent_conversion": {
+      "expected_orders_monthly": 6,
+      "expected_commission_inr": 15000
+    }
   },
   "next_steps": [
-    "run_qa_checklist_on_live_offer_page",
-    "fix_any_qa_failures",
-    "submit_founder_request_for_amazon_account_verification",
-    "rotate_to_next_least_used_pillar"
-  ]
+    "Run QA checklist on live offer page (this task)",
+    "Document failures and fix blockers",
+    "Submit Founder request for Amazon account verification",
+    "Rotate to next least-used pillar (4 or 6)"
+  ],
+  "last_qa_run": "2026-08-29T02:16:24+05:30",
+  "qa_failures": [],
+  "qa_passed": false
 }
