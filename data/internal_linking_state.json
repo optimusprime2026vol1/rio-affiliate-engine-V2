@@ -1,24 +1,112 @@
 {
   "offer_id": "3-tier-rolling-cart",
-  "target_url": "/3-tier-rolling-cart-buying-guide",
-  "anchor_text_variants": [
-    "best 3-tier rolling cart for Indian interior designers",
-    "verified 3-tier rolling cart comparison",
-    "top-rated rolling cart for small offices"
+  "offer_title": "3-Tier Rolling Cart for Indian Interior Designers & Small Offices",
+  "offer_url": "https://www.amazon.in/dp/B09XKJH7GQ",
+  "offer_verified": true,
+  "verified_at": "2026-08-28T18:30+05:30",
+  "verified_by": "X→X GATE",
+  "compliance_status": "PASS",
+  "compliance_checks": [
+    "disclosure",
+    "merchant_terms",
+    "geography",
+    "factual_claims",
+    "privacy",
+    "tracking",
+    "platform_policy"
   ],
-  "source_pages": [
-    "/blog/rolling-cart-buying-guide",
-    "/instagram/carousel-3-tier-rolling-cart",
-    "/landing-page-optimization-plan"
+  "compliance_verified_at": "2026-08-28T18:30+05:30",
+  "compliance_verified_by": "X→X GATE",
+  "content_assets": [
+    {
+      "type": "buying_guide",
+      "path": "site/content/buying-guides/rolling-cart-buying-guide-2026-08-28.md",
+      "status": "PUBLISHED",
+      "published_at": "2026-08-28T20:15+05:30",
+      "internal_linking_status": "PARTIAL"
+    },
+    {
+      "type": "product_led_blog",
+      "path": "site/content/policies/product-led-blog-3-tier-rolling-cart-2026-08-29.md",
+      "status": "DRAFT_PENDING_FOUNDERS_APPROVAL",
+      "internal_linking_status": "NOT_YET_APPLIED"
+    },
+    {
+      "type": "instagram_carousel",
+      "path": "site/content/policies/instagram-carousel-3-tier-rolling-cart-2026-08-29.md",
+      "status": "DRAFT_PENDING_FOUNDERS_APPROVAL",
+      "internal_linking_status": "NOT_YET_APPLIED"
+    }
   ],
-  "compliance_status": "VERIFIED",
-  "disclosure_present": true,
-  "tracking_ready": true,
+  "current_internal_linking_status": {
+    "buying_guide_to_offer": "LINKED",
+    "blog_to_offer": "NOT_LINKED",
+    "carousel_to_offer": "NOT_LINKED",
+    "offer_page_to_related_content": "NOT_LINKED"
+  },
+  "proposed_internal_linking_optimizations": [
+    {
+      "from": "site/content/buying-guides/rolling-cart-buying-guide-2026-08-28.md",
+      "to": "offer_page",
+      "status": "ALREADY_LINKED",
+      "notes": "Amazon ASIN link present with disclosure and sub-ID"
+    },
+    {
+      "from": "site/content/policies/product-led-blog-3-tier-rolling-cart-2026-08-29.md",
+      "to": "offer_page",
+      "status": "PROPOSED",
+      "notes": "Add inline disclosure + Amazon sub-ID + CTA button linking to verified offer page"
+    },
+    {
+      "from": "site/content/policies/instagram-carousel-3-tier-rolling-cart-2026-08-29.md",
+      "to": "offer_page",
+      "status": "PROPOSED",
+      "notes": "Add link-in-bio CTA pointing to offer page; track via UTM + sub-ID"
+    },
+    {
+      "from": "offer_page",
+      "to": "buying_guide",
+      "status": "PROPOSED",
+      "notes": "Add 'Why this cart?' section linking to buying guide for deeper context"
+    }
+  ],
+  "tracking_setup": {
+    "amazon_sub_id": "rioaffiliate-21",
+    "utm_source": "rio-affiliate",
+    "utm_medium": "internal-linking",
+    "utm_campaign": "3-tier-cart-conversion-optimization",
+    "tracking_integrity": "PASS",
+    "verified_at": "2026-08-28T18:30+05:30"
+  },
+  "resource_envelope": {
+    "hosting": "GitHub Pages",
+    "api_model_quotas": "1000 DeepSeek calls/day",
+    "spend_ceiling": "₹0",
+    "renewal_dates": "GitHub Pages: perpetual; DeepSeek: monthly auto-renew",
+    "human_only_dependencies": "Founder approval for blog/post publishing"
+  },
+  "sensitivity_forecast": {
+    "conversion_rates": [
+      0.005,
+      0.01,
+      0.02,
+      0.03
+    ],
+    "estimated_monthly_clicks": 120,
+    "estimated_monthly_conversions_at_0.5pct": 0.6,
+    "estimated_monthly_conversions_at_1pct": 1.2,
+    "estimated_monthly_conversions_at_2pct": 2.4,
+    "estimated_monthly_conversions_at_3pct": 3.6,
+    "estimated_monthly_approved_commission_at_1pct": "₹180",
+    "estimated_monthly_approved_commission_at_2pct": "₹360",
+    "estimated_monthly_approved_commission_at_3pct": "₹540"
+  },
   "next_steps": [
-    "Draft internal linking map for top 3 verified offers",
-    "Update site navigation to surface buying guide from footer and category pages",
-    "Submit for Founder image/approval if new internal CTA banners needed"
-  ],
-  "estimated_impact": "High-intent internal traffic lift; supports AdSense readiness and conversion funnel",
-  "last_verified_at": "2026-08-29T01:00+05:30"
+    "After validator pass: commit changes",
+    "Draft internal linking updates for blog and carousel using verified offer specs",
+    "Add inline disclosure and Amazon sub-ID tracking",
+    "Submit for Founder review and approval",
+    "After approval: publish and monitor conversion lift",
+    "Rotate to next least-used pillar (2 or 5)"
+  ]
 }
