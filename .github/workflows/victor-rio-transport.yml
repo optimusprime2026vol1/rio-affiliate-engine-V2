@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 12
     concurrency:
-      group: rio-victor-${{ inputs.task_id }}
+      group: rio-heartbeat
       cancel-in-progress: false
     env:
       VICTOR_RIO_TASK_ID: ${{ inputs.task_id }}
