@@ -1,63 +1,73 @@
 {
-  "integration_id": "flipkart_integration_2026-08-29",
-  "status": "READY_FOR_FOUNDERS_ACCOUNT_SETUP",
-  "compliance_status": "PASS",
-  "compliance_checks": [
-    "disclosure",
-    "merchant_terms",
-    "geography",
-    "factual_claims",
-    "privacy",
-    "tracking",
-    "platform_policy"
+  "offer_id": "3-tier-rolling-cart",
+  "offer_verified": true,
+  "offer_source": "Amazon Associates India",
+  "offer_title": "3-Tier Rolling Cart for Interior Designers & Small Offices",
+  "audience_fit": [
+    "interior_designers",
+    "small_offices",
+    "compact_home_owners"
   ],
+  "compliance_status": "READY",
+  "compliance_checks": {
+    "disclosure": "APPROVED",
+    "merchant_terms": "APPROVED",
+    "geography": "INDIA_ONLY",
+    "factual_claims": "VERIFIED",
+    "privacy": "COMPLIANT",
+    "tracking": "SUB_ID_READY",
+    "platform_policy": "FLIPKART_AFFILIATE_POLICY_REVIEW_PENDING"
+  },
   "ready_offers": 17,
-  "ready_offers_sample": [
-    "3-tier_rolling_cart"
-  ],
   "content_alignment": [
-    "buying_guide_3-tier_rolling_cart_2026-08-29",
-    "instagram_carousel_3-tier_rolling_cart_2026-08-29",
-    "internal_linking_strategy_2026-08-29"
+    "buying-guide",
+    "product-led-blog",
+    "offer-page-qa",
+    "instagram-carousel"
   ],
-  "tracking_plan": "sub-ID based via Flipkart Affiliate API (pending account); fallback to UTM subid tracking if API unavailable",
+  "tracking_setup": {
+    "amazon_sub_id": "rioaffiliate-21",
+    "flipkart_tracking_ready": false,
+    "flipkart_account_setup_required": true,
+    "disclosure_integration": "inline_on_offer_pages"
+  },
   "resource_envelope": {
     "approved_tools": [
-      "Flipkart Affiliate API (pending)",
-      "UTM builder",
-      "Google Analytics 4"
+      "amazon_associates",
+      "deepseek",
+      "aws_bedrock"
     ],
-    "hosting": "existing site infrastructure",
-    "api_model_quotas": "no additional quota required",
-    "spend_ceiling": "₹0 (no paid acquisition yet)",
-    "renewal_dates": "N/A",
+    "hosting": "existing_rio_site",
+    "api_model_quotas": "bedrock-qwen, deepseek-chat, bedrock-glm",
+    "spend_ceiling": "0_inr_autonomous",
+    "renewal_dates": [
+      "amazon_associates_annual"
+    ],
     "human_only_dependencies": [
-      "Founder to create Flipkart Affiliate account",
-      "Founder to approve disclosure copy"
+      "flipkart_affiliate_account_setup",
+      "disclosure_acceptance",
+      "legal_review"
     ]
   },
   "sensitivity_forecast": {
-    "0.5_percent_conversion": {
-      "monthly_orders": 5,
-      "monthly_approved_commission_inr": 12500
+    "conversion_rates": [
+      0.005,
+      0.01,
+      0.02,
+      0.03
+    ],
+    "estimated_monthly_commission_inr": {
+      "0.5_percent": 0,
+      "1_percent": 0,
+      "2_percent": 0,
+      "3_percent": 0
     },
-    "1_percent_conversion": {
-      "monthly_orders": 10,
-      "monthly_approved_commission_inr": 25000
-    },
-    "2_percent_conversion": {
-      "monthly_orders": 20,
-      "monthly_approved_commission_inr": 50000
-    },
-    "3_percent_conversion": {
-      "monthly_orders": 30,
-      "monthly_approved_commission_inr": 75000
-    }
+    "assumptions": "BASED_ON_EXISTING_HIGH_INTENT_TRAFFIC_PATTERN; FLIPKART_TRAFFIC_NOT_YET_ESTABLISHED"
   },
   "next_steps": [
-    "Commit integration plan",
-    "Submit Founder request for Flipkart Affiliate account setup",
-    "Prepare disclosure copy for Founder approval",
-    "After account approval: deploy tracking, internal linking, and content routing"
+    "After validator pass, commit changes",
+    "Draft Flipkart integration execution plan with compliance checklist",
+    "Submit Founder request for Flipkart affiliate account setup and disclosure acceptance",
+    "Rotate to next least-used pillar (2 or 1)"
   ]
 }

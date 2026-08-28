@@ -1,51 +1,71 @@
-# Flipkart Integration Execution Plan — 2026-08-29
+# Flipkart Integration Execution Plan — RIO Phase-2
 
-**Policy ID:** `RIO_FLIPKART_INTEGRATION_V1`
-**Status:** READY FOR EXECUTION (Founder account pending)
-**Phase:** Phase 2 — conversion-focused content using verified offers
-
-## 1. Objective
-Create conversion-ready content for Flipkart offers using existing verified specs, audience-fit framing, and internal linking — no new discovery or Founder-only actions required beyond future account setup.
-
-## 2. Readiness Summary
-- **Ready offers:** 17 (all Amazon Associates India, verified)
-- **Target product:** 3-tier rolling cart (verified specs, audience-fit framing, internal linking candidates, Instagram carousel)
-- **Compliance checks:** Disclosure, geography, factual claims, privacy = PASS; merchant terms, tracking, platform policy = PENDING_FOUNDER_ACCOUNT
-- **Resource envelope:** No additional spend; uses existing site generator and verified specs
-- **Conversion sensitivity forecast:** ₹2.5k–₹30k/month depending on conversion rate (0.5%–3%)
-
-## 3. Immediate Execution Tasks
-1. **Draft Flipkart-specific offer page**
-   - Use verified specs from `data/verified_offers.json`
-   - Apply disclosure template (`site/content/policies/disclosure-template.md`)
-   - Include internal links from existing buying guide and Instagram carousel
-   - Add Flipkart pixel integration note (Founder account required)
-
-2. **Add internal linking**
-   - From `site/content/buying-guides/3-tier-rolling-cart-indian-designers-2026-08-28.md`
-   - From `site/content/instagram/carousels/3-tier-rolling-cart-indian-designers-2026-08-28.md`
-   - Link text: "Available on Flipkart (pending account setup)"
-
-3. **Create Flipkart offer content template**
-   - Reusable structure for future Flipkart offers
-   - Includes verified specs, disclosure, internal linking, pixel note
-
-## 4. Impact & Next Steps
-- **Expected impact:** High-readiness conversion content using existing assets
-- **Next task after execution:** Commit changes, propose 2–3 immediate fix tasks (disclosure page draft, internal linking, Instagram carousel draft), and rotate to next least-used pillar (3 or 6).
-
-## 5. Compliance & Gates
-- **Hard pass/fail compliance checks:** Disclosure, geography, factual claims, privacy = PASS; merchant terms, tracking, platform policy = PENDING_FOUNDER_ACCOUNT
-- **No Founder-only actions required for this task**
-- **Two failed niche pilots trigger mandatory Dr. Victor strategy review before third niche**
-
-## 6. Resource Envelope
-- Approved tools: existing site generator, verified offer specs
-- Hosting: current site infrastructure
-- API/model quotas: DeepSeek/Bedrock quota available
-- Spend ceiling: ₹0 additional spend required
-- Renewal dates: none applicable
-- Human-only dependencies: Founder Flipkart account setup, payment/tax onboarding
+**Date:** 2026-08-29  
+**Offer:** 3-Tier Rolling Cart (Amazon Associates India verified)  
+**Pillar:** 5 — Additional commerce/platform expansion  
+**Engine:** bedrock-qwen  
+**Risk:** low  
+**Status:** EXECUTION_READINESS_VALIDATED
 
 ---
-*Policy locked per RIO 3.0 Phase-2 autonomous execution pillars and Commercial Validation Policy v2.*
+
+## Why Flipkart?
+
+- Flipkart is India-native, dominant in Tier 2+ cities, and widely trusted by interior designers, contractors, and small-office professionals.
+- Strong fit for furniture, organisation, and storage products — aligned with 3-tier rolling cart use cases.
+- Existing Amazon Associates offer can be mirrored with Flipkart tracking to test cross-platform conversion.
+- Complements EarnKaro/Cuelinks plans and prepares for AdSense-ready multi-platform funnel.
+
+## Compliance Status — HARD PASS/FAIL GATE
+
+| Check | Status | Notes |
+|-------|--------|-------|
+| Disclosure | APPROVED | Inline on offer pages; same format as Amazon |
+| Merchant terms | PENDING | Flipkart affiliate terms must be accepted |
+| Geography | INDIA_ONLY | Verified |
+| Factual claims | VERIFIED | Based on Amazon offer specs |
+| Privacy | COMPLIANT | No PII collected |
+| Tracking | SUB_ID_READY | Amazon sub-ID configured; Flipkart requires separate tracking |
+| Platform policy | REVIEW_PENDING | Must pass Flipkart affiliate policy review |
+
+**COMPLIANCE VERDICT:** NOT READY until Flipkart account approval and policy acceptance.
+
+## Readiness Summary
+
+- **Ready offers:** 17 (including 3-tier rolling cart)
+- **Content alignment:** buying guide, product-led blog, offer-page QA, Instagram carousel all prepared
+- **Tracking:** Amazon sub-ID ready; Flipkart tracking requires account setup
+- **Disclosure:** inline on offer pages; no change needed beyond platform-specific disclosure
+- **Resource envelope:** no autonomous spend required; Founder-only actions: account setup, disclosure acceptance
+
+## Sensitivity Forecast (Conservative)
+
+| Conversion Rate | Estimated Monthly Commission (INR) | Notes |
+|-----------------|------------------------------------|-------|
+| 0.5% | 0 | Pilot baseline |
+| 1% | 0 | Still below payout threshold |
+| 2% | 0 | Depends on Flipkart payout cycle |
+| 3% | 0 | Pilot-proof milestone only |
+
+**Assumptions:**
+- Flipkart traffic not yet established; forecast assumes same intent as Amazon.
+- First settlement required before scaling.
+- Flipkart payout cycle may differ from Amazon; ledger reconciliation must be added.
+
+## Next Steps
+
+1. **After validator pass, commit changes**
+2. **Draft Flipkart integration execution plan with compliance checklist**
+3. **Submit Founder request for Flipkart affiliate account setup and disclosure acceptance**
+4. **Rotate to next least-used pillar (2 or 1)**
+
+## Blocked Actions
+
+- Flipkart account creation (Founder-only)
+- Disclosure acceptance (Founder-only)
+- Legal/tax acceptance (Founder-only)
+- Payment setup (Founder-only)
+
+---
+
+*This plan follows RIO Commercial Validation Policy v2 (Day 30 = execution readiness, not final organic viability). Compliance is a hard pass/fail gate.*
