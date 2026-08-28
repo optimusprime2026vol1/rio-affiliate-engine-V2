@@ -1,79 +1,35 @@
 {
   "offer_id": "3-tier-rolling-cart",
-  "offer_name": "3-Tier Rolling Cart for Interior Designers & Small Offices",
-  "merchant": "Amazon Associates India",
-  "asin": "B09XJZQY7M",
-  "verified_at": "2026-08-28T18:30+05:30",
-  "verified_by": "X→X GATE: PASS",
-  "audience_fit": [
-    "interior_designers",
-    "small_offices",
-    "compact_home_owners"
+  "offer_verified": true,
+  "offer_source": "Amazon Associates India",
+  "audience": [
+    "Indian interior designers",
+    "small offices / home-office professionals",
+    "renters / compact-home owners"
   ],
-  "problem_solving_angle": "Space-constrained workspaces need mobile, modular, and professional-grade storage — this cart delivers 3-tier adjustability, smooth-rolling castors, and a sleek black finish that fits modern Indian interiors.",
-  "carousel_structure": [
-    {
-      "slide": 1,
-      "hook": "Interior designers: Stop juggling storage across 3 locations. One cart solves it.",
-      "visual_hint": "Flat-lay of cart with design tools, tape measure, and notebook",
-      "cta": "Swipe →"
-    },
-    {
-      "slide": 2,
-      "hook": "3-tier adjustability. 120 kg load. 360° smooth castors.",
-      "visual_hint": "Close-up of castors and tier-height adjustment mechanism",
-      "cta": "Swipe →"
-    },
-    {
-      "slide": 3,
-      "hook": "Fits through standard Indian doorways. Black matte finish. No assembly needed.",
-      "visual_hint": "Cart beside a standard 30\" doorframe",
-      "cta": "Swipe →"
-    },
-    {
-      "slide": 4,
-      "hook": "Used by 12+ Indian interior studios. Verified 4.3★ (2,100+ reviews).",
-      "visual_hint": "Mockup of 5-star Amazon review snippet",
-      "cta": "Swipe →"
-    },
-    {
-      "slide": 5,
-      "hook": "Ready in 2 days. Free shipping. 10-day trial. 1-year warranty.",
-      "visual_hint": "Cart in a small home office setup with laptop and drafting tools",
-      "cta": "Link in bio →"
-    }
+  "content_strategy": "Problem-first carousel: storage chaos → 3-tier solution → real Indian space fit → verified specs → CTA with disclosure",
+  "compliance_status": "DISCLOSURE_PLANNED, TRACKING_PLANNED, MERCHANT_POLICY_REVIEWED",
+  "compliance_checks": [
+    "disclosure",
+    "merchant_terms",
+    "geography",
+    "factual_claims",
+    "privacy",
+    "tracking",
+    "platform_policy"
   ],
-  "compliance_status": {
-    "disclosure_planned": "✅ #ad or #affiliate in first slide caption + bio link",
-    "merchant_terms_reviewed": "Amazon Associates India Program Policy v2026-08",
-    "geography_compliant": "India-only targeting",
-    "factual_claims_verified": [
-      "120 kg",
-      "360° castors",
-      "no assembly",
-      "doorway fit"
-    ],
-    "tracking_ready": "Amazon Associates tracking via rioaffiliate-21",
-    "platform_policy_aligned": "Instagram Affiliate Disclosure Guidelines (2026)",
-    "next_check": "None required — ready for publishing"
-  },
-  "content_alignment": {
-    "supports_buying_guide": "buying-guide-3-tier-rolling-cart-2026-08-29.md",
-    "supports_internal_linking": "internal-linking-strategy-2026-08-29.md",
-    "supports_flipkart_plan": "flipkart-integration-readiness-plan-2026-08-29.md (cross-platform readiness)",
-    "supports_cuelinks_plan": "cuelinks-integration-execution-plan-2026-08-29.md (multi-merchant fallback)"
-  },
   "resource_envelope": {
-    "estimated_publish_time_minutes": 15,
-    "required_tools": [
-      "Canva",
-      "Instagram Business account",
-      "Amazon Associates tracking"
+    "tools": [
+      "existing Amazon sub-ID",
+      "verified offer specs",
+      "Instagram content policy v2"
     ],
-    "api_model_quotas_used": "0 (static content)",
-    "spend_ceiling_inr": 0,
+    "hosting": "site/instagram/carousel/",
+    "api_model_quotas": "DeepSeek primary",
+    "spend_ceiling": "₹0",
+    "renewal_dates": "none",
     "human_only_dependencies": [
-      "Founder approval for first carousel caption draft"
+      "Founder review/approval before publishing"
     ]
   },
   "sensitivity_forecast": {
@@ -81,13 +37,13 @@
     "1_percent_conversion": 0,
     "2_percent_conversion": 0,
     "3_percent_conversion": 0,
-    "note": "Forecast pending first 30 impressions; baseline CTR target: 3%+ for carousel"
+    "note": "Forecast based on verified offer specs and audience fit; actual revenue depends on traffic quality and Founder-approved publishing."
   },
   "next_steps": [
-    "Submit caption draft to Founder for approval",
-    "Create 5-slide carousel in Canva using verified offer specs",
-    "Post to Instagram with disclosure and link in bio",
-    "Track impressions, taps, and Amazon sub-ID clicks over 7 days",
-    "Rotate to next pillar (3) after 3 posts or 7 days — whichever comes first"
+    "Draft carousel copy and visual brief",
+    "Add inline disclosure and Amazon sub-ID tracking",
+    "Submit for Founder review/approval",
+    "Publish and track clicks/conversions",
+    "Rotate to next least-used pillar (2 or 5)"
   ]
 }
