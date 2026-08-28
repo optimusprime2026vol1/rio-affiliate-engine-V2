@@ -1,9 +1,9 @@
 {
   "status": "WAITING",
-  "current_task": "Rotate to Pillar 2 (new affiliate networks and product opportunities) — now least-used pillar (0 recent completed tasks); create verified, evidence-based affiliate network expansion readiness plan using existing verified offers and audience fit, focusing on high-readiness, low-friction opportunities that do not require Founder-only account setup.",
-  "started_at": "2026-08-29T00:00:57+05:30",
-  "updated_at": "2026-08-29T00:01:35+05:30",
-  "ai_engine": "deepseek",
+  "current_task": "Rotate to Pillar 3 (AdSense readiness & monetization) — now least-used pillar (0 recent completed tasks); create verified, evidence-based AdSense implementation readiness plan using existing site structure and verified offers, focusing on compliance, content readiness, and traffic prerequisites — no Founder-only actions required beyond future account setup.",
+  "started_at": "2026-08-29T00:01:56+05:30",
+  "updated_at": "2026-08-29T00:02:17+05:30",
+  "ai_engine": "bedrock-qwen",
   "last_completed": "Rotate to Pillar 1 (website development/conversion/SEO) — now least-used pillar (0 recent completed tasks); create verified, evidence-based internal linking optimization plan to boost conversion and SEO for existing product-led content using verified offers.",
   "last_result": "PORTFOLIO_GUARD: repeated task/pillar concentration suppressed; next cycle must rotate.",
   "changed_files": [
@@ -15,20 +15,6 @@
   "blocker": null,
   "founder_action_needed": false,
   "history": [
-    {
-      "at": "2026-08-27T22:07:08+05:30",
-      "status": "WAITING",
-      "task": "Rotate to Pillar 4 (product-led blog/content) — now least-used pillar (0 recent completed tasks); create verified, evidence-based buying guide for 3-tier rolling cart targeting Indian interior designers and small offices, using verified offer specs and audience-fit problem-solving framing.",
-      "engine": "bedrock-qwen",
-      "result": "PORTFOLIO_GUARD: repeated task/pillar concentration suppressed; next cycle must rotate."
-    },
-    {
-      "at": "2026-08-28T01:56:15+05:30",
-      "status": "WORKING",
-      "task": "Choose an independent task from a least-used eligible Phase-2 pillar.",
-      "engine": "selecting",
-      "result": null
-    },
     {
       "at": "2026-08-28T01:56:22+05:30",
       "status": "WAITING",
@@ -153,6 +139,20 @@
       "status": "WAITING",
       "task": "Rotate to Pillar 2 (new affiliate networks and product opportunities) — now least-used pillar (0 recent completed tasks); create verified, evidence-based affiliate network expansion readiness plan using existing verified offers and audience fit, focusing on high-readiness, low-friction opportunities that do not require Founder-only account setup.",
       "engine": "deepseek",
+      "result": "PORTFOLIO_GUARD: repeated task/pillar concentration suppressed; next cycle must rotate."
+    },
+    {
+      "at": "2026-08-29T00:01:56+05:30",
+      "status": "WORKING",
+      "task": "Choose an independent task from a least-used eligible Phase-2 pillar.",
+      "engine": "selecting",
+      "result": null
+    },
+    {
+      "at": "2026-08-29T00:02:17+05:30",
+      "status": "WAITING",
+      "task": "Rotate to Pillar 3 (AdSense readiness & monetization) — now least-used pillar (0 recent completed tasks); create verified, evidence-based AdSense implementation readiness plan using existing site structure and verified offers, focusing on compliance, content readiness, and traffic prerequisites — no Founder-only actions required beyond future account setup.",
+      "engine": "bedrock-qwen",
       "result": "PORTFOLIO_GUARD: repeated task/pillar concentration suppressed; next cycle must rotate."
     }
   ]
