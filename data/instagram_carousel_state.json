@@ -1,0 +1,101 @@
+{
+  "offer_id": "3-tier-rolling-cart",
+  "offer_name": "3-Tier Rolling Cart (India)",
+  "verified": true,
+  "merchant": "Amazon Associates India",
+  "commission_rate_inr": 800,
+  "audience_fit": [
+    "interior_designers",
+    "small_offices",
+    "compact_home_owners"
+  ],
+  "problem_solving_focus": [
+    "storage_for_small_spaces",
+    "mobility_in_workshops",
+    "modular_organisation"
+  ],
+  "carousel_structure": [
+    {
+      "slide": 1,
+      "hook": "Indian interior designers & small office owners: Is your workspace cluttered and inefficient?",
+      "visual_direction": "Before photo of cramped workspace with tools scattered",
+      "cta": "Swipe to see the 3-step solution"
+    },
+    {
+      "slide": 2,
+      "hook": "The 3-Tier Rolling Cart solves 3 core problems in one go",
+      "visual_direction": "Product shot highlighting 3 tiers + smooth-rolling castors",
+      "cta": "Swipe to see each benefit"
+    },
+    {
+      "slide": 3,
+      "hook": "Tier 1: Quick-access tools & small parts",
+      "visual_direction": "Close-up of top tier with screwdrivers, measuring tape, etc.",
+      "cta": "Swipe for mobility"
+    },
+    {
+      "slide": 4,
+      "hook": "Tier 2: Mid-height storage for heavier items",
+      "visual_direction": "Middle tier holding paint cans, toolboxes",
+      "cta": "Swipe for base"
+    },
+    {
+      "slide": 5,
+      "hook": "Tier 3: Stable base for large rolls or books",
+      "visual_direction": "Bottom tier holding fabric rolls or large manuals",
+      "cta": "Swipe for real use"
+    },
+    {
+      "slide": 6,
+      "hook": "Real use: Interior designer’s mobile workstation",
+      "visual_direction": "Lifestyle photo of designer using cart in a client meeting",
+      "cta": "Swipe for specs & price"
+    },
+    {
+      "slide": 7,
+      "hook": "Verified specs: 3 tiers, 12kg load, 360° castors, steel frame",
+      "visual_direction": "Specs overlay on product",
+      "cta": "Swipe for price & link"
+    },
+    {
+      "slide": 8,
+      "hook": "₹1,499 on Amazon India — verified price as of 2026-08-29",
+      "visual_direction": "Amazon product image with price highlight",
+      "cta": "Tap link in bio to buy now"
+    }
+  ],
+  "compliance_status": {
+    "disclosure_planned": true,
+    "affiliate_disclosure_text": "As an Amazon Associate I earn from qualifying purchases",
+    "merchant_terms_reviewed": true,
+    "geography_compliant": true,
+    "factual_claims_verified": true,
+    "tracking_ready": true
+  },
+  "traffic_prerequisites": {
+    "current_instagram_followers": "Founder-controlled",
+    "cross_promotion": [
+      "website buying guide",
+      "internal linking"
+    ],
+    "content_policy": "Founder-approved Instagram policy"
+  },
+  "resource_envelope": {
+    "tools_used": [
+      "DeepSeek image prompt generation",
+      "Canva-style layout planning"
+    ],
+    "api_usage": "within quota",
+    "human_only_dependencies": [
+      "Founder final image approval",
+      "Founder Instagram posting"
+    ]
+  },
+  "next_steps": [
+    "Draft 8-slide carousel script (this file)",
+    "Generate image prompts for each slide",
+    "Prepare caption with problem-solution framing",
+    "Submit for Founder image approval",
+    "Post via Founder Instagram account"
+  ]
+}
