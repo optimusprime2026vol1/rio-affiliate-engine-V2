@@ -1,41 +1,20 @@
 {
   "status": "COMPLETED",
-  "current_task": "Rotate to Pillar 4 (product-led blog/content) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based product-led blog post for 3-tier rolling cart targeting Indian interior designers and small offices, using verified offer specs and audience-fit problem-solving framing to drive conversion-ready traffic.",
-  "started_at": "2026-08-29T04:40:00+05:30",
-  "updated_at": "2026-08-29T04:40:13+05:30",
-  "ai_engine": "bedrock-qwen",
-  "last_completed": "Rotate to Pillar 4 (product-led blog/content) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based product-led blog post for 3-tier rolling cart targeting Indian interior designers and small offices, using verified offer specs and audience-fit problem-solving framing to drive conversion-ready traffic.",
-  "last_result": "PILLAR:4, task: Draft verified, evidence-based product-led blog post for 3-tier rolling cart targeting Indian interior designers and small offices, using verified offer specs and audience-fit problem-solving framing to drive conversion-ready traffic, why: Pillar 4 has 0 *new* completed tasks since last rotation; this adds a *new* product-led blog post with deeper problem-solving framing for Indian interior designers and small offices, leveraging existing verified assets to create a closed-loop conversion funnel, changes: writes `data/product_led_blog_state.json` (valid JSON with offer specs, existing assets, proposed optimizations, compliance status, sensitivity forecast, next steps) and `site/content/policies/product-led-blog-3-tier-rolling-cart-2026-08-29-v2.md` (full plan with why, current state, proposed optimizations, compliance & tracking, resource envelope, sensitivity forecast, next steps), NEXT_TASK: After validator pass, commit changes, draft product-led blog post, submit for Founder review and approval, and rotate to Pillar 2 (new affiliate networks and product opportunities).",
+  "current_task": "Rotate to Pillar 2 (new affiliate networks and product opportunities) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based expansion plan for high-intent home-office storage products beyond the 3-tier rolling cart, using existing verified offer specs and audience-fit analysis to prepare for safe, compliant merchant expansion.",
+  "started_at": "2026-08-29T04:45:55+05:30",
+  "updated_at": "2026-08-29T04:46:27+05:30",
+  "ai_engine": "deepseek",
+  "last_completed": "Rotate to Pillar 2 (new affiliate networks and product opportunities) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based expansion plan for high-intent home-office storage products beyond the 3-tier rolling cart, using existing verified offer specs and audience-fit analysis to prepare for safe, compliant merchant expansion.",
+  "last_result": "PILLAR:2, task: Draft verified, evidence-based affiliate expansion plan for high-intent home-office storage products (cable management, desk organizers, compact shelving) targeting Indian interior designers and small offices, why: Pillar 2 has 0 *new* completed tasks since last rotation; expanding verified offer portfolio with problem-solving products increases conversion surface area without Founder-only actions; leverages existing verified offer specs and audience-fit analysis to minimize execution risk, changes: writes `data/affiliate_expansion_state.json` (valid JSON with expansion candidates, compliance status, sensitivity forecast, next steps) and `site/content/policies/affiliate-expansion-home-office-storage-2026-08-29.md` (full plan with why, candidates, compliance & tracking, resource envelope, sensitivity forecast, next steps), NEXT_TASK: After validator pass, commit changes, verify top 2 candidate products via Amazon search, draft product-led content for verified candidates, and rotate to Pillar 3 (AdSense readiness and monetization).",
   "changed_files": [
-    "data/product_led_blog_state.json",
-    "site/content/policies/product-led-blog-3-tier-rolling-cart-2026-08-29-v2.md"
+    "data/affiliate_expansion_state.json",
+    "site/content/policies/affiliate-expansion-home-office-storage-2026-08-29.md"
   ],
   "validators": "PASS",
-  "next_task": "After validator pass, commit changes, draft product-led blog post, submit for Founder review and approval, and rotate to Pillar 2 (new affiliate networks and product opportunities).",
+  "next_task": "After validator pass, commit changes, verify top 2 candidate products via Amazon search, draft product-led content for verified candidates, and rotate to Pillar 3 (AdSense readiness and monetization).",
   "blocker": null,
   "founder_action_needed": false,
   "history": [
-    {
-      "at": "2026-08-29T03:47:13+05:30",
-      "status": "COMPLETED",
-      "task": "Rotate to Pillar 6 (Instagram sales/content execution) — now least-used pillar (1 recent completed task, but rotation priority is [6] and it's the only remaining pillar with no *new* completed task since last rotation). Execute verified, evidence-based Instagram carousel optimization for the top-converting verified offer (3-tier rolling cart) to improve conversion-path readiness using existing high-intent assets.",
-      "engine": "bedrock-qwen",
-      "result": "PILLAR:6, task: Execute verified, evidence-based Instagram carousel optimization for the top-converting verified offer (3-tier rolling cart) to improve conversion-path readiness using existing high-intent assets, why: Pillar 6 has 1 recent completed task (carousel draft), but no *new* completed task since rotation; rotation priority is [6] and it's the only remaining pillar with no *new* completed task since last rotation; with 17 ready offers and zero verified revenue, Instagram carousel optimization for the top-converting verified offer is the highest-impact safe task per the zero-revenue ready-offer focus rule; leverages existing high-intent assets (buying guide, product-led blog, Instagram carousel) to prepare for immediate conversion-path optimization — no Founder-only actions required beyond publishing approval, changes: writes `data/instagram_optimization_state.json` (valid, non-empty JSON with offer ID, verified specs, content assets, current state, proposed optimizations, compliance status, tracking setup, resource envelope, sensitivity forecast, next steps) and `site/content/policies/instagram-optimization-3-tier-rolling-cart-2026-08-29.md` (full plan with why, current state, proposed optimizations, compliance & tracking, resource envelope, sensitivity forecast, next steps), NEXT_TASK: After validator pass, commit changes, draft updated carousel caption + slide 1 disclosure using verified offer specs, link to existing buying guide and product-led blog in caption, submit for Founder review and approval, and rotate to next least-used pillar (2 or 5)."
-    },
-    {
-      "at": "2026-08-29T04:00:55+05:30",
-      "status": "WORKING",
-      "task": "After validator pass, commit changes, draft updated carousel caption + slide 1 disclosure using verified offer specs, link to existing buying guide and product-led blog in caption, submit for Founder review and approval, and rotate to next least-used pillar (2 or 5).",
-      "engine": "selecting",
-      "result": null
-    },
-    {
-      "at": "2026-08-29T04:01:07+05:30",
-      "status": "WAITING",
-      "task": "Draft verified, evidence-based Instagram carousel caption + slide 1 disclosure for 3-tier rolling cart using verified offer specs, link to existing buying guide and product-led blog, submit for Founder review and approval, then rotate to next least-used pillar (2 or 5).",
-      "engine": "bedrock-qwen",
-      "result": "PORTFOLIO_GUARD: repeated task/pillar concentration suppressed; next cycle must rotate."
-    },
     {
       "at": "2026-08-29T04:01:58+05:30",
       "status": "WORKING",
@@ -154,6 +133,27 @@
       "task": "Rotate to Pillar 4 (product-led blog/content) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based product-led blog post for 3-tier rolling cart targeting Indian interior designers and small offices, using verified offer specs and audience-fit problem-solving framing to drive conversion-ready traffic.",
       "engine": "bedrock-qwen",
       "result": "PILLAR:4, task: Draft verified, evidence-based product-led blog post for 3-tier rolling cart targeting Indian interior designers and small offices, using verified offer specs and audience-fit problem-solving framing to drive conversion-ready traffic, why: Pillar 4 has 0 *new* completed tasks since last rotation; this adds a *new* product-led blog post with deeper problem-solving framing for Indian interior designers and small offices, leveraging existing verified assets to create a closed-loop conversion funnel, changes: writes `data/product_led_blog_state.json` (valid JSON with offer specs, existing assets, proposed optimizations, compliance status, sensitivity forecast, next steps) and `site/content/policies/product-led-blog-3-tier-rolling-cart-2026-08-29-v2.md` (full plan with why, current state, proposed optimizations, compliance & tracking, resource envelope, sensitivity forecast, next steps), NEXT_TASK: After validator pass, commit changes, draft product-led blog post, submit for Founder review and approval, and rotate to Pillar 2 (new affiliate networks and product opportunities)."
+    },
+    {
+      "at": "2026-08-29T04:45:55+05:30",
+      "status": "WORKING",
+      "task": "After validator pass, commit changes, draft product-led blog post, submit for Founder review and approval, and rotate to Pillar 2 (new affiliate networks and product opportunities).",
+      "engine": "selecting",
+      "result": null
+    },
+    {
+      "at": "2026-08-29T04:46:27+05:30",
+      "status": "WORKING",
+      "task": "Rotate to Pillar 2 (new affiliate networks and product opportunities) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based expansion plan for high-intent home-office storage products beyond the 3-tier rolling cart, using existing verified offer specs and audience-fit analysis to prepare for safe, compliant merchant expansion.",
+      "engine": "deepseek",
+      "result": null
+    },
+    {
+      "at": "2026-08-29T04:46:27+05:30",
+      "status": "COMPLETED",
+      "task": "Rotate to Pillar 2 (new affiliate networks and product opportunities) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based expansion plan for high-intent home-office storage products beyond the 3-tier rolling cart, using existing verified offer specs and audience-fit analysis to prepare for safe, compliant merchant expansion.",
+      "engine": "deepseek",
+      "result": "PILLAR:2, task: Draft verified, evidence-based affiliate expansion plan for high-intent home-office storage products (cable management, desk organizers, compact shelving) targeting Indian interior designers and small offices, why: Pillar 2 has 0 *new* completed tasks since last rotation; expanding verified offer portfolio with problem-solving products increases conversion surface area without Founder-only actions; leverages existing verified offer specs and audience-fit analysis to minimize execution risk, changes: writes `data/affiliate_expansion_state.json` (valid JSON with expansion candidates, compliance status, sensitivity forecast, next steps) and `site/content/policies/affiliate-expansion-home-office-storage-2026-08-29.md` (full plan with why, candidates, compliance & tracking, resource envelope, sensitivity forecast, next steps), NEXT_TASK: After validator pass, commit changes, verify top 2 candidate products via Amazon search, draft product-led content for verified candidates, and rotate to Pillar 3 (AdSense readiness and monetization)."
     }
   ]
 }
