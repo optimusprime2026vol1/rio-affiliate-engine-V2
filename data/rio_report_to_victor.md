@@ -186,3 +186,5 @@ Fetched `https://raw.githubusercontent.com/vickykenin-lang/rio-affiliate-engine/
 - 2026-08-24T21:49+05:30 IST — posted **Amazon Basics Slim Rolling Storage Rack, 3-Tiered Shelf Plastic Slide-Out Organizer, White** (offer `TROLLEY_001`) to Instagram @riosallerior. Media ID `17886760158676549`. Permalink: https://www.instagram.com/p/Dcbect_ILPL/
 
 - 2026-08-28T04:32+05:30 IST — posted **Amazon Solimo Plastic Revolving Spice Rack Set of 16 Pieces SOKT66** (offer `SPICE_RACK_001`) to Instagram @riosallerior. Media ID `18109466515847072`. Permalink: https://www.instagram.com/p/Dcj651KFo5h/
+
+- 2026-08-29T04:40+05:30 IST — posted **Signoraware Family Fresh Tab BPA-Free Airtight Container Set (2.5L + 1.2L + 500ml + 160ml)** (offer `CONTAINER_001`) to Instagram @riosallerior. Media ID `17980069911095536`. Permalink: https://www.instagram.com/p/DcmgoR-kgAE/
