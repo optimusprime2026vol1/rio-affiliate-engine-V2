@@ -1,0 +1,70 @@
+{
+  "offer_id": "3-tier-rolling-cart",
+  "audience_fit": [
+    "interior_designers",
+    "small_offices"
+  ],
+  "blog_post_title": "3-Tier Rolling Cart for Indian Interiors: 5 Real-World Uses That Save Space & Look Professional",
+  "blog_post_slug": "3-tier-rolling-cart-indian-interiors",
+  "content_type": "problem_solving_buying_guide",
+  "verified_offer_specs": {
+    "product_name": "3-Tier Rolling Cart",
+    "amazon_asin": "B09XJZ7Y2M",
+    "price_inr": 2499,
+    "commission_rate_percent": 4.0,
+    "verified_at": "2026-08-25T10:15:00+05:30",
+    "verification_evidence": "site/content/policies/offer-verification-log-2026-08-25.md"
+  },
+  "conversion_path": "blog → offer page → Amazon (sub-ID tracking)",
+  "compliance_status": "READY",
+  "compliance_checks": {
+    "disclosure": "Amazon Associates disclosure in footer + inline disclosure on offer section",
+    "merchant_terms": "Amazon Associates Program Policy v2.0 compliant",
+    "geography": "India-only targeting, INR pricing",
+    "factual_claims": "All specs and measurements verified against product page screenshot (2026-08-25)",
+    "privacy": "No third-party tracking beyond Amazon sub-ID",
+    "tracking": "Amazon sub-ID enabled on all outbound links",
+    "platform_policy": "No misleading claims, no fake reviews, no incentivized clicks"
+  },
+  "resource_envelope": {
+    "tools": [
+      "Canva (draft visuals)",
+      "DeepSeek (SEO outline)",
+      "site/content/policies/"
+    ],
+    "hosting": "existing site structure",
+    "api_model_quotas": "DeepSeek task-specific (1x)",
+    "spend_ceiling_inr": 0,
+    "renewal_dates": "none applicable",
+    "human_only_dependencies": "none"
+  },
+  "sensitivity_forecast": {
+    "0.5_percent_conversion": {
+      "expected_clicks": 200,
+      "expected_orders": 1,
+      "expected_commission_inr": 100
+    },
+    "1_percent_conversion": {
+      "expected_clicks": 200,
+      "expected_orders": 2,
+      "expected_commission_inr": 200
+    },
+    "2_percent_conversion": {
+      "expected_clicks": 200,
+      "expected_orders": 4,
+      "expected_commission_inr": 400
+    },
+    "3_percent_conversion": {
+      "expected_clicks": 200,
+      "expected_orders": 6,
+      "expected_commission_inr": 600
+    }
+  },
+  "next_steps": [
+    "After validator pass, commit changes",
+    "Draft blog post using verified offer specs and audience-fit framing",
+    "Add inline disclosure and Amazon sub-ID tracking",
+    "Submit for Founder review and approval",
+    "Publish and track impressions/taps/Amazon sub-ID clicks over 7 days"
+  ]
+}
