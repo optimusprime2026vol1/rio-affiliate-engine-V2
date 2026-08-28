@@ -1,0 +1,59 @@
+{
+  "integration_target": "Cuelinks",
+  "status": "PLANNING",
+  "compliance_status": "PENDING",
+  "ready_offers_for_integration": 17,
+  "top_priority_offers": [
+    "3-tier rolling cart"
+  ],
+  "immediate_content_plan": [
+    {
+      "content_type": "buying guide",
+      "target_url": "/buying-guides/3-tier-rolling-cart",
+      "source_assets": [
+        "buying-guide-3-tier-rolling-cart-2026-08-29.md",
+        "instagram-carousel-3-tier-rolling-cart-2026-08-29.md",
+        "landing-page-optimization-plan-2026-08-29.md"
+      ],
+      "expected_conversion_sensitivity": [
+        0.005,
+        0.01,
+        0.02,
+        0.03
+      ],
+      "compliance_gates": [
+        "disclosure",
+        "merchant_terms",
+        "geography",
+        "factual_claims",
+        "privacy",
+        "tracking",
+        "platform_policy"
+      ]
+    }
+  ],
+  "resource_envelope": {
+    "tools": [
+      "existing CMS",
+      "Cuelinks dashboard (pending setup)"
+    ],
+    "hosting": "current",
+    "api_model_quotas": "unchanged",
+    "spend_ceiling": "₹0 (no paid acquisition yet)",
+    "renewal_dates": "N/A",
+    "human_only_dependencies": [
+      "Founder account setup",
+      "legal acceptance",
+      "payment setup"
+    ]
+  },
+  "next_steps": [
+    "Draft Cuelinks integration execution plan (this task)",
+    "Submit Founder request for Cuelinks account setup (if approved)",
+    "Configure tracking and disclosure compliance",
+    "Deploy internal linking to Cuelinks offer pages",
+    "Monitor 7-day conversion funnel"
+  ],
+  "failed_pilot_limit_remaining": 2,
+  "resource_envelope_met": true
+}
