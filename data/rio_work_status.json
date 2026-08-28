@@ -1,34 +1,20 @@
 {
-  "status": "COMPLETED",
-  "current_task": "Rotate to Pillar 2 (new affiliate networks and product opportunities) — now least-used pillar (0 recent completed tasks); create verified, evidence-based affiliate network expansion readiness plan using existing verified offers and audience fit, focusing on high-readiness, low-friction opportunities that do not require Founder-only account setup.",
-  "started_at": "2026-08-29T00:03:32+05:30",
-  "updated_at": "2026-08-29T00:03:48+05:30",
+  "status": "WAITING",
+  "current_task": "Rotate to Pillar 6 (Instagram sales/content execution) — now least-used pillar (1 recent completed task); create verified, evidence-based Instagram carousel post for 3-tier rolling cart targeting Indian interior designers and small offices, using verified offer specs and audience-fit problem-solving framing.",
+  "started_at": "2026-08-29T00:15:54+05:30",
+  "updated_at": "2026-08-29T00:16:10+05:30",
   "ai_engine": "bedrock-qwen",
   "last_completed": "Rotate to Pillar 2 (new affiliate networks and product opportunities) — now least-used pillar (0 recent completed tasks); create verified, evidence-based affiliate network expansion readiness plan using existing verified offers and audience fit, focusing on high-readiness, low-friction opportunities that do not require Founder-only account setup.",
-  "last_result": "PILLAR:2, task: Create verified, evidence-based affiliate network expansion readiness plan using existing verified offers and audience fit, focusing on high-readiness, low-friction opportunities that do not require Founder-only account setup, why: Pillar 2 has 0 recent completed tasks; this leverages 17 verified offers and 27 content items to prepare for rapid onboarding of EarnKaro, Cuelinks, and Flipkart Affiliate — no new discovery needed; changes: writes `data/affiliate_network_readiness_state.json` (valid, non-empty JSON with network assessment, product opportunities, next steps, resource envelope, compliance status) and `site/content/policies/affiliate-network-readiness-plan-2026-08-29.md` (full plan with why, readiness, immediate tasks, impact); NEXT_TASK: After Founder account setup for EarnKaro/Cuelinks/Flipkart, integrate tracking pixel and verify offer sync; create content templates for new network offers using existing buying guide and Instagram carousel formats.",
+  "last_result": "PORTFOLIO_GUARD: repeated task/pillar concentration suppressed; next cycle must rotate.",
   "changed_files": [
     "data/affiliate_network_readiness_state.json",
     "site/content/policies/affiliate-network-readiness-plan-2026-08-29.md"
   ],
-  "validators": "PASS",
-  "next_task": "After Founder account setup for EarnKaro/Cuelinks/Flipkart, integrate tracking pixel and verify offer sync; create content templates for new network offers using existing buying guide and Instagram carousel formats.",
+  "validators": "NOT_RUN",
+  "next_task": "Choose an independent task from a least-used eligible Phase-2 pillar.",
   "blocker": null,
   "founder_action_needed": false,
   "history": [
-    {
-      "at": "2026-08-28T04:31:59+05:30",
-      "status": "COMPLETED",
-      "task": "Rotate to Pillar 5 (Flipkart/other commerce platforms) — now least-used pillar (0 recent completed tasks); create verified, evidence-based Flipkart integration execution plan focusing on immediate conversion-ready content using existing verified offers.",
-      "engine": "bedrock-qwen",
-      "result": "PILLAR:5, task: Create verified, evidence-based Flipkart execution plan focusing on immediate conversion-ready content using existing verified offers, why: Pillar 5 has 0 recent completed tasks; this leverages 17 verified offers and existing content to prepare for high-impact, low-friction monetization — no new discovery needed; changes: writes `data/flipkart_execution_state.json` (valid, non-empty JSON with verified specs, audience fit, execution roadmap, founder actions) and `site/content/policies/flipkart-execution-plan-2026-08-28.md` (full plan with why, readiness, immediate steps, impact); NEXT_TASK: After validator pass, commit changes, propose 2–3 immediate fix tasks (disclosure page draft, buying guide, internal linking), and rotate to next least-used pillar (1, 2, 3, or 6)."
-    },
-    {
-      "at": "2026-08-28T06:32:24+05:30",
-      "status": "WORKING",
-      "task": "After validator pass, commit changes, propose 2–3 immediate fix tasks (disclosure page draft, buying guide, internal linking), and rotate to next least-used pillar (1, 2, 3, or 6).",
-      "engine": "selecting",
-      "result": null
-    },
     {
       "at": "2026-08-28T06:32:39+05:30",
       "status": "WORKING",
@@ -154,6 +140,20 @@
       "task": "Rotate to Pillar 2 (new affiliate networks and product opportunities) — now least-used pillar (0 recent completed tasks); create verified, evidence-based affiliate network expansion readiness plan using existing verified offers and audience fit, focusing on high-readiness, low-friction opportunities that do not require Founder-only account setup.",
       "engine": "bedrock-qwen",
       "result": "PILLAR:2, task: Create verified, evidence-based affiliate network expansion readiness plan using existing verified offers and audience fit, focusing on high-readiness, low-friction opportunities that do not require Founder-only account setup, why: Pillar 2 has 0 recent completed tasks; this leverages 17 verified offers and 27 content items to prepare for rapid onboarding of EarnKaro, Cuelinks, and Flipkart Affiliate — no new discovery needed; changes: writes `data/affiliate_network_readiness_state.json` (valid, non-empty JSON with network assessment, product opportunities, next steps, resource envelope, compliance status) and `site/content/policies/affiliate-network-readiness-plan-2026-08-29.md` (full plan with why, readiness, immediate tasks, impact); NEXT_TASK: After Founder account setup for EarnKaro/Cuelinks/Flipkart, integrate tracking pixel and verify offer sync; create content templates for new network offers using existing buying guide and Instagram carousel formats."
+    },
+    {
+      "at": "2026-08-29T00:15:54+05:30",
+      "status": "WORKING",
+      "task": "After Founder account setup for EarnKaro/Cuelinks/Flipkart, integrate tracking pixel and verify offer sync; create content templates for new network offers using existing buying guide and Instagram carousel formats.",
+      "engine": "selecting",
+      "result": null
+    },
+    {
+      "at": "2026-08-29T00:16:10+05:30",
+      "status": "WAITING",
+      "task": "Rotate to Pillar 6 (Instagram sales/content execution) — now least-used pillar (1 recent completed task); create verified, evidence-based Instagram carousel post for 3-tier rolling cart targeting Indian interior designers and small offices, using verified offer specs and audience-fit problem-solving framing.",
+      "engine": "bedrock-qwen",
+      "result": "PORTFOLIO_GUARD: repeated task/pillar concentration suppressed; next cycle must rotate."
     }
   ]
 }
