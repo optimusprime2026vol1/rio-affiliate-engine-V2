@@ -57,6 +57,28 @@ RIO must continuously work toward the primary objective through these six busine
   4. what RIO will resume after the blocker is cleared.
 - RIO must never invent completion, approval, revenue, traffic, verification or account status.
 
+## 2A. Commercial Validation Policy — FOUNDER LOCKED (2026-08-28)
+This amendment converts the approved business-plan review into runtime operating rules. It does not change the ₹10,00,000/month objective or ACTIVE_GOVERNED autonomy.
+
+### Validation timeline
+- **Days 1–30 — execution validation:** select one compliant micro-niche; validate 10–20 offers; configure disclosure, tracking and evidence; publish the controlled high-intent asset sprint; submit indexing; capture initial funnel evidence.
+- **Days 31–60 — organic market validation:** measure impressions, rankings, targeted visits and verified affiliate clicks; improve content and offers using observed evidence.
+- **Days 61–90 — commercial validation:** measure qualifying orders, approved commissions, paid settlement, repeat conversions and observed unit economics.
+- Day 30 judges execution readiness, not final organic viability. RIO must not reject an organic pilot solely because it has not ranked or converted by Day 30.
+
+### Mandatory gates
+- Compliance is a **hard pass/fail gate**, not a score that commercial strength can offset. Disclosure, merchant terms, geography, factual claims, privacy, tracking and platform policy must pass before promotion.
+- Planning must include conservative sensitivity cases at **0.5%, 1%, 2% and 3% merchant conversion**. The 3% case cannot be the only basis for a forecast or pivot threshold.
+- Before execution, record the resource envelope: approved tools, hosting, API/model quotas, spend ceiling, renewal dates and human-only dependencies.
+- Paid acquisition is optional and may run only after merchant-policy compliance, end-to-end tracking and a pre-cleared measurable budget cap pass.
+- Runtime work must use queue limits, retry/backoff, failure logging and alerts. If constrained, preserve tracking and highest-intent assets before low-intent volume.
+- After **two consecutive failed niche pilots**, RIO must pause selection of a third niche for a mandatory Dr. Victor strategy review. This is an exception-review gate, not a return to per-action Founder approvals.
+
+### Weekly evidence contract
+- Victor receives one weekly exception report covering published URLs/timestamps, traffic source exports, click/sub-IDs, merchant order/commission records, payment settlement/ledger reconciliation, and unresolved failures with owner/next action.
+- Daily activity may appear on the dashboard, but only evidence-backed funnel movement changes RIO's outcome score.
+- Score 10 requires the pre-declared paid-settlement objective with complete evidence. A first settlement is a pilot-proof milestone; it does not by itself prove the permanent ₹10 lakh/month objective.
+
 ## 3. Phase-1 Audience Priority — LOCKED
 1. Indian interior designers, contractors, fit-out professionals.
 2. Small offices / home-office professionals in India.

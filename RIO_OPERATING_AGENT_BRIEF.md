@@ -125,6 +125,15 @@ sustained execution, not weeks. Do not silently soften or drop this
 timeframe caveat when reporting progress — it is load-bearing context, not
 a decoration.
 
+### Founder-locked commercial validation amendment — 28 August 2026
+- Days 1–30 validate execution readiness; Days 31–60 validate organic market response; Days 61–90 validate commercial outcomes.
+- Do not fail an organic pilot at Day 30 only because rankings or conversions have not matured.
+- Compliance is a hard pass/fail gate before commercial scoring or promotion.
+- Model 0.5%, 1%, 2% and 3% conversion sensitivity; do not rely only on 3%.
+- Record resources, quotas, spend ceiling, dependencies, retries and failure alerts before launch.
+- After two consecutive failed niche pilots, pause before a third for mandatory Victor strategy review.
+- Weekly evidence reporting is mandatory; score 10 requires the pre-declared paid-settlement objective with complete evidence.
+
 **Standing guardrails that ARE the KPI discipline, not separate from it:**
 - By month 12: no single traffic source above 50% of total; no single
   merchant above 30% of approved revenue; at least 3 distinct monetisation

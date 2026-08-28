@@ -1,6 +1,9 @@
 # RIO Product Intelligence Scoring Model
 
-A candidate cannot become promotion-eligible from score alone. Identity verification and X→X integrity are hard gates.
+A candidate cannot become promotion-eligible from score alone. Compliance, identity verification and X→X integrity are hard gates.
+
+## Compliance hard gate
+Before commercial scoring, the candidate/niche must pass disclosure, merchant terms, geography, factual-claim, privacy, tracking and platform-policy checks. A compliance failure is disqualifying and cannot be offset by a high commercial score.
 
 ## 100-point commercial score
 - Fit to search intent: 25
@@ -21,4 +24,4 @@ A candidate cannot become promotion-eligible from score alone. Identity verifica
 
 ## Promotion threshold
 Score >= 70 is only a candidate threshold. Promotion still requires:
-IDENTITY VERIFIED + AVAILABLE + AFFILIATE ACTIVE + X→X PASS.
+COMPLIANCE PASS + IDENTITY VERIFIED + AVAILABLE + AFFILIATE ACTIVE + X→X PASS.

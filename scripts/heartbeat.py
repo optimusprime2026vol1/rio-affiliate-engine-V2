@@ -71,7 +71,7 @@ if not production_ok:
   production_ok,production_out=run_script('check_production.py')
   if production_ok:break
 dash_ok,dash_out=run_script('generate_dashboard.py')
-validator_scripts={'production_live':None,'offer_integrity':'validate_offer_integrity.py','product_candidates':'validate_product_candidates.py','dashboard':'validate_dashboard.py','production_offer_gate':'validate_production_offer_gate.py'}
+validator_scripts={'production_live':None,'offer_integrity':'validate_offer_integrity.py','product_candidates':'validate_product_candidates.py','dashboard':'validate_dashboard.py','production_offer_gate':'validate_production_offer_gate.py','commercial_plan':'validate_commercial_plan.py'}
 validators={}
 for key,script in validator_scripts.items():
  ok,out=(production_ok,production_out) if script is None else run_script(script)
