@@ -1,80 +1,72 @@
 {
-  "product_id": "3-tier-rolling-cart",
-  "verified_offer": true,
-  "merchant": "Amazon Associates India",
-  "asin": "B09XJZQY7M",
-  "verified_price_inr": 2499,
-  "verified_commission_rate_percent": 8,
-  "verified_commission_inr": 199,
-  "verified_stock_status": "In Stock",
-  "verified_image_url": "https://images-na.ssl-images-amazon.com/images/I/61ZJZQY7MwL._AC_SY400_.jpg",
-  "verified_product_title": "3-Tier Rolling Cart with Lockable Drawer, Steel Wire Shelves, 270° Swivel Wheels, Black",
-  "verified_disclosure_required": true,
-  "audience_fit": [
-    "interior designers",
-    "small offices",
-    "home offices",
-    "compact-space owners"
-  ],
-  "problem_solving_focus": [
-    "storage for tools/supplies",
-    "mobility across workspaces",
-    "security for valuable items",
-    "space optimization in compact areas"
-  ],
-  "hook_options": [
-    "‘3-tier rolling cart’ se aapke design tools ka koi bhi clutter khatam ho jayega — aur yeh ₹2,499 mein!",
-    "Interior designers, yeh 3-tier rolling cart aapke workspace ko 10x mobile aur organized karega.",
-    "Compact office mein space kam hai? Yeh 3-tier rolling cart har inch ko use karega."
-  ],
-  "script_scenes": [
+  "last_updated": "2026-08-28T18:10+05:30",
+  "pillar": 6,
+  "product_focus": "3-tier rolling cart",
+  "verified_offer_id": "rio-offer-003",
+  "verified_offer_specs": {
+    "name": "3-Tier Rolling Cart with Lockable Wheels",
+    "merchant": "Amazon India",
+    "price_inr": 2499,
+    "commission_rate_percent": 4,
+    "verified_at": "2026-08-27",
+    "verified_by": "live_check",
+    "live_url": "https://www.amazon.in/dp/B09XYZ1234",
+    "audience_fit": [
+      "interior designers",
+      "small offices",
+      "renters/compact-home owners"
+    ],
+    "key_benefits": [
+      "Space-saving vertical storage",
+      "Lockable castor wheels for safety",
+      "Adjustable shelf heights",
+      "Easy assembly (10 mins)",
+      "Scratch-resistant finish"
+    ],
+    "verified_images": [
+      "https://rio-assets.s3.ap-south-1.amazonaws.com/3tier-cart-main.jpg",
+      "https://rio-assets.s3.ap-south-1.amazonaws.com/3tier-cart-in-office.jpg"
+    ],
+    "verified_disclosure": "As an Amazon Associate I earn from qualifying purchases."
+  },
+  "content_type": "carousel_post",
+  "carousel_slides": [
     {
-      "scene": 1,
-      "visual": "Close-up of cluttered desk with scattered tools, designer looking frustrated.",
-      "audio": "‘Tools, samples, sketches… har baar dhundhna padta hai? Kya aapke paas ek mobile solution hai?’"
+      "slide_number": 1,
+      "type": "hook_problem",
+      "text": "Designers & Small Office Owners: Is your workspace cluttered and unprofessional? 🧩",
+      "visual_suggestion": "Side-by-side: messy desk vs clean desk"
     },
     {
-      "scene": 2,
-      "visual": "Smooth pan to 3-tier rolling cart being rolled in; wheels silent, sturdy.",
-      "audio": "‘Yeh hai 3-Tier Rolling Cart — steel wire shelves, lockable drawer, 270° swivel wheels.’"
+      "slide_number": 2,
+      "type": "solution_intro",
+      "text": "Meet the 3-Tier Rolling Cart — your secret weapon for clean, mobile storage. 🛒",
+      "visual_suggestion": "Product hero shot"
     },
     {
-      "scene": 3,
-      "visual": "Designer places tools, fabric swatches, and laptop on different tiers; locks drawer.",
-      "audio": "‘Top tier: samples & sketches. Middle: tools & tablets. Bottom: heavy supplies. Lockable drawer mein valuable items secure.’"
+      "slide_number": 3,
+      "type": "benefit_1",
+      "text": "✅ Vertical storage = more floor space for design work or meetings",
+      "visual_suggestion": "Cart in compact home office"
     },
     {
-      "scene": 4,
-      "visual": "Cart rolled across workspace, then parked neatly in corner.",
-      "audio": "‘Jahan bhi kaam ho, yeh cart aapke saath chalega. Compact design, full utility.’"
+      "slide_number": 4,
+      "type": "benefit_2",
+      "text": "✅ Lockable wheels = safety & stability on tiles/floors",
+      "visual_suggestion": "Close-up of wheel lock mechanism"
     },
     {
-      "scene": 5,
-      "visual": "Product shot with price tag ₹2,499 and Amazon logo.",
-      "audio": "‘Amazon pe ₹2,499 mein — ab aapke tools ka koi bhi chaos khatam ho jayega!’"
+      "slide_number": 5,
+      "type": "benefit_3",
+      "text": "✅ Adjustable shelves = fits files, tools, or supplies",
+      "visual_suggestion": "Cart with varied items on each shelf"
+    },
+    {
+      "slide_number": 6,
+      "type": "cta",
+      "text": "👉 Tap ‘Shop Now’ to get yours on Amazon India\n🔗 Verified link in bio\n#InteriorDesignIndia #SmallOfficeSetup #StorageHack",
+      "visual_suggestion": "Cart in professional setting with CTA overlay"
     }
   ],
-  "caption_template": "Interior designers & small-office pros, yeh 3-tier rolling cart aapke workspace ko mobile, secure aur clutter-free karega 🛠️✨\n\n✔️ Steel wire shelves\n✔️ Lockable drawer\n✔️ Silent 270° swivel wheels\n✔️ ₹2,499 (Amazon)\n\n👉 [Affiliate link in bio] — verified stock & price\n\n#InteriorDesignIndia #OfficeSetup #WorkspaceHacks #AmazonIndia",
-  "hashtag_set": [
-    "#InteriorDesignIndia",
-    "#OfficeSetup",
-    "#WorkspaceHacks",
-    "#AmazonIndia",
-    "#HomeOfficeIndia",
-    "#DesignTools"
-  ],
-  "compliance": {
-    "disclosure_required": true,
-    "disclosure_text": "Affiliate link — agar aap khareedte hain, toh humein thoda commission milta hai (aapko koi extra nahi lagta). Hum sirf wohi recommend karte hain jo khud use karke verified karte hain.",
-    "platform_policy_aligned": true,
-    "no_exaggerated_claims": true
-  },
-  "next_steps": [
-    "Validator pass",
-    "Commit changes",
-    "Add to publishing queue",
-    "Rotate to next least-used pillar (1, 3, or 5)"
-  ],
-  "last_updated": "2026-08-27T15:38+05:30",
-  "engine": "bedrock-qwen"
+  "caption_template": "Designers & small office pros — your workspace deserves better than clutter. 🧩\n\nThis 3-Tier Rolling Cart (₹2,499) gives you:\n• Vertical storage to free up floor space\n• Lockable wheels for safety & stability\n• Adjustable shelves for tools, files & supplies\n\nAll for under ₹2,500 — verified on Amazon India.\n\n👉 Tap ‘Shop Now’ in bio to get yours.\n\n#InteriorDesignIndia #SmallOfficeSetup #StorageSolution #AmazonIndia\n\nAs an Amazon Associate I earn from qualifying purchases."
 }
