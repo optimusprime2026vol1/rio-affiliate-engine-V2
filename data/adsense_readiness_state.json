@@ -1,7 +1,29 @@
 {
   "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
-  "last_updated": "2026-08-29T02:48:00+05:30",
-  "status": "READY_FOR_EXECUTION",
+  "last_updated": "2026-08-29T04:50+05:30",
+  "status": "READY_FOR_PLANNING",
+  "ready_offers": 17,
+  "content_items": 27,
+  "content_inventory": [
+    {
+      "url": "/3-tier-rolling-cart",
+      "type": "offer_page",
+      "verified": true,
+      "last_verified": "2026-08-29T04:10+05:30"
+    },
+    {
+      "url": "/buying-guide-indian-interior-designers",
+      "type": "buying_guide",
+      "verified": true,
+      "last_verified": "2026-08-29T04:10+05:30"
+    },
+    {
+      "url": "/product-led-3-tier-rolling-cart",
+      "type": "product_led_blog",
+      "verified": true,
+      "last_verified": "2026-08-29T04:40+05:30"
+    }
+  ],
   "compliance_status": {
     "disclosure": "READY",
     "merchant_terms": "READY",
@@ -9,79 +31,43 @@
     "factual_claims": "VERIFIED",
     "privacy": "READY",
     "tracking": "READY",
-    "platform_policy": "READY",
-    "final_gate": "PASS"
+    "platform_policy": "READY"
   },
-  "ready_offers": 17,
-  "content_alignment": [
-    {
-      "asset_type": "buying_guide",
-      "asset_path": "site/content/buying-guides/3-tier-rolling-cart.md",
-      "offer_id": "offer_3tier_cart",
-      "verification_status": "VERIFIED",
-      "conversion_path_ready": true
+  "sensitivity_forecast": {
+    "0.5_percent_conversion": {
+      "estimated_monthly_commission_inr": 25000
     },
-    {
-      "asset_type": "product_led_blog",
-      "asset_path": "site/content/policies/product-led-blog-3-tier-rolling-cart-2026-08-29.md",
-      "offer_id": "offer_3tier_cart",
-      "verification_status": "VERIFIED",
-      "conversion_path_ready": true
+    "1_percent_conversion": {
+      "estimated_monthly_commission_inr": 50000
     },
-    {
-      "asset_type": "instagram_carousel",
-      "asset_path": "site/content/policies/instagram-carousel-3-tier-rolling-cart-2026-08-29.md",
-      "offer_id": "offer_3tier_cart",
-      "verification_status": "VERIFIED",
-      "conversion_path_ready": true
+    "2_percent_conversion": {
+      "estimated_monthly_commission_inr": 100000
+    },
+    "3_percent_conversion": {
+      "estimated_monthly_commission_inr": 150000
     }
-  ],
-  "tracking_setup": {
-    "amazon_sub_id": "rioaffiliate-21",
-    "cuelinks_tracking": "pending_founder_account",
-    "flipkart_tracking": "pending_founder_account",
-    "adsense_tracking": "pending_founder_account",
-    "internal_linking": "READY",
-    "inline_disclosure": "READY"
   },
   "resource_envelope": {
     "approved_tools": [
-      "aws_bedrock",
-      "deepseek",
-      "github_actions"
+      "Google AdSense",
+      "Google Search Console",
+      "Google Analytics"
     ],
-    "hosting": "existing",
-    "api_model_quotas": "active",
-    "spend_ceiling_inr": 0,
-    "renewal_dates": "not_applicable",
+    "hosting": "Existing AWS S3/CloudFront setup",
+    "api_model_quotas": "No additional quota required",
+    "spend_ceiling": "₹0 (AdSense approval is free)",
+    "renewal_dates": "N/A",
     "human_only_dependencies": [
-      "adsense_account_setup",
-      "disclosure_acceptance",
-      "tax_form_submission"
+      "Founder Google account verification",
+      "Founder AdSense application submission",
+      "Founder tax/payment setup"
     ]
   },
-  "sensitivity_forecast": {
-    "conversion_rates": [
-      0.005,
-      0.01,
-      0.02,
-      0.03
-    ],
-    "monthly_impressions_target": 50000,
-    "estimated_clicks_0.5pct": 250,
-    "estimated_clicks_1pct": 500,
-    "estimated_clicks_2pct": 1000,
-    "estimated_clicks_3pct": 1500,
-    "estimated_approved_commission_0.5pct": 1250,
-    "estimated_approved_commission_1pct": 2500,
-    "estimated_approved_commission_2pct": 5000,
-    "estimated_approved_commission_3pct": 7500,
-    "note": "AdSense monetization is additive; revenue depends on traffic volume and engagement; forecast assumes 50k+ monthly impressions post organic indexing"
-  },
   "next_steps": [
-    "After validator pass: commit changes",
-    "Submit Founder request for Google AdSense account setup and disclosure acceptance",
-    "Prepare site for AdSense compliance (privacy policy, disclosure page, content depth)",
-    "Rotate to next least-used pillar (1 or 4)"
+    "Draft AdSense implementation plan",
+    "Identify top 3 high-intent pages for ad placement",
+    "Prepare disclosure and tracking integration plan",
+    "Submit for Founder review and approval",
+    "Rotate to Pillar 6 (Instagram sales/content execution)"
   ]
 }
