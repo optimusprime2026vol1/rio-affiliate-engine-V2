@@ -1,64 +1,95 @@
-# Cuelinks Integration Execution Plan — RIO Phase-2
+# Cuelinks Integration Execution Plan — RIO 3.0
 
-**Date:** 2026-08-29  
-**Policy ID:** RIO_COMMERCIAL_VALIDATION_V2  
-**Status:** PLANNING (no Founder-only actions required beyond account setup)
+**Version:** 2026-08-29
+**Policy:** RIO_COMMERCIAL_VALIDATION_V2 (Founder-locked)
+**Phase:** Execution Validation (Days 1–30)
+**Status:** READY_FOR_EXECUTION_PLAN
+
+---
 
 ## Why Cuelinks?
-- Strong presence in India for home, furniture, and interior-design verticals
-- Supports Amazon Associates and other high-ticket offers
-- Allows multi-merchant tracking with unified disclosure
-- Proven compliance with Indian disclosure standards
 
-## Readiness Assessment
-- **Ready offers:** 17 (including top verified offer: 3-tier rolling cart)
-- **Content items:** 27 (including 3 high-intent assets for top offer)
-- **Site structure:** compliant with Cuelinks disclosure and tracking requirements
-- **Compliance gaps:** None beyond Founder-gated account setup
+- **India-native platform** with strong presence in home, furniture, and interior design verticals.
+- Supports Amazon Associates integration, enabling unified tracking with existing `rioaffiliate-21` sub-ID.
+- Strong disclosure and compliance tooling aligned with RIO’s hard-gate requirements.
+- Complements existing Flipkart/EarnKaro/AdSense expansion work.
+- Zero Founder-only actions required beyond account setup and disclosure acceptance.
 
-## Immediate Execution Plan (No Founder Action Required)
+---
 
-### 1. Content-First Integration
-Use existing verified assets to prepare conversion-ready pages:
-- Link top offer (3-tier rolling cart) via Cuelinks placeholder
-- Insert disclosure: "*As an Amazon Associate and Cuelinks publisher, I earn from qualifying purchases.*"
-- Apply internal linking from buying guide → offer page → Cuelinks tracking
-- Track via sub-ID: `cuelinks-rio-2026-08-29`
+## Compliance Checks (Hard Pass/Fail Gate)
 
-### 2. Compliance Checklist (Hard Pass/Fail)
-- [x] Disclosure placement on every offer page
-- [x] No misleading claims (verified specs only)
-- [x] Geography: India-only targeting
-- [x] Privacy: no third-party tracking beyond Cuelinks standard
-- [x] Platform policy: no spam, no incentivized clicks
-- [ ] **Cuelinks account approval** — Founder-only
-- [ ] **Payment/tax setup** — Founder-only
+| Check              | Status   | Notes |
+|--------------------|----------|-------|
+| Disclosure         | READY    | Existing disclosure policy applies; sub-ID integration ready |
+| Merchant Terms     | PENDING  | Account setup required |
+| Geography          | READY    | India-only focus, matches RIO audience |
+| Factual Claims     | READY    | Verified offers only; no unverified claims |
+| Privacy            | READY    | Existing privacy policy covers Cuelinks integration |
+| Tracking           | READY    | Sub-ID alignment with Amazon Associates confirmed |
+| Platform Policy    | PENDING  | Account approval required |
 
-### 3. Resource Envelope
-- Tools: existing CMS, Cuelinks dashboard (pending)
-- Hosting: unchanged
-- API/model quotas: unchanged
-- Spend ceiling: ₹0 (no paid acquisition yet)
-- Human-only dependencies: Founder account setup, legal acceptance, payment setup
+**Compliance verdict:** PASS for execution planning; FAIL for live promotion until account and disclosure accepted.
 
-### 4. Sensitivity Forecast (0.5%, 1%, 2%, 3% conversion)
-| Conversion Rate | Monthly Orders | Est. Approved Commission (₹) |
-|----------------|----------------|-----------------------------|
-| 0.5%           | ~5             | ~₹2,500                     |
-| 1%             | ~10            | ~₹5,000                     |
-| 2%             | ~20            | ~₹10,000                    |
-| 3%             | ~30            | ~₹15,000                    |
+---
 
-*Assumes 1,000 monthly visitors to top offer page (conservative estimate from existing assets)*
+## Readiness Summary
+
+- **Ready Offers:** 17 (all verified, live-checked)
+- **Content Alignment:**
+  - 3-tier rolling cart (verified offer)
+  - Buying guide (existing high-intent asset)
+  - Product-led blog (existing)
+  - Instagram carousel (existing)
+- **Tracking Setup:**
+  - Sub-ID required: Yes
+  - Amazon sub-ID: `rioaffiliate-21`
+  - Cuelinks sub-ID format: `subid1=rioaffiliate-21`
+  - Internal linking alignment: READY
+  - Disclosure integration: READY
+
+---
+
+## Sensitivity Forecast (0.5%, 1%, 2%, 3% Conversion Rates)
+
+| Conversion Rate | Estimated Monthly Commission (INR) | Notes |
+|-----------------|-------------------------------------|-------|
+| 0.5%            | 0                                   | Zero verified revenue until first settlement |
+| 1%              | 0                                   | Same |
+| 2%              | 0                                   | Same |
+| 3%              | 0                                   | Same |
+
+**Assumptions:**
+- Zero verified revenue until first settlement.
+- First settlement required for pilot-proof milestone.
+- No paid acquisition until merchant-policy compliance and tracking verified.
+- Forecast based on 17 ready offers and existing high-intent assets.
+
+---
+
+## Resource Envelope
+
+- **Approved Tools:** Cuelinks dashboard, Amazon Associates, Google Analytics
+- **Hosting:** Existing
+- **API/Model Quotas:** Available
+- **Spend Ceiling:** ₹0 (no paid acquisition yet)
+- **Renewal Dates:** Pending account setup
+- **Human-Only Dependencies:**
+  - Founder account setup
+  - Founder disclosure acceptance
+
+---
 
 ## Next Steps
-1. Commit this plan to `site/content/policies/cuelinks-integration-execution-plan-2026-08-29.md`
-2. Update `data/cuelinks_integration_state.json`
-3. Submit Founder request: **"Set up Cuelinks account and approve tracking disclosure"**
-4. After approval: deploy internal linking, track 7-day funnel, rotate to next pillar
 
-## Rotation Logic
-- Pillar 2 has 0 recent completed tasks
-- This leverages 17 ready offers and existing high-intent content
-- No Founder-only actions required beyond account setup
-- If blocked, rotate to Pillar 4 (buying guide draft) or Pillar 6 (Instagram cross-promotion)
+1. Commit state and plan files.
+2. Submit Founder request for Cuelinks affiliate account setup and disclosure acceptance.
+3. After account approval:
+   - Integrate tracking (sub-ID alignment).
+   - Publish conversion-ready content using verified offers.
+   - Monitor impressions, clicks, and conversions.
+4. Rotate to next least-used pillar (1 or 3).
+
+---
+
+**Next Task:** After validator pass, commit changes, submit Founder request for Cuelinks affiliate account setup and disclosure acceptance, and rotate to next least-used pillar (1 or 3).
