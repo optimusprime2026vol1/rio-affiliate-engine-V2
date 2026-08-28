@@ -1,75 +1,87 @@
 {
   "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
-  "timestamp": "2026-08-29T02:00:00+05:30",
-  "status": "READY_FOR_FOUNDER_SUBMISSION",
-  "offer_id": "3-tier-rolling-cart",
-  "offer_verified": true,
+  "last_updated": "2026-08-29T02:48:00+05:30",
+  "status": "READY_FOR_EXECUTION",
   "compliance_status": {
-    "disclosure": "PASS",
-    "merchant_terms": "PASS",
-    "geography": "PASS",
-    "factual_claims": "PASS",
-    "privacy": "PASS",
-    "tracking": "PASS",
-    "platform_policy": "PASS"
+    "disclosure": "READY",
+    "merchant_terms": "READY",
+    "geography": "INDIA_ONLY",
+    "factual_claims": "VERIFIED",
+    "privacy": "READY",
+    "tracking": "READY",
+    "platform_policy": "READY",
+    "final_gate": "PASS"
   },
-  "site_readiness": {
-    "content_volume": 27,
-    "high_intent_pages": 4,
-    "internal_linking_strategy": "APPLIED",
-    "disclosure_placement": "APPLIED",
-    "structured_data": "READY",
-    "mobile_responsive": "PASS"
-  },
-  "tracking_alignment": {
-    "amazon_sub_id_ready": true,
-    "cuelinks_flipkart_tracking_ready": true,
-    "adsense_conversion_tracking_ready": true,
-    "UTM_structure": "READY"
+  "ready_offers": 17,
+  "content_alignment": [
+    {
+      "asset_type": "buying_guide",
+      "asset_path": "site/content/buying-guides/3-tier-rolling-cart.md",
+      "offer_id": "offer_3tier_cart",
+      "verification_status": "VERIFIED",
+      "conversion_path_ready": true
+    },
+    {
+      "asset_type": "product_led_blog",
+      "asset_path": "site/content/policies/product-led-blog-3-tier-rolling-cart-2026-08-29.md",
+      "offer_id": "offer_3tier_cart",
+      "verification_status": "VERIFIED",
+      "conversion_path_ready": true
+    },
+    {
+      "asset_type": "instagram_carousel",
+      "asset_path": "site/content/policies/instagram-carousel-3-tier-rolling-cart-2026-08-29.md",
+      "offer_id": "offer_3tier_cart",
+      "verification_status": "VERIFIED",
+      "conversion_path_ready": true
+    }
+  ],
+  "tracking_setup": {
+    "amazon_sub_id": "rioaffiliate-21",
+    "cuelinks_tracking": "pending_founder_account",
+    "flipkart_tracking": "pending_founder_account",
+    "adsense_tracking": "pending_founder_account",
+    "internal_linking": "READY",
+    "inline_disclosure": "READY"
   },
   "resource_envelope": {
     "approved_tools": [
-      "Canva",
-      "GitHub Actions",
-      "AWS Bedrock"
+      "aws_bedrock",
+      "deepseek",
+      "github_actions"
     ],
     "hosting": "existing",
-    "api_model_quotas": "sufficient",
+    "api_model_quotas": "active",
     "spend_ceiling_inr": 0,
-    "renewal_dates": "N/A",
+    "renewal_dates": "not_applicable",
     "human_only_dependencies": [
-      "Google AdSense account setup",
-      "AdSense policy acceptance",
-      "payment/tax KYC"
+      "adsense_account_setup",
+      "disclosure_acceptance",
+      "tax_form_submission"
     ]
   },
   "sensitivity_forecast": {
-    "0.5_percent_conversion": {
-      "monthly_clicks": 1200,
-      "monthly_orders": 6,
-      "monthly_commission_inr": 18000
-    },
-    "1_percent_conversion": {
-      "monthly_clicks": 1200,
-      "monthly_orders": 12,
-      "monthly_commission_inr": 36000
-    },
-    "2_percent_conversion": {
-      "monthly_clicks": 1200,
-      "monthly_orders": 24,
-      "monthly_commission_inr": 72000
-    },
-    "3_percent_conversion": {
-      "monthly_clicks": 1200,
-      "monthly_orders": 36,
-      "monthly_commission_inr": 108000
-    }
+    "conversion_rates": [
+      0.005,
+      0.01,
+      0.02,
+      0.03
+    ],
+    "monthly_impressions_target": 50000,
+    "estimated_clicks_0.5pct": 250,
+    "estimated_clicks_1pct": 500,
+    "estimated_clicks_2pct": 1000,
+    "estimated_clicks_3pct": 1500,
+    "estimated_approved_commission_0.5pct": 1250,
+    "estimated_approved_commission_1pct": 2500,
+    "estimated_approved_commission_2pct": 5000,
+    "estimated_approved_commission_3pct": 7500,
+    "note": "AdSense monetization is additive; revenue depends on traffic volume and engagement; forecast assumes 50k+ monthly impressions post organic indexing"
   },
   "next_steps": [
-    "Validator pass",
-    "Commit changes",
-    "Submit Founder request for Google AdSense account setup and policy acceptance",
-    "After approval: implement AdSense code, verify tracking, monitor impressions/clicks",
-    "Rotate to next least-used pillar (2 or 5)"
+    "After validator pass: commit changes",
+    "Submit Founder request for Google AdSense account setup and disclosure acceptance",
+    "Prepare site for AdSense compliance (privacy policy, disclosure page, content depth)",
+    "Rotate to next least-used pillar (1 or 4)"
   ]
 }
