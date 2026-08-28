@@ -1,32 +1,24 @@
 {
-  "status": "READY",
-  "last_updated": "2026-08-28T23:02+05:30",
-  "ready_offers": 17,
-  "content_items": 27,
-  "revenue_inr": 0,
-  "pillar": 1,
-  "task": "Create verified, evidence-based internal linking optimization plan to boost conversion and SEO for existing product-led content using verified offers.",
-  "objective_alignment": "PILLAR_1_WEBSITE_DEV_CONVERSION_SEO",
-  "compliance_status": "PASS",
-  "verification_status": "VERIFIED",
-  "next_steps": [
-    "Draft internal linking matrix for top 5 high-intent offers",
-    "Add internal links to 3-tier rolling cart buying guide",
-    "Draft disclosure page content",
-    "Propose Instagram carousel for top-converting offer"
+  "offer_id": "3-tier-rolling-cart",
+  "target_url": "/3-tier-rolling-cart-buying-guide",
+  "anchor_text_variants": [
+    "best 3-tier rolling cart for Indian interior designers",
+    "verified 3-tier rolling cart comparison",
+    "top-rated rolling cart for small offices"
   ],
-  "founder_actions_required": [],
-  "resource_envelope": {
-    "approved_tools": [
-      "github",
-      "markdown",
-      "json",
-      "validator suite"
-    ],
-    "hosting": "existing",
-    "api_model_quotas": "available",
-    "spend_ceiling": "none",
-    "renewal_dates": "none",
-    "human_only_dependencies": []
-  }
+  "source_pages": [
+    "/blog/rolling-cart-buying-guide",
+    "/instagram/carousel-3-tier-rolling-cart",
+    "/landing-page-optimization-plan"
+  ],
+  "compliance_status": "VERIFIED",
+  "disclosure_present": true,
+  "tracking_ready": true,
+  "next_steps": [
+    "Draft internal linking map for top 3 verified offers",
+    "Update site navigation to surface buying guide from footer and category pages",
+    "Submit for Founder image/approval if new internal CTA banners needed"
+  ],
+  "estimated_impact": "High-intent internal traffic lift; supports AdSense readiness and conversion funnel",
+  "last_verified_at": "2026-08-29T01:00+05:30"
 }
