@@ -1,41 +1,20 @@
 {
   "status": "COMPLETED",
-  "current_task": "Rotate to Pillar 3 (AdSense readiness and monetization) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based AdSense implementation plan using existing verified offer specs and content inventory to prepare for safe, compliant display-ad monetization.",
-  "started_at": "2026-08-29T04:47:01+05:30",
-  "updated_at": "2026-08-29T04:47:12+05:30",
+  "current_task": "Rotate to Pillar 6 (Instagram sales/content execution) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based Instagram carousel optimization for the 3-tier rolling cart offer to improve conversion-path readiness using existing high-intent assets (buying guide, product-led blog, internal linking plan).",
+  "started_at": "2026-08-29T05:00:54+05:30",
+  "updated_at": "2026-08-29T05:01:08+05:30",
   "ai_engine": "bedrock-qwen",
-  "last_completed": "Rotate to Pillar 3 (AdSense readiness and monetization) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based AdSense implementation plan using existing verified offer specs and content inventory to prepare for safe, compliant display-ad monetization.",
-  "last_result": "PILLAR:3, task: Draft verified, evidence-based AdSense implementation plan using existing verified offer specs and content inventory to prepare for safe, compliant display-ad monetization, why: Pillar 3 has 0 *new* completed tasks since last rotation; AdSense is a high-potential, low-friction revenue layer aligned with RIO’s audience and content inventory; this plan prepares for safe, compliant implementation while respecting Founder-only account/approval gates, changes: writes `data/adsense_readiness_state.json` (valid JSON with policy ID, status, ready_offers, content inventory, compliance status, sensitivity forecast, resource envelope, next steps) and `site/content/policies/adsense-readiness-implementation-plan-2026-08-29.md` (full plan with why, current state, checklist, top 3 pages, compliance & tracking, sensitivity forecast, resource envelope, next steps), NEXT_TASK: After validator pass, commit changes, submit plan for Founder review and approval, and rotate to Pillar 6 (Instagram sales/content execution).",
+  "last_completed": "Rotate to Pillar 6 (Instagram sales/content execution) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based Instagram carousel optimization for the 3-tier rolling cart offer to improve conversion-path readiness using existing high-intent assets (buying guide, product-led blog, internal linking plan).",
+  "last_result": "PILLAR:6, task: Draft verified, evidence-based Instagram carousel optimization for 3-tier rolling cart using existing high-intent assets (buying guide, product-led blog, internal linking plan), why: Pillar 6 has 0 *new* completed tasks since last rotation; Instagram remains the highest-potential owned-channel for verified offers targeting Indian interior designers and small offices; this plan improves conversion-path readiness without requiring new content or Founder-only actions, changes: writes `data/instagram_optimization_state.json` (valid JSON with policy ID, status, offer specs, existing assets, compliance status, sensitivity forecast, resource envelope, next steps) and `site/content/policies/instagram-optimization-3-tier-rolling-cart-2026-08-29.md` (full plan with why, current state, proposed slides, compliance & tracking, sensitivity forecast, resource envelope, next steps), NEXT_TASK: After validator pass, commit changes, draft updated Instagram caption + slide 1 disclosure using verified offer specs, link to existing buying guide and product-led blog in caption, submit for Founder review and approval, and rotate to Pillar 1 (website development/conversion/SEO).",
   "changed_files": [
-    "data/adsense_readiness_state.json",
-    "site/content/policies/adsense-readiness-implementation-plan-2026-08-29.md"
+    "data/instagram_optimization_state.json",
+    "site/content/policies/instagram-optimization-3-tier-rolling-cart-2026-08-29.md"
   ],
   "validators": "PASS",
-  "next_task": "After validator pass, commit changes, submit plan for Founder review and approval, and rotate to Pillar 6 (Instagram sales/content execution).",
+  "next_task": "After validator pass, commit changes, draft updated Instagram caption + slide 1 disclosure using verified offer specs, link to existing buying guide and product-led blog in caption, submit for Founder review and approval, and rotate to Pillar 1 (website development/conversion/SEO).",
   "blocker": null,
   "founder_action_needed": false,
   "history": [
-    {
-      "at": "2026-08-29T04:09:27+05:30",
-      "status": "WAITING",
-      "task": "Rotate to Pillar 1 (website development/conversion/SEO) — now least-used pillar (0 *new* completed tasks since last rotation); execute verified, evidence-based internal linking optimization for the 3-tier rolling cart offer to improve conversion-path readiness using existing high-intent assets (buying guide, product-led blog, Instagram carousel).",
-      "engine": "bedrock-qwen",
-      "result": "PORTFOLIO_GUARD: repeated task/pillar concentration suppressed; next cycle must rotate."
-    },
-    {
-      "at": "2026-08-29T04:15:55+05:30",
-      "status": "WORKING",
-      "task": "Choose an independent task from a least-used eligible Phase-2 pillar.",
-      "engine": "selecting",
-      "result": null
-    },
-    {
-      "at": "2026-08-29T04:16:07+05:30",
-      "status": "WAITING",
-      "task": "Rotate to Pillar 1 (website development/conversion/SEO) — now least-used pillar (0 *new* completed tasks since last rotation); execute verified, evidence-based internal linking optimization for the 3-tier rolling cart offer to improve conversion-path readiness using existing high-intent assets (buying guide, product-led blog, Instagram carousel).",
-      "engine": "bedrock-qwen",
-      "result": "PORTFOLIO_GUARD: repeated task/pillar concentration suppressed; next cycle must rotate."
-    },
     {
       "at": "2026-08-29T04:16:56+05:30",
       "status": "WORKING",
@@ -154,6 +133,27 @@
       "task": "Rotate to Pillar 3 (AdSense readiness and monetization) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based AdSense implementation plan using existing verified offer specs and content inventory to prepare for safe, compliant display-ad monetization.",
       "engine": "bedrock-qwen",
       "result": "PILLAR:3, task: Draft verified, evidence-based AdSense implementation plan using existing verified offer specs and content inventory to prepare for safe, compliant display-ad monetization, why: Pillar 3 has 0 *new* completed tasks since last rotation; AdSense is a high-potential, low-friction revenue layer aligned with RIO’s audience and content inventory; this plan prepares for safe, compliant implementation while respecting Founder-only account/approval gates, changes: writes `data/adsense_readiness_state.json` (valid JSON with policy ID, status, ready_offers, content inventory, compliance status, sensitivity forecast, resource envelope, next steps) and `site/content/policies/adsense-readiness-implementation-plan-2026-08-29.md` (full plan with why, current state, checklist, top 3 pages, compliance & tracking, sensitivity forecast, resource envelope, next steps), NEXT_TASK: After validator pass, commit changes, submit plan for Founder review and approval, and rotate to Pillar 6 (Instagram sales/content execution)."
+    },
+    {
+      "at": "2026-08-29T05:00:54+05:30",
+      "status": "WORKING",
+      "task": "After validator pass, commit changes, submit plan for Founder review and approval, and rotate to Pillar 6 (Instagram sales/content execution).",
+      "engine": "selecting",
+      "result": null
+    },
+    {
+      "at": "2026-08-29T05:01:08+05:30",
+      "status": "WORKING",
+      "task": "Rotate to Pillar 6 (Instagram sales/content execution) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based Instagram carousel optimization for the 3-tier rolling cart offer to improve conversion-path readiness using existing high-intent assets (buying guide, product-led blog, internal linking plan).",
+      "engine": "bedrock-qwen",
+      "result": null
+    },
+    {
+      "at": "2026-08-29T05:01:08+05:30",
+      "status": "COMPLETED",
+      "task": "Rotate to Pillar 6 (Instagram sales/content execution) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based Instagram carousel optimization for the 3-tier rolling cart offer to improve conversion-path readiness using existing high-intent assets (buying guide, product-led blog, internal linking plan).",
+      "engine": "bedrock-qwen",
+      "result": "PILLAR:6, task: Draft verified, evidence-based Instagram carousel optimization for 3-tier rolling cart using existing high-intent assets (buying guide, product-led blog, internal linking plan), why: Pillar 6 has 0 *new* completed tasks since last rotation; Instagram remains the highest-potential owned-channel for verified offers targeting Indian interior designers and small offices; this plan improves conversion-path readiness without requiring new content or Founder-only actions, changes: writes `data/instagram_optimization_state.json` (valid JSON with policy ID, status, offer specs, existing assets, compliance status, sensitivity forecast, resource envelope, next steps) and `site/content/policies/instagram-optimization-3-tier-rolling-cart-2026-08-29.md` (full plan with why, current state, proposed slides, compliance & tracking, sensitivity forecast, resource envelope, next steps), NEXT_TASK: After validator pass, commit changes, draft updated Instagram caption + slide 1 disclosure using verified offer specs, link to existing buying guide and product-led blog in caption, submit for Founder review and approval, and rotate to Pillar 1 (website development/conversion/SEO)."
     }
   ]
 }

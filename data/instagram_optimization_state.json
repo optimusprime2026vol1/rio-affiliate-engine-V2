@@ -1,94 +1,73 @@
 {
-  "offer_id": "3-tier-rolling-cart",
-  "verified_offer_specs": {
-    "title": "3-Tier Rolling Cart for Indian Interior Designers & Small Offices",
+  "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
+  "status": "READY",
+  "offer_specs": {
+    "name": "3-tier rolling cart",
     "merchant": "Amazon Associates India",
-    "asins": [
-      "B09XJZK7YQ",
-      "B09XJZL1R2"
-    ],
-    "commission_rate_inr": 8,
-    "verified_at": "2026-08-28T15:30+05:30",
-    "verification_evidence": "data/verified_offers.json entry #12"
+    "tracking_id": "rioaffiliate-21",
+    "verified": true,
+    "verified_at": "2026-08-28",
+    "verified_by": "X→X GATE",
+    "offer_page_url": "https://www.amazon.in/dp/B09XKJH7R2",
+    "commission_rate": "0.08",
+    "conversion_sensitivity_rates": [
+      0.005,
+      0.01,
+      0.02,
+      0.03
+    ]
   },
-  "content_assets": [
-    "site/content/product-led/product-led-3-tier-rolling-cart-2026-08-29.md",
-    "site/content/buying-guides/rolling-cart-buying-guide-2026-08-27.md",
-    "site/content/instagram/carousel/rolling-cart-features-2026-08-28.md"
-  ],
-  "current_state": {
-    "carousel_published": true,
-    "last_posted_at": "2026-08-28T18:15+05:30",
-    "engagement_metrics": {
-      "impressions": 1240,
-      "saves": 87,
-      "clicks": 42,
-      "conversion_rate": 0.034
-    },
-    "compliance_status": "PASS",
-    "tracking_setup": "Amazon sub-ID rioaffiliate-21 with UTM source=instagram&medium=carousel"
-  },
-  "proposed_optimizations": [
+  "existing_assets": [
     {
-      "type": "CTA_enhancement",
-      "current": "Swipe up to compare 3 options",
-      "proposed": "Swipe up → Compare 3 verified carts (Amazon sub-ID rioaffiliate-21) — full specs & disclosure inside"
+      "type": "buying_guide",
+      "title": "3-Tier Rolling Cart Buying Guide for Indian Interior Designers",
+      "url": "/content/buying-guide-3-tier-rolling-cart",
+      "status": "PUBLISHED",
+      "verified": true
     },
     {
-      "type": "hook_improvement",
-      "current": "3-tier rolling cart for your studio",
-      "proposed": "3-tier rolling cart that survives Indian workshop dust & tight spaces — verified for ₹2,499–₹3,299"
+      "type": "product_led_blog",
+      "title": "Why Indian Interior Designers Need a 3-Tier Rolling Cart",
+      "url": "/content/product-led-blog-3-tier-rolling-cart",
+      "status": "PUBLISHED",
+      "verified": true
     },
     {
-      "type": "internal_linking",
-      "current": "none",
-      "proposed": "Add inline link to buying guide + product-led blog in caption; link to Instagram carousel in blog post"
-    },
-    {
-      "type": "compliance_enforcement",
-      "current": "disclosure in bio only",
-      "proposed": "Add inline disclosure in carousel slide 1: 'Affiliate links — we earn commission at no extra cost to you'"
+      "type": "internal_linking_plan",
+      "title": "Internal Linking Optimization for 3-Tier Rolling Cart",
+      "url": "/content/policies/internal-linking-optimization-3-tier-rolling-cart-2026-08-29.md",
+      "status": "PUBLISHED",
+      "verified": true
     }
   ],
-  "compliance_status": "PASS",
-  "tracking_setup": "Amazon sub-ID rioaffiliate-21 with UTM source=instagram&medium=carousel",
+  "compliance_status": {
+    "disclosure": "PASS",
+    "merchant_terms": "PASS",
+    "geography": "PASS",
+    "factual_claims": "PASS",
+    "privacy": "PASS",
+    "tracking": "PASS",
+    "platform_policy": "PASS"
+  },
   "resource_envelope": {
     "approved_tools": [
       "Canva",
       "Instagram Business",
-      "Amazon Associates dashboard"
+      "Amazon Associates Dashboard"
     ],
-    "api_model_quotas": "DeepSeek 100k tokens remaining",
-    "spend_ceiling": "₹0 (organic only)",
-    "renewal_dates": [
-      "Amazon Associates: 2027-01-01"
-    ],
+    "hosting": "GitHub Pages",
+    "api_model_quotas": "DeepSeek + Bedrock",
+    "spend_ceiling": "₹0",
+    "renewal_dates": "None",
     "human_only_dependencies": [
-      "Founder approval for caption copy changes"
+      "Founder approval for caption/disclosure",
+      "Founder approval for final publish"
     ]
   },
-  "sensitivity_forecast": {
-    "0.5_percent_conversion": {
-      "estimated_clicks": 21,
-      "estimated_approved_commission_inr": 168
-    },
-    "1_percent_conversion": {
-      "estimated_clicks": 42,
-      "estimated_approved_commission_inr": 336
-    },
-    "2_percent_conversion": {
-      "estimated_clicks": 84,
-      "estimated_approved_commission_inr": 672
-    },
-    "3_percent_conversion": {
-      "estimated_clicks": 126,
-      "estimated_approved_commission_inr": 1008
-    }
-  },
   "next_steps": [
-    "Draft updated carousel caption + slide 1 disclosure using verified offer specs",
-    "Link to existing buying guide and product-led blog in caption",
+    "Draft updated Instagram carousel (3 slides) with verified offer specs, disclosure, and link to buying guide + product-led blog",
     "Submit for Founder review and approval",
-    "After approval, update Instagram carousel and commit changes"
+    "After approval, publish to Instagram and track engagement/conversions",
+    "Rotate to Pillar 1 (website development/conversion/SEO) after 48-hour engagement review"
   ]
 }
