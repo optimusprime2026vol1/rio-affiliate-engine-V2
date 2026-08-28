@@ -1,0 +1,32 @@
+{
+  "status": "READY",
+  "last_updated": "2026-08-28T23:02+05:30",
+  "ready_offers": 17,
+  "content_items": 27,
+  "revenue_inr": 0,
+  "pillar": 1,
+  "task": "Create verified, evidence-based internal linking optimization plan to boost conversion and SEO for existing product-led content using verified offers.",
+  "objective_alignment": "PILLAR_1_WEBSITE_DEV_CONVERSION_SEO",
+  "compliance_status": "PASS",
+  "verification_status": "VERIFIED",
+  "next_steps": [
+    "Draft internal linking matrix for top 5 high-intent offers",
+    "Add internal links to 3-tier rolling cart buying guide",
+    "Draft disclosure page content",
+    "Propose Instagram carousel for top-converting offer"
+  ],
+  "founder_actions_required": [],
+  "resource_envelope": {
+    "approved_tools": [
+      "github",
+      "markdown",
+      "json",
+      "validator suite"
+    ],
+    "hosting": "existing",
+    "api_model_quotas": "available",
+    "spend_ceiling": "none",
+    "renewal_dates": "none",
+    "human_only_dependencies": []
+  }
+}
