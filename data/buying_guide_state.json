@@ -1,0 +1,31 @@
+{
+  "product_id": "3-tier-rolling-cart-indian-designers",
+  "offer_source": "verified_offers",
+  "verified": true,
+  "audience": [
+    "interior_designers",
+    "small_offices"
+  ],
+  "problem_solved": "Mobile, modular, and space-efficient storage for Indian design studios and home offices with frequent reconfiguration needs.",
+  "key_benefits": [
+    "3-tier vertical storage",
+    "smooth-rolling castors",
+    "adjustable height options",
+    "compact footprint",
+    "easy assembly"
+  ],
+  "verified_specs": {
+    "max_load_kg": 45,
+    "dimensions_cm": "60x40x120",
+    "material": "steel_frame_with_melamine_board",
+    "wheel_type": "swivel_with_brake",
+    "assembly_time_min": 15,
+    "country_of_origin": "India"
+  },
+  "compliance_status": "disclosure_ready",
+  "next_steps": [
+    "draft buying guide",
+    "internal linking plan",
+    "disclosure page draft"
+  ]
+}
