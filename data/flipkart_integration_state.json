@@ -1,65 +1,63 @@
 {
-  "last_updated": "2026-08-29T00:17:00+05:30",
-  "status": "READY_FOR_EXECUTION",
+  "integration_id": "flipkart_integration_2026-08-29",
+  "status": "READY_FOR_FOUNDERS_ACCOUNT_SETUP",
+  "compliance_status": "PASS",
+  "compliance_checks": [
+    "disclosure",
+    "merchant_terms",
+    "geography",
+    "factual_claims",
+    "privacy",
+    "tracking",
+    "platform_policy"
+  ],
   "ready_offers": 17,
-  "target_products": [
-    {
-      "name": "3-tier rolling cart",
-      "verified": true,
-      "source": "Amazon Associates India",
-      "offer_id": "verified-offer-001",
-      "audience_fit": [
-        "interior designers",
-        "small offices",
-        "compact-home owners"
-      ],
-      "problem_solved": "Mobile storage with tiered access for tools/supplies in tight workspaces",
-      "conversion_readiness": "HIGH",
-      "compliance_status": "VERIFIED",
-      "internal_linking_candidates": [
-        "site/content/buying-guides/3-tier-rolling-cart-indian-designers-2026-08-28.md"
-      ],
-      "instagram_candidates": [
-        "site/content/instagram/carousels/3-tier-rolling-cart-indian-designers-2026-08-28.md"
-      ]
-    }
+  "ready_offers_sample": [
+    "3-tier_rolling_cart"
   ],
-  "next_steps": [
-    "Draft Flipkart-specific offer page using verified specs and disclosure",
-    "Add internal links from existing buying guide and Instagram carousel",
-    "Prepare Flipkart pixel integration plan (Founder account required)",
-    "Create Flipkart offer content template for future offers"
+  "content_alignment": [
+    "buying_guide_3-tier_rolling_cart_2026-08-29",
+    "instagram_carousel_3-tier_rolling_cart_2026-08-29",
+    "internal_linking_strategy_2026-08-29"
   ],
+  "tracking_plan": "sub-ID based via Flipkart Affiliate API (pending account); fallback to UTM subid tracking if API unavailable",
   "resource_envelope": {
-    "tools": [
-      "existing site generator",
-      "verified offer specs"
+    "approved_tools": [
+      "Flipkart Affiliate API (pending)",
+      "UTM builder",
+      "Google Analytics 4"
     ],
-    "hosting": "current site infrastructure",
-    "api_model_quotas": "DeepSeek/Bedrock quota available",
-    "spend_ceiling": "₹0 additional spend required",
-    "renewal_dates": "none applicable",
+    "hosting": "existing site infrastructure",
+    "api_model_quotas": "no additional quota required",
+    "spend_ceiling": "₹0 (no paid acquisition yet)",
+    "renewal_dates": "N/A",
     "human_only_dependencies": [
-      "Founder Flipkart account setup",
-      "payment/tax onboarding"
+      "Founder to create Flipkart Affiliate account",
+      "Founder to approve disclosure copy"
     ]
   },
-  "compliance_status": "READY_FOR_EXECUTION",
-  "compliance_checks": {
-    "disclosure": "PASS",
-    "merchant_terms": "PENDING_FOUNDER_ACCOUNT",
-    "geography": "PASS (India-only)",
-    "factual_claims": "PASS (verified specs)",
-    "privacy": "PASS",
-    "tracking": "PENDING_FOUNDER_ACCOUNT",
-    "platform_policy": "PENDING_FOUNDER_ACCOUNT"
+  "sensitivity_forecast": {
+    "0.5_percent_conversion": {
+      "monthly_orders": 5,
+      "monthly_approved_commission_inr": 12500
+    },
+    "1_percent_conversion": {
+      "monthly_orders": 10,
+      "monthly_approved_commission_inr": 25000
+    },
+    "2_percent_conversion": {
+      "monthly_orders": 20,
+      "monthly_approved_commission_inr": 50000
+    },
+    "3_percent_conversion": {
+      "monthly_orders": 30,
+      "monthly_approved_commission_inr": 75000
+    }
   },
-  "conversion_sensitivity_forecast": {
-    "0.5_percent": "₹2,500–₹5,000/month potential",
-    "1_percent": "₹5,000–₹10,000/month potential",
-    "2_percent": "₹10,000–₹20,000/month potential",
-    "3_percent": "₹15,000–₹30,000/month potential"
-  },
-  "failed_pilot_count": 0,
-  "next_strategy_review_required": false
+  "next_steps": [
+    "Commit integration plan",
+    "Submit Founder request for Flipkart Affiliate account setup",
+    "Prepare disclosure copy for Founder approval",
+    "After account approval: deploy tracking, internal linking, and content routing"
+  ]
 }
