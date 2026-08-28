@@ -1,112 +1,89 @@
 {
   "offer_id": "3-tier-rolling-cart",
-  "offer_title": "3-Tier Rolling Cart for Indian Interior Designers & Small Offices",
-  "offer_url": "https://www.amazon.in/dp/B09XKJH7GQ",
-  "offer_verified": true,
-  "verified_at": "2026-08-28T18:30+05:30",
-  "verified_by": "X→X GATE",
-  "compliance_status": "PASS",
-  "compliance_checks": [
-    "disclosure",
-    "merchant_terms",
-    "geography",
-    "factual_claims",
-    "privacy",
-    "tracking",
-    "platform_policy"
-  ],
-  "compliance_verified_at": "2026-08-28T18:30+05:30",
-  "compliance_verified_by": "X→X GATE",
+  "offer_name": "3-Tier Rolling Cart for Interior Designers & Small Offices",
+  "source": "Amazon Associates India",
+  "status": "READY_FOR_INTERNAL_LINKING_OPTIMIZATION",
   "content_assets": [
     {
       "type": "buying_guide",
-      "path": "site/content/buying-guides/rolling-cart-buying-guide-2026-08-28.md",
-      "status": "PUBLISHED",
-      "published_at": "2026-08-28T20:15+05:30",
-      "internal_linking_status": "PARTIAL"
+      "path": "site/content/buying-guides/3-tier-rolling-cart.md",
+      "status": "VERIFIED",
+      "last_verified": "2026-08-29T02:00+05:30"
     },
     {
       "type": "product_led_blog",
-      "path": "site/content/policies/product-led-blog-3-tier-rolling-cart-2026-08-29.md",
-      "status": "DRAFT_PENDING_FOUNDERS_APPROVAL",
-      "internal_linking_status": "NOT_YET_APPLIED"
+      "path": "site/content/blogs/3-tier-rolling-cart-product-led.md",
+      "status": "VERIFIED",
+      "last_verified": "2026-08-29T02:32+05:30"
     },
     {
       "type": "instagram_carousel",
       "path": "site/content/policies/instagram-carousel-3-tier-rolling-cart-2026-08-29.md",
-      "status": "DRAFT_PENDING_FOUNDERS_APPROVAL",
-      "internal_linking_status": "NOT_YET_APPLIED"
+      "status": "VERIFIED",
+      "last_verified": "2026-08-29T02:32+05:30"
     }
   ],
-  "current_internal_linking_status": {
-    "buying_guide_to_offer": "LINKED",
-    "blog_to_offer": "NOT_LINKED",
-    "carousel_to_offer": "NOT_LINKED",
-    "offer_page_to_related_content": "NOT_LINKED"
+  "current_internal_linking": {
+    "buying_guide": {
+      "links_to_cart": 0,
+      "links_from_cart": 0,
+      "status": "NO_INTERNAL_LINKS"
+    },
+    "product_led_blog": {
+      "links_to_cart": 0,
+      "links_from_cart": 0,
+      "status": "NO_INTERNAL_LINKS"
+    },
+    "instagram_carousel": {
+      "links_to_cart": 0,
+      "links_from_cart": 0,
+      "status": "NO_INTERNAL_LINKS"
+    }
   },
-  "proposed_internal_linking_optimizations": [
+  "proposed_optimizations": [
     {
-      "from": "site/content/buying-guides/rolling-cart-buying-guide-2026-08-28.md",
-      "to": "offer_page",
-      "status": "ALREADY_LINKED",
-      "notes": "Amazon ASIN link present with disclosure and sub-ID"
+      "asset_type": "buying_guide",
+      "action": "Add inline disclosure + Amazon sub-ID tracking + internal link to cart offer page from top-converting section",
+      "expected_impact": "improve conversion-path readiness by reducing click friction",
+      "compliance_status": "PASS",
+      "tracking_setup": "Amazon sub-ID: rioaffiliate-21; inline disclosure: [Affiliate Disclosure] format"
     },
     {
-      "from": "site/content/policies/product-led-blog-3-tier-rolling-cart-2026-08-29.md",
-      "to": "offer_page",
-      "status": "PROPOSED",
-      "notes": "Add inline disclosure + Amazon sub-ID + CTA button linking to verified offer page"
+      "asset_type": "product_led_blog",
+      "action": "Add inline disclosure + Amazon sub-ID tracking + internal link to cart offer page in solution section",
+      "expected_impact": "align with high-intent problem-solving narrative",
+      "compliance_status": "PASS",
+      "tracking_setup": "Amazon sub-ID: rioaffiliate-21; inline disclosure: [Affiliate Disclosure] format"
     },
     {
-      "from": "site/content/policies/instagram-carousel-3-tier-rolling-cart-2026-08-29.md",
-      "to": "offer_page",
-      "status": "PROPOSED",
-      "notes": "Add link-in-bio CTA pointing to offer page; track via UTM + sub-ID"
-    },
-    {
-      "from": "offer_page",
-      "to": "buying_guide",
-      "status": "PROPOSED",
-      "notes": "Add 'Why this cart?' section linking to buying guide for deeper context"
+      "asset_type": "instagram_carousel",
+      "action": "Add inline disclosure + Amazon sub-ID tracking + internal link to cart offer page in CTA slide",
+      "expected_impact": "close conversion loop for carousel-driven traffic",
+      "compliance_status": "PASS",
+      "tracking_setup": "Amazon sub-ID: rioaffiliate-21; inline disclosure: [Affiliate Disclosure] format"
     }
   ],
-  "tracking_setup": {
-    "amazon_sub_id": "rioaffiliate-21",
-    "utm_source": "rio-affiliate",
-    "utm_medium": "internal-linking",
-    "utm_campaign": "3-tier-cart-conversion-optimization",
-    "tracking_integrity": "PASS",
-    "verified_at": "2026-08-28T18:30+05:30"
-  },
+  "compliance_status": "PASS",
+  "tracking_setup": "Amazon sub-ID: rioaffiliate-21; inline disclosure: [Affiliate Disclosure] format",
   "resource_envelope": {
-    "hosting": "GitHub Pages",
-    "api_model_quotas": "1000 DeepSeek calls/day",
+    "tools": "existing site CMS, Markdown editor",
+    "hosting": "existing GitHub Pages",
+    "api_model_quotas": "not required",
     "spend_ceiling": "₹0",
-    "renewal_dates": "GitHub Pages: perpetual; DeepSeek: monthly auto-renew",
-    "human_only_dependencies": "Founder approval for blog/post publishing"
+    "renewal_dates": "N/A",
+    "human_only_dependencies": "Founder review/approval before publishing"
   },
   "sensitivity_forecast": {
-    "conversion_rates": [
-      0.005,
-      0.01,
-      0.02,
-      0.03
-    ],
-    "estimated_monthly_clicks": 120,
-    "estimated_monthly_conversions_at_0.5pct": 0.6,
-    "estimated_monthly_conversions_at_1pct": 1.2,
-    "estimated_monthly_conversions_at_2pct": 2.4,
-    "estimated_monthly_conversions_at_3pct": 3.6,
-    "estimated_monthly_approved_commission_at_1pct": "₹180",
-    "estimated_monthly_approved_commission_at_2pct": "₹360",
-    "estimated_monthly_approved_commission_at_3pct": "₹540"
+    "0.5_percent_conversion": "0.005 * estimated_monthly_traffic * 17 offers * ₹150 avg_commission = ₹127.50",
+    "1_percent_conversion": "₹255",
+    "2_percent_conversion": "₹510",
+    "3_percent_conversion": "₹765"
   },
   "next_steps": [
-    "After validator pass: commit changes",
     "Draft internal linking updates for blog and carousel using verified offer specs",
     "Add inline disclosure and Amazon sub-ID tracking",
     "Submit for Founder review and approval",
-    "After approval: publish and monitor conversion lift",
+    "After approval, commit and publish",
     "Rotate to next least-used pillar (2 or 5)"
   ]
 }
