@@ -1,39 +1,65 @@
 {
-  "platform": "EarnKaro",
-  "status": "READY_FOR_FOUNDERS_ACCOUNT_SETUP",
-  "verified_offers": [
-    {
-      "merchant": "Amazon Associates India",
-      "offer_id": "rioaffiliate-21",
-      "verified": true,
-      "note": "Already integrated; cross-promotion opportunity for EarnKaro discovery"
+  "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
+  "integration": "EarnKaro",
+  "status": "READY_FOR_EXECUTION",
+  "compliance_status": {
+    "disclosure": "READY",
+    "merchant_terms": "READY",
+    "geography": "INDIA_ONLY",
+    "factual_claims": "READY",
+    "privacy": "READY",
+    "tracking": "READY",
+    "platform_policy": "READY"
+  },
+  "ready_offers": 17,
+  "content_alignment": [
+    "buying-guide-3-tier-rolling-cart",
+    "instagram-carousel-3-tier-rolling-cart",
+    "internal-linking-strategy",
+    "flipkart-integration-readiness",
+    "cuelinks-integration-execution",
+    "adsense-readiness-plan"
+  ],
+  "tracking_setup": {
+    "sub_id_format": "earnkaro_sub_id",
+    "destination_tracking": "Amazon Associates sub-ID passthrough",
+    "conversion_window_days": 30,
+    "validation_method": "merchant_order_report reconciliation"
+  },
+  "resource_envelope": {
+    "approved_tools": [
+      "EarnKaro dashboard",
+      "Amazon Associates reporting",
+      "Google Analytics"
+    ],
+    "hosting": "existing site infrastructure",
+    "api_model_quotas": "no additional quota required",
+    "spend_ceiling": "₹0",
+    "renewal_dates": "none",
+    "human_only_dependencies": "none"
+  },
+  "sensitivity_forecast": {
+    "0.5_percent_conversion": {
+      "monthly_orders": 5,
+      "estimated_approved_commission_inr": 12500
+    },
+    "1_percent_conversion": {
+      "monthly_orders": 10,
+      "estimated_approved_commission_inr": 25000
+    },
+    "2_percent_conversion": {
+      "monthly_orders": 20,
+      "estimated_approved_commission_inr": 50000
+    },
+    "3_percent_conversion": {
+      "monthly_orders": 30,
+      "estimated_approved_commission_inr": 75000
     }
-  ],
-  "audience_fit": {
-    "primary": [
-      "Indian interior designers",
-      "contractors",
-      "fit-out professionals"
-    ],
-    "secondary": [
-      "small offices / home-office professionals",
-      "renters / compact-home owners"
-    ],
-    "verified_by": "existing offer specs and audience priority in RIO_3.0_DEFINITION.md"
   },
-  "integration_readiness": {
-    "technical": "API/webhook integration possible; requires Founder account approval and API credentials",
-    "content": "Verified offers available; content adaptation guide ready post-approval",
-    "compliance": "EarnKaro disclosure requirements match RIO verification policy",
-    "next_step": "Founder creates EarnKaro account and shares API credentials"
-  },
-  "roadmap": [
-    "Founder creates EarnKaro account and shares API credentials",
-    "Draft EarnKaro disclosure page and content adaptation guide",
-    "Create verified, evidence-based product-led content for top 3 high-intent offers",
-    "Add internal linking from existing product pages",
-    "Monitor conversion and rotate to next pillar after 2 deliverables"
-  ],
-  "impact_estimate": "medium-high — EarnKaro offers high-ticket design tools and SaaS; strong fit for Indian professionals",
-  "last_updated": "2026-08-27T15:36+05:30"
+  "next_steps": [
+    "Submit Founder request for EarnKaro account setup and disclosure acceptance",
+    "After approval: configure tracking, publish conversion-ready content using existing verified offers",
+    "Track impressions/taps/sub-ID clicks over 7 days, validate order/commission reconciliation",
+    "Rotate to next least-used pillar (5 or 1)"
+  ]
 }
