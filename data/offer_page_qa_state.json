@@ -1,0 +1,82 @@
+{
+  "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
+  "founder_locked_at": "2026-08-28",
+  "operating_mode": "ACTIVE_GOVERNED",
+  "pillar": 1,
+  "task": "Offer-page QA and conversion-path optimization checklist for top verified offer (3-tier rolling cart)",
+  "created_at": "2026-08-29T02:15:00+05:30",
+  "compliance_status": "HARD_PASS_FAIL_PENDING",
+  "compliance_checks": [
+    "disclosure_visible",
+    "merchant_terms_respected",
+    "geography_india_only",
+    "factual_claims_verified",
+    "privacy_policy_present",
+    "tracking_subid_aligned",
+    "platform_policy_compliant"
+  ],
+  "ready_offers": 17,
+  "target_offer": "3-tier rolling cart",
+  "target_offer_verified": true,
+  "content_alignment": {
+    "buying_guide": "site/content/buying-guide-3-tier-rolling-cart.md",
+    "internal_linking": "data/internal_linking_state.json",
+    "carousel": "site/content/policies/instagram-carousel-3-tier-rolling-cart-2026-08-29.md"
+  },
+  "qa_checklist": [
+    "verify_product_title_matches_merchant_listing",
+    "verify_price_and_availability_current",
+    "verify_affiliate_link_has_subid_tracking",
+    "verify_disclosure_above_the_fold",
+    "verify_images_alt_text_optimized",
+    "verify_cta_buttons_clear_and_above_fold",
+    "verify_mobile_responsive_layout",
+    "verify_page_load_speed_under_3s",
+    "verify_internal_links_to_related_high_intent_content",
+    "verify_no_fabricated_claims_or_ratings"
+  ],
+  "conversion_path": [
+    "landing_page",
+    "offer_details",
+    "cta_click",
+    "amazon_subid_tracking",
+    "merchant_checkout"
+  ],
+  "resource_envelope": {
+    "approved_tools": [
+      "github_actions",
+      "aws_bedrock",
+      "telegram_webhook"
+    ],
+    "hosting": "github_pages",
+    "api_model_quotas": "within_limits",
+    "spend_ceiling": 0,
+    "renewal_dates": "2026-09-01",
+    "human_only_dependencies": [
+      "amazon_account_verification",
+      "adsense_approval"
+    ]
+  },
+  "sensitivity_forecast": {
+    "conversion_rates": [
+      0.005,
+      0.01,
+      0.02,
+      0.03
+    ],
+    "monthly_visitors_estimate": 1000,
+    "monthly_commissions_estimate_inr": [
+      500,
+      1000,
+      2000,
+      3000
+    ],
+    "note": "ESTIMATE_ONLY_NOT_VERIFIED_REVENUE"
+  },
+  "next_steps": [
+    "run_qa_checklist_on_live_offer_page",
+    "fix_any_qa_failures",
+    "submit_founder_request_for_amazon_account_verification",
+    "rotate_to_next_least_used_pillar"
+  ]
+}
