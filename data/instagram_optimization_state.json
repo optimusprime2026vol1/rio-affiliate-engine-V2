@@ -1,0 +1,94 @@
+{
+  "offer_id": "3-tier-rolling-cart",
+  "verified_offer_specs": {
+    "title": "3-Tier Rolling Cart for Indian Interior Designers & Small Offices",
+    "merchant": "Amazon Associates India",
+    "asins": [
+      "B09XJZK7YQ",
+      "B09XJZL1R2"
+    ],
+    "commission_rate_inr": 8,
+    "verified_at": "2026-08-28T15:30+05:30",
+    "verification_evidence": "data/verified_offers.json entry #12"
+  },
+  "content_assets": [
+    "site/content/product-led/product-led-3-tier-rolling-cart-2026-08-29.md",
+    "site/content/buying-guides/rolling-cart-buying-guide-2026-08-27.md",
+    "site/content/instagram/carousel/rolling-cart-features-2026-08-28.md"
+  ],
+  "current_state": {
+    "carousel_published": true,
+    "last_posted_at": "2026-08-28T18:15+05:30",
+    "engagement_metrics": {
+      "impressions": 1240,
+      "saves": 87,
+      "clicks": 42,
+      "conversion_rate": 0.034
+    },
+    "compliance_status": "PASS",
+    "tracking_setup": "Amazon sub-ID rioaffiliate-21 with UTM source=instagram&medium=carousel"
+  },
+  "proposed_optimizations": [
+    {
+      "type": "CTA_enhancement",
+      "current": "Swipe up to compare 3 options",
+      "proposed": "Swipe up → Compare 3 verified carts (Amazon sub-ID rioaffiliate-21) — full specs & disclosure inside"
+    },
+    {
+      "type": "hook_improvement",
+      "current": "3-tier rolling cart for your studio",
+      "proposed": "3-tier rolling cart that survives Indian workshop dust & tight spaces — verified for ₹2,499–₹3,299"
+    },
+    {
+      "type": "internal_linking",
+      "current": "none",
+      "proposed": "Add inline link to buying guide + product-led blog in caption; link to Instagram carousel in blog post"
+    },
+    {
+      "type": "compliance_enforcement",
+      "current": "disclosure in bio only",
+      "proposed": "Add inline disclosure in carousel slide 1: 'Affiliate links — we earn commission at no extra cost to you'"
+    }
+  ],
+  "compliance_status": "PASS",
+  "tracking_setup": "Amazon sub-ID rioaffiliate-21 with UTM source=instagram&medium=carousel",
+  "resource_envelope": {
+    "approved_tools": [
+      "Canva",
+      "Instagram Business",
+      "Amazon Associates dashboard"
+    ],
+    "api_model_quotas": "DeepSeek 100k tokens remaining",
+    "spend_ceiling": "₹0 (organic only)",
+    "renewal_dates": [
+      "Amazon Associates: 2027-01-01"
+    ],
+    "human_only_dependencies": [
+      "Founder approval for caption copy changes"
+    ]
+  },
+  "sensitivity_forecast": {
+    "0.5_percent_conversion": {
+      "estimated_clicks": 21,
+      "estimated_approved_commission_inr": 168
+    },
+    "1_percent_conversion": {
+      "estimated_clicks": 42,
+      "estimated_approved_commission_inr": 336
+    },
+    "2_percent_conversion": {
+      "estimated_clicks": 84,
+      "estimated_approved_commission_inr": 672
+    },
+    "3_percent_conversion": {
+      "estimated_clicks": 126,
+      "estimated_approved_commission_inr": 1008
+    }
+  },
+  "next_steps": [
+    "Draft updated carousel caption + slide 1 disclosure using verified offer specs",
+    "Link to existing buying guide and product-led blog in caption",
+    "Submit for Founder review and approval",
+    "After approval, update Instagram carousel and commit changes"
+  ]
+}
