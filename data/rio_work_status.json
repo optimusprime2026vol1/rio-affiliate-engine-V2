@@ -1,34 +1,20 @@
 {
-  "status": "COMPLETED",
-  "current_task": "Rotate to Pillar 1 (website development/conversion/SEO) — now least-used pillar (0 recent completed tasks); create verified, evidence-based internal linking strategy for top offer (3-tier rolling cart) to improve SEO authority and conversion path using existing assets.",
-  "started_at": "2026-08-29T01:01:57+05:30",
-  "updated_at": "2026-08-29T01:02:13+05:30",
+  "status": "WAITING",
+  "current_task": "Rotate to Pillar 6 (Instagram sales/content execution) — now least-used pillar (1 recent completed task); create verified, evidence-based Instagram carousel post for 3-tier rolling cart targeting Indian interior designers and small offices, using verified offer specs and audience-fit problem-solving framing.",
+  "started_at": "2026-08-29T01:15:55+05:30",
+  "updated_at": "2026-08-29T01:16:07+05:30",
   "ai_engine": "bedrock-qwen",
   "last_completed": "Rotate to Pillar 1 (website development/conversion/SEO) — now least-used pillar (0 recent completed tasks); create verified, evidence-based internal linking strategy for top offer (3-tier rolling cart) to improve SEO authority and conversion path using existing assets.",
-  "last_result": "PILLAR:1, task: Create verified, evidence-based internal linking strategy for top offer (3-tier rolling cart) to improve SEO authority and conversion path using existing assets, why: Pillar 1 has 0 recent completed tasks; internal linking is low-effort, high-readiness, and directly supports conversion and SEO authority; changes: writes `data/internal_linking_state.json` (valid, non-empty JSON with offer ID, source pages, anchor variants, compliance status, next steps) and `site/content/policies/internal-linking-strategy-2026-08-29.md` (full plan with why, evidence, implementation checklist, impact forecast); NEXT_TASK: After validator pass, commit changes, deploy internal linking code, monitor for 7 days, and rotate to next least-used pillar (4 or 6).",
+  "last_result": "PORTFOLIO_GUARD: repeated task/pillar concentration suppressed; next cycle must rotate.",
   "changed_files": [
     "data/internal_linking_state.json",
     "site/content/policies/internal-linking-strategy-2026-08-29.md"
   ],
-  "validators": "PASS",
-  "next_task": "After validator pass, commit changes, deploy internal linking code, monitor for 7 days, and rotate to next least-used pillar (4 or 6).",
+  "validators": "NOT_RUN",
+  "next_task": "Choose an independent task from a least-used eligible Phase-2 pillar.",
   "blocker": null,
   "founder_action_needed": false,
   "history": [
-    {
-      "at": "2026-08-29T00:16:57+05:30",
-      "status": "WORKING",
-      "task": "Choose an independent task from a least-used eligible Phase-2 pillar.",
-      "engine": "selecting",
-      "result": null
-    },
-    {
-      "at": "2026-08-29T00:17:09+05:30",
-      "status": "WORKING",
-      "task": "Rotate to Pillar 5 (Flipkart/other commerce platforms) — now least-used pillar (0 recent completed tasks); create verified, evidence-based Flipkart offer integration execution plan focusing on immediate conversion-ready content using existing verified offers.",
-      "engine": "bedrock-qwen",
-      "result": null
-    },
     {
       "at": "2026-08-29T00:17:09+05:30",
       "status": "COMPLETED",
@@ -154,6 +140,20 @@
       "task": "Rotate to Pillar 1 (website development/conversion/SEO) — now least-used pillar (0 recent completed tasks); create verified, evidence-based internal linking strategy for top offer (3-tier rolling cart) to improve SEO authority and conversion path using existing assets.",
       "engine": "bedrock-qwen",
       "result": "PILLAR:1, task: Create verified, evidence-based internal linking strategy for top offer (3-tier rolling cart) to improve SEO authority and conversion path using existing assets, why: Pillar 1 has 0 recent completed tasks; internal linking is low-effort, high-readiness, and directly supports conversion and SEO authority; changes: writes `data/internal_linking_state.json` (valid, non-empty JSON with offer ID, source pages, anchor variants, compliance status, next steps) and `site/content/policies/internal-linking-strategy-2026-08-29.md` (full plan with why, evidence, implementation checklist, impact forecast); NEXT_TASK: After validator pass, commit changes, deploy internal linking code, monitor for 7 days, and rotate to next least-used pillar (4 or 6)."
+    },
+    {
+      "at": "2026-08-29T01:15:55+05:30",
+      "status": "WORKING",
+      "task": "After validator pass, commit changes, deploy internal linking code, monitor for 7 days, and rotate to next least-used pillar (4 or 6).",
+      "engine": "selecting",
+      "result": null
+    },
+    {
+      "at": "2026-08-29T01:16:07+05:30",
+      "status": "WAITING",
+      "task": "Rotate to Pillar 6 (Instagram sales/content execution) — now least-used pillar (1 recent completed task); create verified, evidence-based Instagram carousel post for 3-tier rolling cart targeting Indian interior designers and small offices, using verified offer specs and audience-fit problem-solving framing.",
+      "engine": "bedrock-qwen",
+      "result": "PORTFOLIO_GUARD: repeated task/pillar concentration suppressed; next cycle must rotate."
     }
   ]
 }
