@@ -1,8 +1,8 @@
 {
   "status": "WAITING",
   "current_task": "Rotate to Pillar 1 (website development/conversion/SEO) — now least-used pillar (0 *new* completed tasks since last rotation); execute verified, evidence-based internal linking optimization for the 3-tier rolling cart offer to improve conversion-path readiness using existing high-intent assets (buying guide, product-led blog, Instagram carousel).",
-  "started_at": "2026-08-29T05:01:55+05:30",
-  "updated_at": "2026-08-29T05:02:24+05:30",
+  "started_at": "2026-08-29T05:15:53+05:30",
+  "updated_at": "2026-08-29T05:16:02+05:30",
   "ai_engine": "bedrock-qwen",
   "last_completed": "Rotate to Pillar 6 (Instagram sales/content execution) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based Instagram carousel optimization for the 3-tier rolling cart offer to improve conversion-path readiness using existing high-intent assets (buying guide, product-led blog, internal linking plan).",
   "last_result": "PORTFOLIO_GUARD: repeated task/pillar concentration suppressed; next cycle must rotate.",
@@ -15,20 +15,6 @@
   "blocker": null,
   "founder_action_needed": false,
   "history": [
-    {
-      "at": "2026-08-29T04:31:01+05:30",
-      "status": "WORKING",
-      "task": "Choose an independent task from a least-used eligible Phase-2 pillar.",
-      "engine": "selecting",
-      "result": null
-    },
-    {
-      "at": "2026-08-29T04:31:13+05:30",
-      "status": "WORKING",
-      "task": "Rotate to Pillar 5 (Flipkart or other commerce/platform expansion) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based Flipkart integration feasibility plan using existing verified offer specs and audience-fit analysis to prepare for safe, compliant platform expansion.",
-      "engine": "bedrock-qwen",
-      "result": null
-    },
     {
       "at": "2026-08-29T04:31:13+05:30",
       "status": "COMPLETED",
@@ -150,6 +136,20 @@
     },
     {
       "at": "2026-08-29T05:02:24+05:30",
+      "status": "WAITING",
+      "task": "Rotate to Pillar 1 (website development/conversion/SEO) — now least-used pillar (0 *new* completed tasks since last rotation); execute verified, evidence-based internal linking optimization for the 3-tier rolling cart offer to improve conversion-path readiness using existing high-intent assets (buying guide, product-led blog, Instagram carousel).",
+      "engine": "bedrock-qwen",
+      "result": "PORTFOLIO_GUARD: repeated task/pillar concentration suppressed; next cycle must rotate."
+    },
+    {
+      "at": "2026-08-29T05:15:53+05:30",
+      "status": "WORKING",
+      "task": "Choose an independent task from a least-used eligible Phase-2 pillar.",
+      "engine": "selecting",
+      "result": null
+    },
+    {
+      "at": "2026-08-29T05:16:02+05:30",
       "status": "WAITING",
       "task": "Rotate to Pillar 1 (website development/conversion/SEO) — now least-used pillar (0 *new* completed tasks since last rotation); execute verified, evidence-based internal linking optimization for the 3-tier rolling cart offer to improve conversion-path readiness using existing high-intent assets (buying guide, product-led blog, Instagram carousel).",
       "engine": "bedrock-qwen",
