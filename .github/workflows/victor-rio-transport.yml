@@ -8,10 +8,10 @@ on:
         required: true
         type: string
       task_type:
-        description: Governed read-only RIO task
+        description: Governed Victor→RIO task
         required: true
         type: choice
-        options: [STATUS_CHECK, GOVERNANCE_CHECK, PRIORITY_CHECK, STRICT_SUPERVISION_PROBE]
+        options: [STATUS_CHECK, GOVERNANCE_CHECK, PRIORITY_CHECK, STRICT_SUPERVISION_PROBE, GOAL_EXECUTE]
       payload:
         description: Strict authority envelope
         required: false
@@ -24,7 +24,10 @@ permissions:
 jobs:
   execute:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 12
+    concurrency:
+      group: rio-victor-${{ inputs.task_id }}
+      cancel-in-progress: false
     env:
       VICTOR_RIO_TASK_ID: ${{ inputs.task_id }}
       VICTOR_RIO_TASK_TYPE: ${{ inputs.task_type }}
@@ -33,8 +36,49 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: '3.12'}
-      - name: Execute read-only governed RIO task
+
+      - id: mode
+        name: Resolve read-only vs goal execution
+        run: |
+          python - <<'PY'
+          import json, os
+          payload=json.loads(os.environ.get('VICTOR_RIO_TASK_PAYLOAD','{}'))
+          text=str(payload.get('founder_message') or '').upper()
+          goal=(os.environ.get('VICTOR_RIO_TASK_TYPE','').upper()=='GOAL_EXECUTE' or 'VICTOR GOAL CONTRACT' in text)
+          with open(os.environ['GITHUB_OUTPUT'],'a',encoding='utf-8') as f:
+              f.write('goal_execute=' + ('true' if goal else 'false') + '\n')
+          print('GOAL_EXECUTE' if goal else 'READ_ONLY')
+          PY
+
+      - name: Validate governed RIO production gate
+        if: steps.mode.outputs.goal_execute == 'true'
+        run: |
+          python - <<'PY'
+          import json
+          state=json.load(open('data/production_control.json',encoding='utf-8'))
+          if state.get('production_state')!='ACTIVE':
+              raise SystemExit('RIO_GOAL_EXECUTION_REQUIRES_ACTIVE_PRODUCTION_STATE')
+          if state.get('operating_mode')!='GOVERNED_SELF_MODE':
+              raise SystemExit('RIO_GOAL_EXECUTION_REQUIRES_GOVERNED_SELF_MODE')
+          print('RIO_GOAL_PRODUCTION_GATE_OK')
+          PY
+
+      - name: Revalidate RIO Soul hard gate
+        if: steps.mode.outputs.goal_execute == 'true'
+        run: python scripts/soul_runtime.py
+
+      - name: Execute one existing governed RIO autonomous business cycle
+        if: steps.mode.outputs.goal_execute == 'true'
+        env:
+          TELEGRAM_BOT_TOKEN_RIO: ${{ secrets.TELEGRAM_BOT_TOKEN_RIO }}
+          TELEGRAM_CHAT_ID_RIO: ${{ secrets.TELEGRAM_CHAT_ID_RIO }}
+          AWS_BEDROCK_API_KEY: ${{ secrets.AWS_BEDROCK_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: python scripts/autonomous_business_cycle.py
+
+      - name: Build RIO→Victor evidence envelope
         run: python scripts/victor_rio_task.py
+
       - name: Validate strict revert envelope
         run: |
           python - <<'PY'
@@ -45,24 +89,35 @@ jobs:
           missing=[k for k in required if k not in s]
           if missing: raise SystemExit('STRICT_RIO_REVERT_MISSING:'+','.join(missing))
           if s.get('revert_to_victor') is not True: raise SystemExit('STRICT_RIO_REVERT_NOT_CONFIRMED')
-          if d.get('public_action_performed') or d.get('objective_changed') or d.get('credential_transfer_performed'):
+          if d.get('objective_changed') or d.get('credential_transfer_performed'):
               raise SystemExit('RIO_BRIDGE_BOUNDARY_VIOLATION')
+          if d.get('public_action_performed'):
+              raise SystemExit('RIO_GOAL_TRANSPORT_PUBLIC_SIDE_EFFECT_NOT_ALLOWED')
+          if d.get('governed_business_cycle_performed'):
+              assert d.get('task_type')=='GOAL_EXECUTE'
+              assert d.get('snapshot',{}).get('production_state')=='ACTIVE'
           print('STRICT_RIO_REVERT_ENVELOPE_OK')
           PY
-      - name: Persist RIO evidence
+
+      - name: Persist RIO evidence and governed autonomous work
         run: |
           git config user.name "rio-victor-bridge"
           git config user.email "actions@users.noreply.github.com"
+          if [ "${{ steps.mode.outputs.goal_execute }}" = "true" ]; then
+            python scripts/stage_autonomous_changes.py
+          fi
           git add integration/results/victor_tasks/${VICTOR_RIO_TASK_ID}.json
           git diff --cached --quiet && exit 0
           git commit -m "Persist Victor-RIO task evidence ${VICTOR_RIO_TASK_ID}"
           git pull --rebase --autostash
           git push
+
       - name: Reply in Management Group as RIO
         env:
           TELEGRAM_BOT_TOKEN_RIO: ${{ secrets.TELEGRAM_BOT_TOKEN_RIO }}
           TELEGRAM_MANAGEMENT_CHAT_ID: ${{ secrets.TELEGRAM_MANAGEMENT_CHAT_ID }}
         run: python scripts/telegram_management_reply.py
+
       - uses: actions/upload-artifact@v4
         with:
           name: victor-rio-result-${{ inputs.task_id }}
