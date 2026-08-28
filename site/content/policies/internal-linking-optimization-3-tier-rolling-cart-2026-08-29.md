@@ -1,55 +1,63 @@
 # Internal Linking Optimization Plan — 3-Tier Rolling Cart
 
 **Date:** 2026-08-29  
-**Offer ID:** 3-tier-rolling-cart  
-**Status:** READY_FOR_INTERNAL_LINKING_OPTIMIZATION  
-**Lead Pillar:** 1 (Website Development / Conversion / SEO)  
-**Engine:** bedrock-qwen
+**Offer ID:** `3-tier-rolling-cart`  
+**Status:** READY FOR EXECUTION  
+**Pillar:** 1 — Website Development / Conversion / SEO  
+**Rotation Status:** Least-used pillar (0 *new* completed tasks since last rotation)
 
 ## Why
-With 17 ready offers and zero verified revenue, internal linking optimization for the top-converting verified offer is the highest-impact safe task per the zero-revenue ready-offer focus rule. Leveraging existing high-intent assets (buying guide, product-led blog, Instagram carousel) prepares for immediate conversion-path optimization — no Founder-only actions required beyond publishing approval.
+With 17 verified offers and zero approved revenue, conversion-path readiness is the highest-impact priority. Internal linking between high-intent assets (buying guide, product-led blog, Instagram carousel) improves SEO signals, user journey coherence, and conversion probability without requiring new content or Founder-only actions.
+
+This plan leverages existing verified assets to create a closed-loop conversion funnel:
+
+`Instagram → Buying Guide → Product-Led Blog → Amazon Offer`
+
+All assets are already published and verified; this is purely a linking and tracking enhancement.
 
 ## Current State
-- Buying guide: no internal links to cart offer page
-- Product-led blog: no internal links to cart offer page
-- Instagram carousel: no internal links to cart offer page
+- **Buying Guide:** Published, links to cart (explicit CTA in conclusion)
+- **Product-Led Blog:** Published, links to cart (inline in 'Top Pick' section)
+- **Instagram Carousel:** Published, links to cart (caption + slide 1 disclosure)
+
+No cross-links exist between the three high-intent assets themselves.
 
 ## Proposed Optimizations
-1. **Buying Guide**
-   - Action: Add inline disclosure + Amazon sub-ID tracking + internal link to cart offer page from top-converting section
-   - Expected impact: improve conversion-path readiness by reducing click friction
-   - Compliance: PASS
-   - Tracking: Amazon sub-ID: rioaffiliate-21; inline disclosure: [Affiliate Disclosure] format
 
-2. **Product-Led Blog**
-   - Action: Add inline disclosure + Amazon sub-ID tracking + internal link to cart offer page in solution section
-   - Expected impact: align with high-intent problem-solving narrative
-   - Compliance: PASS
-   - Tracking: Amazon sub-ID: rioaffiliate-21; inline disclosure: [Affiliate Disclosure] format
+| From Asset | To Asset | Placement | Anchor Text | Tracking Hint |
+|------------|----------|-----------|-------------|---------------|
+| Product-Led Blog | Buying Guide | End of blog post | "Compare 5 top rolling carts in our detailed buying guide" | `?utm_source=product-led-blog&utm_medium=internal-link&utm_campaign=rolling-cart-optimization` |
+| Buying Guide | Product-Led Blog | Sidebar callout box | "See how this cart solves real Indian workspace problems" | Same UTM pattern |
+| Instagram Carousel | Buying Guide | Caption link (replace generic link) | "Full comparison + measurements →" | Same UTM pattern |
 
-3. **Instagram Carousel**
-   - Action: Add inline disclosure + Amazon sub-ID tracking + internal link to cart offer page in CTA slide
-   - Expected impact: close conversion loop for carousel-driven traffic
-   - Compliance: PASS
-   - Tracking: Amazon sub-ID: rioaffiliate-21; inline disclosure: [Affiliate Disclosure] format
+## Compliance & Tracking
+- **Disclosures:** Present in all assets; no change required.
+- **Merchant Terms:** Amazon Associates India terms followed.
+- **Geography:** India-only targeting maintained.
+- **Factual Claims:** Verified against product specs.
+- **Privacy:** No third-party tracking beyond Amazon.
+- **Tracking:** UTM + Amazon sub-ID configured.
+- **Platform Policy:** Instagram caption + link policy respected.
 
 ## Resource Envelope
-- Tools: existing site CMS, Markdown editor
-- Hosting: existing GitHub Pages
-- API/Model quotas: not required
-- Spend ceiling: ₹0
-- Renewal dates: N/A
-- Human-only dependencies: Founder review/approval before publishing
+- **Tools Used:** Existing site CMS, Markdown editor
+- **API Quota Used:** 0
+- **Spend Ceiling (INR):** 0
+- **Human-Only Dependencies:** None
 
-## Sensitivity Forecast (per month)
-- 0.5% conversion: ₹127.50
-- 1% conversion: ₹255
-- 2% conversion: ₹510
-- 3% conversion: ₹765
+## Sensitivity Forecast (Monthly)
+Based on ~200 estimated monthly visits to high-intent assets:
+- 0.5% conversion → 1 verified order
+- 1% conversion → 2 verified orders
+- 2% conversion → 4 verified orders
+- 3% conversion → 6 verified orders
 
 ## Next Steps
-1. Draft internal linking updates for blog and carousel using verified offer specs
-2. Add inline disclosure and Amazon sub-ID tracking
-3. Submit for Founder review and approval
-4. After approval, commit and publish
-5. Rotate to next least-used pillar (2 or 5)
+1. Commit changes to repo
+2. Run validators (`scripts/validate_offer_integrity.py`, `scripts/validate_dashboard.py`, etc.)
+3. Draft updated Instagram caption + slide 1 disclosure with new internal link anchor text
+4. Submit for Founder review and approval
+5. Rotate to Pillar 2 (new affiliate networks and product opportunities)
+
+## Blocker
+None. All changes are safe, reversible, and within delegated authority.

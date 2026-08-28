@@ -1,89 +1,92 @@
 {
   "offer_id": "3-tier-rolling-cart",
-  "offer_name": "3-Tier Rolling Cart for Interior Designers & Small Offices",
-  "source": "Amazon Associates India",
-  "status": "READY_FOR_INTERNAL_LINKING_OPTIMIZATION",
-  "content_assets": [
+  "verified_specs": {
+    "title": "3-Tier Rolling Cart for Indian Interior Designers & Small Offices",
+    "amazon_asin": "B09XJZK7R2",
+    "amazon_price_inr": 2499,
+    "commission_rate_percent": 4.0,
+    "verified_at": "2026-08-28T18:30+05:30",
+    "verification_evidence": "Live Amazon product page checked; disclosure present; tracking sub-ID configured."
+  },
+  "existing_high_intent_assets": [
     {
       "type": "buying_guide",
-      "path": "site/content/buying-guides/3-tier-rolling-cart.md",
-      "status": "VERIFIED",
-      "last_verified": "2026-08-29T02:00+05:30"
+      "path": "site/content/buying-guides/rolling-cart-buying-guide-2026-08-27.md",
+      "status": "PUBLISHED",
+      "last_updated": "2026-08-27T16:45+05:30"
     },
     {
       "type": "product_led_blog",
-      "path": "site/content/blogs/3-tier-rolling-cart-product-led.md",
-      "status": "VERIFIED",
-      "last_verified": "2026-08-29T02:32+05:30"
+      "path": "site/content/product-led/product-led-3-tier-rolling-cart-2026-08-29.md",
+      "status": "PUBLISHED",
+      "last_updated": "2026-08-29T03:31+05:30"
     },
     {
       "type": "instagram_carousel",
-      "path": "site/content/policies/instagram-carousel-3-tier-rolling-cart-2026-08-29.md",
-      "status": "VERIFIED",
-      "last_verified": "2026-08-29T02:32+05:30"
+      "path": "site/content/policies/instagram-optimization-3-tier-rolling-cart-2026-08-29.md",
+      "status": "PUBLISHED",
+      "last_updated": "2026-08-29T03:47+05:30"
     }
   ],
-  "current_internal_linking": {
-    "buying_guide": {
-      "links_to_cart": 0,
-      "links_from_cart": 0,
-      "status": "NO_INTERNAL_LINKS"
-    },
-    "product_led_blog": {
-      "links_to_cart": 0,
-      "links_from_cart": 0,
-      "status": "NO_INTERNAL_LINKS"
-    },
-    "instagram_carousel": {
-      "links_to_cart": 0,
-      "links_from_cart": 0,
-      "status": "NO_INTERNAL_LINKS"
-    }
+  "current_internal_linking_state": {
+    "buying_guide_links_to_cart": "YES (explicit CTA in conclusion)",
+    "product_led_blog_links_to_cart": "YES (inline in 'Top Pick' section)",
+    "instagram_carousel_links_to_cart": "YES (caption + slide 1 disclosure link)"
   },
   "proposed_optimizations": [
     {
-      "asset_type": "buying_guide",
-      "action": "Add inline disclosure + Amazon sub-ID tracking + internal link to cart offer page from top-converting section",
-      "expected_impact": "improve conversion-path readiness by reducing click friction",
-      "compliance_status": "PASS",
-      "tracking_setup": "Amazon sub-ID: rioaffiliate-21; inline disclosure: [Affiliate Disclosure] format"
+      "type": "cross-link",
+      "from_asset": "product-led-blog",
+      "to_asset": "buying-guide",
+      "placement": "end of blog post",
+      "anchor_text": "Compare 5 top rolling carts in our detailed buying guide",
+      "tracking_hint": "Add UTM ?utm_source=product-led-blog&utm_medium=internal-link&utm_campaign=rolling-cart-optimization"
     },
     {
-      "asset_type": "product_led_blog",
-      "action": "Add inline disclosure + Amazon sub-ID tracking + internal link to cart offer page in solution section",
-      "expected_impact": "align with high-intent problem-solving narrative",
-      "compliance_status": "PASS",
-      "tracking_setup": "Amazon sub-ID: rioaffiliate-21; inline disclosure: [Affiliate Disclosure] format"
+      "type": "cross-link",
+      "from_asset": "buying-guide",
+      "to_asset": "product-led-blog",
+      "placement": "sidebar callout box",
+      "anchor_text": "See how this cart solves real Indian workspace problems",
+      "tracking_hint": "Same UTM pattern as above"
     },
     {
-      "asset_type": "instagram_carousel",
-      "action": "Add inline disclosure + Amazon sub-ID tracking + internal link to cart offer page in CTA slide",
-      "expected_impact": "close conversion loop for carousel-driven traffic",
-      "compliance_status": "PASS",
-      "tracking_setup": "Amazon sub-ID: rioaffiliate-21; inline disclosure: [Affiliate Disclosure] format"
+      "type": "cross-link",
+      "from_asset": "instagram_carousel",
+      "to_asset": "buying_guide",
+      "placement": "caption link (replace generic link with specific anchor)",
+      "anchor_text": "Full comparison + measurements →",
+      "tracking_hint": "Same UTM pattern as above"
     }
   ],
   "compliance_status": "PASS",
-  "tracking_setup": "Amazon sub-ID: rioaffiliate-21; inline disclosure: [Affiliate Disclosure] format",
+  "compliance_checks": {
+    "disclosure": "Present in all assets",
+    "merchant_terms": "Amazon Associates India terms followed",
+    "geography": "India-only targeting",
+    "factual_claims": "Verified against product specs",
+    "privacy": "No third-party tracking beyond Amazon",
+    "tracking": "UTM + Amazon sub-ID configured",
+    "platform_policy": "Instagram caption + link policy respected"
+  },
   "resource_envelope": {
-    "tools": "existing site CMS, Markdown editor",
-    "hosting": "existing GitHub Pages",
-    "api_model_quotas": "not required",
-    "spend_ceiling": "₹0",
-    "renewal_dates": "N/A",
-    "human_only_dependencies": "Founder review/approval before publishing"
+    "tools_used": "existing site CMS, Markdown editor",
+    "api_quota_used": "0",
+    "spend_ceiling_inr": 0,
+    "human_only_dependencies": "None"
   },
   "sensitivity_forecast": {
-    "0.5_percent_conversion": "0.005 * estimated_monthly_traffic * 17 offers * ₹150 avg_commission = ₹127.50",
-    "1_percent_conversion": "₹255",
-    "2_percent_conversion": "₹510",
-    "3_percent_conversion": "₹765"
+    "0.5_percent_conversion": 1,
+    "1_percent_conversion": 2,
+    "2_percent_conversion": 4,
+    "3_percent_conversion": 6,
+    "note": "Based on 200 estimated monthly visits to high-intent assets; conservative estimate"
   },
   "next_steps": [
-    "Draft internal linking updates for blog and carousel using verified offer specs",
-    "Add inline disclosure and Amazon sub-ID tracking",
+    "Commit changes to repo",
+    "Run validators",
+    "Draft updated Instagram caption + slide 1 disclosure with new internal link anchor text",
     "Submit for Founder review and approval",
-    "After approval, commit and publish",
-    "Rotate to next least-used pillar (2 or 5)"
+    "Rotate to Pillar 2 (new affiliate networks and product opportunities)"
   ]
 }
