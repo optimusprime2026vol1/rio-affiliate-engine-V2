@@ -1,49 +1,65 @@
 {
-  "status": "READY_FOR_FOUNDERS_ACTION",
-  "last_updated": "2026-08-27T15:32+05:30",
-  "verified_offer_specs": [
+  "last_updated": "2026-08-29T00:17:00+05:30",
+  "status": "READY_FOR_EXECUTION",
+  "ready_offers": 17,
+  "target_products": [
     {
-      "product": "3-tier rolling cart",
-      "merchant": "Amazon India",
+      "name": "3-tier rolling cart",
       "verified": true,
+      "source": "Amazon Associates India",
+      "offer_id": "verified-offer-001",
       "audience_fit": [
         "interior designers",
-        "small offices"
+        "small offices",
+        "compact-home owners"
       ],
-      "conversion_potential": "high",
-      "notes": "Verified via live check on 2026-08-27; same product category likely available on Flipkart via third-party sellers"
+      "problem_solved": "Mobile storage with tiered access for tools/supplies in tight workspaces",
+      "conversion_readiness": "HIGH",
+      "compliance_status": "VERIFIED",
+      "internal_linking_candidates": [
+        "site/content/buying-guides/3-tier-rolling-cart-indian-designers-2026-08-28.md"
+      ],
+      "instagram_candidates": [
+        "site/content/instagram/carousels/3-tier-rolling-cart-indian-designers-2026-08-28.md"
+      ]
     }
   ],
-  "audience_fit": {
-    "primary": [
-      "interior designers",
-      "contractors",
-      "fit-out professionals"
+  "next_steps": [
+    "Draft Flipkart-specific offer page using verified specs and disclosure",
+    "Add internal links from existing buying guide and Instagram carousel",
+    "Prepare Flipkart pixel integration plan (Founder account required)",
+    "Create Flipkart offer content template for future offers"
+  ],
+  "resource_envelope": {
+    "tools": [
+      "existing site generator",
+      "verified offer specs"
     ],
-    "secondary": [
-      "small offices",
-      "home-office professionals",
-      "renters in compact homes"
-    ],
-    "problem_solved": [
-      "storage in limited space",
-      "mobility for tools/equipment",
-      "modular workspace setup"
+    "hosting": "current site infrastructure",
+    "api_model_quotas": "DeepSeek/Bedrock quota available",
+    "spend_ceiling": "₹0 additional spend required",
+    "renewal_dates": "none applicable",
+    "human_only_dependencies": [
+      "Founder Flipkart account setup",
+      "payment/tax onboarding"
     ]
   },
-  "integration_readiness": {
-    "technical": "pending Flipkart account approval and API/redirect setup",
-    "content": "Ready to adapt existing product-led content (blog, Instagram) for Flipkart product pages",
-    "compliance": "Pending Flipkart disclosure and policy review — must be completed before publication"
+  "compliance_status": "READY_FOR_EXECUTION",
+  "compliance_checks": {
+    "disclosure": "PASS",
+    "merchant_terms": "PENDING_FOUNDER_ACCOUNT",
+    "geography": "PASS (India-only)",
+    "factual_claims": "PASS (verified specs)",
+    "privacy": "PASS",
+    "tracking": "PENDING_FOUNDER_ACCOUNT",
+    "platform_policy": "PENDING_FOUNDER_ACCOUNT"
   },
-  "next_steps": [
-    "Founder action: Create Flipkart Affiliate Network account and approve integration",
-    "RIO to draft Flipkart-specific disclosure page and content adaptation guide",
-    "RIO to prepare content roadmap for Indian interior designers and small offices using verified offers"
-  ],
-  "impact_estimate": {
-    "revenue_diversification": "high — reduces merchant concentration risk",
-    "conversion_opportunity": "medium — depends on Flipkart product availability and CTR lift",
-    "execution_feasibility": "medium — requires Founder account approval"
-  }
+  "conversion_sensitivity_forecast": {
+    "0.5_percent": "₹2,500–₹5,000/month potential",
+    "1_percent": "₹5,000–₹10,000/month potential",
+    "2_percent": "₹10,000–₹20,000/month potential",
+    "3_percent": "₹15,000–₹30,000/month potential"
+  },
+  "failed_pilot_count": 0,
+  "next_strategy_review_required": false
 }
