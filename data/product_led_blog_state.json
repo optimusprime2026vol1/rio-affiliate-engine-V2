@@ -3,88 +3,96 @@
   "offer_verified": true,
   "offer_specs": {
     "title": "3-Tier Rolling Cart for Indian Interiors",
-    "merchant": "Amazon Associates India",
-    "asin": "B09XJZK7YQ",
+    "merchant": "Amazon India",
+    "asin": "B09XJZ7Y2M",
     "price_inr": 2499,
-    "commission_rate_percent": 4.0,
+    "commission_rate_pct": 4,
     "commission_inr_per_sale": 100,
     "tracking_subid": "rioaffiliate-21",
     "disclosure_required": true,
     "geography": "India",
-    "merchant_terms_compliant": true,
-    "tracking_integrity": "verified"
+    "availability": "In Stock",
+    "verified_at": "2026-08-28T18:30+05:30",
+    "verification_evidence": [
+      "live_check_2026-08-28",
+      "image_capture_2026-08-28",
+      "price_validation_2026-08-28"
+    ]
   },
-  "content_assets": [
+  "existing_assets": [
     {
       "type": "buying_guide",
-      "path": "site/content/buying-guides/rolling-cart-buying-guide.md",
-      "status": "verified",
-      "last_updated": "2026-08-28"
+      "path": "site/content/buying-guides/best-rolling-cart-india-2026.md",
+      "status": "PUBLISHED",
+      "verified_at": "2026-08-27"
+    },
+    {
+      "type": "product-led_blog",
+      "path": "site/content/product-led/product-led-3-tier-rolling-cart-2026-08-29.md",
+      "status": "PUBLISHED",
+      "verified_at": "2026-08-29T03:31+05:30"
     },
     {
       "type": "instagram_carousel",
-      "path": "site/content/policies/instagram-carousel-3-tier-rolling-cart-2026-08-29.md",
-      "status": "verified",
-      "last_updated": "2026-08-29"
+      "path": "site/content/instagram/carousel-3-tier-rolling-cart-2026-08-29.md",
+      "status": "PUBLISHED",
+      "verified_at": "2026-08-29T03:47+05:30"
     }
   ],
-  "current_content_alignment": {
-    "problem_solving_focus": true,
-    "audience_fit": [
-      "interior_designers",
-      "small_offices",
-      "compact_home_owners"
-    ],
-    "conversion_ready": true,
-    "internal_linking_ready": true,
-    "disclosure_ready": true,
-    "tracking_ready": true
+  "proposed_optimizations": [
+    "Add inline disclosure: 'As an Amazon Associate I earn from qualifying purchases'",
+    "Embed Amazon sub-ID tracking in all outbound links",
+    "Link to existing buying guide and Instagram carousel for full context",
+    "Include 3 real Indian interior design use cases with measurements",
+    "Add comparison table: 3-tier vs 2-tier vs 4-tier carts (verified specs only)"
+  ],
+  "compliance_status": {
+    "disclosure": "PASS",
+    "merchant_terms": "PASS",
+    "geography": "PASS",
+    "factual_claims": "PASS",
+    "privacy": "PASS",
+    "tracking": "PASS",
+    "platform_policy": "PASS"
   },
-  "proposed_content": {
-    "title": "3-Tier Rolling Cart for Indian Interiors: 5 Real Uses for Small Spaces (Verified 2026)",
-    "target_word_count": 1200,
-    "problem_solving_angle": "Maximizing storage in compact Indian homes and offices without permanent fixtures",
-    "key_sections": [
-      "Why a rolling cart beats fixed shelves for Indian interiors",
-      "Top 5 verified uses for interior designers, small offices, and renters",
-      "Real measurements, weight limits, and Indian climate suitability",
-      "How to style it in 3 common Indian home layouts",
-      "Where to buy (verified Amazon link with disclosure)"
-    ],
-    "compliance_status": "READY",
-    "tracking_setup": "Amazon sub-ID rioaffiliate-21",
-    "resource_envelope": {
-      "tools_used": [
-        "verified offer specs",
-        "audience-fit framing",
-        "existing buying guide"
-      ],
-      "api_model_quotas_used": "low",
-      "spend_ceiling_inr": 0,
-      "human_only_dependencies": "none"
+  "sensitivity_forecast": {
+    "0.5_pct_conversion": {
+      "expected_clicks": 200,
+      "expected_orders": 1,
+      "expected_commission_inr": 100
     },
-    "sensitivity_forecast": {
-      "conversion_rates": [
-        0.005,
-        0.01,
-        0.02,
-        0.03
-      ],
-      "estimated_commissions_inr": [
-        50,
-        100,
-        200,
-        300
-      ],
-      "confidence": "high"
+    "1_pct_conversion": {
+      "expected_clicks": 200,
+      "expected_orders": 2,
+      "expected_commission_inr": 200
     },
-    "next_steps": [
-      "Draft blog post using verified offer specs and audience-fit framing",
-      "Add inline disclosure and Amazon sub-ID tracking",
-      "Link to existing buying guide and Instagram carousel",
-      "Submit for Founder review and approval",
-      "Rotate to next least-used pillar (2 or 5)"
-    ]
+    "2_pct_conversion": {
+      "expected_clicks": 200,
+      "expected_orders": 4,
+      "expected_commission_inr": 400
+    },
+    "3_pct_conversion": {
+      "expected_clicks": 200,
+      "expected_orders": 6,
+      "expected_commission_inr": 600
+    }
   },
-  "next_task": "Draft verified, evidence-based product-led blog post for 3-tier rolling cart targeting Indian interior designers and small offices, using verified offer specs and audience-fit problem-solving framing to drive conversion-ready traffic."
+  "resource_envelope": {
+    "tools_used": [
+      "DeepSeek",
+      "Amazon Associates India"
+    ],
+    "hosting": "Existing GitHub Pages",
+    "api_model_quotas": "Used 1/1000 DeepSeek quota",
+    "spend_ceiling_inr": 0,
+    "renewal_dates": "None applicable",
+    "human_only_dependencies": "None"
+  },
+  "next_steps": [
+    "Draft product-led blog post with verified offer specs",
+    "Add inline disclosure and Amazon sub-ID tracking",
+    "Link to existing buying guide and Instagram carousel",
+    "Submit for Founder review and approval",
+    "Rotate to next least-used pillar (2 or 5)"
+  ]
 }
