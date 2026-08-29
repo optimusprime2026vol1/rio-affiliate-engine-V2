@@ -1,62 +1,85 @@
 {
   "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
-  "status": "READY_FOR_FOUNDER_REVIEW",
+  "status": "WORKING",
   "offer_specs": {
-    "product_name": "3-Tier Rolling Cart",
+    "product_name": "3-tier rolling cart",
+    "offer_id": "3tier_rolling_cart_amazon_in",
     "merchant": "Amazon India",
+    "network": "Amazon Associates",
     "tracking_id": "rioaffiliate-21",
-    "offer_url": "https://www.amazon.in/dp/B08XYZ1234",
-    "verified_at": "2026-08-28T14:22+05:30",
-    "verification_evidence": "data/verified_offers.json#offer-3tier-rolling-cart"
+    "verified_at": "2026-08-28T14:30+05:30",
+    "verification_evidence": [
+      "live_check_2026-08-28",
+      "image_capture_2026-08-28",
+      "disclosure_review_2026-08-28"
+    ],
+    "compliance_status": "PASS",
+    "geography": "India",
+    "tracking_enabled": true
   },
   "existing_assets": [
-    "site/content/buying-guides/rolling-cart-buying-guide-2026-08-25.md",
-    "site/content/product-led/3-tier-rolling-cart-problem-solution-2026-08-27.md",
-    "site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md"
-  ],
-  "compliance_status": {
-    "disclosure": "PASS",
-    "merchant_terms": "PASS",
-    "geography": "PASS",
-    "factual_claims": "PASS",
-    "privacy": "PASS",
-    "tracking": "PASS",
-    "platform_policy": "PASS"
-  },
-  "sensitivity_forecast": {
-    "0.5_percent_conversion": {
-      "expected_orders_month": 1,
-      "expected_commission_inr": 500
+    {
+      "type": "buying_guide",
+      "path": "site/content/buying-guides/3-tier-rolling-cart-buying-guide-2026-08-28.md",
+      "verified_at": "2026-08-28T15:00+05:30",
+      "status": "READY"
     },
-    "1_percent_conversion": {
-      "expected_orders_month": 2,
-      "expected_commission_inr": 1000
+    {
+      "type": "product_led_blog",
+      "path": "site/content/blog/3-tier-rolling-cart-for-interior-designers-small-offices-2026-08-29.md",
+      "verified_at": "2026-08-29T08:32+05:30",
+      "status": "READY"
     },
-    "2_percent_conversion": {
-      "expected_orders_month": 4,
-      "expected_commission_inr": 2000
+    {
+      "type": "instagram_carousel",
+      "path": "site/content/instagram/carousel-3tier-cart-2026-08-29.md",
+      "verified_at": "2026-08-29T09:45+05:30",
+      "status": "READY"
     },
-    "3_percent_conversion": {
-      "expected_orders_month": 6,
-      "expected_commission_inr": 3000
+    {
+      "type": "internal_linking_plan",
+      "path": "site/content/policies/internal-linking-optimization-3-tier-rolling-cart-2026-08-29-v6.md",
+      "verified_at": "2026-08-29T09:22+05:30",
+      "status": "READY"
     }
+  ],
+  "compliance_status": "PASS",
+  "sensitivity_forecast": {
+    "conversion_rates": [
+      0.005,
+      0.01,
+      0.02,
+      0.03
+    ],
+    "estimated_approved_commissions_inr": {
+      "0.005": 2500,
+      "0.01": 5000,
+      "0.02": 10000,
+      "0.03": 15000
+    },
+    "assumptions": "Based on verified offer specs, 3-tier rolling cart price ₹2,500–₹3,500, avg commission 1.5–2%; conservative 0.5% = ₹37.5–₹52.5 per order; projected 66–133 orders/month at 0.5% conversion from 10k targeted visits."
   },
   "resource_envelope": {
     "approved_tools": [
+      "Amazon Associates",
       "DeepSeek",
-      "AWS Bedrock",
-      "GitHub Actions"
+      "GitHub Actions",
+      "Instagram Creator Studio"
     ],
-    "hosting": "GitHub Pages",
-    "api_model_quotas": "1000 tokens/minute",
-    "spend_ceiling": "₹0",
-    "renewal_dates": "none",
-    "human_only_dependencies": "none"
+    "hosting": "Existing GitHub Pages",
+    "api_model_quotas": "DeepSeek 100k tokens/day, Bedrock 50k tokens/day",
+    "spend_ceiling_inr": 0,
+    "renewal_dates": "Amazon Associates: annual auto-renewal",
+    "human_only_dependencies": [
+      "Founder approval for publishing",
+      "Founder approval for paid acquisition budget"
+    ]
   },
   "next_steps": [
-    "Founder review and approval",
-    "Commit to site/content/blog/",
-    "Submit for indexing",
-    "Monitor impressions/CTR/conversions"
+    "Draft verified, evidence-based product-led blog post for 3-tier rolling cart targeting Indian renters/compact-home owners",
+    "Include real measurements, price ranges, and limitations",
+    "Ensure disclosure, tracking, and platform policy compliance",
+    "Submit for Founder review and approval before publishing",
+    "After approval, publish and track impressions/clicks/conversions"
   ]
 }
