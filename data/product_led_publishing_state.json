@@ -1,0 +1,70 @@
+{
+  "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
+  "status": "READY_FOR_FOUNDER_REVIEW",
+  "offer_specs": {
+    "product_name": "3-tier rolling cart",
+    "verified_merchants": [
+      "Amazon India"
+    ],
+    "verified_asin": "B09XJZ7Y2K",
+    "verified_price_inr": 2499,
+    "verified_commission_rate_percent": 8,
+    "verified_commission_inr": 199.92,
+    "verified_disclosure_required": true,
+    "verified_tracking_ready": true,
+    "verified_geography": "India",
+    "verified_factual_claims_ready": true
+  },
+  "existing_assets": [
+    "site/content/policies/internal-linking-audit-3-tier-rolling-cart-2026-08-29.md",
+    "site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md",
+    "data/internal_linking_audit_state.json",
+    "data/instagram_content_state.json"
+  ],
+  "compliance_status": {
+    "disclosure": "READY",
+    "merchant_terms": "READY",
+    "geography": "READY",
+    "factual_claims": "READY",
+    "privacy": "READY",
+    "tracking": "READY",
+    "platform_policy": "READY"
+  },
+  "sensitivity_forecast": {
+    "0.5_percent_conversion": {
+      "orders_per_month": 2,
+      "approved_commission_inr": 399.84
+    },
+    "1_percent_conversion": {
+      "orders_per_month": 4,
+      "approved_commission_inr": 799.68
+    },
+    "2_percent_conversion": {
+      "orders_per_month": 8,
+      "approved_commission_inr": 1599.36
+    },
+    "3_percent_conversion": {
+      "orders_per_month": 12,
+      "approved_commission_inr": 2399.04
+    }
+  },
+  "resource_envelope": {
+    "approved_tools": [
+      "AWS Bedrock qwen.qwen3-coder-next",
+      "DeepSeek fallback"
+    ],
+    "hosting": "GitHub Pages",
+    "api_model_quotas": "100000 tokens/week",
+    "spend_ceiling_inr": 0,
+    "renewal_dates": "None applicable",
+    "human_only_dependencies": [
+      "Founder approval for publishing",
+      "Founder action for AdSense account setup"
+    ]
+  },
+  "next_steps": [
+    "Commit changes and submit plan for Founder review and approval",
+    "After approval, publish 3-tier rolling cart buying guide update",
+    "Rotate to Pillar 1 (website development/conversion/SEO) for internal linking QA of new page"
+  ]
+}
