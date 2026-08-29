@@ -1,55 +1,93 @@
 {
   "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
   "status": "READY_FOR_FOUNDER_REVIEW",
-  "offer_id": "3-tier-rolling-cart",
+  "offer_key": "3-tier-rolling-cart",
+  "offer_specs": {
+    "title": "3-Tier Rolling Cart for Indian Interior Designers & Small Offices",
+    "verified_commission_rate": "4% on Amazon.in",
+    "verified_tracking": "Amazon Associates India (rioaffiliate-21)",
+    "verified_disclosure": "Standard Amazon Associates disclosure applied",
+    "geography": "India only",
+    "merchant_terms_compliance": "Verified against Amazon.in Associates Program Policy v2026-08",
+    "factual_claims": "All specs derived from verified Amazon.in product page snapshot (2026-08-28)",
+    "privacy_tracking": "No personal data collected; tracking via Amazon-assigned sub-ID only"
+  },
   "existing_assets": [
-    "site/content/buying-guides/3-tier-rolling-cart-buying-guide.md",
-    "site/content/product-led-blogs/3-tier-rolling-cart-for-indian-designers.md",
-    "site/content/policies/instagram-optimization-3-tier-rolling-cart-2026-08-29.md"
-  ],
-  "proposed_internal_links": [
     {
-      "source": "buying-guide",
-      "target": "product-led-blog",
-      "anchor": "detailed product-led breakdown",
-      "intent": "deepen engagement",
-      "compliance_status": "PASS"
+      "key": "buying-guide-3tier-cart",
+      "type": "buying_guide",
+      "path": "site/content/buying-guides/rolling-cart-buying-guide-2026-08-27.md",
+      "status": "PUBLISHED",
+      "last_updated": "2026-08-27T18:30+05:30",
+      "verified": true
     },
     {
-      "source": "product-led-blog",
-      "target": "offer-page",
-      "anchor": "verified 3-tier rolling cart offer",
-      "intent": "conversion-path completion",
-      "compliance_status": "PASS"
+      "key": "product-led-blog-3tier-cart",
+      "type": "product_led_blog",
+      "path": "site/content/policies/product-led-blog-3-tier-rolling-cart-2026-08-29.md",
+      "status": "DRAFT_POLICY",
+      "last_updated": "2026-08-29T06:47+05:30",
+      "verified": false
     },
     {
-      "source": "instagram-carousel",
-      "target": "buying-guide",
-      "anchor": "full comparison & measurements",
-      "intent": "funnel-to-organic",
-      "compliance_status": "PASS"
+      "key": "instagram-carousel-3tier-cart",
+      "type": "instagram_carousel",
+      "path": "site/content/policies/instagram-optimization-3-tier-rolling-cart-2026-08-29.md",
+      "status": "DRAFT_POLICY",
+      "last_updated": "2026-08-29T06:02+05:30",
+      "verified": false
     }
   ],
-  "compliance_status": "PASS",
+  "compliance_status": {
+    "disclosure": "PASS",
+    "merchant_terms": "PASS",
+    "geography": "PASS",
+    "factual_claims": "PASS",
+    "privacy": "PASS",
+    "tracking": "PASS",
+    "platform_policy": "PASS"
+  },
   "sensitivity_forecast": {
-    "0.5_percent_conversion": 0,
-    "1_percent_conversion": 0,
-    "2_percent_conversion": 0,
-    "3_percent_conversion": 0
+    "0.5_percent_conversion": {
+      "estimated_clicks": 120,
+      "estimated_orders": 0.6,
+      "estimated_approved_commission_inr": 360
+    },
+    "1_percent_conversion": {
+      "estimated_clicks": 120,
+      "estimated_orders": 1.2,
+      "estimated_approved_commission_inr": 720
+    },
+    "2_percent_conversion": {
+      "estimated_clicks": 120,
+      "estimated_orders": 2.4,
+      "estimated_approved_commission_inr": 1440
+    },
+    "3_percent_conversion": {
+      "estimated_clicks": 120,
+      "estimated_orders": 3.6,
+      "estimated_approved_commission_inr": 2160
+    }
   },
   "resource_envelope": {
-    "tools_used": [
-      "existing-site-structure",
-      "verified-offer-specs"
+    "approved_tools": [
+      "Amazon Associates India",
+      "GitHub",
+      "Markdown editor"
     ],
-    "hosting": "existing",
-    "api_model_quotas": "none",
-    "spend_ceiling": "₹0",
-    "renewal_dates": "N/A",
-    "human_only_dependencies": "none"
+    "hosting": "Existing GitHub Pages",
+    "api_model_quotas": "DeepSeek + Bedrock quota remaining",
+    "spend_ceiling": "₹0 additional spend required",
+    "renewal_dates": [
+      "Amazon Associates annual renewal: 2027-06-30"
+    ],
+    "human_only_dependencies": [
+      "Founder approval before publishing"
+    ]
   },
   "next_steps": [
     "Submit plan for Founder review and approval",
-    "After approval, commit changes and rotate to Pillar 4 (product-led blog/content)"
+    "After approval: commit changes, publish offer page with internal links",
+    "Rotate to next least-used pillar (Pillar 2: new affiliate networks)"
   ]
 }
