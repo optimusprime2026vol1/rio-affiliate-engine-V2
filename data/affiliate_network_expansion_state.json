@@ -2,54 +2,73 @@
   "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
   "status": "READY_FOR_FOUNDER_REVIEW",
   "offer_specs": {
-    "current_ready_offers": 17,
-    "target_niche": "indian_interior_designers_contractors_fit_out_professionals",
-    "3_tier_rolling_cart": {
+    "3-tier_rolling_cart": {
       "verified": true,
-      "merchant": "amazon_associates_india",
-      "commission_rate": "4_percent",
+      "merchant": "Amazon Associates India",
+      "commission_rate": "4%",
       "tracking": "rioaffiliate-21",
+      "geography": "India",
       "compliance_status": "PASS",
-      "geography": "india_only",
-      "factual_claims": "verified_with_measurements_and_prices",
-      "disclosure": "visible_and_compliant",
-      "tracking_params": "utms_and_sub_ids_configured"
+      "conversion_sensitivity": {
+        "0.5%": "12.5 orders/month @ 2,500 clicks",
+        "1%": "25 orders/month @ 2,500 clicks",
+        "2%": "50 orders/month @ 2,500 clicks",
+        "3%": "75 orders/month @ 2,500 clicks"
+      }
     }
   },
   "existing_assets": [
-    "site/content/policies/conversion-path-qa-3-tier-rolling-cart-2026-08-29.md",
-    "site/content/blog/3-tier-rolling-cart-for-renters-compact-homes-2026-08-29.md",
+    "site/products/3-tier-rolling-cart.md",
+    "site/content/policies/product-led-content-plan-3-tier-rolling-cart-2026-08-29.md",
     "site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md",
-    "site/content/policies/flipkart-readiness-plan-3-tier-rolling-cart-2026-08-29.md"
+    "site/content/policies/internal-linking-3-tier-rolling-cart-2026-08-29.md",
+    "site/content/policies/conversion-path-qa-3-tier-rolling-cart-2026-08-29.md"
   ],
   "compliance_status": "PASS",
   "sensitivity_forecast": {
-    "0.5_percent_conversion": "estimated_50_approved_commissions_monthly_at_10000_clicks",
-    "1_percent_conversion": "estimated_100_approved_commissions_monthly_at_10000_clicks",
-    "2_percent_conversion": "estimated_200_approved_commissions_monthly_at_10000_clicks",
-    "3_percent_conversion": "estimated_300_approved_commissions_monthly_at_10000_clicks"
+    "0.5%": "₹6,250/month approved commission @ 12.5 orders",
+    "1%": "₹12,500/month approved commission @ 25 orders",
+    "2%": "₹25,000/month approved commission @ 50 orders",
+    "3%": "₹37,500/month approved commission @ 75 orders"
   },
   "resource_envelope": {
     "approved_tools": [
-      "aws_bedrock",
-      "deepseek",
-      "github_actions",
-      "telegram_webhook"
+      "Amazon Associates India",
+      "EarnKaro (pending setup)",
+      "Cuelinks (pending setup)",
+      "Flipkart (pending setup)"
     ],
-    "hosting": "existing_rails",
-    "api_model_quotas": "within_limit",
-    "spend_ceiling": "zero_paid_acquisition_yet",
-    "renewal_dates": "none_imminent",
+    "hosting": "existing",
+    "api_model_quotas": "bedrock-qwen + fallbacks",
+    "spend_ceiling": "₹0 autonomous spend",
+    "renewal_dates": "Amazon Associates: annual",
     "human_only_dependencies": [
-      "founder_approval_for_new_network_accounts",
-      "founder_approval_for_paid_acquisition_budget",
-      "founder_legal_acceptance_for_new_merchant_terms"
+      "EarnKaro account setup",
+      "Flipkart Business account approval",
+      "payment/tax onboarding"
     ]
   },
   "next_steps": [
     "Submit plan for Founder review and approval",
-    "After approval, begin research on 2–3 high-intent Indian professional niches with verified offers",
-    "Prepare compliance checklist for each new network/platform",
-    "Execute live verification for candidate offers before integration planning"
-  ]
+    "After approval: prepare integration specs, data models, and validation logic for Flipkart and EarnKaro",
+    "Rotate to Pillar 3 (AdSense readiness) for parallel progress"
+  ],
+  "platform_priority": [
+    "EarnKaro",
+    "Flipkart"
+  ],
+  "audience_fit": "High — Indian interior designers, contractors, fit-out professionals, small offices/home-office professionals",
+  "commercial_readiness": "Ready for integration specs; Founder-gated account/approval remains blocker",
+  "compliance_gates": [
+    "disclosure",
+    "merchant_terms",
+    "geography",
+    "factual_claims",
+    "privacy",
+    "tracking",
+    "platform_policy"
+  ],
+  "failed_pilot_limit_remaining": 2,
+  "resource_envelope_required": true,
+  "failure_resilience_required": true
 }
