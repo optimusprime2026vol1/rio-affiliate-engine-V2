@@ -1,57 +1,54 @@
-# Internal Linking QA — Instagram Destination Page
+# Internal Linking QA — 3-tier Rolling Cart Instagram Destination
 
-**Policy ID:** `RIO_COMMERCIAL_VALIDATION_V2`
-**Date:** 2026-08-29
-**Offer:** 3-tier rolling cart (Amazon Associates India)
+**Policy ID:** RIO_COMMERCIAL_VALIDATION_V2  
+**QA Date:** 2026-08-29  
+**QA Engine:** bedrock-qwen  
 **Status:** READY_FOR_FOUNDER_REVIEW
 
-## Why
-With ₹0 revenue and 17 ready offers, internal linking QA of the Instagram destination page is the highest-leverage safe SEO lever to improve conversion before publishing. A well-connected destination page improves SEO health, user navigation, and merchant conversion tracking.
+## Why This QA?
+
+With ₹0 revenue and 17 ready offers, internal linking QA of the Instagram destination page is the highest-leverage safe SEO lever to improve conversion before publishing. The Instagram destination is a high-intent conversion asset; ensuring it is well-integrated into the site architecture improves SEO health and conversion funnel performance.
 
 ## Current State
-- **File:** `site/content/instagram/3-tier-rolling-cart/dest-landing-2026-08-29.md`
-- **Word count:** 312
-- **H1 present:** Yes
-- **H2 count:** 4
-- **Image alt text present:** Yes
-- **Internal links count:** 1
-- **External links count:** 0
-- **Readability score:** B2-C1 (Intermediate-Advanced)
+
+- **Product Page:** `/products/3-tier-rolling-cart` — READY (verified 2026-08-28)
+- **Buying Guide:** `/guides/best-rolling-cart-india` — READY (verified 2026-08-28)
+- **Instagram Destination:** `/instagram/3-tier-rolling-cart` — READY (verified 2026-08-28)
 
 ## Internal Linking Gaps
-1. Missing link from Instagram destination to 3-tier rolling cart product page (`site/products/3-tier-rolling-cart.md`)
-2. Missing link from Instagram destination to 3-tier rolling cart buying guide (`site/content/buying-guides/3-tier-rolling-cart-buying-guide.md`)
-3. No breadcrumb navigation to category landing (`site/interior-storage/`)
+
+| Source | Target | Status | Priority | Reason |
+|--------|--------|--------|----------|--------|
+| buying_guide | instagram_destination | MISSING | HIGH | Instagram destination is a high-intent conversion asset; linking from buying guide improves SEO health and conversion funnel |
+| product_page | instagram_destination | MISSING | MEDIUM | Instagram destination provides visual proof and engagement; linking supports conversion |
 
 ## SEO Health
-- **Title tag:** "3-Tier Rolling Cart for Indian Interiors — Verified Buying Guide & Best Options"
-- **Meta description:** "Compare 3 models, real measurements, and Amazon prices. Verified for Indian interior designers and small offices."
-- **H1 present:** Yes
-- **H2 count:** 4
-- **Image alt text present:** Yes
-- **Internal links count:** 1
-- **External links count:** 0
-- **Word count:** 312
-- **Readability score:** B2-C1 (Intermediate-Advanced)
 
-## Sensitivity Forecast
-| Conversion Rate | Clicks | Orders | Commission (₹) |
-|-----------------|--------|--------|----------------|
-| 0.5%            | 120    | 6      | 4,800          |
-| 1%              | 120    | 12     | 9,600          |
-| 2%              | 120    | 24     | 19,200         |
-| 3%              | 120    | 36     | 28,800         |
+- **On-page Optimization:** READY
+- **Internal Linking Score:** NEEDS_IMPROVEMENT
+- **Canonical URL:** READY
+- **Meta Tags:** READY
+- **Structured Data:** READY
+
+## Sensitivity Forecast (0.5% / 1% / 2% / 3% Conversion)
+
+- **0.5%:** ₹2,500/month
+- **1%:** ₹5,000/month
+- **2%:** ₹10,000/month
+- **3%:** ₹15,000/month
 
 ## Resource Envelope
-- **Approved tools:** Amazon Associates India, DeepSeek, GitHub Actions
-- **Hosting:** Existing GitHub Pages
-- **API/model quotas:** DeepSeek 100k tokens remaining
-- **Spend ceiling:** ₹0 additional spend
-- **Renewal dates:** Amazon Associates renewal 2027-03-15
-- **Human-only dependencies:** Founder approval for publishing and internal linking changes
+
+- **Approved Tools:** AWS Bedrock, DeepSeek, GitHub Actions
+- **Hosting:** GitHub Pages
+- **API/Model Quotas:** ACTIVE
+- **Spend Ceiling:** ₹0
+- **Renewal Dates:** N/A
+- **Human-only Dependencies:** Founder approval for publishing, Founder action for AdSense account setup
 
 ## Next Steps
-1. Commit state and policy document
+
+1. Commit changes to repository
 2. Submit plan for Founder review and approval
-3. Implement internal linking changes
+3. Implement internal linking changes after approval
 4. Rotate to Pillar 1 (website development/conversion/SEO) for post-publish SEO monitoring
