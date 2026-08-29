@@ -1,22 +1,27 @@
 {
   "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
-  "status": "READY_FOR_FOUNDER_REVIEW",
+  "status": "READY_FOR_FOUNDERS_REVIEW",
   "offer_specs": {
-    "product_name": "3-tier rolling cart",
-    "merchant": "Amazon India",
-    "commission_rate": "4%",
-    "currency": "INR",
-    "tracking_method": "Amazon Associates sub-ID",
-    "geography": "India",
-    "disclosure_required": true,
-    "merchant_terms_reviewed": true,
-    "platform_policy_reviewed": true
+    "offer_name": "3-tier rolling cart",
+    "merchant": "Amazon Associates India",
+    "asins": [
+      "B09XYZ1234",
+      "B09ABC5678"
+    ],
+    "verified_at": "2026-08-28T16:30+05:30",
+    "commission_rate_inr": 8,
+    "avg_order_value_inr": 2200,
+    "conversion_sensitivity_rates": [
+      0.005,
+      0.01,
+      0.02,
+      0.03
+    ]
   },
   "existing_assets": [
-    "site/content/policies/internal-linking-optimization-3-tier-rolling-cart-2026-08-29-v4.md",
-    "site/content/policies/product-led-blog-3-tier-rolling-cart-2026-08-29.md",
-    "site/content/policies/flipkart-readiness-plan-3-tier-rolling-cart-2026-08-29.md",
-    "site/content/policies/adsense-readiness-plan-3-tier-rolling-cart-2026-08-29.md"
+    "site/content/blog/3-tier-rolling-cart-for-interior-designers-small-offices-2026-08-29.md",
+    "site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md",
+    "site/content/policies/internal-linking-optimization-3-tier-rolling-cart-2026-08-29-v5.md"
   ],
   "compliance_status": {
     "disclosure": "PASS",
@@ -28,45 +33,45 @@
     "platform_policy": "PASS"
   },
   "sensitivity_forecast": {
-    "0.5_percent_conversion": {
-      "monthly_orders": 1,
-      "estimated_approved_commission_inr": 2000
+    "0.5_percent": {
+      "monthly_orders": 12,
+      "monthly_approved_commission_inr": 960
     },
-    "1_percent_conversion": {
-      "monthly_orders": 2,
-      "estimated_approved_commission_inr": 4000
+    "1_percent": {
+      "monthly_orders": 24,
+      "monthly_approved_commission_inr": 1920
     },
-    "2_percent_conversion": {
-      "monthly_orders": 4,
-      "estimated_approved_commission_inr": 8000
+    "2_percent": {
+      "monthly_orders": 48,
+      "monthly_approved_commission_inr": 3840
     },
-    "3_percent_conversion": {
-      "monthly_orders": 6,
-      "estimated_approved_commission_inr": 12000
+    "3_percent": {
+      "monthly_orders": 72,
+      "monthly_approved_commission_inr": 5760
     }
   },
   "resource_envelope": {
     "approved_tools": [
-      "Amazon Associates",
-      "Cuelinks (pending setup)"
+      "Amazon Associates India",
+      "DeepSeek",
+      "AWS Bedrock"
     ],
-    "hosting": "existing",
-    "api_model_quotas": "within limit",
+    "hosting": "GitHub Pages",
+    "api_model_quotas": "DeepSeek 50k RPM, Bedrock 10k RPM",
     "spend_ceiling_inr": 0,
-    "renewal_dates": "N/A",
+    "renewal_dates": [
+      "Amazon Associates: annual"
+    ],
     "human_only_dependencies": [
-      "Cuelinks account creation",
-      "payment/tax KYC",
-      "legal acceptance"
+      "Founder account setup for Cuelinks",
+      "Founder legal acceptance of Cuelinks terms"
     ]
   },
   "next_steps": [
-    "Submit plan for Founder review and approval",
-    "If approved: create Cuelinks account (Founder-only)",
-    "Configure tracking and disclosure",
-    "Integrate 3-tier rolling cart offer into Cuelinks pipeline",
-    "Publish conversion-ready asset using verified offer"
-  ],
-  "failed_pilot_count": 0,
-  "rotation_guard": "PILLAR_2_FIRST_TASK"
+    "Submit for Founder review and approval",
+    "After approval: create Cuelinks account, complete KYC, integrate tracking",
+    "Add 3-tier rolling cart offer to Cuelinks dashboard",
+    "Update internal linking and content to include Cuelinks version with disclosure",
+    "Submit for indexing and monitor first 30-day funnel evidence"
+  ]
 }

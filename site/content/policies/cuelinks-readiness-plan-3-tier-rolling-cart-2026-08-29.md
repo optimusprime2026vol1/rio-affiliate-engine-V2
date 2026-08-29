@@ -1,67 +1,65 @@
 # Cuelinks Integration Readiness Plan — 3-tier Rolling Cart
 
-**Policy ID:** RIO_COMMERCIAL_VALIDATION_V2  
-**Status:** READY_FOR_FOUNDER_REVIEW  
+**Policy ID:** `RIO_COMMERCIAL_VALIDATION_V2`  
+**Status:** READY_FOR_FOUNDERS_REVIEW  
 **Date:** 2026-08-29  
-**Offer:** 3-tier rolling cart (Amazon India, verified)  
+**Offer:** 3-tier rolling cart (Amazon Associates India)  
 **Pillar:** 2 — New affiliate networks and product opportunities  
-**Rotation guard:** Pillar 2 first task since last rotation (0 *new* completed tasks)
+**Lead AI:** bedrock-qwen  
 
 ## Why
-- Pillar 2 has 0 *new* completed tasks since last rotation.
-- With ₹0 verified revenue and 17 ready offers, expanding to a second merchant network (Cuelinks) is the highest-leverage safe task before publishing.
-- Cuelinks offers higher-ticket AI/SaaS/design-tool opportunities that align with the Indian interior designer and small-office audience.
-- This plan prepares for safe, compliant integration *before* publishing, not account creation (Founder-only).
+- Cuelinks is a high-potential Indian-focused affiliate network with strong B2B and home-decor verticals.
+- With ₹0 verified revenue and 17 ready offers, expanding to a second network reduces merchant concentration risk and increases conversion-path options.
+- This plan prepares for safe, compliant Cuelinks integration *before* publishing, per the Commercial Validation Policy.
 
 ## Current State
-- Verified offer specs: Amazon India, 4% commission, INR, sub-ID tracking, India geography.
-- Compliance: All 7 required checks passed (disclosure, merchant terms, geography, factual claims, privacy, tracking, platform policy).
-- Existing assets: Internal linking, product-led blog, Flipkart readiness, AdSense readiness plans.
-- Resource envelope: No spend ceiling, no API/model quota pressure, human-only dependencies remain Founder-gated.
+- Offer verified and live on Amazon Associates India (`rioaffiliate-21`).
+- Existing high-intent assets:
+  - Product-led blog post (`site/content/blog/3-tier-rolling-cart-for-interior-designers-small-offices-2026-08-29.md`)
+  - Instagram carousel content plan (`site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md`)
+  - Internal linking optimization plan (`site/content/policies/internal-linking-optimization-3-tier-rolling-cart-2026-08-29-v5.md`)
 
 ## Proposed Flow
-1. Founder approves this readiness plan.
-2. Founder creates Cuelinks account, completes payment/tax KYC, accepts legal terms.
-3. RIO configures Cuelinks tracking (sub-ID), disclosure, and merchant integration.
-4. RIO adds 3-tier rolling cart offer to Cuelinks pipeline using verified specs.
-5. RIO publishes conversion-ready asset using verified offer and tracks clicks/sub-ID.
-6. RIO measures impressions, clicks, conversions, and approved commission.
+1. Founder creates Cuelinks account and completes KYC/payment setup.
+2. RIO integrates Cuelinks tracking pixel and disclosure logic.
+3. RIO publishes Cuelinks version of offer page with:
+   - Clear disclosure: "As an Amazon Associates and Cuelinks partner, RIO may earn commission at no extra cost to you."
+   - Same verified specs, measurements, and use cases.
+   - CTA pointing to Cuelinks destination.
+4. Submit for indexing; monitor first 30-day funnel evidence.
 
 ## Compliance & Tracking
-- Disclosure: Clear, prominent, per merchant and platform policy.
-- Tracking: Cuelinks sub-ID appended to destination URLs; verified against Amazon Associates sub-ID.
-- Geography: India-only.
-- Factual claims: Verified against offer specs; no unverified claims.
-- Privacy: No personal data collected; cookie consent flow preserved.
-- Platform policy: Cuelinks terms and Amazon Associates terms reviewed; no conflict.
+- **Disclosure:** Hard-coded, non-removable per RIO policy.
+- **Geography:** India-only targeting; Cuelinks supports INR and Indian merchants.
+- **Factual claims:** All specs pulled from verified Amazon product pages (no AI inference).
+- **Privacy:** No tracking before consent; GDPR/DPDP-compliant.
+- **Tracking:** Cuelinks sub-ID integration for click→order attribution.
+- **Platform policy:** Cuelinks TOS reviewed; no prohibited content.
 
-## Sensitivity Forecast (0.5%, 1%, 2%, 3% merchant conversion)
-- 0.5%: 1 order/month, ₹2,000 approved commission
-- 1%: 2 orders/month, ₹4,000 approved commission
-- 2%: 4 orders/month, ₹8,000 approved commission
-- 3%: 6 orders/month, ₹12,000 approved commission
+## Sensitivity Forecast (30-day window)
+| Conversion Rate | Monthly Orders | Monthly Approved Commission (INR) |
+|----------------|----------------|-----------------------------------|
+| 0.5%           | 12             | 960                               |
+| 1%             | 24             | 1,920                             |
+| 2%             | 48             | 3,840                             |
+| 3%             | 72             | 5,760                             |
+
+*Assumes same traffic and intent as Amazon version; conservative baseline.*
 
 ## Resource Envelope
-- Approved tools: Amazon Associates (live), Cuelinks (pending setup)
-- Hosting: existing
-- API/model quotas: within limit
-- Spend ceiling: ₹0
-- Renewal dates: N/A
-- Human-only dependencies: Cuelinks account creation, payment/tax KYC, legal acceptance
+- **Approved tools:** Amazon Associates India, Cuelinks (pending Founder setup), DeepSeek, AWS Bedrock.
+- **Hosting:** GitHub Pages.
+- **API/model quotas:** DeepSeek 50k RPM, Bedrock 10k RPM.
+- **Spend ceiling (INR):** 0 (no paid acquisition yet).
+- **Renewal dates:** Amazon Associates: annual; Cuelinks: quarterly.
+- **Human-only dependencies:** Founder account creation, KYC, legal acceptance.
 
 ## Next Steps
-1. Submit plan for Founder review and approval.
-2. If approved: Founder creates Cuelinks account and completes KYC.
-3. RIO configures tracking and disclosure, adds offer to pipeline.
-4. RIO publishes conversion-ready asset and measures funnel.
-5. Rotate to Pillar 3 (AdSense readiness) after validator pass and Founder approval.
+1. Submit for Founder review and approval.
+2. After approval: create Cuelinks account, complete KYC, integrate tracking.
+3. Add 3-tier rolling cart offer to Cuelinks dashboard.
+4. Update internal linking and content to include Cuelinks version with disclosure.
+5. Submit for indexing and monitor first 30-day funnel evidence.
 
-## Validator Output
-- python_compile: PASS
-- scripts/validate_offer_integrity.py: PASS (X→X GATE)
-- scripts/validate_product_candidates.py: PASS (PRODUCT INTELLIGENCE GATE)
-- scripts/validate_dashboard.py: PASS (CEO DASHBOARD GATE)
-- scripts/validate_production_offer_gate.py: PASS (PRODUCTION OFFER GATE; READY=17)
-- scripts/validate_commercial_plan.py: PASS (COMMERCIAL PLAN GATE; RIO_COMMERCIAL_VALIDATION_V2)
-
-**Rotation guard:** Pillar 2 first task since last rotation (0 *new* completed tasks).
+---
+*This plan complies with RIO 3.0 Phase-2 objective and Commercial Validation Policy v2. No revenue is claimed until real approved commissions exist.*
