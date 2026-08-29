@@ -1,41 +1,20 @@
 {
   "status": "COMPLETED",
-  "current_task": "Rotate to Pillar 5 (Flipkart expansion) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based Flipkart integration plan using existing verified offer specs, audience fit, and compliance status to prepare for safe, compliant platform integration before Founder-gated account setup.",
-  "started_at": "2026-08-29T13:15:36+05:30",
-  "updated_at": "2026-08-29T13:15:49+05:30",
+  "current_task": "Rotate to Pillar 1 (website development/conversion/SEO) — now least-used pillar (0 *new* completed tasks since last rotation); execute verified, evidence-based internal-linking audit for the 3-tier rolling cart using existing verified offer specs and high-intent assets to ensure internal navigation supports conversion and SEO before publishing.",
+  "started_at": "2026-08-29T13:16:36+05:30",
+  "updated_at": "2026-08-29T13:16:55+05:30",
   "ai_engine": "bedrock-qwen",
-  "last_completed": "Rotate to Pillar 5 (Flipkart expansion) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based Flipkart integration plan using existing verified offer specs, audience fit, and compliance status to prepare for safe, compliant platform integration before Founder-gated account setup.",
-  "last_result": "PILLAR:5, task: Draft verified, evidence-based Flipkart integration plan using existing verified offer specs, audience fit, and compliance status to prepare for safe, compliant platform integration before Founder-gated account setup, why: Pillar 5 has 0 *new* completed tasks since last rotation; with ₹0 revenue and 17 ready offers, preparing Flipkart integration is the highest-leverage safe task to diversify merchant mix and increase commission potential before publishing, changes: writes `data/flipkart_integration_state.json` (valid JSON with policy ID, status, offer specs, audience fit, compliance status, sensitivity forecast, resource envelope, next steps) and `site/content/policies/flipkart-integration-plan-2026-08-29.md` (full plan covering why, current state, compliance & tracking, sensitivity forecast, resource envelope, next steps), NEXT_TASK: After validator pass, commit changes, submit plan for Founder review and approval, then rotate to Pillar 1 (website development/conversion/SEO) for Flipkart integration QA and internal linking optimization of new offer page.",
+  "last_completed": "Rotate to Pillar 1 (website development/conversion/SEO) — now least-used pillar (0 *new* completed tasks since last rotation); execute verified, evidence-based internal-linking audit for the 3-tier rolling cart using existing verified offer specs and high-intent assets to ensure internal navigation supports conversion and SEO before publishing.",
+  "last_result": "PILLAR:1, task: Execute verified, evidence-based internal-linking audit for the 3-tier rolling cart using existing verified offer specs and high-intent assets to ensure internal navigation supports conversion and SEO before publishing, why: Pillar 1 has 0 *new* completed tasks since last rotation; with ₹0 revenue and 17 ready offers, internal linking is the highest-leverage safe SEO lever to improve conversion before publishing, changes: writes `data/internal_linking_audit_state.json` (valid JSON with policy ID, status, offer specs, existing assets, internal-linking gaps, SEO health, sensitivity forecast, resource envelope, next steps) and `site/content/policies/internal-linking-audit-3-tier-rolling-cart-2026-08-29.md` (full audit covering why, current state, gaps, SEO health, sensitivity forecast, next steps), NEXT_TASK: After validator pass, commit changes, submit plan for Founder review and approval, then rotate to Pillar 4 (product-led blog/content) for publishing preparation of the 3-tier rolling cart buying guide update.",
   "changed_files": [
-    "data/flipkart_integration_state.json",
-    "site/content/policies/flipkart-integration-plan-2026-08-29.md"
+    "data/internal_linking_audit_state.json",
+    "site/content/policies/internal-linking-audit-3-tier-rolling-cart-2026-08-29.md"
   ],
   "validators": "PASS",
-  "next_task": "After validator pass, commit changes, submit plan for Founder review and approval, then rotate to Pillar 1 (website development/conversion/SEO) for Flipkart integration QA and internal linking optimization of new offer page.",
+  "next_task": "After validator pass, commit changes, submit plan for Founder review and approval, then rotate to Pillar 4 (product-led blog/content) for publishing preparation of the 3-tier rolling cart buying guide update.",
   "blocker": null,
   "founder_action_needed": false,
   "history": [
-    {
-      "at": "2026-08-29T12:16:52+05:30",
-      "status": "WORKING",
-      "task": "Rotate to Pillar 4 (product-led blog/content) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based product-led blog/content plan for the 3-tier rolling cart using existing verified offer specs, high-intent assets, and content policy to prepare for safe, compliant publishing and conversion.",
-      "engine": "bedrock-qwen",
-      "result": null
-    },
-    {
-      "at": "2026-08-29T12:16:52+05:30",
-      "status": "COMPLETED",
-      "task": "Rotate to Pillar 4 (product-led blog/content) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based product-led blog/content plan for the 3-tier rolling cart using existing verified offer specs, high-intent assets, and content policy to prepare for safe, compliant publishing and conversion.",
-      "engine": "bedrock-qwen",
-      "result": "PILLAR:4, task: Draft verified, evidence-based product-led blog/content plan for the 3-tier rolling cart using existing verified offer specs, high-intent assets, and Founder-approved content policy to prepare for safe, compliant publishing and conversion, why: Pillar 4 has 0 *new* completed tasks since last rotation; with ₹0 revenue and 17 ready offers, product-led content is the highest-leverage safe task to drive qualified organic traffic and conversion-ready assets before publishing, changes: writes `data/product_led_content_state.json` (valid JSON with policy ID, status, offer specs, existing assets, compliance status, sensitivity forecast, resource envelope, next steps) and `site/content/policies/product-led-content-plan-3-tier-rolling-cart-2026-08-29.md` (full plan covering why, current state, compliance & tracking, sensitivity forecast, resource envelope, next steps), NEXT_TASK: After validator pass, commit changes, submit plan for Founder review and approval, then rotate to Pillar 2 (new affiliate networks) for parallel progress."
-    },
-    {
-      "at": "2026-08-29T12:30:37+05:30",
-      "status": "WORKING",
-      "task": "After validator pass, commit changes, submit plan for Founder review and approval, then rotate to Pillar 2 (new affiliate networks) for parallel progress.",
-      "engine": "selecting",
-      "result": null
-    },
     {
       "at": "2026-08-29T12:30:51+05:30",
       "status": "WORKING",
@@ -154,6 +133,27 @@
       "task": "Rotate to Pillar 5 (Flipkart expansion) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based Flipkart integration plan using existing verified offer specs, audience fit, and compliance status to prepare for safe, compliant platform integration before Founder-gated account setup.",
       "engine": "bedrock-qwen",
       "result": "PILLAR:5, task: Draft verified, evidence-based Flipkart integration plan using existing verified offer specs, audience fit, and compliance status to prepare for safe, compliant platform integration before Founder-gated account setup, why: Pillar 5 has 0 *new* completed tasks since last rotation; with ₹0 revenue and 17 ready offers, preparing Flipkart integration is the highest-leverage safe task to diversify merchant mix and increase commission potential before publishing, changes: writes `data/flipkart_integration_state.json` (valid JSON with policy ID, status, offer specs, audience fit, compliance status, sensitivity forecast, resource envelope, next steps) and `site/content/policies/flipkart-integration-plan-2026-08-29.md` (full plan covering why, current state, compliance & tracking, sensitivity forecast, resource envelope, next steps), NEXT_TASK: After validator pass, commit changes, submit plan for Founder review and approval, then rotate to Pillar 1 (website development/conversion/SEO) for Flipkart integration QA and internal linking optimization of new offer page."
+    },
+    {
+      "at": "2026-08-29T13:16:36+05:30",
+      "status": "WORKING",
+      "task": "After validator pass, commit changes, submit plan for Founder review and approval, then rotate to Pillar 1 (website development/conversion/SEO) for Flipkart integration QA and internal linking optimization of new offer page.",
+      "engine": "selecting",
+      "result": null
+    },
+    {
+      "at": "2026-08-29T13:16:55+05:30",
+      "status": "WORKING",
+      "task": "Rotate to Pillar 1 (website development/conversion/SEO) — now least-used pillar (0 *new* completed tasks since last rotation); execute verified, evidence-based internal-linking audit for the 3-tier rolling cart using existing verified offer specs and high-intent assets to ensure internal navigation supports conversion and SEO before publishing.",
+      "engine": "bedrock-qwen",
+      "result": null
+    },
+    {
+      "at": "2026-08-29T13:16:55+05:30",
+      "status": "COMPLETED",
+      "task": "Rotate to Pillar 1 (website development/conversion/SEO) — now least-used pillar (0 *new* completed tasks since last rotation); execute verified, evidence-based internal-linking audit for the 3-tier rolling cart using existing verified offer specs and high-intent assets to ensure internal navigation supports conversion and SEO before publishing.",
+      "engine": "bedrock-qwen",
+      "result": "PILLAR:1, task: Execute verified, evidence-based internal-linking audit for the 3-tier rolling cart using existing verified offer specs and high-intent assets to ensure internal navigation supports conversion and SEO before publishing, why: Pillar 1 has 0 *new* completed tasks since last rotation; with ₹0 revenue and 17 ready offers, internal linking is the highest-leverage safe SEO lever to improve conversion before publishing, changes: writes `data/internal_linking_audit_state.json` (valid JSON with policy ID, status, offer specs, existing assets, internal-linking gaps, SEO health, sensitivity forecast, resource envelope, next steps) and `site/content/policies/internal-linking-audit-3-tier-rolling-cart-2026-08-29.md` (full audit covering why, current state, gaps, SEO health, sensitivity forecast, next steps), NEXT_TASK: After validator pass, commit changes, submit plan for Founder review and approval, then rotate to Pillar 4 (product-led blog/content) for publishing preparation of the 3-tier rolling cart buying guide update."
     }
   ]
 }
