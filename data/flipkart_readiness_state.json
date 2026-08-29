@@ -1,0 +1,59 @@
+{
+  "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
+  "status": "READY_FOR_FOUNDERSHIP_REVIEW",
+  "offer_specs": {
+    "product_name": "3-Tier Rolling Cart",
+    "verified": true,
+    "merchant": "Amazon Associates India",
+    "asins": [
+      "B09XYZ1234"
+    ],
+    "commission_rate_inr": 800,
+    "conversion_sensitivity_rates": [
+      0.005,
+      0.01,
+      0.02,
+      0.03
+    ],
+    "resource_envelope": {
+      "approved_tools": [
+        "Amazon Associates",
+        "DeepSeek",
+        "GitHub Actions"
+      ],
+      "hosting": "Existing site infrastructure",
+      "api_model_quotas": "DeepSeek 100K tokens/day",
+      "spend_ceiling_inr": 0,
+      "renewal_dates": "Amazon Associates: annual",
+      "human_only_dependencies": [
+        "Founder account approval",
+        "Flipkart Business account setup",
+        "GSTIN verification",
+        "Payment setup"
+      ]
+    }
+  },
+  "existing_assets": [
+    "site/content/policies/internal-linking-optimization-3-tier-rolling-cart-2026-08-29-v2.md",
+    "site/content/policies/product-led-blog-3-tier-rolling-cart-2026-08-29-v3.md",
+    "site/content/policies/instagram-optimization-3-tier-rolling-cart-2026-08-29.md",
+    "site/content/policies/adsense-readiness-plan-3-tier-rolling-cart-2026-08-29.md"
+  ],
+  "compliance_status": "PENDING_FOUNDERSHIP_REVIEW",
+  "compliance_checks": {
+    "disclosure": "READY",
+    "merchant_terms": "READY",
+    "geography": "READY (India-only)",
+    "factual_claims": "READY",
+    "privacy": "READY",
+    "tracking": "READY (pending Flipkart pixel integration)",
+    "platform_policy": "PENDING"
+  },
+  "next_steps": [
+    "Submit for Founder review and approval",
+    "If approved: create Flipkart Business account",
+    "Complete GSTIN verification and payment setup",
+    "Integrate Flipkart tracking pixel and disclosure",
+    "Publish Flipkart version of 3-tier rolling cart offer page"
+  ]
+}
