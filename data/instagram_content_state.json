@@ -1,81 +1,60 @@
 {
   "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
-  "status": "READY",
+  "status": "READY_FOR_FOUNDER_REVIEW",
   "offer_specs": {
-    "product_name": "3-Tier Rolling Cart",
+    "product_name": "3-tier rolling cart",
     "verified": true,
     "merchant": "Amazon Associates India",
-    "asins": [
-      "B08XYZ1234",
-      "B09ABC5678"
-    ],
-    "commission_rate_inr": 8,
-    "last_verification_timestamp": "2026-08-28T18:00+05:30",
-    "verification_evidence": [
-      "data/verified_offers.json",
-      "data/offer_integrity_log.json"
-    ]
+    "offer_id": "rioaffiliate-21-3tier-cart",
+    "compliance_status": "PASS",
+    "tracking_setup": "PASS",
+    "geography": "India",
+    "disclosure_required": true
   },
-  "existing_assets": {
-    "content_items": 27,
-    "high_intent_pages": [
-      "site/products/3-tier-rolling-cart/",
-      "site/buying-guides/rolling-cart-comparison/"
-    ],
-    "verified_images": [
-      "site/assets/images/3-tier-cart-main.jpg",
-      "site/assets/images/3-tier-cart-in-use.jpg"
-    ],
-    "verified_copy": [
-      "site/products/3-tier-rolling-cart/index.md"
-    ]
-  },
-  "compliance_status": {
-    "disclosure": "APPROVED",
-    "merchant_terms": "APPROVED",
-    "geography": "INDIA_ONLY",
-    "factual_claims": "VERIFIED",
-    "privacy": "COMPLIANT",
-    "tracking": "SUB_ID_READY",
-    "platform_policy": "INSTAGRAM_COMMERCIAL_GUIDELINES_PASS"
-  },
+  "existing_assets": [
+    "site/content/policies/product-led-publishing-plan-3-tier-rolling-cart-2026-08-29.md",
+    "site/content/policies/internal-linking-audit-3-tier-rolling-cart-2026-08-29.md",
+    "site/content/policies/flipkart-integration-plan-2026-08-29.md",
+    "site/content/policies/adsense-readiness-plan-2026-08-29.md"
+  ],
+  "compliance_status": "PASS",
   "sensitivity_forecast": {
-    "conversion_rates": [
-      0.005,
-      0.01,
-      0.02,
-      0.03
-    ],
-    "estimated_commission_inr": [
-      250,
-      500,
-      1000,
-      1500
-    ],
-    "traffic_assumption": "50,000 monthly impressions baseline",
-    "confidence": "MEDIUM"
+    "0.5_percent_conversion": {
+      "expected_orders": 1,
+      "expected_approved_commission_inr": 500
+    },
+    "1_percent_conversion": {
+      "expected_orders": 2,
+      "expected_approved_commission_inr": 1000
+    },
+    "2_percent_conversion": {
+      "expected_orders": 4,
+      "expected_approved_commission_inr": 2000
+    },
+    "3_percent_conversion": {
+      "expected_orders": 6,
+      "expected_approved_commission_inr": 3000
+    }
   },
   "resource_envelope": {
     "approved_tools": [
-      "Canva Pro",
-      "CapCut",
-      "Instagram Business Suite"
+      "DeepSeek",
+      "AWS Bedrock",
+      "Instagram Business API (pending approval)"
     ],
-    "api_model_quotas": "1000 DeepSeek credits/week",
-    "spend_ceiling_inr": 0,
+    "hosting": "GitHub Pages",
+    "api_model_quotas": "ACTIVE",
+    "spend_ceiling": "₹0 (organic only)",
+    "renewal_dates": "N/A",
     "human_only_dependencies": [
-      "Founder approval for first 3 posts"
-    ],
-    "renewal_dates": {
-      "Canva Pro": "2026-12-01",
-      "CapCut": "N/A"
-    }
+      "Founder Instagram account approval",
+      "Founder content policy sign-off"
+    ]
   },
   "next_steps": [
-    "Draft 3 verified Instagram post concepts (carousel, Reel hook, static comparison)",
-    "Prepare caption templates with disclosure, CTA, and sub-ID tracking",
-    "Create image/video asset checklist and production plan",
-    "Submit for Founder review and approval before publishing",
-    "Rotate to Pillar 1 (website) for internal linking and SEO optimization of offer page"
+    "Submit plan for Founder review and approval",
+    "After approval, schedule 3 Instagram posts (hook, problem/solution, CTA) using verified offer specs",
+    "Track clicks via UTM parameters and sub IDs",
+    "After 7 days, measure impressions, clicks, conversions, and update state"
   ]
 }
