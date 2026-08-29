@@ -1,34 +1,20 @@
 {
-  "status": "COMPLETED",
-  "current_task": "Rotate to Pillar 4 (product-led blog/content) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based publishing preparation for the 3-tier rolling cart buying guide update using existing verified offer specs, high-intent assets, and content policy to prepare for safe, compliant publishing and conversion.",
-  "started_at": "2026-08-29T13:30:36+05:30",
-  "updated_at": "2026-08-29T13:30:48+05:30",
+  "status": "WAITING",
+  "current_task": "Rotate to Pillar 6 (Instagram sales/content execution) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based Instagram content plan for the 3-tier rolling cart using existing verified offer specs, high-intent assets, and Founder-approved content policy to prepare for safe, compliant publishing and conversion.",
+  "started_at": "2026-08-29T13:31:37+05:30",
+  "updated_at": "2026-08-29T13:31:46+05:30",
   "ai_engine": "bedrock-qwen",
   "last_completed": "Rotate to Pillar 4 (product-led blog/content) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based publishing preparation for the 3-tier rolling cart buying guide update using existing verified offer specs, high-intent assets, and content policy to prepare for safe, compliant publishing and conversion.",
-  "last_result": "PILLAR:4, task: Draft verified, evidence-based publishing preparation for the 3-tier rolling cart buying guide update using existing verified offer specs, high-intent assets, and content policy to prepare for safe, compliant publishing and conversion, why: Pillar 4 has 0 *new* completed tasks since last rotation; with ₹0 revenue and 17 ready offers, publishing a verified buying guide is the highest-leverage safe task to drive qualified organic traffic and conversion-ready assets before publishing, changes: writes `data/product_led_publishing_state.json` (valid JSON with policy ID, status, offer specs, existing assets, compliance status, sensitivity forecast, resource envelope, next steps) and `site/content/policies/product-led-publishing-plan-3-tier-rolling-cart-2026-08-29.md` (full plan covering why, current state, compliance & tracking, sensitivity forecast, resource envelope, next steps), NEXT_TASK: After validator pass, commit changes, submit plan for Founder review and approval, then publish the 3-tier rolling cart buying guide update and rotate to Pillar 1 (website development/conversion/SEO) for internal linking QA of new page.",
+  "last_result": "PORTFOLIO_GUARD: repeated task/pillar concentration suppressed; next cycle must rotate.",
   "changed_files": [
     "data/product_led_publishing_state.json",
     "site/content/policies/product-led-publishing-plan-3-tier-rolling-cart-2026-08-29.md"
   ],
-  "validators": "PASS",
-  "next_task": "After validator pass, commit changes, submit plan for Founder review and approval, then publish the 3-tier rolling cart buying guide update and rotate to Pillar 1 (website development/conversion/SEO) for internal linking QA of new page.",
+  "validators": "NOT_RUN",
+  "next_task": "Choose an independent task from a least-used eligible Phase-2 pillar.",
   "blocker": null,
   "founder_action_needed": false,
   "history": [
-    {
-      "at": "2026-08-29T12:31:56+05:30",
-      "status": "WAITING",
-      "task": "Rotate to Pillar 3 (AdSense readiness and monetization) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based AdSense readiness plan using existing verified offers, content assets, and compliance status to prepare for safe, compliant monetization setup before Founder-gated account approval.",
-      "engine": "bedrock-qwen",
-      "result": "PORTFOLIO_GUARD: repeated task/pillar concentration suppressed; next cycle must rotate."
-    },
-    {
-      "at": "2026-08-29T12:45:36+05:30",
-      "status": "WORKING",
-      "task": "Choose an independent task from a least-used eligible Phase-2 pillar.",
-      "engine": "selecting",
-      "result": null
-    },
     {
       "at": "2026-08-29T12:45:51+05:30",
       "status": "WORKING",
@@ -154,6 +140,20 @@
       "task": "Rotate to Pillar 4 (product-led blog/content) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based publishing preparation for the 3-tier rolling cart buying guide update using existing verified offer specs, high-intent assets, and content policy to prepare for safe, compliant publishing and conversion.",
       "engine": "bedrock-qwen",
       "result": "PILLAR:4, task: Draft verified, evidence-based publishing preparation for the 3-tier rolling cart buying guide update using existing verified offer specs, high-intent assets, and content policy to prepare for safe, compliant publishing and conversion, why: Pillar 4 has 0 *new* completed tasks since last rotation; with ₹0 revenue and 17 ready offers, publishing a verified buying guide is the highest-leverage safe task to drive qualified organic traffic and conversion-ready assets before publishing, changes: writes `data/product_led_publishing_state.json` (valid JSON with policy ID, status, offer specs, existing assets, compliance status, sensitivity forecast, resource envelope, next steps) and `site/content/policies/product-led-publishing-plan-3-tier-rolling-cart-2026-08-29.md` (full plan covering why, current state, compliance & tracking, sensitivity forecast, resource envelope, next steps), NEXT_TASK: After validator pass, commit changes, submit plan for Founder review and approval, then publish the 3-tier rolling cart buying guide update and rotate to Pillar 1 (website development/conversion/SEO) for internal linking QA of new page."
+    },
+    {
+      "at": "2026-08-29T13:31:37+05:30",
+      "status": "WORKING",
+      "task": "After validator pass, commit changes, submit plan for Founder review and approval, then publish the 3-tier rolling cart buying guide update and rotate to Pillar 1 (website development/conversion/SEO) for internal linking QA of new page.",
+      "engine": "selecting",
+      "result": null
+    },
+    {
+      "at": "2026-08-29T13:31:46+05:30",
+      "status": "WAITING",
+      "task": "Rotate to Pillar 6 (Instagram sales/content execution) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based Instagram content plan for the 3-tier rolling cart using existing verified offer specs, high-intent assets, and Founder-approved content policy to prepare for safe, compliant publishing and conversion.",
+      "engine": "bedrock-qwen",
+      "result": "PORTFOLIO_GUARD: repeated task/pillar concentration suppressed; next cycle must rotate."
     }
   ]
 }
