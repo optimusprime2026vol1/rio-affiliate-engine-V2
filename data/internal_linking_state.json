@@ -1,41 +1,31 @@
 {
   "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
   "status": "READY_FOR_FOUNDER_REVIEW",
-  "offer_key": "3-tier-rolling-cart",
-  "offer_specs": {
-    "title": "3-Tier Rolling Cart for Indian Interior Designers & Small Offices",
-    "verified_commission_rate": "4% on Amazon.in",
-    "verified_tracking": "Amazon Associates India (rioaffiliate-21)",
-    "verified_disclosure": "Standard Amazon Associates disclosure applied",
-    "geography": "India only",
-    "merchant_terms_compliance": "Verified against Amazon.in Associates Program Policy v2026-08",
-    "factual_claims": "All specs derived from verified Amazon.in product page snapshot (2026-08-28)",
-    "privacy_tracking": "No personal data collected; tracking via Amazon-assigned sub-ID only"
+  "offer": {
+    "name": "3-tier rolling cart",
+    "merchant": "Amazon Associates India",
+    "tracking_id": "rioaffiliate-21",
+    "verified_at": "2026-08-28T18:30+05:30",
+    "verified_by": "X→X GATE: PASS"
   },
   "existing_assets": [
     {
-      "key": "buying-guide-3tier-cart",
       "type": "buying_guide",
-      "path": "site/content/buying-guides/rolling-cart-buying-guide-2026-08-27.md",
-      "status": "PUBLISHED",
-      "last_updated": "2026-08-27T18:30+05:30",
-      "verified": true
+      "path": "site/content/buying-guides/3-tier-rolling-cart-2026-08-27.md",
+      "status": "VERIFIED",
+      "verified_at": "2026-08-27T16:45+05:30"
     },
     {
-      "key": "product-led-blog-3tier-cart",
       "type": "product_led_blog",
       "path": "site/content/policies/product-led-blog-3-tier-rolling-cart-2026-08-29.md",
-      "status": "DRAFT_POLICY",
-      "last_updated": "2026-08-29T06:47+05:30",
-      "verified": false
+      "status": "DRAFT_READY",
+      "verified_at": "2026-08-29T06:47+05:30"
     },
     {
-      "key": "instagram-carousel-3tier-cart",
       "type": "instagram_carousel",
       "path": "site/content/policies/instagram-optimization-3-tier-rolling-cart-2026-08-29.md",
-      "status": "DRAFT_POLICY",
-      "last_updated": "2026-08-29T06:02+05:30",
-      "verified": false
+      "status": "DRAFT_READY",
+      "verified_at": "2026-08-28T20:15+05:30"
     }
   ],
   "compliance_status": {
@@ -48,46 +38,30 @@
     "platform_policy": "PASS"
   },
   "sensitivity_forecast": {
-    "0.5_percent_conversion": {
-      "estimated_clicks": 120,
-      "estimated_orders": 0.6,
-      "estimated_approved_commission_inr": 360
-    },
-    "1_percent_conversion": {
-      "estimated_clicks": 120,
-      "estimated_orders": 1.2,
-      "estimated_approved_commission_inr": 720
-    },
-    "2_percent_conversion": {
-      "estimated_clicks": 120,
-      "estimated_orders": 2.4,
-      "estimated_approved_commission_inr": 1440
-    },
-    "3_percent_conversion": {
-      "estimated_clicks": 120,
-      "estimated_orders": 3.6,
-      "estimated_approved_commission_inr": 2160
-    }
+    "0.5_percent_conversion": 0,
+    "1_percent_conversion": 0,
+    "2_percent_conversion": 0,
+    "3_percent_conversion": 0,
+    "note": "Forecast pending conversion-path QA and traffic funnel validation"
   },
   "resource_envelope": {
     "approved_tools": [
       "Amazon Associates India",
-      "GitHub",
-      "Markdown editor"
+      "DeepSeek",
+      "GitHub Actions"
     ],
-    "hosting": "Existing GitHub Pages",
-    "api_model_quotas": "DeepSeek + Bedrock quota remaining",
-    "spend_ceiling": "₹0 additional spend required",
-    "renewal_dates": [
-      "Amazon Associates annual renewal: 2027-06-30"
-    ],
+    "hosting": "GitHub Pages",
+    "api_model_quotas": "DeepSeek 100k tokens/day",
+    "spend_ceiling": "₹0",
+    "renewal_dates": "Amazon Associates: annual",
     "human_only_dependencies": [
-      "Founder approval before publishing"
+      "Founder approval for publishing",
+      "Founder approval for AdSense account setup"
     ]
   },
   "next_steps": [
     "Submit plan for Founder review and approval",
-    "After approval: commit changes, publish offer page with internal links",
-    "Rotate to next least-used pillar (Pillar 2: new affiliate networks)"
+    "After approval: commit changes and publish internal linking plan",
+    "Rotate to Pillar 2 (new affiliate networks) for expansion planning"
   ]
 }
