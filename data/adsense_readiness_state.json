@@ -1,42 +1,15 @@
 {
   "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
-  "status": "READY_FOR_FOUNDER_REVIEW",
-  "offer_specs": {
-    "product": "3-tier rolling cart",
-    "verified": true,
-    "merchant": "Amazon Associates India",
-    "asins": [
-      "B09XJZQY7M",
-      "B09XJZQY8N"
-    ],
-    "measurements": {
-      "height_cm": 75,
-      "width_cm": 45,
-      "depth_cm": 30,
-      "wheel_type": "swivel_with_lock",
-      "load_capacity_kg": 25
-    },
-    "use_cases": [
-      "interior designer tool storage",
-      "small office stationery & supplies",
-      "compact workspace organization"
-    ],
-    "compliance_status": {
-      "disclosure": "PASS",
-      "merchant_terms": "PASS",
-      "geography": "PASS",
-      "factual_claims": "PASS",
-      "privacy": "PASS",
-      "tracking": "PASS",
-      "platform_policy": "PASS"
-    }
+  "status": "DRAFTED",
+  "pillar": 3,
+  "objective": "Prepare RIO for compliant display-ad monetization and execute all safe/available setup work autonomously",
+  "current_state": {
+    "verified_revenue_inr": 0,
+    "ready_offers": 17,
+    "content_items": 27,
+    "published_assets": 27,
+    "instagram_posted": 4
   },
-  "existing_assets": [
-    "site/content/blog/3-tier-rolling-cart-for-interior-designers-small-offices-2026-08-29.md",
-    "site/content/policies/internal-linking-optimization-3-tier-rolling-cart-2026-08-29-v5.md",
-    "site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md",
-    "site/content/policies/cuelinks-readiness-plan-3-tier-rolling-cart-2026-08-29.md"
-  ],
   "compliance_status": {
     "disclosure": "PASS",
     "merchant_terms": "PASS",
@@ -46,44 +19,55 @@
     "tracking": "PASS",
     "platform_policy": "PASS"
   },
+  "adsense_requirements": {
+    "account_creation": "FOUNDER_ONLY",
+    "payment_details": "FOUNDER_ONLY",
+    "tax_acceptance": "FOUNDER_ONLY",
+    "legal_acceptance": "FOUNDER_ONLY",
+    "site_approval": "FOUNDER_ONLY"
+  },
+  "safe_autonomous_prep": [
+    "verify_site_content_quality",
+    "verify_privacy_policy_present",
+    "verify_about_page_present",
+    "verify_contact_page_present",
+    "verify_disclosure_policy_present",
+    "verify_site_speed_baseline",
+    "verify_mobile_responsiveness",
+    "verify_content_originality",
+    "verify_no_duplicate_content",
+    "verify_clean_navigation"
+  ],
   "sensitivity_forecast": {
-    "0.5_percent_conversion": {
-      "monthly_orders": 1,
-      "estimated_approved_commission_inr": 2500
-    },
-    "1_percent_conversion": {
-      "monthly_orders": 2,
-      "estimated_approved_commission_inr": 5000
-    },
-    "2_percent_conversion": {
-      "monthly_orders": 4,
-      "estimated_approved_commission_inr": 10000
-    },
-    "3_percent_conversion": {
-      "monthly_orders": 6,
-      "estimated_approved_commission_inr": 15000
-    }
+    "conversion_rates": [
+      0.005,
+      0.01,
+      0.02,
+      0.03
+    ],
+    "note": "AdSense revenue forecast requires traffic data; current verified traffic = 0. Forecast deferred until organic validation window (days 31-60) produces evidence."
   },
   "resource_envelope": {
     "approved_tools": [
-      "AWS Bedrock qwen3-coder-next",
-      "DeepSeek",
-      "GitHub Actions"
+      "GitHub Actions",
+      "AWS Bedrock",
+      "DeepSeek"
     ],
-    "hosting": "existing AWS S3/CloudFront",
-    "api_model_quotas": "within current limits",
-    "spend_ceiling_inr": 0,
-    "renewal_dates": "none applicable",
+    "hosting": "GitHub Pages",
+    "api_model_quotas": "Within existing quotas",
+    "spend_ceiling": "₹0 additional spend",
+    "renewal_dates": "N/A",
     "human_only_dependencies": [
-      "AdSense account approval",
-      "tax/legal acceptance",
-      "payment setup"
+      "AdSense account creation",
+      "Payment details",
+      "Tax acceptance",
+      "Legal acceptance"
     ]
   },
   "next_steps": [
-    "Submit plan for Founder review and approval",
-    "If approved: initiate AdSense account application using Founder-locked credentials",
-    "After approval: configure tracking, disclosure, and internal linking for AdSense placement",
-    "After account approval: publish AdSense-compliant page variant with compliant disclosure and placement"
+    "Run site readiness checklist autonomously",
+    "Document any gaps in site/content/policies/adsense-readiness-plan-2026-08-29.md",
+    "Submit plan for Founder review",
+    "Block on Founder for account creation after plan approval"
   ]
 }
