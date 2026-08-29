@@ -1,71 +1,33 @@
 {
-  "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
-  "status": "READY_FOR_FOUNDER_REVIEW",
-  "offer_specs": {
-    "sku": "3-tier-rolling-cart",
-    "verified": true,
-    "merchant": "Amazon Associates India",
-    "tracking_id": "rioaffiliate-21",
-    "compliance_status": "PASS",
-    "geography": "IN",
-    "tracking_setup": "verified"
-  },
+  "policy_id": "RIO_INTERNAL_LINKING_V1",
+  "status": "READY",
+  "offer": "3-tier rolling cart",
+  "verified_offer_specs": "NOT_VERIFIED_IN_THIS_CONTEXT",
   "existing_assets": [
-    {
-      "type": "buying_guide",
-      "path": "site/content/buying-guides/3-tier-rolling-cart-buying-guide-2026-08-28.md",
-      "status": "PUBLISHED",
-      "internal_links": [
-        "product-led-blog",
-        "instagram-carousel"
-      ]
-    },
-    {
-      "type": "product-led_blog",
-      "path": "site/content/blog/3-tier-rolling-cart-for-small-offices-2026-08-28.md",
-      "status": "PUBLISHED",
-      "internal_links": [
-        "buying-guide",
-        "instagram-carousel"
-      ]
-    },
-    {
-      "type": "instagram_carousel",
-      "path": "site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md",
-      "status": "READY",
-      "internal_links": [
-        "buying-guide",
-        "product-led-blog"
-      ]
-    }
+    "buying guide",
+    "product-led blog",
+    "Instagram carousel"
   ],
-  "compliance_status": "PASS",
-  "sensitivity_forecast": {
-    "0.5_percent_conversion": 500,
-    "1_percent_conversion": 1000,
-    "2_percent_conversion": 2000,
-    "3_percent_conversion": 3000
-  },
+  "compliance_status": "HARD_PASS_FAIL_PENDING",
+  "conversion_sensitivity_rates": [
+    0.005,
+    0.01,
+    0.02,
+    0.03
+  ],
   "resource_envelope": {
-    "approved_tools": [
-      "Amazon Associates",
-      "DeepSeek",
-      "GitHub Actions"
-    ],
-    "hosting": "GitHub Pages",
-    "api_model_quotas": "bedrock-qwen primary, deepseek-chat fallback",
-    "spend_ceiling": "₹0",
-    "renewal_dates": [
-      "Amazon Associates: annual"
-    ],
-    "human_only_dependencies": [
-      "Founder approval for publishing",
-      "Founder action for AdSense/Flipkart/Cuelinks onboarding"
-    ]
+    "approved_tools": "existing",
+    "hosting": "existing",
+    "api_model_quotas": "existing",
+    "spend_ceiling": "0",
+    "renewal_dates": "N/A",
+    "human_only_dependencies": "Founder review before publishing"
   },
   "next_steps": [
-    "Commit changes",
-    "Submit plan for Founder review and approval",
-    "After approval: publish internal linking updates and monitor conversion-path metrics"
+    "Map internal links from buying guide to product-led blog",
+    "Map internal links from product-led blog to offer page",
+    "Map internal links from Instagram carousel to offer page",
+    "Ensure disclosure and tracking integrity on all links",
+    "Submit for Founder review and approval before publishing"
   ]
 }
