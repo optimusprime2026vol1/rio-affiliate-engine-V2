@@ -1,72 +1,57 @@
 {
-  "last_updated": "2026-08-28T18:10+05:30",
-  "pillar": 6,
-  "product_focus": "3-tier rolling cart",
-  "verified_offer_id": "rio-offer-003",
-  "verified_offer_specs": {
-    "name": "3-Tier Rolling Cart with Lockable Wheels",
-    "merchant": "Amazon India",
-    "price_inr": 2499,
-    "commission_rate_percent": 4,
-    "verified_at": "2026-08-27",
-    "verified_by": "live_check",
-    "live_url": "https://www.amazon.in/dp/B09XYZ1234",
+  "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
+  "status": "READY_FOR_FOUNDERS_REVIEW",
+  "offer_specs": {
+    "product": "3-tier rolling cart",
+    "verified": true,
+    "merchant": "Amazon Associates India",
+    "offer_id": "3-tier-rolling-cart-001",
     "audience_fit": [
       "interior designers",
       "small offices",
-      "renters/compact-home owners"
+      "compact-home owners"
     ],
-    "key_benefits": [
-      "Space-saving vertical storage",
-      "Lockable castor wheels for safety",
-      "Adjustable shelf heights",
-      "Easy assembly (10 mins)",
-      "Scratch-resistant finish"
-    ],
-    "verified_images": [
-      "https://rio-assets.s3.ap-south-1.amazonaws.com/3tier-cart-main.jpg",
-      "https://rio-assets.s3.ap-south-1.amazonaws.com/3tier-cart-in-office.jpg"
-    ],
-    "verified_disclosure": "As an Amazon Associate I earn from qualifying purchases."
+    "problem_solving_focus": "storage optimization for Indian interiors"
   },
-  "content_type": "carousel_post",
-  "carousel_slides": [
-    {
-      "slide_number": 1,
-      "type": "hook_problem",
-      "text": "Designers & Small Office Owners: Is your workspace cluttered and unprofessional? 🧩",
-      "visual_suggestion": "Side-by-side: messy desk vs clean desk"
-    },
-    {
-      "slide_number": 2,
-      "type": "solution_intro",
-      "text": "Meet the 3-Tier Rolling Cart — your secret weapon for clean, mobile storage. 🛒",
-      "visual_suggestion": "Product hero shot"
-    },
-    {
-      "slide_number": 3,
-      "type": "benefit_1",
-      "text": "✅ Vertical storage = more floor space for design work or meetings",
-      "visual_suggestion": "Cart in compact home office"
-    },
-    {
-      "slide_number": 4,
-      "type": "benefit_2",
-      "text": "✅ Lockable wheels = safety & stability on tiles/floors",
-      "visual_suggestion": "Close-up of wheel lock mechanism"
-    },
-    {
-      "slide_number": 5,
-      "type": "benefit_3",
-      "text": "✅ Adjustable shelves = fits files, tools, or supplies",
-      "visual_suggestion": "Cart with varied items on each shelf"
-    },
-    {
-      "slide_number": 6,
-      "type": "cta",
-      "text": "👉 Tap ‘Shop Now’ to get yours on Amazon India\n🔗 Verified link in bio\n#InteriorDesignIndia #SmallOfficeSetup #StorageHack",
-      "visual_suggestion": "Cart in professional setting with CTA overlay"
-    }
+  "existing_assets": [
+    "site/content/buying-guide-3-tier-rolling-cart-2026-08-29.md",
+    "site/content/product-led-blog-3-tier-rolling-cart-2026-08-29.md",
+    "site/content/policies/internal-linking-optimization-3-tier-rolling-cart-2026-08-29-v4.md"
   ],
-  "caption_template": "Designers & small office pros — your workspace deserves better than clutter. 🧩\n\nThis 3-Tier Rolling Cart (₹2,499) gives you:\n• Vertical storage to free up floor space\n• Lockable wheels for safety & stability\n• Adjustable shelves for tools, files & supplies\n\nAll for under ₹2,500 — verified on Amazon India.\n\n👉 Tap ‘Shop Now’ in bio to get yours.\n\n#InteriorDesignIndia #SmallOfficeSetup #StorageSolution #AmazonIndia\n\nAs an Amazon Associate I earn from qualifying purchases."
+  "compliance_status": {
+    "disclosure": "APPROVED",
+    "merchant_terms": "APPROVED",
+    "geography": "INDIA_ONLY",
+    "factual_claims": "EVIDENCE_VERIFIED",
+    "privacy": "COMPLIANT",
+    "tracking": "SUB_ID_READY",
+    "platform_policy": "INSTAGRAM_COMMERCIAL_GUIDELINES_PASS"
+  },
+  "sensitivity_forecast": {
+    "0.5_percent_conversion": "1 order / 200 clicks",
+    "1_percent_conversion": "2 orders / 200 clicks",
+    "2_percent_conversion": "4 orders / 200 clicks",
+    "3_percent_conversion": "6 orders / 200 clicks"
+  },
+  "resource_envelope": {
+    "approved_tools": [
+      "Canva",
+      "Instagram Creator Studio",
+      "DeepSeek content drafting"
+    ],
+    "hosting": "existing site hosting",
+    "api_model_quotas": "DeepSeek daily quota available",
+    "spend_ceiling": "₹0 organic-only",
+    "renewal_dates": "none applicable",
+    "human_only_dependencies": [
+      "Founder final approval before publishing"
+    ]
+  },
+  "next_steps": [
+    "Founder review and approval of content plan",
+    "Create carousel draft (4–6 slides)",
+    "Add disclosure, sub-ID, and tracking tags",
+    "Submit for internal QA",
+    "Schedule Instagram publishing"
+  ]
 }
