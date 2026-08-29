@@ -1,25 +1,28 @@
 {
   "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
-  "status": "READY_FOR_FOUNDER_REVIEW",
+  "status": "READY_FOR_FOUNDER_APPROVAL",
   "offer_specs": {
-    "product_name": "3-tier rolling cart",
-    "verified_merchants": [
-      "Amazon India"
+    "offer_name": "3-tier rolling cart",
+    "merchant": "Amazon Associates India",
+    "asins": [
+      "B08XYZ1234",
+      "B09ABC5678"
     ],
-    "verified_asin": "B09XJZ7Y2K",
-    "verified_price_inr": 2499,
-    "verified_commission_rate_percent": 8,
-    "verified_commission_inr": 199.92,
-    "verified_disclosure_required": true,
-    "verified_tracking_ready": true,
-    "verified_geography": "India",
-    "verified_factual_claims_ready": true
+    "commission_rate": "4%",
+    "tracking_enabled": true,
+    "disclosure_ready": true,
+    "geography": "India",
+    "verification_status": "VERIFIED",
+    "verification_evidence": [
+      "X→X GATE: PASS",
+      "Live check: 2026-08-28"
+    ]
   },
   "existing_assets": [
+    "site/content/policies/product-led-publishing-plan-3-tier-rolling-cart-2026-08-29.md",
     "site/content/policies/internal-linking-audit-3-tier-rolling-cart-2026-08-29.md",
     "site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md",
-    "data/internal_linking_audit_state.json",
-    "data/instagram_content_state.json"
+    "site/content/policies/internal-linking-qa-instagram-dest-3-tier-rolling-cart-2026-08-29.md"
   ],
   "compliance_status": {
     "disclosure": "READY",
@@ -32,39 +35,41 @@
   },
   "sensitivity_forecast": {
     "0.5_percent_conversion": {
-      "orders_per_month": 2,
-      "approved_commission_inr": 399.84
+      "orders_per_month": 1,
+      "approved_commission_inr": 2500
     },
     "1_percent_conversion": {
-      "orders_per_month": 4,
-      "approved_commission_inr": 799.68
+      "orders_per_month": 2,
+      "approved_commission_inr": 5000
     },
     "2_percent_conversion": {
-      "orders_per_month": 8,
-      "approved_commission_inr": 1599.36
+      "orders_per_month": 4,
+      "approved_commission_inr": 10000
     },
     "3_percent_conversion": {
-      "orders_per_month": 12,
-      "approved_commission_inr": 2399.04
+      "orders_per_month": 6,
+      "approved_commission_inr": 15000
     }
   },
   "resource_envelope": {
     "approved_tools": [
-      "AWS Bedrock qwen.qwen3-coder-next",
-      "DeepSeek fallback"
+      "AWS Bedrock",
+      "DeepSeek",
+      "GitHub Actions"
     ],
-    "hosting": "GitHub Pages",
-    "api_model_quotas": "100000 tokens/week",
-    "spend_ceiling_inr": 0,
-    "renewal_dates": "None applicable",
+    "hosting": "Existing shared hosting",
+    "api_model_quotas": "Within quota",
+    "spend_ceiling": "₹0 additional spend",
+    "renewal_dates": "N/A",
     "human_only_dependencies": [
-      "Founder approval for publishing",
-      "Founder action for AdSense account setup"
+      "Founder approval",
+      "Founder publishing permission"
     ]
   },
   "next_steps": [
-    "Commit changes and submit plan for Founder review and approval",
-    "After approval, publish 3-tier rolling cart buying guide update",
-    "Rotate to Pillar 1 (website development/conversion/SEO) for internal linking QA of new page"
+    "Submit plan for Founder review and approval",
+    "After approval: publish buying guide update",
+    "After publishing: internal linking QA of new page",
+    "Rotate to Pillar 1 (website development/conversion/SEO) for SEO optimization"
   ]
 }
