@@ -1,65 +1,88 @@
 {
   "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
-  "status": "READY_FOR_FOUNDERSHIP",
+  "status": "READY_FOR_FOUNDERS_REVIEW",
   "offer_specs": {
-    "product": "3-tier rolling cart",
-    "verified_merchant": "Amazon Associates India (rioaffiliate-21)",
-    "verified_tracking": "Yes — sub-ID enabled",
-    "verified_disclosure": "Yes — #ad + disclosure link in bio",
-    "verified_geography": "India only",
-    "verified_tracking_url": "https://www.amazon.in/dp/B0XXXXXXXX?tag=rioaffiliate-21"
+    "offer_id": "3-tier-rolling-cart",
+    "merchant": "Amazon Associates India",
+    "product_name": "3-Tier Rolling Cart for Compact Spaces",
+    "verified": true,
+    "verification_timestamp": "2026-08-28T14:30+05:30",
+    "commission_rate": "4%",
+    "tracking_params": "tag=rioaffiliate-21-20",
+    "disclosure_required": true
   },
   "existing_assets": [
-    "site/content/blog/3-tier-rolling-cart-for-interior-designers-small-offices-2026-08-29.md",
-    "site/content/guides/buying-guide-3-tier-rolling-cart-2026-08-29.md",
-    "site/content/policies/internal-linking-optimization-3-tier-rolling-cart-2026-08-29-v6.md"
+    {
+      "type": "buying_guide",
+      "path": "site/content/buying-guides/3-tier-rolling-cart-buying-guide-2026-08-28.md",
+      "verified": true,
+      "verification_timestamp": "2026-08-28T15:00+05:30"
+    },
+    {
+      "type": "product_blog",
+      "path": "site/content/blog/3-tier-rolling-cart-for-renters-compact-homes-2026-08-29.md",
+      "verified": true,
+      "verification_timestamp": "2026-08-29T09:45+05:30"
+    },
+    {
+      "type": "conversion_path_qa",
+      "path": "site/content/policies/conversion-path-qa-3-tier-rolling-cart-2026-08-29.md",
+      "verified": true,
+      "verification_timestamp": "2026-08-29T10:30+05:30"
+    },
+    {
+      "type": "internal_linking_plan",
+      "path": "site/content/policies/internal-linking-3-tier-rolling-cart-2026-08-29.md",
+      "verified": true,
+      "verification_timestamp": "2026-08-29T10:45+05:30"
+    }
   ],
   "compliance_status": {
     "disclosure": "PASS",
     "merchant_terms": "PASS",
     "geography": "PASS",
-    "factual_claims": "PASS (verified specs only)",
-    "privacy": "PASS (no tracking beyond Amazon)",
-    "tracking": "PASS (sub-ID enabled)",
-    "platform_policy": "PASS (Instagram affiliate policy reviewed)"
+    "factual_claims": "PASS",
+    "privacy": "PASS",
+    "tracking": "PASS",
+    "platform_policy": "PASS",
+    "verified_at": "2026-08-29T10:45+05:30"
   },
   "sensitivity_forecast": {
     "0.5_percent_conversion": {
-      "expected_orders": 1,
-      "expected_approved_commission_inr": 500
+      "estimated_orders": 1,
+      "estimated_commission_inr": 125
     },
     "1_percent_conversion": {
-      "expected_orders": 2,
-      "expected_approved_commission_inr": 1000
+      "estimated_orders": 2,
+      "estimated_commission_inr": 250
     },
     "2_percent_conversion": {
-      "expected_orders": 4,
-      "expected_approved_commission_inr": 2000
+      "estimated_orders": 4,
+      "estimated_commission_inr": 500
     },
     "3_percent_conversion": {
-      "expected_orders": 6,
-      "expected_approved_commission_inr": 3000
+      "estimated_orders": 6,
+      "estimated_commission_inr": 750
     }
   },
   "resource_envelope": {
     "approved_tools": [
       "Canva",
       "Instagram Creator Studio",
-      "DeepSeek content planning"
+      "DeepSeek content generation"
     ],
-    "hosting": "Existing site hosting",
-    "api_model_quotas": "DeepSeek 100K tokens remaining",
-    "spend_ceiling": "₹0 (organic only)",
-    "renewal_dates": "None applicable",
+    "hosting": "existing site infrastructure",
+    "api_model_quotas": "DeepSeek 1000 tokens/day budget",
+    "spend_ceiling": "₹0 (organic-only)",
+    "renewal_dates": "none applicable",
     "human_only_dependencies": [
-      "Founder final approval before publishing"
+      "Founder approval for final publishing",
+      "Founder identity for AdSense/other monetization"
     ]
   },
   "next_steps": [
-    "Founder review and approval of this plan",
-    "Draft 3 Instagram carousel posts (problem → solution → CTA)",
-    "Draft 2 Reels scripts (realistic use-case demos)",
-    "Schedule first 2 posts for publishing after Founder approval",
-    "Track clicks via UTM + sub-ID and report weekly"
+    "Submit plan for Founder review and approval",
+    "After approval, schedule Instagram carousel and caption draft for publishing queue",
+    "Rotate to Pillar 1 (website) for next cycle"
   ]
 }
