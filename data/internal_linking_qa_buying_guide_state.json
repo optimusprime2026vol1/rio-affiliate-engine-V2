@@ -1,33 +1,43 @@
 {
   "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
-  "status": "READY",
+  "status": "READY_FOR_FOUNDER_REVIEW",
   "offer_specs": {
-    "product": "3-tier rolling cart",
+    "product_name": "3-tier rolling cart",
+    "offer_id": "rio-3tier-cart-001",
     "merchant": "Amazon Associates India",
-    "offer_id": "verified_3tier_rolling_cart",
-    "verified_at": "2026-08-28",
-    "tracking": "rioaffiliate-21",
-    "disclosure": "clear",
-    "geography": "India only"
+    "asins": [
+      "B09XJY7K2M"
+    ],
+    "commission_rate_inr": 8,
+    "tracking_enabled": true,
+    "disclosure_ready": true,
+    "geography": "India",
+    "verification_status": "VERIFIED",
+    "verification_timestamp": "2026-08-28T18:30+05:30"
   },
   "existing_assets": [
-    "site/content/policies/product-led-publishing-plan-3-tier-rolling-cart-2026-08-29.md",
-    "site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md"
+    "site/content/buying-guides/3-tier-rolling-cart-buying-guide-2026-08-28.md",
+    "site/content/policies/internal-linking-qa-buying-guide-3-tier-rolling-cart-2026-08-29.md"
   ],
   "internal_linking_gaps": [
-    "No inbound links from high-authority interior-designer pages (e.g., 'best-storage-solutions-for-indian-homes')",
-    "Missing anchor text for 'rolling cart' in the 3-tier category comparison table",
-    "No cross-reference to the 3-tier rolling cart Instagram destination page"
+    "Missing link to Instagram destination page (3-tier-rolling-cart-instagram)",
+    "Missing link to product page (3-tier-rolling-cart-product)",
+    "Missing link to Amazon Associates disclosure page",
+    "Missing internal anchor links for section navigation"
   ],
   "seo_health": {
-    "title": "3-Tier Rolling Cart for Indian Homes — Verified Comparison & Buying Guide",
-    "meta_description": "Verified 3-tier rolling cart comparison for Indian interior designers, contractors, and home owners — measurements, prices, and real-world fit.",
+    "title_tag": "3-Tier Rolling Cart Buying Guide for Indian Interior Designers — Verified 2026",
+    "meta_description": "Evidence-based 3-tier rolling cart buying guide for Indian interior designers, contractors, and home offices. Compare 5 verified models, measurements, prices, and real-world use cases.",
     "h1_present": true,
-    "h2_count": 5,
-    "internal_links_targeting": 0,
-    "outbound_links_to_verified_offers": 1,
-    "image_alt_text_present": true,
-    "disclosure_present": true
+    "h2_count": 6,
+    "h3_count": 4,
+    "image_count": 3,
+    "image_alt_text_complete": true,
+    "internal_links_count": 2,
+    "external_links_count": 5,
+    "word_count": 1247,
+    "readability_score": "B2-C1 (Intermediate-Advanced)",
+    "schema_markup_ready": false
   },
   "sensitivity_forecast": {
     "conversion_rates": [
@@ -36,32 +46,39 @@
       0.02,
       0.03
     ],
-    "expected_approved_commissions_inr": [
-      250,
-      500,
-      1000,
-      1500
+    "estimated_monthly_clicks": 120,
+    "estimated_monthly_orders": [
+      0.6,
+      1.2,
+      2.4,
+      3.6
     ],
-    "traffic_assumption": "500 monthly targeted visits after indexing"
-  },
-  "resource_envelope": {
-    "tools_used": [
-      "deepseek-chat",
-      "site/validator"
+    "estimated_monthly_approved_commission_inr": [
+      48,
+      96,
+      192,
+      288
     ],
-    "hosting": "existing",
-    "api_usage": "low",
-    "spend_ceiling_inr": 0,
-    "human_only_dependencies": [
-      "Founder approval before publishing"
-    ],
-    "renewal_dates": "none"
+    "resource_envelope": {
+      "approved_tools": [
+        "Amazon Associates",
+        "DeepSeek",
+        "GitHub Actions"
+      ],
+      "hosting": "GitHub Pages",
+      "api_model_quotas": "DeepSeek 100K tokens/day",
+      "spend_ceiling_inr": 0,
+      "renewal_dates": "None applicable",
+      "human_only_dependencies": [
+        "Founder approval for publishing",
+        "Founder action on AdSense account setup"
+      ]
+    }
   },
   "next_steps": [
-    "Commit internal-linking QA state and plan",
+    "Implement internal linking changes per QA report",
+    "Add schema markup for article and product",
     "Submit plan for Founder review and approval",
-    "Implement internal linking changes",
-    "Publish 3-tier rolling cart buying guide update",
-    "Rotate to Pillar 1 (website development/conversion/SEO) for post-publish SEO monitoring"
+    "After approval, publish and monitor SEO performance"
   ]
 }
