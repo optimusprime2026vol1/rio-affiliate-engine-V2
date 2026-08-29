@@ -1,8 +1,8 @@
 {
   "status": "WAITING",
   "current_task": "Rotate to Pillar 1 (website development/conversion/SEO) — now least-used pillar (0 *new* completed tasks since last rotation); execute verified, evidence-based internal-linking audit for the 3-tier rolling cart using existing verified offer specs and high-intent assets to ensure internal navigation supports conversion and SEO before publishing.",
-  "started_at": "2026-08-29T13:00:33+05:30",
-  "updated_at": "2026-08-29T13:00:48+05:30",
+  "started_at": "2026-08-29T13:01:35+05:30",
+  "updated_at": "2026-08-29T13:01:55+05:30",
   "ai_engine": "bedrock-qwen",
   "last_completed": "Rotate to Pillar 6 (Instagram sales/content execution) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based Instagram content plan for the 3-tier rolling cart using existing verified offer specs, high-intent assets, and Founder-approved content policy to prepare for safe, compliant publishing and conversion.",
   "last_result": "PORTFOLIO_GUARD: repeated task/pillar concentration suppressed; next cycle must rotate.",
@@ -15,20 +15,6 @@
   "blocker": null,
   "founder_action_needed": false,
   "history": [
-    {
-      "at": "2026-08-29T12:01:53+05:30",
-      "status": "COMPLETED",
-      "task": "Rotate to Pillar 5 (Flipkart expansion) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based Flipkart integration plan using existing verified offer specs, audience fit, and compliance status to prepare for safe, compliant platform integration before Founder-gated account setup.",
-      "engine": "bedrock-qwen",
-      "result": "PILLAR:5, task: Draft verified, evidence-based Flipkart integration plan using existing verified offer specs, audience fit, and compliance status to prepare for safe, compliant platform integration before Founder-gated account setup, why: Pillar 5 has 0 *new* completed tasks since last rotation; with ₹0 revenue and 17 ready offers, preparing Flipkart integration is the highest-leverage safe task to diversify merchant mix and increase commission potential before publishing, changes: writes `data/flipkart_integration_state.json` (valid JSON with policy ID, status, offer specs, existing assets, compliance status, sensitivity forecast, resource envelope, next steps) and `site/content/policies/flipkart-integration-plan-2026-08-29.md` (full plan covering why, current state, compliance & tracking, sensitivity forecast, resource envelope, next steps), NEXT_TASK: After validator pass, commit changes, submit plan for Founder review and approval, then rotate to Pillar 1 (website development/conversion/SEO) for parallel progress."
-    },
-    {
-      "at": "2026-08-29T12:15:35+05:30",
-      "status": "WORKING",
-      "task": "After validator pass, commit changes, submit plan for Founder review and approval, then rotate to Pillar 1 (website development/conversion/SEO) for parallel progress.",
-      "engine": "selecting",
-      "result": null
-    },
     {
       "at": "2026-08-29T12:15:45+05:30",
       "status": "WORKING",
@@ -150,6 +136,20 @@
     },
     {
       "at": "2026-08-29T13:00:48+05:30",
+      "status": "WAITING",
+      "task": "Rotate to Pillar 1 (website development/conversion/SEO) — now least-used pillar (0 *new* completed tasks since last rotation); execute verified, evidence-based internal-linking audit for the 3-tier rolling cart using existing verified offer specs and high-intent assets to ensure internal navigation supports conversion and SEO before publishing.",
+      "engine": "bedrock-qwen",
+      "result": "PORTFOLIO_GUARD: repeated task/pillar concentration suppressed; next cycle must rotate."
+    },
+    {
+      "at": "2026-08-29T13:01:35+05:30",
+      "status": "WORKING",
+      "task": "Choose an independent task from a least-used eligible Phase-2 pillar.",
+      "engine": "selecting",
+      "result": null
+    },
+    {
+      "at": "2026-08-29T13:01:55+05:30",
       "status": "WAITING",
       "task": "Rotate to Pillar 1 (website development/conversion/SEO) — now least-used pillar (0 *new* completed tasks since last rotation); execute verified, evidence-based internal-linking audit for the 3-tier rolling cart using existing verified offer specs and high-intent assets to ensure internal navigation supports conversion and SEO before publishing.",
       "engine": "bedrock-qwen",
