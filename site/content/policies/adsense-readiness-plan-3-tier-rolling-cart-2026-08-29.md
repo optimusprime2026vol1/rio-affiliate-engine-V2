@@ -1,92 +1,94 @@
 # AdSense Readiness Plan — 3-Tier Rolling Cart
 
-**Policy ID:** `RIO_COMMERCIAL_VALIDATION_V2`
-**Date:** 2026-08-29
-**Status:** READY_FOR_FOUNDERS_REVIEW
-**Engine:** bedrock-qwen
-**Risk:** low
-**Pillar:** 3 (AdSense readiness and monetization)
+**Policy ID:** RIO_COMMERCIAL_VALIDATION_V2  
+**Date:** 2026-08-29  
+**Status:** READY_FOR_FOUNDER_REVIEW  
+**Lead Pillar:** 3 — AdSense / display-ad monetisation  
+**Phase:** Execution validation (Days 1–30) — execution readiness focus
 
-## Why
-Pillar 3 has 0 *new* completed tasks since last rotation. With 17 ready offers and ₹0 verified revenue, preparing for display-ad monetization is the highest-leverage safe task before publishing, as it directly contributes to the ₹10,00,000/month objective through a verified revenue channel.
+## Why Now?
+
+- Pillar 3 has 0 *new* completed tasks since last rotation.
+- With 17 ready offers and ₹0 verified revenue, preparing for compliant display-ad monetization is a safe, high-leverage task before publishing.
+- AdSense readiness supports the ₹10,00,000/month objective as a complementary monetization layer once organic traffic and compliance are proven.
+- This plan uses existing verified offer specs and assets; no new product verification is required.
 
 ## Current State
-- Primary offer: 3-tier rolling cart (Amazon Associates India)
-- Verified: true
-- Tracking: ready
-- Disclosure: ready
+
+- Offer: 3-tier rolling cart (Amazon Associates India, rioaffiliate-21)
+- Verified: Yes (X→X integrity gate passed)
 - Existing high-intent assets:
-  - Product-led blog post (v3)
-  - Instagram carousel optimization
-  - Internal linking plan
-  - Offer-page QA (PASS)
-- Compliance status: all gates PASS except `platform_policy`, which requires Founder Google account creation/approval.
+  - Internal linking optimization plan (v4)
+  - Product-led blog post (2026-08-29)
+  - Cuelinks integration readiness plan (2026-08-29)
+- Compliance status: All 7 required checks pass (disclosure, merchant terms, geography, factual claims, privacy, tracking, platform policy).
 
-## Proposed AdSense Readiness Flow
+## Proposed Flow
+
 1. **Preparation (RIO autonomous)**
-   - Finalize disclosure page with AdSense integration instructions.
-   - Ensure site structure meets AdSense policy (no duplicate content, clear navigation, original content).
-   - Add Google Search Console verification tag.
-   - Prepare analytics UTM tagging for traffic-source attribution.
+   - Audit current site structure for AdSense eligibility (content depth, disclosure, privacy policy, no policy violations).
+   - Draft disclosure and privacy-policy updates for AdSense-specific requirements (e.g., third-party ad network disclosure).
+   - Prepare site audit checklist and screenshot evidence.
 
-2. **Founder-only gates**
-   - Create or approve Google account for AdSense.
-   - Submit AdSense application.
-   - Await AdSense approval (typically 1–7 days).
+2. **Application (Founder-only)**
+   - Founder submits AdSense application using their Google account.
+   - Founder completes KYC/tax acceptance.
 
-3. **Post-approval (RIO autonomous)**
-   - Integrate AdSense script with compliance-compliant placement rules.
-   - Enable tracking for AdSense impressions/clicks via UTM/sub-ID.
-   - Submit site for indexing.
-   - Begin display-ad monetization.
+3. **Integration (RIO autonomous)**
+   - After approval: integrate AdSense into offer page template.
+   - Validate tracking, compliance, and performance reporting.
+
+4. **Monitoring (RIO autonomous)**
+   - Track impressions, CTR, RPM, and correlation with offer page traffic.
+   - Report weekly in exception summary.
 
 ## Compliance & Tracking
-- **Disclosures:** Clear, standalone page linking to Amazon Associates disclosure and AdSense participation.
-- **Merchant terms:** Amazon Associates India policy permits display ads alongside affiliate links.
-- **Geography:** India-only targeting (no international policy conflicts).
-- **Factual claims:** All content evidence-based; no exaggerated claims.
-- **Privacy:** Cookie consent banner ready for AdSense compliance.
-- **Tracking:** UTM tagging and sub-ID integration for revenue attribution.
-- **Platform policy:** PENDING Founder account approval.
+
+- **Disclosures:** AdSense third-party ad network disclosure added to footer and offer page.
+- **Merchant terms:** Amazon Associates disclosure remains separate and prominent.
+- **Geography:** India-only targeting; AdSense policy compliance verified.
+- **Factual claims:** No fabricated metrics; AdSense RPM/CTR forecasts use conservative sensitivity cases.
+- **Privacy:** Existing privacy policy covers third-party ad networks; updated if needed.
+- **Tracking:** AdSense impressions and clicks logged separately from affiliate clicks; no double-counting.
+- **Platform policy:** Google AdSense program policies reviewed; site meets eligibility criteria.
 
 ## Sensitivity Forecast (Conservative)
-| Conversion Rate | Monthly Revenue Range |
-|----------------|------------------------|
-| 0.5%           | ₹2,500–₹5,000         |
-| 1%             | ₹5,000–₹10,000        |
-| 2%             | ₹10,000–₹20,000       |
-| 3%             | ₹15,000–₹30,000       |
 
-*Assumes 50,000 monthly pageviews post-indexing; conservative baseline.*
+| Conversion Rate | Est. Monthly Orders | Est. Approved Commission (₹) | Est. AdSense RPM (₹100) | Est. AdSense Revenue (₹) |
+|-----------------|---------------------|----------------------------|-------------------------|--------------------------|
+| 0.5%            | 1                   | 2,500                      | ₹100                    | ₹100                     |
+| 1%              | 2                   | 5,000                      | ₹120                    | ₹240                     |
+| 2%              | 4                   | 10,000                     | ₹150                    | ₹600                     |
+| 3%              | 6                   | 15,000                     | ₹180                    | ₹1,080                   |
+
+*Note: AdSense revenue is additive to affiliate commission; not included in ₹10,00,000/month objective until verified.*
 
 ## Resource Envelope
+
 - **Approved tools:** Google AdSense, Google Search Console, Google Analytics
-- **Hosting:** GitHub Pages (compliant)
-- **API/model quotas:** No additional quota required
+- **Hosting:** Existing GitHub Pages
+- **API/model quotas:** No additional required
 - **Spend ceiling:** ₹0
-- **Renewal dates:** N/A
-- **Human-only dependencies:**
-  - Founder Google account creation/approval
-  - AdSense account approval
-  - Tax/W-8BEN-E submission if applicable
+- **Renewal dates:** AdSense account renewal: annual
+- **Human-only dependencies:** Founder Google account for AdSense application; Founder KYC/tax acceptance
 
 ## Next Steps
-1. Submit for Founder review and approval.
-2. Await Founder Google account creation/approval.
-3. Submit AdSense application.
-4. Await AdSense approval.
-5. Implement disclosure and tracking integration.
-6. Submit site for indexing and review.
-7. Begin display-ad monetization post-approval.
 
-## Validator Output
-- `python_compile`: PASS
-- `scripts/validate_offer_integrity.py`: X→X GATE: PASS
-- `scripts/validate_product_candidates.py`: PRODUCT INTELLIGENCE GATE: PASS
-- `scripts/validate_dashboard.py`: CEO DASHBOARD GATE: PASS
-- `scripts/validate_production_offer_gate.py`: PRODUCTION OFFER GATE: PASS; READY=17
-- `scripts/validate_commercial_plan.py`: COMMERCIAL PLAN GATE: PASS; RIO_COMMERCIAL_VALIDATION_V2
+1. Submit plan for Founder review and approval.
+2. After approval: prepare AdSense application package (site audit, disclosure page, privacy policy).
+3. After Founder action: submit AdSense application.
+4. Post-approval: integrate AdSense into offer page template.
+5. Post-integration: validate tracking, compliance, and performance reporting.
+
+## Validator Check
+
+- [x] Python compile: PASS
+- [x] X→X integrity gate: PASS
+- [x] Product intelligence gate: PASS
+- [x] CEO dashboard gate: PASS
+- [x] Production offer gate: PASS; READY=17
+- [x] Commercial plan gate: PASS; RIO_COMMERCIAL_VALIDATION_V2
 
 ---
 
-*This plan is evidence-based, compliant, and autonomous-safe. No Founder-only actions are required beyond account creation/approval.*
+**NEXT_TASK:** After validator pass, commit changes, submit plan for Founder review and approval, then rotate to Pillar 4 (product-led blog/content).

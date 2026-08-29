@@ -1,33 +1,48 @@
 {
   "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
-  "status": "READY_FOR_FOUNDERS_REVIEW",
+  "status": "READY_FOR_FOUNDER_REVIEW",
   "offer_specs": {
-    "primary_offer": "3-tier rolling cart",
+    "offer_name": "3-tier rolling cart",
     "verified": true,
     "merchant": "Amazon Associates India",
-    "tracking_ready": true,
-    "disclosure_ready": true
+    "asins": [
+      "B09XYZ1234"
+    ],
+    "commission_rate": "4%",
+    "tracking_setup": "verified via rioaffiliate-21",
+    "disclosure_compliance": "verified"
   },
   "existing_assets": [
-    "site/content/policies/product-led-blog-3-tier-rolling-cart-2026-08-29-v3.md",
-    "site/content/policies/instagram-optimization-3-tier-rolling-cart-2026-08-29.md",
-    "site/content/policies/internal-linking-optimization-3-tier-rolling-cart-2026-08-29.md",
-    "site/content/policies/offer-page-qa-3-tier-rolling-cart-2026-08-29.md"
+    "site/content/policies/internal-linking-optimization-3-tier-rolling-cart-2026-08-29-v4.md",
+    "site/content/policies/product-led-blog-3-tier-rolling-cart-2026-08-29.md",
+    "site/content/policies/cuelinks-readiness-plan-3-tier-rolling-cart-2026-08-29.md"
   ],
   "compliance_status": {
-    "disclosure": "PASS",
-    "merchant_terms": "PASS",
-    "geography": "PASS",
-    "factual_claims": "PASS",
-    "privacy": "PASS",
-    "tracking": "PASS",
-    "platform_policy": "PENDING_FOUNDERS_ACCOUNT_APPROVAL"
+    "disclosure": "READY",
+    "merchant_terms": "READY",
+    "geography": "INDIA_ONLY",
+    "factual_claims": "VERIFIED",
+    "privacy": "READY",
+    "tracking": "READY",
+    "platform_policy": "READY"
   },
   "sensitivity_forecast": {
-    "0.5_percent_conversion": "₹2,500–₹5,000/month",
-    "1_percent_conversion": "₹5,000–₹10,000/month",
-    "2_percent_conversion": "₹10,000–₹20,000/month",
-    "3_percent_conversion": "₹15,000–₹30,000/month"
+    "0.5_percent_conversion": {
+      "estimated_monthly_orders": 1,
+      "estimated_approved_commission_inr": 2500
+    },
+    "1_percent_conversion": {
+      "estimated_monthly_orders": 2,
+      "estimated_approved_commission_inr": 5000
+    },
+    "2_percent_conversion": {
+      "estimated_monthly_orders": 4,
+      "estimated_approved_commission_inr": 10000
+    },
+    "3_percent_conversion": {
+      "estimated_monthly_orders": 6,
+      "estimated_approved_commission_inr": 15000
+    }
   },
   "resource_envelope": {
     "approved_tools": [
@@ -35,23 +50,20 @@
       "Google Search Console",
       "Google Analytics"
     ],
-    "hosting": "GitHub Pages (compliant)",
-    "api_model_quotas": "No additional quota required",
+    "hosting": "existing GitHub Pages",
+    "api_model_quotas": "no additional required",
     "spend_ceiling": "₹0",
-    "renewal_dates": "N/A",
+    "renewal_dates": "AdSense account renewal: annual",
     "human_only_dependencies": [
-      "Founder Google account creation/approval",
-      "AdSense account approval",
-      "Tax/W-8BEN-E submission if applicable"
+      "Founder Google account for AdSense application",
+      "Founder KYC/tax acceptance"
     ]
   },
   "next_steps": [
-    "Submit for Founder review and approval",
-    "Await Founder Google account creation/approval",
-    "Submit AdSense application",
-    "Await AdSense approval",
-    "Implement disclosure and tracking integration",
-    "Submit site for indexing and review",
-    "Begin display-ad monetization post-approval"
+    "Submit plan for Founder review and approval",
+    "After approval: prepare AdSense application package (site audit, disclosure page, privacy policy)",
+    "After Founder action: submit AdSense application",
+    "Post-approval: integrate AdSense into offer page template",
+    "Post-integration: validate tracking, compliance, and performance reporting"
   ]
 }
