@@ -1,0 +1,67 @@
+{
+  "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
+  "status": "READY",
+  "offer_specs": {
+    "product": "3-tier rolling cart",
+    "merchant": "Amazon Associates India",
+    "offer_id": "verified_3tier_rolling_cart",
+    "verified_at": "2026-08-28",
+    "tracking": "rioaffiliate-21",
+    "disclosure": "clear",
+    "geography": "India only"
+  },
+  "existing_assets": [
+    "site/content/policies/product-led-publishing-plan-3-tier-rolling-cart-2026-08-29.md",
+    "site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md"
+  ],
+  "internal_linking_gaps": [
+    "No inbound links from high-authority interior-designer pages (e.g., 'best-storage-solutions-for-indian-homes')",
+    "Missing anchor text for 'rolling cart' in the 3-tier category comparison table",
+    "No cross-reference to the 3-tier rolling cart Instagram destination page"
+  ],
+  "seo_health": {
+    "title": "3-Tier Rolling Cart for Indian Homes — Verified Comparison & Buying Guide",
+    "meta_description": "Verified 3-tier rolling cart comparison for Indian interior designers, contractors, and home owners — measurements, prices, and real-world fit.",
+    "h1_present": true,
+    "h2_count": 5,
+    "internal_links_targeting": 0,
+    "outbound_links_to_verified_offers": 1,
+    "image_alt_text_present": true,
+    "disclosure_present": true
+  },
+  "sensitivity_forecast": {
+    "conversion_rates": [
+      0.005,
+      0.01,
+      0.02,
+      0.03
+    ],
+    "expected_approved_commissions_inr": [
+      250,
+      500,
+      1000,
+      1500
+    ],
+    "traffic_assumption": "500 monthly targeted visits after indexing"
+  },
+  "resource_envelope": {
+    "tools_used": [
+      "deepseek-chat",
+      "site/validator"
+    ],
+    "hosting": "existing",
+    "api_usage": "low",
+    "spend_ceiling_inr": 0,
+    "human_only_dependencies": [
+      "Founder approval before publishing"
+    ],
+    "renewal_dates": "none"
+  },
+  "next_steps": [
+    "Commit internal-linking QA state and plan",
+    "Submit plan for Founder review and approval",
+    "Implement internal linking changes",
+    "Publish 3-tier rolling cart buying guide update",
+    "Rotate to Pillar 1 (website development/conversion/SEO) for post-publish SEO monitoring"
+  ]
+}
