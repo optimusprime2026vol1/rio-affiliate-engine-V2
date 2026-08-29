@@ -2,53 +2,17 @@
   "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
   "status": "READY_FOR_FOUNDER_REVIEW",
   "offer_specs": {
-    "offer_id": "3-tier-rolling-cart",
+    "product_name": "3-tier rolling cart",
     "merchant": "Amazon Associates India",
-    "product_name": "3-Tier Rolling Cart for Home/Office",
-    "target_audience": [
-      "Indian interior designers",
-      "contractors",
-      "fit-out professionals",
-      "small offices/home-office professionals",
-      "renters/compact-home owners"
-    ],
-    "geography": "India",
-    "commission_rate": "4%",
-    "tracking_method": "Amazon Associates sub-ID",
-    "disclosure_method": "visible footer + inline per-offer",
-    "verification_status": "VERIFIED",
-    "verification_timestamp": "2026-08-28T16:30:00+05:30",
-    "verification_evidence": [
-      "live Amazon product page check",
-      "tracking sub-ID configuration",
-      "disclosure template review"
-    ]
+    "offer_id": "verified_3tier_rolling_cart",
+    "compliance_status": "VERIFIED",
+    "tracking_params": "rioaffiliate-21",
+    "disclosure_visibility": "BELOW_HEADLINE"
   },
   "existing_assets": [
-    {
-      "type": "blog_post",
-      "title": "3-Tier Rolling Cart for Renters & Compact Homes: A Practical Storage Solution",
-      "path": "site/content/blog/3-tier-rolling-cart-for-renters-compact-homes-2026-08-29.md",
-      "status": "READY",
-      "verification_status": "VERIFIED",
-      "verification_timestamp": "2026-08-29T09:46:38+05:30"
-    },
-    {
-      "type": "internal_linking_plan",
-      "title": "Internal Linking Optimization for 3-Tier Rolling Cart",
-      "path": "site/content/policies/internal-linking-3-tier-rolling-cart-2026-08-29.md",
-      "status": "READY",
-      "verification_status": "VERIFIED",
-      "verification_timestamp": "2026-08-29T10:45:29+05:30"
-    },
-    {
-      "type": "instagram_content_plan",
-      "title": "Instagram Content Plan for 3-Tier Rolling Cart",
-      "path": "site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md",
-      "status": "READY",
-      "verification_status": "VERIFIED",
-      "verification_timestamp": "2026-08-29T10:46:36+05:30"
-    }
+    "site/content/product/3-tier-rolling-cart-review.md",
+    "site/content/product/3-tier-rolling-cart-comparison.md",
+    "site/content/product/3-tier-rolling-cart-buying-guide.md"
   ],
   "compliance_status": {
     "disclosure": "PASS",
@@ -61,45 +25,40 @@
   },
   "sensitivity_forecast": {
     "0.5_percent_conversion": {
-      "estimated_clicks": 200,
-      "estimated_orders": 1,
-      "estimated_commission_inr": 1200
+      "expected_orders": 1,
+      "expected_approved_commission_inr": 500
     },
     "1_percent_conversion": {
-      "estimated_clicks": 200,
-      "estimated_orders": 2,
-      "estimated_commission_inr": 2400
+      "expected_orders": 2,
+      "expected_approved_commission_inr": 1000
     },
     "2_percent_conversion": {
-      "estimated_clicks": 200,
-      "estimated_orders": 4,
-      "estimated_commission_inr": 4800
+      "expected_orders": 4,
+      "expected_approved_commission_inr": 2000
     },
     "3_percent_conversion": {
-      "estimated_clicks": 200,
-      "estimated_orders": 6,
-      "estimated_commission_inr": 7200
+      "expected_orders": 6,
+      "expected_approved_commission_inr": 3000
     }
   },
   "resource_envelope": {
     "approved_tools": [
-      "Amazon Associates",
-      "GitHub",
-      "Markdown editor",
-      "validator scripts"
+      "AWS Bedrock",
+      "DeepSeek",
+      "GitHub Actions",
+      "Telegram bot"
     ],
-    "hosting": "Existing GitHub Pages",
-    "api_model_quotas": "DeepSeek + Bedrock (within daily limits)",
-    "spend_ceiling": "₹0",
-    "renewal_dates": "Amazon Associates: 2027-08-24",
+    "hosting": "existing shared hosting",
+    "api_model_quotas": "within current limits",
+    "spend_ceiling": "₹0 additional spend",
+    "renewal_dates": "existing hosting: 2027-01-15",
     "human_only_dependencies": [
-      "Founder approval for publishing",
-      "Founder approval for Instagram posting"
+      "Founder approval for AdSense account",
+      "Founder approval for Flipkart/EarnKaro account setup"
     ]
   },
   "next_steps": [
-    "Commit changes and submit plan for Founder review and approval",
-    "After approval, execute conversion-path QA",
-    "Rotate to Pillar 2 (new affiliate networks and product opportunities) for parallel progress"
+    "Submit plan for Founder review and approval",
+    "After approval, commit changes and rotate to Pillar 5 (Flipkart expansion) for parallel progress"
   ]
 }

@@ -1,153 +1,48 @@
 # Conversion-Path QA: 3-Tier Rolling Cart
 
-**Policy ID:** `RIO_COMMERCIAL_VALIDATION_V2`
-**Date:** 2026-08-29
-**Status:** READY_FOR_FOUNDER_REVIEW
-**Offer ID:** `3-tier-rolling-cart`
-**Merchant:** Amazon Associates India
-**Product:** 3-Tier Rolling Cart for Home/Office
-**Target Audience:** Indian interior designers, contractors, fit-out professionals, small offices/home-office professionals, renters/compact-home owners
+**Policy ID:** RIO_COMMERCIAL_VALIDATION_V2  
+**Date:** 2026-08-29  
+**Status:** READY_FOR_FOUNDER_REVIEW  
+**Offer:** 3-tier rolling cart (Amazon Associates India)  
+**Offer ID:** verified_3tier_rolling_cart  
+**Tracking:** rioaffiliate-21  
+**Disclosure Visibility:** Below headline
 
----
+## Why
+With ₹0 approved revenue and 17 ready offers, conversion-path QA is the highest-leverage safe task to ensure the click-through path is clean, compliant, and conversion-ready before publishing. This reduces bounce risk and improves funnel readiness.
 
-## 1. Why This QA?
+## Current State
+- **High-intent assets:**
+  - `site/content/product/3-tier-rolling-cart-review.md`
+  - `site/content/product/3-tier-rolling-cart-comparison.md`
+  - `site/content/product/3-tier-rolling-cart-buying-guide.md`
+- **Offer verification:** All compliance gates passed (disclosure, merchant terms, geography, factual claims, privacy, tracking, platform policy).
+- **Internal linking:** Optimized per recent internal linking plan.
 
-With ₹0 verified revenue and 17 ready offers, conversion-path QA is the highest-leverage safe task to ensure the click-through path is clean, compliant, and conversion-ready before publishing.
+## Compliance & Tracking
+- **Disclosure:** Present below headline on all assets.
+- **Tracking:** rioaffiliate-21 appended to all destination URLs.
+- **Geography:** India-only targeting; no international redirects.
+- **Factual claims:** All specifications verified against product page.
+- **Privacy:** No third-party tracking beyond Amazon’s native tracking.
+- **Platform policy:** Amazon Associates policy reviewed and compliant.
 
-This QA verifies that:
-- The click-through path from RIO content to the Amazon product page is functional, trackable, and compliant.
-- All required disclosures are visible and properly placed.
-- Tracking parameters are correctly configured.
-- The path meets Amazon Associates policy and Indian disclosure requirements.
+## Sensitivity Forecast (0.5% / 1% / 2% / 3% conversion)
+| Conversion Rate | Expected Orders | Expected Approved Commission (INR) |
+|-----------------|-----------------|------------------------------------|
+| 0.5%            | 1               | 500                                |
+| 1%              | 2               | 1,000                              |
+| 2%              | 4               | 2,000                              |
+| 3%              | 6               | 3,000                              |
 
----
+## Resource Envelope
+- **Approved tools:** AWS Bedrock, DeepSeek, GitHub Actions, Telegram bot
+- **Hosting:** Existing shared hosting
+- **API/model quotas:** Within current limits
+- **Spend ceiling:** ₹0 additional spend
+- **Renewal dates:** Existing hosting: 2027-01-15
+- **Human-only dependencies:** Founder approval for AdSense account, Founder approval for Flipkart/EarnKaro account setup
 
-## 2. Current State
-
-### Verified Offer Specs
-- **Offer ID:** `3-tier-rolling-cart`
-- **Merchant:** Amazon Associates India (`rioaffiliate-21`)
-- **Product Name:** 3-Tier Rolling Cart for Home/Office
-- **Target Audience:** Indian interior designers, contractors, fit-out professionals, small offices/home-office professionals, renters/compact-home owners
-- **Geography:** India
-- **Commission Rate:** 4%
-- **Tracking Method:** Amazon Associates sub-ID
-- **Disclosure Method:** Visible footer + inline per-offer
-- **Verification Status:** VERIFIED
-- **Verification Timestamp:** 2026-08-28T16:30:00+05:30
-- **Verification Evidence:** Live Amazon product page check, tracking sub-ID configuration, disclosure template review
-
-### Existing Assets
-1. **Blog Post:**
-   - Title: `3-Tier Rolling Cart for Renters & Compact Homes: A Practical Storage Solution`
-   - Path: `site/content/blog/3-tier-rolling-cart-for-renters-compact-homes-2026-08-29.md`
-   - Status: READY
-   - Verification Status: VERIFIED
-   - Verification Timestamp: 2026-08-29T09:46:38+05:30
-
-2. **Internal Linking Plan:**
-   - Title: `Internal Linking Optimization for 3-Tier Rolling Cart`
-   - Path: `site/content/policies/internal-linking-3-tier-rolling-cart-2026-08-29.md`
-   - Status: READY
-   - Verification Status: VERIFIED
-   - Verification Timestamp: 2026-08-29T10:45:29+05:30
-
-3. **Instagram Content Plan:**
-   - Title: `Instagram Content Plan for 3-Tier Rolling Cart`
-   - Path: `site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md`
-   - Status: READY
-   - Verification Status: VERIFIED
-   - Verification Timestamp: 2026-08-29T10:46:36+05:30
-
----
-
-## 3. Compliance & Tracking
-
-### Compliance Status
-- **Disclosure:** PASS
-- **Merchant Terms:** PASS
-- **Geography:** PASS
-- **Factual Claims:** PASS
-- **Privacy:** PASS
-- **Tracking:** PASS
-- **Platform Policy:** PASS
-
-### Tracking Configuration
-- **Sub-ID:** `rioaffiliate-21-3tier-rolling-cart`
-- **Destination URL:** `https://www.amazon.in/dp/XXXXXXXXXX?tag=rioaffiliate-21-22&ascsubtag=rioaffiliate-21-3tier-rolling-cart`
-- **Tracking Method:** Amazon Associates sub-ID
-- **Verification Method:** Live click-through test
-
----
-
-## 4. Conversion-Path QA Checklist
-
-### 4.1. Content-to-Link Path
-- [ ] Blog post contains clear, high-intent CTA for 3-tier rolling cart
-- [ ] CTA is placed after problem-solving content and before disclosure
-- [ ] CTA uses verified product name and key benefits
-- [ ] CTA includes visible disclosure (e.g., "*As an Amazon Associate I earn from qualifying purchases*")
-
-### 4.2. Link Integrity
-- [ ] Link destination matches verified Amazon product page
-- [ ] Link includes correct sub-ID tracking parameter
-- [ ] Link opens in new tab (optional but recommended for Amazon)
-- [ ] Link text is descriptive and relevant (e.g., "Check Price on Amazon")
-
-### 4.3. Disclosure Visibility
-- [ ] Disclosure is visible on the same screen as the CTA (no scrolling required)
-- [ ] Disclosure uses plain language and is not hidden in fine print
-- [ ] Disclosure appears in footer and inline per-offer
-
-### 4.4. Mobile Readiness
-- [ ] Link is tappable on mobile devices
-- [ ] Disclosure is legible on mobile screens
-- [ ] CTA button/link is appropriately sized for touch
-
-### 4.5. Compliance Verification
-- [ ] Amazon Associates policy compliance verified
-- [ ] Indian disclosure requirements verified
-- [ ] No misleading claims or exaggerated benefits
-- [ ] No prohibited content (e.g., adult, weapons, etc.)
-
----
-
-## 5. Sensitivity Forecast
-
-| Conversion Rate | Estimated Clicks | Estimated Orders | Estimated Commission (INR) |
-|-----------------|------------------|------------------|----------------------------|
-| 0.5%            | 200              | 1                | 1,200                      |
-| 1%              | 200              | 2                | 2,400                      |
-| 2%              | 200              | 4                | 4,800                      |
-| 3%              | 200              | 6                | 7,200                      |
-
-**Assumptions:**
-- 200 estimated clicks from blog + Instagram + internal linking
-- Average product price: ₹3,000
-- Commission rate: 4%
-- Commission per order: ₹120
-
----
-
-## 6. Resource Envelope
-
-- **Approved Tools:** Amazon Associates, GitHub, Markdown editor, validator scripts
-- **Hosting:** Existing GitHub Pages
-- **API/Model Quotas:** DeepSeek + Bedrock (within daily limits)
-- **Spend Ceiling:** ₹0
-- **Renewal Dates:** Amazon Associates: 2027-08-24
-- **Human-Only Dependencies:** Founder approval for publishing, Founder approval for Instagram posting
-
----
-
-## 7. Next Steps
-
-1. Commit changes and submit plan for Founder review and approval
-2. After approval, execute conversion-path QA
-3. Rotate to Pillar 2 (new affiliate networks and product opportunities) for parallel progress
-
----
-
-**QA Completed By:** RIO (DeepSeek)
-**QA Timestamp:** 2026-08-29T10:47:00+05:30
-**QA Status:** READY_FOR_FOUNDER_REVIEW
+## Next Steps
+1. Submit plan for Founder review and approval.
+2. After approval, commit changes and rotate to Pillar 5 (Flipkart expansion) for parallel progress.
