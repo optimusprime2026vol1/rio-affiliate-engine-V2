@@ -1,0 +1,48 @@
+name: RIO measurement and forecast cycle
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rio-measurement
+  cancel-in-progress: false
+
+jobs:
+  measure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Collect Instagram insights
+        continue-on-error: true
+        env:
+          IG_RIO_TOKEN: ${{ secrets.IG_RIO_TOKEN }}
+        run: python scripts/collect_instagram_insights.py
+
+      - name: Forecast earnings
+        run: python scripts/forecast_earnings.py
+
+      - name: Check next task for repetition
+        continue-on-error: true
+        run: python scripts/guard_repetition.py
+
+      - name: Commit measurement state
+        run: |
+          git config user.name "rio-v2-bot"
+          git config user.email "rio-v2-bot@users.noreply.github.com"
+          git add data/metrics_ledger.json data/earnings_forecast.json data/repetition_guard.json || true
+          if git diff --cached --quiet; then
+            echo "No measurement changes to commit"
+          else
+            git commit -m "chore(rio): measurement and forecast cycle"
+            git push
+          fi
