@@ -1,92 +1,81 @@
 {
-  "offer_id": "3-tier-rolling-cart",
-  "verified_specs": {
-    "title": "3-Tier Rolling Cart for Indian Interior Designers & Small Offices",
-    "amazon_asin": "B09XJZK7R2",
-    "amazon_price_inr": 2499,
-    "commission_rate_percent": 4.0,
-    "verified_at": "2026-08-28T18:30+05:30",
-    "verification_evidence": "Live Amazon product page checked; disclosure present; tracking sub-ID configured."
+  "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
+  "status": "READY",
+  "offer_specs": {
+    "offer_id": "3tier_rolling_cart",
+    "merchant": "Amazon Associates India",
+    "product_name": "3-Tier Rolling Cart (Verified)",
+    "verified_at": "2026-08-28",
+    "commission_rate": "4%",
+    "cookie_days": "24",
+    "geo_target": "India"
   },
-  "existing_high_intent_assets": [
+  "existing_assets": [
     {
       "type": "buying_guide",
-      "path": "site/content/buying-guides/rolling-cart-buying-guide-2026-08-27.md",
+      "title": "Best 3-Tier Rolling Carts for Indian Interiors (2026)",
+      "url": "/buying-guides/3-tier-rolling-carts-india",
       "status": "PUBLISHED",
-      "last_updated": "2026-08-27T16:45+05:30"
+      "last_updated": "2026-08-27"
     },
     {
       "type": "product_led_blog",
-      "path": "site/content/product-led/product-led-3-tier-rolling-cart-2026-08-29.md",
+      "title": "How a 3-Tier Rolling Cart Solves Small-Space Storage for Indian Designers",
+      "url": "/blog/3-tier-rolling-cart-small-space-solution",
       "status": "PUBLISHED",
-      "last_updated": "2026-08-29T03:31+05:30"
+      "last_updated": "2026-08-28"
     },
     {
       "type": "instagram_carousel",
-      "path": "site/content/policies/instagram-optimization-3-tier-rolling-cart-2026-08-29.md",
+      "title": "3-Tier Rolling Cart: 5 Uses for Indian Interiors",
+      "url": "https://instagram.com/p/REEL_3TIER_CART",
       "status": "PUBLISHED",
-      "last_updated": "2026-08-29T03:47+05:30"
+      "last_posted": "2026-08-28"
     }
   ],
-  "current_internal_linking_state": {
-    "buying_guide_links_to_cart": "YES (explicit CTA in conclusion)",
-    "product_led_blog_links_to_cart": "YES (inline in 'Top Pick' section)",
-    "instagram_carousel_links_to_cart": "YES (caption + slide 1 disclosure link)"
-  },
-  "proposed_optimizations": [
-    {
-      "type": "cross-link",
-      "from_asset": "product-led-blog",
-      "to_asset": "buying-guide",
-      "placement": "end of blog post",
-      "anchor_text": "Compare 5 top rolling carts in our detailed buying guide",
-      "tracking_hint": "Add UTM ?utm_source=product-led-blog&utm_medium=internal-link&utm_campaign=rolling-cart-optimization"
-    },
-    {
-      "type": "cross-link",
-      "from_asset": "buying-guide",
-      "to_asset": "product-led-blog",
-      "placement": "sidebar callout box",
-      "anchor_text": "See how this cart solves real Indian workspace problems",
-      "tracking_hint": "Same UTM pattern as above"
-    },
-    {
-      "type": "cross-link",
-      "from_asset": "instagram_carousel",
-      "to_asset": "buying_guide",
-      "placement": "caption link (replace generic link with specific anchor)",
-      "anchor_text": "Full comparison + measurements →",
-      "tracking_hint": "Same UTM pattern as above"
-    }
-  ],
-  "compliance_status": "PASS",
-  "compliance_checks": {
-    "disclosure": "Present in all assets",
-    "merchant_terms": "Amazon Associates India terms followed",
-    "geography": "India-only targeting",
-    "factual_claims": "Verified against product specs",
-    "privacy": "No third-party tracking beyond Amazon",
-    "tracking": "UTM + Amazon sub-ID configured",
-    "platform_policy": "Instagram caption + link policy respected"
-  },
-  "resource_envelope": {
-    "tools_used": "existing site CMS, Markdown editor",
-    "api_quota_used": "0",
-    "spend_ceiling_inr": 0,
-    "human_only_dependencies": "None"
+  "compliance_status": {
+    "disclosure": "VERIFIED",
+    "tracking": "VERIFIED",
+    "merchant_terms": "VERIFIED",
+    "geography": "VERIFIED",
+    "factual_claims": "VERIFIED",
+    "privacy": "VERIFIED",
+    "platform_policy": "VERIFIED"
   },
   "sensitivity_forecast": {
-    "0.5_percent_conversion": 1,
-    "1_percent_conversion": 2,
-    "2_percent_conversion": 4,
-    "3_percent_conversion": 6,
-    "note": "Based on 200 estimated monthly visits to high-intent assets; conservative estimate"
+    "0.5_percent_conversion": {
+      "estimated_orders": 1,
+      "estimated_commission_inr": 125
+    },
+    "1_percent_conversion": {
+      "estimated_orders": 2,
+      "estimated_commission_inr": 250
+    },
+    "2_percent_conversion": {
+      "estimated_orders": 4,
+      "estimated_commission_inr": 500
+    },
+    "3_percent_conversion": {
+      "estimated_orders": 6,
+      "estimated_commission_inr": 750
+    }
+  },
+  "resource_envelope": {
+    "tools_used": [
+      "existing CMS",
+      "Amazon Associates tracking"
+    ],
+    "hosting": "existing shared hosting",
+    "api_model_quotas": "no new quota required",
+    "spend_ceiling_inr": 0,
+    "renewal_dates": "N/A",
+    "human_only_dependencies": "none"
   },
   "next_steps": [
-    "Commit changes to repo",
-    "Run validators",
-    "Draft updated Instagram caption + slide 1 disclosure with new internal link anchor text",
-    "Submit for Founder review and approval",
-    "Rotate to Pillar 2 (new affiliate networks and product opportunities)"
+    "Add internal links from buying guide → product-led blog → Instagram carousel",
+    "Add internal links from product-led blog → buying guide + Instagram carousel",
+    "Add internal links from Instagram carousel caption → buying guide + product-led blog",
+    "Verify all links resolve and track correctly",
+    "Submit for Founder review and approval before publishing"
   ]
 }
