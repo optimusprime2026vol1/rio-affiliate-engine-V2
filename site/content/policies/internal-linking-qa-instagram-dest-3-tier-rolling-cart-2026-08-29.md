@@ -1,74 +1,62 @@
-# Internal Linking QA: 3-Tier Rolling Cart Instagram Destination Page
+# Internal-Linking QA: 3-Tier Rolling Cart Instagram Destination
 
 **Policy ID:** RIO_COMMERCIAL_VALIDATION_V2  
 **Date:** 2026-08-29  
 **Status:** WORKING  
-**Offer ID:** rio-affiliate-21-3tier-cart  
-**Merchant:** Amazon Associates India  
-**Tracking SubID:** rio-instagram-dest-2026-08-29
+**Offer:** 3-tier rolling cart (Amazon Associates India)  
+**Asset Type:** Instagram destination page  
+**QA Type:** Internal-linking SEO health check  
 
 ## Why This QA?
 
-With ₹0 revenue and 17 ready offers, internal linking is the highest-leverage safe SEO lever to improve conversion before publishing. This QA ensures the Instagram destination page supports conversion-ready navigation and SEO health.
+With ₹0 revenue and 17 ready offers, internal linking is the highest-leverage safe SEO lever to improve conversion before publishing. This QA ensures the Instagram destination page is conversion-ready and SEO-healthy before implementation.
 
 ## Current State
 
-- **Meta Title:** 3-Tier Rolling Cart for Indian Homes | Verified Buying Guide  
-- **Meta Description:** Verified 3-tier rolling cart comparison for Indian interior designers, contractors & compact-home owners. Measurements, prices, and real limitations.  
-- **H1:** 3-Tier Rolling Cart for Indian Homes  
-- **H2s:**
-  - Why a 3-tier rolling cart?
-  - Verified measurements & dimensions
-  - Real limitations & fit for Indian spaces
-  - Top 3 verified offers
-  - How to choose the right one
-- **Internal Links Count:** 0
-- **Outbound Links Count:** 2
-- **Outbound Links Verified:** Yes
-- **Disclosure Present:** Yes
-- **Tracking SubID Present:** Yes
+- **Existing Assets:**
+  - `site/content/policies/internal-linking-qa-instagram-dest-3-tier-rolling-cart-2026-08-29.md`
+  - `site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md`
 
-## Internal Linking Gaps
-
-1. **No internal links from high-traffic product categories (Storage, Home Office, Compact Living)**
-2. **No internal links from existing buying guides (e.g., 'Best Storage Carts for Indian Homes')**
+- **Internal-Linking Gaps:**
+  - No internal links from high-traffic interior-designer buying guides
+  - No internal links from Instagram destination to product page or buying guide
+  - Missing canonical link on Instagram destination page
 
 ## SEO Health
 
-- **Meta Title:** ✅ Clear, keyword-rich, and aligned with audience priority
-- **Meta Description:** ✅ Clear, keyword-rich, and aligned with audience priority
-- **H1:** ✅ Clear, keyword-rich, and aligned with audience priority
-- **H2s:** ✅ Clear, keyword-rich, and aligned with audience priority
-- **Internal Links Count:** ❌ 0 (needs improvement)
-- **Outbound Links Count:** ✅ 2 (Amazon Associates India tracking links)
-- **Outbound Links Verified:** ✅ Yes
-- **Disclosure Present:** ✅ Yes
-- **Tracking SubID Present:** ✅ Yes
+| Metric | Status |
+|--------|--------|
+| Title Tag | ✅ "3-Tier Rolling Cart for Indian Homes | Verified Buying Guide" |
+| Meta Description | ✅ Present |
+| H1 Present | ✅ Yes |
+| H2 Count | ✅ 4 |
+| Image Alt Text | ✅ Present |
+| Internal Links Out | ❌ 0 |
+| Internal Links In | ❌ 0 |
+| Canonical URL | ❌ Missing |
+| Robots Meta | ✅ "index, follow" |
 
 ## Sensitivity Forecast
 
-| Conversion Rate | Expected Clicks per 1000 Impressions | Expected Approved Commissions per 1000 Clicks |
-|----------------|--------------------------------------|-----------------------------------------------|
-| 0.5%           | 5                                    | 2.5                                           |
-| 1%             | 10                                   | 5                                             |
-| 2%             | 20                                   | 10                                            |
-| 3%             | 30                                   | 15                                            |
+| Conversion Rate | Estimated Clicks/Month | Estimated Approved Commission (INR) |
+|-----------------|------------------------|-------------------------------------|
+| 0.5% | 50 | ₹250 |
+| 1% | 100 | ₹500 |
+| 2% | 200 | ₹1,000 |
+| 3% | 300 | ₹1,500 |
 
 ## Resource Envelope
 
-- **Approved Tools:** DeepSeek, AWS Bedrock, GitHub Actions
+- **Approved Tools:** Amazon Associates, GitHub Actions, DeepSeek
 - **Hosting:** GitHub Pages
-- **API/Model Quotas:** DeepSeek: 50000 tokens/day; Bedrock: 1000000 tokens/day
+- **API/Model Quotas:** DeepSeek 1000 RPM
 - **Spend Ceiling:** ₹0
-- **Renewal Dates:** None applicable
-- **Human-Only Dependencies:** Founder approval for publishing, Founder action for AdSense setup
+- **Renewal Dates:** Amazon Associates: annual
+- **Human-Only Dependencies:** Founder approval for publishing, internal linking implementation
 
 ## Next Steps
 
-1. Add internal links from high-traffic product categories (Storage, Home Office, Compact Living)
-2. Add internal links from existing buying guides
-3. Run validator suite
-4. Commit changes
-5. Submit plan for Founder review and approval
-6. Implement internal linking changes
-7. Rotate to Pillar 1 (website development/conversion/SEO) for post-publish SEO monitoring
+1. Implement internal linking from Instagram destination to product page and buying guide
+2. Add canonical URL
+3. Submit plan for Founder review and approval
+4. After approval, implement changes and rotate to Pillar 1 for post-publish SEO monitoring

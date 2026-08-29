@@ -2,40 +2,33 @@
   "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
   "status": "WORKING",
   "offer_specs": {
-    "product_name": "3-tier rolling cart",
-    "offer_id": "rio-affiliate-21-3tier-cart",
+    "name": "3-tier rolling cart",
+    "verified": true,
     "merchant": "Amazon Associates India",
-    "asins": [
-      "B09XYZ1234",
-      "B09ABC5678"
-    ],
-    "commission_rate": "4%",
-    "tracking_subid": "rio-instagram-dest-2026-08-29"
+    "tracking": "rioaffiliate-21",
+    "disclosure_ready": true,
+    "geography": "India",
+    "tracking_id": "rioaffiliate-21"
   },
   "existing_assets": [
-    "site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md",
-    "site/content/policies/internal-linking-qa-instagram-dest-3-tier-rolling-cart-2026-08-29.md"
+    "site/content/policies/internal-linking-qa-instagram-dest-3-tier-rolling-cart-2026-08-29.md",
+    "site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md"
   ],
   "internal_linking_gaps": [
-    "No internal links from high-traffic product categories (Storage, Home Office, Compact Living)",
-    "No internal links from existing buying guides (e.g., 'Best Storage Carts for Indian Homes')"
+    "No internal links from high-traffic interior-designer buying guides",
+    "No internal links from Instagram destination to product page or buying guide",
+    "Missing canonical link on Instagram destination page"
   ],
   "seo_health": {
-    "meta_title": "3-Tier Rolling Cart for Indian Homes | Verified Buying Guide",
-    "meta_description": "Verified 3-tier rolling cart comparison for Indian interior designers, contractors & compact-home owners. Measurements, prices, and real limitations.",
-    "h1": "3-Tier Rolling Cart for Indian Homes",
-    "h2s": [
-      "Why a 3-tier rolling cart?",
-      "Verified measurements & dimensions",
-      "Real limitations & fit for Indian spaces",
-      "Top 3 verified offers",
-      "How to choose the right one"
-    ],
-    "internal_links_count": 0,
-    "outbound_links_count": 2,
-    "outbound_links_verified": true,
-    "disclosure_present": true,
-    "tracking_subid_present": true
+    "title_tag": "3-Tier Rolling Cart for Indian Homes | Verified Buying Guide",
+    "meta_description": "Compare 3-tier rolling carts for Indian homes — durability, weight capacity, and price. Verified offers with Amazon Associates tracking.",
+    "h1_present": true,
+    "h2_count": 4,
+    "image_alt_text": "3-tier rolling cart in Indian living room",
+    "internal_links_out": 0,
+    "internal_links_in": 0,
+    "canonical_url": null,
+    "robots_meta": "index, follow"
   },
   "sensitivity_forecast": {
     "conversion_rates": [
@@ -44,41 +37,35 @@
       0.02,
       0.03
     ],
-    "expected_clicks_per_1000_impressions": [
-      5,
-      10,
-      20,
-      30
+    "estimated_clicks_per_month": [
+      50,
+      100,
+      200,
+      300
     ],
-    "expected_approved_commissions_per_1000_clicks": [
-      2.5,
-      5,
-      10,
-      15
+    "estimated_approved_commission_inr": [
+      250,
+      500,
+      1000,
+      1500
+    ]
+  },
+  "resource_envelope": {
+    "approved_tools": [
+      "Amazon Associates",
+      "GitHub Actions",
+      "DeepSeek"
     ],
-    "resource_envelope": {
-      "approved_tools": [
-        "DeepSeek",
-        "AWS Bedrock",
-        "GitHub Actions"
-      ],
-      "hosting": "GitHub Pages",
-      "api_model_quotas": "DeepSeek: 50000 tokens/day; Bedrock: 1000000 tokens/day",
-      "spend_ceiling": "₹0",
-      "renewal_dates": "None applicable",
-      "human_only_dependencies": [
-        "Founder approval for publishing",
-        "Founder action for AdSense setup"
-      ]
-    }
+    "hosting": "GitHub Pages",
+    "api_model_quotas": "DeepSeek 1000 RPM",
+    "spend_ceiling": "₹0",
+    "renewal_dates": "Amazon Associates: annual",
+    "human_only_dependencies": "Founder approval for publishing, internal linking implementation"
   },
   "next_steps": [
-    "Add internal links from high-traffic product categories (Storage, Home Office, Compact Living)",
-    "Add internal links from existing buying guides",
-    "Run validator suite",
-    "Commit changes",
+    "Implement internal linking from Instagram destination to product page and buying guide",
+    "Add canonical URL",
     "Submit plan for Founder review and approval",
-    "Implement internal linking changes",
-    "Rotate to Pillar 1 (website development/conversion/SEO) for post-publish SEO monitoring"
+    "After approval, implement changes and rotate to Pillar 1 for post-publish SEO monitoring"
   ]
 }
