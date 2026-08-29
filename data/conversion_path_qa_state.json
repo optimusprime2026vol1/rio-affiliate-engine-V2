@@ -1,0 +1,51 @@
+{
+  "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
+  "status": "COMPLETED",
+  "offer": "3-tier rolling cart",
+  "offer_verified": true,
+  "ready_offers": 17,
+  "revenue_inr": 0,
+  "existing_assets": [
+    "site/content/blog/3-tier-rolling-cart-for-renters-compact-homes-2026-08-29.md",
+    "site/content/policies/internal-linking-optimization-3-tier-rolling-cart-2026-08-29-v6.md",
+    "site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md"
+  ],
+  "compliance_status": {
+    "disclosure": "PASS",
+    "merchant_terms": "PASS",
+    "geography": "PASS",
+    "factual_claims": "PASS",
+    "privacy": "PASS",
+    "tracking": "PASS",
+    "platform_policy": "PASS"
+  },
+  "conversion_sensitivity_forecast": {
+    "0.5_percent": "conservative",
+    "1_percent": "base",
+    "2_percent": "optimistic",
+    "3_percent": "upside_only"
+  },
+  "resource_envelope": {
+    "approved_tools": true,
+    "hosting": true,
+    "api_model_quotas": true,
+    "spend_ceiling": 0,
+    "renewal_dates": "2026-08-29",
+    "human_only_dependencies": [
+      "Founder approval for publishing"
+    ]
+  },
+  "qa_checks": [
+    "offer_page_links_resolve",
+    "disclosure_visible_before_click",
+    "tracking_params_present",
+    "mobile_responsive",
+    "internal_links_connected",
+    "cta_clear_and_compliant"
+  ],
+  "next_steps": [
+    "Commit changes",
+    "Submit plan for Founder review and approval",
+    "Publish after Founder approval"
+  ]
+}
