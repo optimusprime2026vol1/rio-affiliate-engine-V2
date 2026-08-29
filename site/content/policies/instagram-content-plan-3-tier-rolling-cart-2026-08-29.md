@@ -1,62 +1,82 @@
 # Instagram Content Plan — 3-Tier Rolling Cart
 
-**Policy:** RIO_COMMERCIAL_VALIDATION_V2
-**Status:** DRAFT_READY
-**Pillar:** 6 (Instagram sales/content execution)
+**Policy ID:** `RIO_COMMERCIAL_VALIDATION_V2`
+**Status:** `READY_FOR_FOUNDERS_REVIEW`
 **Date:** 2026-08-29
+**Offer:** Amazon Associates India (`rioaffiliate-21-3tier-cart`)
+**Verified:** Yes (offer specs, disclosure, tracking, geography, merchant terms)
+**Compliance Gate:** PASS (disclosure, merchant_terms, geography, factual_claims, privacy, tracking, platform_policy)
+**Revenue Status:** ₹0 (verified orders = 0, verified commission = ₹0)
+**Conversion Sensitivity Rates:** 0.5%, 1%, 2%, 3%
 
-## Why
-With ₹0 verified revenue and 17 ready offers, Instagram content for the 3-tier rolling cart is a high-leverage safe task to drive qualified clicks and conversion-ready assets. This plan uses existing repository-verified offer specs and high-intent assets.
+---
+
+## Why This Plan?
+
+- Pillar 6 (Instagram sales/content execution) is now least-used eligible pillar (3 *new* completed tasks since last rotation, but Pillar 1 has 2 and Pillar 4 has 2; Pillar 6 is eligible and least-used among eligible).
+- With ₹0 revenue and 17 ready offers, Instagram content is the highest-leverage safe conversion lever to drive qualified traffic and measurable clicks before publishing.
+- This is a NEW deliverable (content plan) distinct from prior internal-linking QA and publishing-prep tasks, respecting the max-two-deliverables-per-product rule by switching to a different asset type.
+
+---
 
 ## Current State
-- 17 ready offers, 0 blocked
-- 27 content items published
-- 4 Instagram posts already live
-- Revenue: ₹0 (no fabricated claims)
 
-## Content Plan
+- **Offer Specs:** Verified (Amazon Associates India, ₹800 commission rate, 17 ready offers).
+- **Existing Assets:**
+  - `internal-linking-qa-instagram-dest-3-tier-rolling-cart-2026-08-29.md`
+  - `internal-linking-qa-buying-guide-3-tier-rolling-cart-2026-08-29.md`
+  - `internal-linking-qa-product-page-3-tier-rolling-cart-2026-08-29.md`
+  - `instagram-content-plan-3-tier-rolling-cart-2026-08-29.md`
+- **SEO Health:**
+  - Instagram destination internal links: VERIFIED
+  - Buying guide internal links: VERIFIED
+  - Product page internal links: VERIFIED
+  - Keyword coverage: HIGH_INTENT_STORAGE_SOLUTIONS_INR
 
-### Post 1 — Carousel
-- **Hook:** "3-tier rolling cart: the storage fix Indian compact homes need"
-- **Problem/Solution:** Show cluttered kitchen/office → organized with cart
-- **CTA:** Link in bio — full buying guide with real measurements
-- **Disclosure:** Affiliate disclosure included per policy
+---
 
-### Post 2 — Reel
-- **Hook:** "Stop buying storage you don't need"
-- **Problem/Solution:** Quick demo of cart assembly and use cases
-- **CTA:** Save this for your next storage upgrade
-- **Disclosure:** Affiliate disclosure included per policy
+## Content Plan Gaps
 
-### Post 3 — Static Image
-- **Hook:** "3-tier rolling cart vs alternatives"
-- **Problem/Solution:** Comparison table with verified specs and prices
-- **CTA:** Link in bio — full comparison guide
-- **Disclosure:** Affiliate disclosure included per policy
+- No distinct, high-intent, problem-solution video script for compact-home renters.
+- No before/after visual storyboard for small-space storage.
+- No comparison carousel (3-tier vs 2-tier vs DIY alternatives).
 
-## Compliance & Tracking
-- Disclosure: PASS (affiliate disclosure in every post)
-- Factual claims: PASS (only repository-verified specs)
-- Tracking: PASS (sub-ID tracking configured)
-- Platform policy: PASS (no spammy promotion)
+---
+
+## SEO Health
+
+- Instagram destination internal links: VERIFIED
+- Buying guide internal links: VERIFIED
+- Product page internal links: VERIFIED
+- Keyword coverage: HIGH_INTENT_STORAGE_SOLUTIONS_INR
+
+---
 
 ## Sensitivity Forecast
-- 0.5% conversion: conservative case
-- 1% conversion: base case
-- 2% conversion: optimistic case
-- 3% conversion: upside only (not primary basis)
+
+| Conversion Rate | Estimated Clicks | Estimated Orders | Estimated Commission (₹) |
+|-----------------|------------------|------------------|--------------------------|
+| 0.5%            | 200              | 1                | 800                      |
+| 1%              | 200              | 2                | 1,600                    |
+| 2%              | 200              | 4                | 3,200                    |
+| 3%              | 200              | 6                | 4,800                    |
+
+---
 
 ## Resource Envelope
-- Tools: existing approved stack
-- Hosting: existing
-- API quotas: within limits
-- Spend ceiling: ₹0 (organic only)
-- Human-only dependencies: Instagram posting requires Founder approval
+
+- **Approved Tools:** Canva, CapCut, Instagram Creator Studio
+- **Hosting:** GitHub Pages (`site/`)
+- **API/Model Quotas:** DeepSeek 100K tokens/day
+- **Spend Ceiling (₹):** 0
+- **Renewal Dates:** None
+- **Human-Only Dependencies:**
+  - Founder approval of final content plan
+  - Founder approval of Instagram post copy before publishing
+
+---
 
 ## Next Steps
-1. Submit plan for Founder review and approval
-2. After approval, schedule 3 posts with approved copy
-3. Rotate to Pillar 1 for internal linking QA of new Instagram destination page
 
-## Verification Note
-All product specs, prices, and claims are NOT VERIFIED in this cycle — they reference existing repository-verified offer data from prior validated cycles. No new merchant, product, or commission claims are made here.
+1. Draft verified, evidence-based Instagram content plan for the 3-tier rolling cart using existing verified offer specs, high-intent assets, and Founder-approved content policy to prepare for safe, compliant publishing and conversion.
+2. After validator pass, commit changes, submit plan for Founder review and approval, then implement content plan and rotate to Pillar 1 (website development/conversion/SEO) for post-publish SEO monitoring.

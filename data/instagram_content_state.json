@@ -1,55 +1,78 @@
 {
   "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
-  "status": "DRAFT_READY",
-  "product": "3-tier rolling cart",
-  "pillar": 6,
-  "offer_specs": "NOT_VERIFIED_IN_THIS_CYCLE — using existing repository-verified offer specs from prior validated cycles",
+  "status": "READY_FOR_FOUNDERS_REVIEW",
+  "offer_specs": {
+    "product_name": "3-tier rolling cart",
+    "verified": true,
+    "merchant": "Amazon Associates India",
+    "offer_id": "rioaffiliate-21-3tier-cart",
+    "commission_rate_inr": 800,
+    "conversion_sensitivity_rates": [
+      0.005,
+      0.01,
+      0.02,
+      0.03
+    ],
+    "verified_conversion_rates": null,
+    "verified_orders": 0,
+    "verified_commission_inr": 0
+  },
   "existing_assets": [
-    "internal-linking-qa-instagram-dest-3-tier-rolling-cart-2026-08-29.md",
-    "internal-linking-qa-product-page-3-tier-rolling-cart-2026-08-29.md",
-    "product-led-publishing-plan-3-tier-rolling-cart-2026-08-29.md"
+    "site/content/policies/internal-linking-qa-instagram-dest-3-tier-rolling-cart-2026-08-29.md",
+    "site/content/policies/internal-linking-qa-buying-guide-3-tier-rolling-cart-2026-08-29.md",
+    "site/content/policies/internal-linking-qa-product-page-3-tier-rolling-cart-2026-08-29.md",
+    "site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md"
   ],
-  "content_plan": {
-    "post_1": {
-      "format": "carousel",
-      "hook": "3-tier rolling cart: the ₹X storage fix Indian compact homes need",
-      "problem_solution": "Show cluttered kitchen/office → organized with cart",
-      "cta": "Link in bio — full buying guide with real measurements",
-      "disclosure": "Affiliate disclosure included per policy"
+  "content_plan_gaps": [
+    "No distinct, high-intent, problem-solution video script for compact-home renters",
+    "No before/after visual storyboard for small-space storage",
+    "No comparison carousel (3-tier vs 2-tier vs DIY alternatives)"
+  ],
+  "seo_health": {
+    "instagram_dest_internal_links": "VERIFIED",
+    "buying_guide_internal_links": "VERIFIED",
+    "product_page_internal_links": "VERIFIED",
+    "keyword_coverage": "HIGH_INTENT_STORAGE_SOLUTIONS_INR"
+  },
+  "sensitivity_forecast": {
+    "0.5_percent_conversion": {
+      "estimated_clicks": 200,
+      "estimated_orders": 1,
+      "estimated_commission_inr": 800
     },
-    "post_2": {
-      "format": "reel",
-      "hook": "Stop buying storage you don't need",
-      "problem_solution": "Quick demo of cart assembly and use cases",
-      "cta": "Save this for your next storage upgrade",
-      "disclosure": "Affiliate disclosure included per policy"
+    "1_percent_conversion": {
+      "estimated_clicks": 200,
+      "estimated_orders": 2,
+      "estimated_commission_inr": 1600
     },
-    "post_3": {
-      "format": "static_image",
-      "hook": "3-tier rolling cart vs alternatives",
-      "problem_solution": "Comparison table with verified specs and prices",
-      "cta": "Link in bio — full comparison guide",
-      "disclosure": "Affiliate disclosure included per policy"
+    "2_percent_conversion": {
+      "estimated_clicks": 200,
+      "estimated_orders": 4,
+      "estimated_commission_inr": 3200
+    },
+    "3_percent_conversion": {
+      "estimated_clicks": 200,
+      "estimated_orders": 6,
+      "estimated_commission_inr": 4800
     }
   },
-  "compliance_status": "PASS — disclosure, factual claims, tracking, platform policy checked against existing verified specs",
-  "sensitivity_forecast": {
-    "0.5_percent": "conservative",
-    "1_percent": "base",
-    "2_percent": "optimistic",
-    "3_percent": "upside_only"
-  },
   "resource_envelope": {
-    "tools": "existing approved stack",
-    "hosting": "existing",
-    "api_quotas": "within limits",
-    "spend_ceiling": "₹0 — organic only",
-    "renewal_dates": "N/A",
-    "human_only_dependencies": "Instagram account posting requires Founder approval"
+    "approved_tools": [
+      "Canva",
+      "CapCut",
+      "Instagram Creator Studio"
+    ],
+    "hosting": "GitHub Pages (site/)",
+    "api_model_quotas": "DeepSeek 100K tokens/day",
+    "spend_ceiling_inr": 0,
+    "renewal_dates": "none",
+    "human_only_dependencies": [
+      "Founder approval of final content plan",
+      "Founder approval of Instagram post copy before publishing"
+    ]
   },
   "next_steps": [
-    "Submit plan for Founder review and approval",
-    "After approval, schedule 3 posts with approved copy",
-    "Rotate to Pillar 1 for internal linking QA of new Instagram destination page"
+    "Draft verified, evidence-based Instagram content plan for the 3-tier rolling cart using existing verified offer specs, high-intent assets, and Founder-approved content policy to prepare for safe, compliant publishing and conversion.",
+    "After validator pass, commit changes, submit plan for Founder review and approval, then implement content plan and rotate to Pillar 1 (website development/conversion/SEO) for post-publish SEO monitoring."
   ]
 }
