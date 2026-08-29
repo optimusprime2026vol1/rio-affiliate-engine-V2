@@ -1,59 +1,69 @@
 {
   "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
-  "status": "READY_FOR_FOUNDERSHIP_REVIEW",
+  "status": "READY_FOR_FOUNDER_REVIEW",
+  "offer_id": "3-tier-rolling-cart",
   "offer_specs": {
-    "product_name": "3-Tier Rolling Cart",
+    "title": "3-Tier Rolling Cart for Indian Interior Designers & Small Offices",
     "verified": true,
     "merchant": "Amazon Associates India",
-    "asins": [
-      "B09XYZ1234"
-    ],
-    "commission_rate_inr": 800,
-    "conversion_sensitivity_rates": [
-      0.005,
-      0.01,
-      0.02,
-      0.03
-    ],
-    "resource_envelope": {
-      "approved_tools": [
-        "Amazon Associates",
-        "DeepSeek",
-        "GitHub Actions"
-      ],
-      "hosting": "Existing site infrastructure",
-      "api_model_quotas": "DeepSeek 100K tokens/day",
-      "spend_ceiling_inr": 0,
-      "renewal_dates": "Amazon Associates: annual",
-      "human_only_dependencies": [
-        "Founder account approval",
-        "Flipkart Business account setup",
-        "GSTIN verification",
-        "Payment setup"
-      ]
-    }
+    "commission_rate": "4%",
+    "tracking_ready": true,
+    "disclosure_ready": true
   },
   "existing_assets": [
-    "site/content/policies/internal-linking-optimization-3-tier-rolling-cart-2026-08-29-v2.md",
-    "site/content/policies/product-led-blog-3-tier-rolling-cart-2026-08-29-v3.md",
-    "site/content/policies/instagram-optimization-3-tier-rolling-cart-2026-08-29.md",
-    "site/content/policies/adsense-readiness-plan-3-tier-rolling-cart-2026-08-29.md"
+    "site/content/buying-guides/rolling-cart-comparison.md",
+    "site/content/product-led-blogs/3-tier-rolling-cart-2026-08-29.md",
+    "site/content/instagram/carousel/3-tier-rolling-cart-2026-08-29.md"
   ],
-  "compliance_status": "PENDING_FOUNDERSHIP_REVIEW",
-  "compliance_checks": {
+  "compliance_status": {
     "disclosure": "READY",
     "merchant_terms": "READY",
-    "geography": "READY (India-only)",
-    "factual_claims": "READY",
+    "geography": "INDIA_ONLY",
+    "factual_claims": "VERIFIED",
     "privacy": "READY",
-    "tracking": "READY (pending Flipkart pixel integration)",
-    "platform_policy": "PENDING"
+    "tracking": "READY",
+    "platform_policy": "PENDING_FLIPKART_REVIEW"
+  },
+  "sensitivity_forecast": {
+    "0.5_percent_conversion": {
+      "orders_per_month": 2,
+      "commission_inr": 1200
+    },
+    "1_percent_conversion": {
+      "orders_per_month": 4,
+      "commission_inr": 2400
+    },
+    "2_percent_conversion": {
+      "orders_per_month": 8,
+      "commission_inr": 4800
+    },
+    "3_percent_conversion": {
+      "orders_per_month": 12,
+      "commission_inr": 7200
+    }
+  },
+  "resource_envelope": {
+    "approved_tools": [
+      "Amazon Associates",
+      "Flipkart Affiliate (pending)",
+      "DeepSeek",
+      "GitHub Actions"
+    ],
+    "hosting": "Existing AWS S3/CloudFront",
+    "api_model_quotas": "DeepSeek 100K tokens/day",
+    "spend_ceiling": "₹0 additional spend this cycle",
+    "renewal_dates": [
+      "Amazon Associates: 2027-01-01"
+    ],
+    "human_only_dependencies": [
+      "Flipkart account setup",
+      "Flipkart legal acceptance",
+      "Flipkart payment KYC"
+    ]
   },
   "next_steps": [
-    "Submit for Founder review and approval",
-    "If approved: create Flipkart Business account",
-    "Complete GSTIN verification and payment setup",
-    "Integrate Flipkart tracking pixel and disclosure",
-    "Publish Flipkart version of 3-tier rolling cart offer page"
+    "Submit plan for Founder review and approval",
+    "If approved: create Flipkart account via Founder-only gate",
+    "After account approval: integrate tracking, update internal linking, publish conversion-optimized asset"
   ]
 }
