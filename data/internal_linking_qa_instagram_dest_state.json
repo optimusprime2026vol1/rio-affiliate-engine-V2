@@ -1,0 +1,68 @@
+{
+  "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
+  "status": "READY_FOR_FOUNDER_REVIEW",
+  "offer_specs": {
+    "product_name": "3-tier rolling cart",
+    "verified_merchant": "Amazon Associates India",
+    "tracking_id": "rioaffiliate-21",
+    "offer_url": "https://www.amazon.in/dp/B09XKJH7LQ",
+    "commission_rate_inr": 800,
+    "verified_at": "2026-08-28T10:15:00+05:30"
+  },
+  "existing_assets": [
+    "site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md",
+    "data/instagram_content_state.json"
+  ],
+  "internal_linking_gaps": [
+    "No internal link from existing high-traffic pages to Instagram destination",
+    "No breadcrumb navigation to Instagram destination on offer landing page",
+    "Instagram destination lacks canonical tag pointing to main offer page"
+  ],
+  "seo_health": {
+    "title_tag": "3-Tier Rolling Cart for Indian Interiors | Verified Buying Guide",
+    "meta_description": "Verified 3-tier rolling cart for Indian interior designers, contractors & home offices. Includes measurements, prices, and Amazon Associates disclosure.",
+    "h1_present": true,
+    "h2_count": 3,
+    "internal_links_out": 0,
+    "internal_links_in": 0,
+    "canonical_tag_missing": true
+  },
+  "sensitivity_forecast": {
+    "conversion_rates": [
+      0.005,
+      0.01,
+      0.02,
+      0.03
+    ],
+    "estimated_approved_commission_inr": [
+      400,
+      800,
+      1600,
+      2400
+    ],
+    "confidence": "LOW",
+    "note": "Based on 3-tier rolling cart offer specs; assumes Instagram traffic reaches destination page."
+  },
+  "resource_envelope": {
+    "approved_tools": [
+      "GitHub Actions",
+      "AWS Bedrock",
+      "DeepSeek"
+    ],
+    "hosting": "GitHub Pages",
+    "api_model_quotas": "bedrock-qwen primary, deepseek-chat fallback",
+    "spend_ceiling_inr": 0,
+    "renewal_dates": "none applicable",
+    "human_only_dependencies": [
+      "Founder approval for publishing",
+      "Founder review of internal linking plan"
+    ]
+  },
+  "next_steps": [
+    "Commit changes after validator pass",
+    "Submit plan for Founder review and approval",
+    "After approval, add internal links from high-traffic pages to Instagram destination",
+    "Add canonical tag and breadcrumb navigation to Instagram destination page",
+    "Rotate to Pillar 6 (Instagram sales/content execution) for scheduling 3 Instagram posts (hook, problem/solution, CTA)"
+  ]
+}
