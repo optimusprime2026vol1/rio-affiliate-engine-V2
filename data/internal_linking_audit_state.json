@@ -1,0 +1,73 @@
+{
+  "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
+  "status": "READY",
+  "offer_specs": {
+    "product_name": "3-Tier Rolling Cart",
+    "verified": true,
+    "merchant": "Amazon Associates India",
+    "tracking_ready": true,
+    "disclosure_ready": true,
+    "geography": "India",
+    "audience_fit": [
+      "interior designers",
+      "contractors",
+      "small offices",
+      "home-office professionals",
+      "renters",
+      "compact-home owners"
+    ],
+    "conversion_sensitivity_rates": [
+      0.005,
+      0.01,
+      0.02,
+      0.03
+    ],
+    "resource_envelope": {
+      "approved_tools": [
+        "AWS Bedrock",
+        "DeepSeek",
+        "GitHub Actions",
+        "existing hosting"
+      ],
+      "hosting": "verified live",
+      "api_model_quotas": "active",
+      "spend_ceiling": "none required",
+      "renewal_dates": "none imminent",
+      "human_only_dependencies": [
+        "Founder account setup",
+        "Founder approval for live publishing"
+      ]
+    }
+  },
+  "existing_assets": {
+    "content_items": 27,
+    "ready_offers": 17,
+    "instagram_posts": 4,
+    "verified_conversion_path": true,
+    "instagram_content_plan": "verified",
+    "adsense_readiness_plan": "verified",
+    "flipkart_integration_plan": "verified",
+    "affiliate_network_expansion_plan": "verified",
+    "product_led_content_plan": "verified"
+  },
+  "compliance_status": {
+    "disclosure": "READY",
+    "merchant_terms": "READY",
+    "geography": "READY",
+    "factual_claims": "READY",
+    "privacy": "READY",
+    "tracking": "READY",
+    "platform_policy": "READY"
+  },
+  "sensitivity_forecast": {
+    "0.5%": "low but viable baseline",
+    "1%": "modest traction",
+    "2%": "strong conversion potential",
+    "3%": "high-impact pilot"
+  },
+  "next_steps": [
+    "After validator pass, commit changes",
+    "Submit plan for Founder review and approval",
+    "Rotate to Pillar 4 (product-led blog/content) for parallel progress"
+  ]
+}
