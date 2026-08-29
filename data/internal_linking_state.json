@@ -1,33 +1,60 @@
 {
-  "policy_id": "RIO_INTERNAL_LINKING_V1",
+  "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
   "status": "READY",
-  "offer": "3-tier rolling cart",
-  "verified_offer_specs": "NOT_VERIFIED_IN_THIS_CONTEXT",
-  "existing_assets": [
-    "buying guide",
-    "product-led blog",
-    "Instagram carousel"
-  ],
-  "compliance_status": "HARD_PASS_FAIL_PENDING",
-  "conversion_sensitivity_rates": [
-    0.005,
-    0.01,
-    0.02,
-    0.03
-  ],
+  "offer_key": "3-tier-rolling-cart",
+  "current_state": {
+    "high_intent_assets": [
+      "site/content/blog/3-tier-rolling-cart-for-renters-compact-homes-2026-08-29.md",
+      "site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md",
+      "site/content/policies/conversion-path-qa-3-tier-rolling-cart-2026-08-29.md"
+    ],
+    "existing_internal_links": [],
+    "conversion_path_status": "QA-PASSED",
+    "compliance_status": "VERIFIED"
+  },
+  "compliance_status": "VERIFIED",
+  "internal_linking_plan": {
+    "primary_target": "site/content/blog/3-tier-rolling-cart-for-renters-compact-homes-2026-08-29.md",
+    "anchor_text_rules": [
+      "descriptive",
+      "contextual",
+      "no-generic",
+      "include-keyword"
+    ],
+    "link_sources": [
+      "site/content/policies/conversion-path-qa-3-tier-rolling-cart-2026-08-29.md",
+      "site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md"
+    ],
+    "link_types": [
+      "contextual",
+      "CTA-box",
+      "buying-guide-summary"
+    ],
+    "tracking_params": "utm_source=internal&utm_medium=blog&utm_campaign=3tier-cart-20260829",
+    "disclosure_visibility": "always-visible-above-cta"
+  },
+  "sensitivity_forecast": {
+    "0.5_percent_conversion": 0,
+    "1_percent_conversion": 0,
+    "2_percent_conversion": 0,
+    "3_percent_conversion": 0
+  },
   "resource_envelope": {
-    "approved_tools": "existing",
+    "approved_tools": [
+      "markdown-editor",
+      "git"
+    ],
     "hosting": "existing",
-    "api_model_quotas": "existing",
-    "spend_ceiling": "0",
+    "api_model_quotas": "none-required",
+    "spend_ceiling": "₹0",
     "renewal_dates": "N/A",
-    "human_only_dependencies": "Founder review before publishing"
+    "human_only_dependencies": "none"
   },
   "next_steps": [
-    "Map internal links from buying guide to product-led blog",
-    "Map internal links from product-led blog to offer page",
-    "Map internal links from Instagram carousel to offer page",
-    "Ensure disclosure and tracking integrity on all links",
-    "Submit for Founder review and approval before publishing"
+    "Add 2–3 contextual links in conversion-path QA doc pointing to blog post",
+    "Add 1 CTA-box link in Instagram content plan pointing to blog post",
+    "Add 1 summary link in blog post pointing back to conversion-path QA",
+    "Run internal linking validator",
+    "Commit and submit for Founder review"
   ]
 }
