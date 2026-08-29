@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RIO v2 — Command Dashboard</title>
+<style>
+:root{
+  --bg:#0a0c0f; --panel:#11151b; --panel2:#161b23; --line:#1f2630;
+  --text:#e6edf3; --muted:#8b98a8; --dim:#5c6773;
+  --cyan:#22d3ee; --green:#34d399; --amber:#fbbf24; --red:#f87171;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;padding:32px 20px 64px}
+.wrap{max-width:1180px;margin:0 auto}
+.orb{width:104px;height:104px;border-radius:50%;margin:0 auto 20px;
+  background:radial-gradient(circle at 34% 30%,#67e8f9,#0891b2 62%,#075985);
+  box-shadow:0 0 0 10px rgba(34,211,238,.06),0 0 44px rgba(34,211,238,.34)}
+h1{text-align:center;font-size:26px;font-weight:600;letter-spacing:.14em;color:var(--cyan)}
+.sub{text-align:center;color:var(--muted);font-size:13px;margin-top:6px}
+.stamp{text-align:center;color:var(--dim);font-size:12px;margin-top:8px}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:12px;margin:30px 0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.card .k{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.card .v{font-size:25px;font-weight:600;margin-top:6px;font-variant-numeric:tabular-nums}
+
+h2{font-size:15px;font-weight:600;margin:34px 0 12px;color:var(--text)}
+h2 .note{font-weight:400;font-size:12px;color:var(--dim);margin-left:8px}
+
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px}
+.banner{border-radius:12px;padding:15px 18px;margin-bottom:14px;font-size:14px;border:1px solid}
+.b-warn{background:rgba(251,191,36,.07);border-color:rgba(251,191,36,.34);color:#fde68a}
+.b-ok{background:rgba(52,211,153,.07);border-color:rgba(52,211,153,.34);color:#a7f3d0}
+.b-bad{background:rgba(248,113,113,.07);border-color:rgba(248,113,113,.34);color:#fecaca}
+.banner b{display:block;margin-bottom:5px;font-weight:600}
+
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{text-align:left;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);
+  padding:9px 10px;border-bottom:1px solid var(--line);font-weight:500}
+td{padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+.num{text-align:right;font-variant-numeric:tabular-nums}
+.unmeasured{color:var(--amber);font-style:italic;font-size:12.5px}
+.pill{display:inline-block;padding:2px 9px;border-radius:99px;font-size:11px;letter-spacing:.04em}
+.p-ok{background:rgba(52,211,153,.14);color:#6ee7b7}
+.p-warn{background:rgba(251,191,36,.14);color:#fcd34d}
+.p-bad{background:rgba(248,113,113,.14);color:#fca5a5}
+.prod{color:var(--muted);font-size:12px;display:block;margin-top:3px}
+a{color:var(--cyan);text-decoration:none}
+a:hover{text-decoration:underline}
+.foot{text-align:center;color:var(--dim);font-size:12px;margin-top:40px;line-height:1.9}
+.task{background:var(--panel2);border-left:2px solid var(--cyan);border-radius:0;padding:12px 15px;margin-top:10px;font-size:13.5px}
+.task .lbl{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="orb"></div>
+  <h1>RIO v2</h1>
+  <div class="sub">Measurement-first affiliate engine · reports to Dr. Victor</div>
+  <div class="stamp" id="stamp">loading…</div>
+
+  <div class="cards" id="cards"></div>
+
+  <h2>Earnings forecast <span class="note">the objective</span></h2>
+  <div id="forecast"></div>
+
+  <h2>Measurement <span class="note">what has actually been observed</span></h2>
+  <div id="measurement"></div>
+
+  <h2>Loop guard <span class="note">blocks repeated work and unobservable conditions</span></h2>
+  <div id="guard"></div>
+
+  <h2>Current work</h2>
+  <div id="work"></div>
+
+  <div class="foot">
+    Nulls mean not measured. They are never shown as zero.<br>
+    Collected revenue stays at ₹0 until an approved Associates commission is recorded.
+  </div>
+</div>
+
+<script>
+const F = {
+  snap: 'data/dashboard_snapshot.json',
+  metrics: 'data/metrics_ledger.json',
+  forecast: 'data/earnings_forecast.json',
+  guard: 'data/repetition_guard.json',
+  posts: 'data/ig_published.json',
+  work: 'data/rio_work_status.json',
+  econ: 'data/unit_economics.json'
+};
+
+async function grab(path){
+  try{
+    const r = await fetch(path + '?t=' + Date.now());
+    if(!r.ok) return null;
+    return await r.json();
+  }catch(e){ return null; }
+}
+
+const num = v => (typeof v === 'number') ? v.toLocaleString('en-IN') : null;
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+function card(k, v, colour){
+  const shown = (v === null || v === undefined)
+    ? '<span class="unmeasured">not measured</span>' : v;
+  const style = colour ? ` style="color:${colour}"` : '';
+  return `<div class="card"><div class="k">${k}</div><div class="v"${style}>${shown}</div></div>`;
+}
+
+function renderCards(snap, metrics){
+  const s = snap || {};
+  const t = (metrics && metrics.totals) || {};
+  document.getElementById('cards').innerHTML = [
+    card('Ready offers', num(s.ready_offers)),
+    card('Content items', num(s.content_items)),
+    card('Posts live', num(s.instagram_posted)),
+    card('Reach', num(t.reach)),
+    card('Link clicks', num(t.website_clicks), t.website_clicks ? 'var(--green)' : null),
+    card('Revenue', '₹' + (num(s.revenue_inr) ?? '0'))
+  ].join('');
+}
+
+function renderForecast(fc, econ){
+  const el = document.getElementById('forecast');
+  if(!fc){ el.innerHTML = '<div class="panel"><span class="unmeasured">No forecast file yet. Run the measurement cycle.</span></div>'; return; }
+
+  if(fc.verdict === 'INSUFFICIENT_DATA'){
+    const miss = (fc.blockers || []).map(b => `<li>${esc(b)}</li>`).join('');
+    el.innerHTML = `
+      <div class="banner b-warn">
+        <b>No forecast produced — and that is deliberate</b>
+        The forecaster refuses to output a number until the funnel is measured, because a
+        forecast built on assumptions looks like evidence and is not.
+        <ul style="margin:9px 0 0 20px">${miss}</ul>
+      </div>
+      <div class="panel">${esc(fc.required_next_action || '')}</div>`;
+    return;
+  }
+
+  const p = fc.projections_by_conversion_rate || {};
+  const rows = Object.keys(p).map(band => {
+    const r = p[band];
+    return `<tr>
+      <td><b>${esc(band)}</b></td>
+      <td class="num">${num(r.monthly_orders) ?? '—'}</td>
+      <td class="num">₹${num(Math.round(r.monthly_gross_inr)) ?? '—'}</td>
+      <td class="num" style="color:var(--green)">₹${num(Math.round(r.monthly_commission_inr)) ?? '—'}</td>
+      <td class="num">${r.months_to_target_at_this_rate ?? '—'}</td>
+    </tr>`;
+  }).join('');
+
+  const i = fc.inputs || {};
+  el.innerHTML = `
+    <div class="banner b-ok">
+      <b>Modelled from ${num(i.measured_clicks)} measured clicks</b>
+      Projection only — not earned revenue. Four conversion bands, as the commercial
+      validation policy requires.
+    </div>
+    <div class="panel">
+      <table>
+        <thead><tr>
+          <th>Conversion</th><th class="num">Orders / mo</th><th class="num">Gross / mo</th>
+          <th class="num">Commission / mo</th><th class="num">Months to ₹10L</th>
+        </tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>`;
+}
+
+function renderMeasurement(metrics, posts){
+  const el = document.getElementById('measurement');
+  const known = (posts && posts.posted) || {};
+  const tracked = (metrics && metrics.posts) || {};
+
+  if(!Object.keys(known).length){
+    el.innerHTML = '<div class="panel"><span class="unmeasured">No published posts recorded.</span></div>';
+    return;
+  }
+
+  const anyMeasured = Object.values(tracked).some(p => p.latest && typeof p.latest.website_clicks === 'number');
+  const banner = anyMeasured ? '' : `
+    <div class="banner b-bad">
+      <b>Nothing measured yet</b>
+      Posts are live but no metrics have been collected. This is the exact gap that stalled
+      v1 — every "wait for clicks" task stays true forever when clicks are never read.
+      Add the <code>IG_RIO_TOKEN</code> secret and run the measurement cycle.
+    </div>`;
+
+  const rows = Object.entries(known).map(([key, post]) => {
+    const m = (tracked[key] && tracked[key].latest) || {};
+    const cell = v => (typeof v === 'number')
+      ? num(v) : '<span class="unmeasured">—</span>';
+    const state = (tracked[key] && tracked[key].latest_status) === 'COLLECTED'
+      ? '<span class="pill p-ok">measured</span>'
+      : '<span class="pill p-warn">unmeasured</span>';
+    return `<tr>
+      <td>
+        <a href="${esc(post.permalink)}" target="_blank" rel="noopener">${esc(key)}</a>
+        <span class="prod">${esc(post.product_name || '')}</span>
+      </td>
+      <td>${state}</td>
+      <td class="num">${cell(m.reach)}</td>
+      <td class="num">${cell(m.impressions)}</td>
+      <td class="num">${cell(m.saved)}</td>
+      <td class="num">${cell(m.website_clicks)}</td>
+    </tr>`;
+  }).join('');
+
+  el.innerHTML = banner + `
+    <div class="panel">
+      <table>
+        <thead><tr>
+          <th>Post</th><th>State</th><th class="num">Reach</th>
+          <th class="num">Impr.</th><th class="num">Saves</th><th class="num">Clicks</th>
+        </tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>`;
+}
+
+function renderGuard(g){
+  const el = document.getElementById('guard');
+  if(!g){ el.innerHTML = '<div class="panel"><span class="unmeasured">Guard has not run yet.</span></div>'; return; }
+  if(g.allowed){
+    el.innerHTML = `<div class="banner b-ok"><b>Next task allowed</b>${esc(g.proposed_task)}</div>`;
+    return;
+  }
+  const reasons = (g.reasons || []).map(r => `<li>${esc(r)}</li>`).join('');
+  el.innerHTML = `
+    <div class="banner b-bad">
+      <b>Next task blocked</b>
+      <div style="margin-bottom:8px">${esc(g.proposed_task)}</div>
+      <ul style="margin-left:20px">${reasons}</ul>
+    </div>`;
+}
+
+function renderWork(w){
+  const el = document.getElementById('work');
+  if(!w){ el.innerHTML = '<div class="panel"><span class="unmeasured">No work status file.</span></div>'; return; }
+  const cls = w.status === 'WAITING' ? 'p-warn' : 'p-ok';
+  el.innerHTML = `
+    <div class="panel">
+      <span class="pill ${cls}">${esc(w.status || 'UNKNOWN')}</span>
+      <span style="color:var(--dim);font-size:12px;margin-left:10px">engine: ${esc(w.ai_engine || '—')} · validators: ${esc(w.validators || '—')}</span>
+      <div class="task"><div class="lbl">Current task</div>${esc(w.current_task || '—')}</div>
+      <div class="task"><div class="lbl">Next task</div>${esc(w.next_task || '—')}</div>
+    </div>`;
+}
+
+(async function(){
+  const [snap, metrics, forecast, guard, posts, work, econ] = await Promise.all(
+    Object.values(F).map(grab)
+  );
+  renderCards(snap, metrics);
+  renderForecast(forecast, econ);
+  renderMeasurement(metrics, posts);
+  renderGuard(guard);
+  renderWork(work);
+  const when = (metrics && metrics.updated_at) || (forecast && forecast.generated_at);
+  document.getElementById('stamp').textContent = when
+    ? 'metrics updated ' + new Date(when).toLocaleString('en-IN')
+    : 'no measurement cycle has run yet';
+})();
+</script>
+</body>
+</html>
