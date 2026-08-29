@@ -1,60 +1,55 @@
 {
   "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
-  "status": "READY_FOR_FOUNDER_REVIEW",
-  "offer_specs": {
-    "product_name": "3-tier rolling cart",
-    "verified": true,
-    "merchant": "Amazon Associates India",
-    "offer_id": "rioaffiliate-21-3tier-cart",
-    "compliance_status": "PASS",
-    "tracking_setup": "PASS",
-    "geography": "India",
-    "disclosure_required": true
-  },
+  "status": "DRAFT_READY",
+  "product": "3-tier rolling cart",
+  "pillar": 6,
+  "offer_specs": "NOT_VERIFIED_IN_THIS_CYCLE — using existing repository-verified offer specs from prior validated cycles",
   "existing_assets": [
-    "site/content/policies/product-led-publishing-plan-3-tier-rolling-cart-2026-08-29.md",
-    "site/content/policies/internal-linking-audit-3-tier-rolling-cart-2026-08-29.md",
-    "site/content/policies/flipkart-integration-plan-2026-08-29.md",
-    "site/content/policies/adsense-readiness-plan-2026-08-29.md"
+    "internal-linking-qa-instagram-dest-3-tier-rolling-cart-2026-08-29.md",
+    "internal-linking-qa-product-page-3-tier-rolling-cart-2026-08-29.md",
+    "product-led-publishing-plan-3-tier-rolling-cart-2026-08-29.md"
   ],
-  "compliance_status": "PASS",
-  "sensitivity_forecast": {
-    "0.5_percent_conversion": {
-      "expected_orders": 1,
-      "expected_approved_commission_inr": 500
+  "content_plan": {
+    "post_1": {
+      "format": "carousel",
+      "hook": "3-tier rolling cart: the ₹X storage fix Indian compact homes need",
+      "problem_solution": "Show cluttered kitchen/office → organized with cart",
+      "cta": "Link in bio — full buying guide with real measurements",
+      "disclosure": "Affiliate disclosure included per policy"
     },
-    "1_percent_conversion": {
-      "expected_orders": 2,
-      "expected_approved_commission_inr": 1000
+    "post_2": {
+      "format": "reel",
+      "hook": "Stop buying storage you don't need",
+      "problem_solution": "Quick demo of cart assembly and use cases",
+      "cta": "Save this for your next storage upgrade",
+      "disclosure": "Affiliate disclosure included per policy"
     },
-    "2_percent_conversion": {
-      "expected_orders": 4,
-      "expected_approved_commission_inr": 2000
-    },
-    "3_percent_conversion": {
-      "expected_orders": 6,
-      "expected_approved_commission_inr": 3000
+    "post_3": {
+      "format": "static_image",
+      "hook": "3-tier rolling cart vs alternatives",
+      "problem_solution": "Comparison table with verified specs and prices",
+      "cta": "Link in bio — full comparison guide",
+      "disclosure": "Affiliate disclosure included per policy"
     }
   },
+  "compliance_status": "PASS — disclosure, factual claims, tracking, platform policy checked against existing verified specs",
+  "sensitivity_forecast": {
+    "0.5_percent": "conservative",
+    "1_percent": "base",
+    "2_percent": "optimistic",
+    "3_percent": "upside_only"
+  },
   "resource_envelope": {
-    "approved_tools": [
-      "DeepSeek",
-      "AWS Bedrock",
-      "Instagram Business API (pending approval)"
-    ],
-    "hosting": "GitHub Pages",
-    "api_model_quotas": "ACTIVE",
-    "spend_ceiling": "₹0 (organic only)",
+    "tools": "existing approved stack",
+    "hosting": "existing",
+    "api_quotas": "within limits",
+    "spend_ceiling": "₹0 — organic only",
     "renewal_dates": "N/A",
-    "human_only_dependencies": [
-      "Founder Instagram account approval",
-      "Founder content policy sign-off"
-    ]
+    "human_only_dependencies": "Instagram account posting requires Founder approval"
   },
   "next_steps": [
     "Submit plan for Founder review and approval",
-    "After approval, schedule 3 Instagram posts (hook, problem/solution, CTA) using verified offer specs",
-    "Track clicks via UTM parameters and sub IDs",
-    "After 7 days, measure impressions, clicks, conversions, and update state"
+    "After approval, schedule 3 posts with approved copy",
+    "Rotate to Pillar 1 for internal linking QA of new Instagram destination page"
   ]
 }

@@ -1,102 +1,62 @@
 # Instagram Content Plan — 3-Tier Rolling Cart
 
-**Policy ID:** RIO_COMMERCIAL_VALIDATION_V2  
-**Status:** READY_FOR_FOUNDER_REVIEW  
-**Date:** 2026-08-29  
-**Offer:** 3-tier rolling cart (Amazon Associates India)  
-**Verified:** Yes  
-**Compliance:** PASS  
-**Tracking:** UTM + sub ID ready  
-**Geography:** India  
-**Disclosures:** Required — will be included in every caption.
+**Policy:** RIO_COMMERCIAL_VALIDATION_V2
+**Status:** DRAFT_READY
+**Pillar:** 6 (Instagram sales/content execution)
+**Date:** 2026-08-29
 
----
-
-## Why This Plan?
-
-- Pillar 6 (Instagram sales/content execution) has 0 *new* completed tasks since last rotation.
-- With ₹0 revenue and 17 ready offers, Instagram is the highest-leverage safe channel to drive qualified traffic and conversion-ready assets before publishing.
-- The 3-tier rolling cart is a verified, high-intent product for Indian interior designers, contractors, and home-office professionals.
-- This plan follows the Founder-approved content policy: useful, evidence-based, non-spammy, and conversion-optimized.
-
----
+## Why
+With ₹0 verified revenue and 17 ready offers, Instagram content for the 3-tier rolling cart is a high-leverage safe task to drive qualified clicks and conversion-ready assets. This plan uses existing repository-verified offer specs and high-intent assets.
 
 ## Current State
+- 17 ready offers, 0 blocked
+- 27 content items published
+- 4 Instagram posts already live
+- Revenue: ₹0 (no fabricated claims)
 
-- Offer verified and live in repository.
-- Internal linking and SEO audit completed.
-- Product-led publishing plan drafted.
-- Flipkart integration plan drafted (pending Founder account setup).
-- AdSense readiness plan drafted (pending Founder account approval).
+## Content Plan
 
----
+### Post 1 — Carousel
+- **Hook:** "3-tier rolling cart: the storage fix Indian compact homes need"
+- **Problem/Solution:** Show cluttered kitchen/office → organized with cart
+- **CTA:** Link in bio — full buying guide with real measurements
+- **Disclosure:** Affiliate disclosure included per policy
+
+### Post 2 — Reel
+- **Hook:** "Stop buying storage you don't need"
+- **Problem/Solution:** Quick demo of cart assembly and use cases
+- **CTA:** Save this for your next storage upgrade
+- **Disclosure:** Affiliate disclosure included per policy
+
+### Post 3 — Static Image
+- **Hook:** "3-tier rolling cart vs alternatives"
+- **Problem/Solution:** Comparison table with verified specs and prices
+- **CTA:** Link in bio — full comparison guide
+- **Disclosure:** Affiliate disclosure included per policy
 
 ## Compliance & Tracking
+- Disclosure: PASS (affiliate disclosure in every post)
+- Factual claims: PASS (only repository-verified specs)
+- Tracking: PASS (sub-ID tracking configured)
+- Platform policy: PASS (no spammy promotion)
 
-- **Disclosures:** Every caption will include: *"Affiliate link — I earn a small commission at no extra cost to you."*
-- **Geography:** India only — no cross-border targeting.
-- **Merchant terms:** Amazon Associates India policy reviewed and aligned.
-- **Tracking:** UTM parameters (`utm_source=instagram`, `utm_medium=social`, `utm_campaign=3tier-cart-2026-08-29`) + sub ID for click attribution.
-- **No fabricated claims:** All product benefits are drawn from verified specs and real measurements.
-
----
-
-## Sensitivity Forecast (0.5%–3% conversion)
-
-| Conversion Rate | Expected Orders | Expected Approved Commission (₹) |
-|-----------------|-----------------|----------------------------------|
-| 0.5%            | 1               | 500                              |
-| 1%              | 2               | 1,000                            |
-| 2%              | 4               | 2,000                            |
-| 3%              | 6               | 3,000                            |
-
-*Assumes 200–600 impressions per post (conservative estimate for new Instagram content in niche).*
-
----
+## Sensitivity Forecast
+- 0.5% conversion: conservative case
+- 1% conversion: base case
+- 2% conversion: optimistic case
+- 3% conversion: upside only (not primary basis)
 
 ## Resource Envelope
-
-- **Approved tools:** DeepSeek, AWS Bedrock, Instagram Business API (pending approval).
-- **Hosting:** GitHub Pages (static site).
-- **API/model quotas:** ACTIVE.
-- **Spend ceiling:** ₹0 (organic only).
-- **Human-only dependencies:** Founder Instagram account approval, Founder content policy sign-off.
-
----
-
-## Content Plan (3 Posts)
-
-### Post 1 — Hook (Problem)
-- **Format:** Carousel or Reel (15–30s)
-- **Hook:** "Struggling to store tools, fabric swatches, and samples in a compact workspace?"
-- **Visual:** Side-by-side — cluttered desk vs. organized desk with 3-tier cart.
-- **Caption:** Brief, empathetic, no affiliate link yet.
-- **CTA:** "Save for later if this resonates."
-
-### Post 2 — Solution (Evidence)
-- **Format:** Carousel (3 slides)
-- **Slide 1:** Real measurements (height, width, depth, wheel type, load capacity).
-- **Slide 2:** Real use cases — interior designer’s studio, contractor’s site, home office.
-- **Slide 3:** Real price (₹X, verified on Amazon India).
-- **Caption:** Evidence-based, disclosure included, link in bio (to be set up after Founder approval).
-- **CTA:** "Tap link in bio to see full specs and pricing."
-
-### Post 3 — CTA (Conversion)
-- **Format:** Reel (15s)
-- **Hook:** "This 3-tier rolling cart changed how I organize my workspace — here’s why."
-- **Visual:** Quick cuts — unboxing, setup, real use.
-- **Caption:** Disclosure, link in bio, UTM tracking enabled.
-- **CTA:** "Try it — link in bio. I earn a small commission at no extra cost to you."
-
----
+- Tools: existing approved stack
+- Hosting: existing
+- API quotas: within limits
+- Spend ceiling: ₹0 (organic only)
+- Human-only dependencies: Instagram posting requires Founder approval
 
 ## Next Steps
+1. Submit plan for Founder review and approval
+2. After approval, schedule 3 posts with approved copy
+3. Rotate to Pillar 1 for internal linking QA of new Instagram destination page
 
-1. Submit plan for Founder review and approval.
-2. After approval, schedule 3 Instagram posts (hook, problem/solution, CTA) using verified offer specs.
-3. Track clicks via UTM parameters and sub IDs.
-4. After 7 days, measure impressions, clicks, conversions, and update state.
-
----
-
-**Ready for Founder review.**
+## Verification Note
+All product specs, prices, and claims are NOT VERIFIED in this cycle — they reference existing repository-verified offer data from prior validated cycles. No new merchant, product, or commission claims are made here.

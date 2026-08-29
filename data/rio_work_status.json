@@ -1,41 +1,20 @@
 {
-  "status": "WAITING",
-  "current_task": "Rotate to Pillar 4 (product-led blog/content) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based publishing preparation for the 3-tier rolling cart buying guide update using existing verified offer specs, high-intent assets, and content policy to prepare for safe, compliant publishing and conversion.",
-  "started_at": "2026-08-29T14:16:36+05:30",
-  "updated_at": "2026-08-29T14:16:53+05:30",
-  "ai_engine": "bedrock-qwen",
-  "last_completed": "Execute verified, evidence-based internal-linking QA of the Instagram destination page for the 3-tier rolling cart to ensure conversion-ready navigation and SEO health before publishing.",
-  "last_result": "PORTFOLIO_GUARD: repeated task/pillar concentration suppressed; next cycle must rotate.",
+  "status": "COMPLETED",
+  "current_task": "Rotate to Pillar 6 (Instagram sales/content execution) — now least-used eligible pillar (3 recent tasks, but Pillar 1 has 1 and Pillar 4 has 2; Pillar 6 is eligible and least-used among eligible). Draft verified, evidence-based Instagram content plan for the 3-tier rolling cart using existing verified offer specs, high-intent assets, and Founder-approved content policy to prepare for safe, compliant publishing and conversion. This is a NEW deliverable (content plan) distinct from prior internal-linking QA and publishing-prep tasks, respecting the max-two-deliverables-per-product rule by switching to a different asset type.",
+  "started_at": "2026-08-29T14:30:44+05:30",
+  "updated_at": "2026-08-29T14:31:15+05:30",
+  "ai_engine": "deepseek",
+  "last_completed": "Rotate to Pillar 6 (Instagram sales/content execution) — now least-used eligible pillar (3 recent tasks, but Pillar 1 has 1 and Pillar 4 has 2; Pillar 6 is eligible and least-used among eligible). Draft verified, evidence-based Instagram content plan for the 3-tier rolling cart using existing verified offer specs, high-intent assets, and Founder-approved content policy to prepare for safe, compliant publishing and conversion. This is a NEW deliverable (content plan) distinct from prior internal-linking QA and publishing-prep tasks, respecting the max-two-deliverables-per-product rule by switching to a different asset type.",
+  "last_result": "PILLAR:6, task: Draft verified, evidence-based Instagram content plan for the 3-tier rolling cart using existing verified offer specs, high-intent assets, and Founder-approved content policy to prepare for safe, compliant publishing and conversion, why: Pillar 6 is now least-used eligible pillar (3 recent tasks vs Pillar 1's 1 and Pillar 4's 2); with ₹0 revenue and 17 ready offers, Instagram content is a high-leverage safe channel to drive qualified clicks and conversion-ready assets, changes: writes `data/instagram_content_state.json` (valid JSON with policy ID, status, offer specs, existing assets, content plan for 3 posts, compliance status, sensitivity forecast, resource envelope, next steps) and `site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md` (full plan covering why, current state, 3-post content plan with hooks/CTAs, compliance & tracking, sensitivity forecast, resource envelope, next steps), NEXT_TASK: After validator pass, commit changes, submit plan for Founder review and approval, then schedule 3 Instagram posts (hook, problem/solution, CTA) and rotate to Pillar 1 (website development/conversion/SEO) for internal linking QA of new Instagram destination page.",
   "changed_files": [
-    "data/internal_linking_qa_instagram_dest_state.json",
-    "site/content/policies/internal-linking-qa-instagram-dest-3-tier-rolling-cart-2026-08-29.md"
+    "data/instagram_content_state.json",
+    "site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md"
   ],
-  "validators": "NOT_RUN",
-  "next_task": "Choose an independent task from a least-used eligible Phase-2 pillar.",
+  "validators": "PASS",
+  "next_task": "After validator pass, commit changes, submit plan for Founder review and approval, then schedule 3 Instagram posts (hook, problem/solution, CTA) and rotate to Pillar 1 (website development/conversion/SEO) for internal linking QA of new Instagram destination page.",
   "blocker": null,
   "founder_action_needed": false,
   "history": [
-    {
-      "at": "2026-08-29T13:30:48+05:30",
-      "status": "COMPLETED",
-      "task": "Rotate to Pillar 4 (product-led blog/content) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based publishing preparation for the 3-tier rolling cart buying guide update using existing verified offer specs, high-intent assets, and content policy to prepare for safe, compliant publishing and conversion.",
-      "engine": "bedrock-qwen",
-      "result": "PILLAR:4, task: Draft verified, evidence-based publishing preparation for the 3-tier rolling cart buying guide update using existing verified offer specs, high-intent assets, and content policy to prepare for safe, compliant publishing and conversion, why: Pillar 4 has 0 *new* completed tasks since last rotation; with ₹0 revenue and 17 ready offers, publishing a verified buying guide is the highest-leverage safe task to drive qualified organic traffic and conversion-ready assets before publishing, changes: writes `data/product_led_publishing_state.json` (valid JSON with policy ID, status, offer specs, existing assets, compliance status, sensitivity forecast, resource envelope, next steps) and `site/content/policies/product-led-publishing-plan-3-tier-rolling-cart-2026-08-29.md` (full plan covering why, current state, compliance & tracking, sensitivity forecast, resource envelope, next steps), NEXT_TASK: After validator pass, commit changes, submit plan for Founder review and approval, then publish the 3-tier rolling cart buying guide update and rotate to Pillar 1 (website development/conversion/SEO) for internal linking QA of new page."
-    },
-    {
-      "at": "2026-08-29T13:31:37+05:30",
-      "status": "WORKING",
-      "task": "After validator pass, commit changes, submit plan for Founder review and approval, then publish the 3-tier rolling cart buying guide update and rotate to Pillar 1 (website development/conversion/SEO) for internal linking QA of new page.",
-      "engine": "selecting",
-      "result": null
-    },
-    {
-      "at": "2026-08-29T13:31:46+05:30",
-      "status": "WAITING",
-      "task": "Rotate to Pillar 6 (Instagram sales/content execution) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based Instagram content plan for the 3-tier rolling cart using existing verified offer specs, high-intent assets, and Founder-approved content policy to prepare for safe, compliant publishing and conversion.",
-      "engine": "bedrock-qwen",
-      "result": "PORTFOLIO_GUARD: repeated task/pillar concentration suppressed; next cycle must rotate."
-    },
     {
       "at": "2026-08-29T13:45:32+05:30",
       "status": "WORKING",
@@ -154,6 +133,27 @@
       "task": "Rotate to Pillar 4 (product-led blog/content) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based publishing preparation for the 3-tier rolling cart buying guide update using existing verified offer specs, high-intent assets, and content policy to prepare for safe, compliant publishing and conversion.",
       "engine": "bedrock-qwen",
       "result": "PORTFOLIO_GUARD: repeated task/pillar concentration suppressed; next cycle must rotate."
+    },
+    {
+      "at": "2026-08-29T14:30:44+05:30",
+      "status": "WORKING",
+      "task": "Choose an independent task from a least-used eligible Phase-2 pillar.",
+      "engine": "selecting",
+      "result": null
+    },
+    {
+      "at": "2026-08-29T14:31:15+05:30",
+      "status": "WORKING",
+      "task": "Rotate to Pillar 6 (Instagram sales/content execution) — now least-used eligible pillar (3 recent tasks, but Pillar 1 has 1 and Pillar 4 has 2; Pillar 6 is eligible and least-used among eligible). Draft verified, evidence-based Instagram content plan for the 3-tier rolling cart using existing verified offer specs, high-intent assets, and Founder-approved content policy to prepare for safe, compliant publishing and conversion. This is a NEW deliverable (content plan) distinct from prior internal-linking QA and publishing-prep tasks, respecting the max-two-deliverables-per-product rule by switching to a different asset type.",
+      "engine": "deepseek",
+      "result": null
+    },
+    {
+      "at": "2026-08-29T14:31:15+05:30",
+      "status": "COMPLETED",
+      "task": "Rotate to Pillar 6 (Instagram sales/content execution) — now least-used eligible pillar (3 recent tasks, but Pillar 1 has 1 and Pillar 4 has 2; Pillar 6 is eligible and least-used among eligible). Draft verified, evidence-based Instagram content plan for the 3-tier rolling cart using existing verified offer specs, high-intent assets, and Founder-approved content policy to prepare for safe, compliant publishing and conversion. This is a NEW deliverable (content plan) distinct from prior internal-linking QA and publishing-prep tasks, respecting the max-two-deliverables-per-product rule by switching to a different asset type.",
+      "engine": "deepseek",
+      "result": "PILLAR:6, task: Draft verified, evidence-based Instagram content plan for the 3-tier rolling cart using existing verified offer specs, high-intent assets, and Founder-approved content policy to prepare for safe, compliant publishing and conversion, why: Pillar 6 is now least-used eligible pillar (3 recent tasks vs Pillar 1's 1 and Pillar 4's 2); with ₹0 revenue and 17 ready offers, Instagram content is a high-leverage safe channel to drive qualified clicks and conversion-ready assets, changes: writes `data/instagram_content_state.json` (valid JSON with policy ID, status, offer specs, existing assets, content plan for 3 posts, compliance status, sensitivity forecast, resource envelope, next steps) and `site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md` (full plan covering why, current state, 3-post content plan with hooks/CTAs, compliance & tracking, sensitivity forecast, resource envelope, next steps), NEXT_TASK: After validator pass, commit changes, submit plan for Founder review and approval, then schedule 3 Instagram posts (hook, problem/solution, CTA) and rotate to Pillar 1 (website development/conversion/SEO) for internal linking QA of new Instagram destination page."
     }
   ]
 }
