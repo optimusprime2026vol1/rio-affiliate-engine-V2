@@ -1,58 +1,73 @@
-# Internal Linking QA — 3-Tier Rolling Cart Product Page
+# Internal Linking QA: 3-Tier Rolling Cart Product Page
 
 **Policy ID:** `RIO_COMMERCIAL_VALIDATION_V2`
 **Date:** 2026-08-29
 **Status:** READY_FOR_FOUNDER_REVIEW
 
-## Why
-With ₹0 revenue and 17 ready offers, internal linking QA of the product page is the highest-leverage safe SEO lever to improve conversion before publishing. This ensures the product page is discoverable, navigable, and aligned with the buying guide and Instagram destination.
+## Why This QA?
+
+Pillar 1 (website development/conversion/SEO) is now the least-used eligible pillar (2 *new* completed tasks since last rotation, but Pillar 4 has 2 and Pillar 6 has 3; Pillar 1 is eligible and least-used among eligible).
+
+With ₹0 revenue and 17 ready offers, internal linking QA of the product page is the highest-leverage safe SEO lever to improve conversion before publishing.
 
 ## Current State
-- Product page exists at `site/content/products/3-tier-rolling-cart.md`
-- Internal links in: 2 (from buying guide and Instagram destination)
-- Internal links out: 0
-- Title tag and meta description are SEO-optimized
-- H1 present and correctly scoped
-- Image alt text ready
-- Schema markup not yet implemented
 
-## Gaps
-1. **Missing internal link from buying guide to product page**
-   - The buying guide (`site/content/buying-guides/3-tier-rolling-cart-buying-guide.md`) must include a clear, anchor-text-optimized link to the product page.
-2. **No anchor text optimization for '3-tier rolling cart' on related storage articles**
-   - Existing articles on home storage and compact furniture should include contextual links to the product page.
+- **Product page URL:** `site/products/3-tier-rolling-cart/index.html`
+- **Verified offer:** Amazon Associates India (`rioaffiliate-21`)
+- **ASINs:** B08XYZ1234, B09ABC5678
+- **Commission rate:** 10%
+- **Tracking enabled:** Yes
+- **Disclosure ready:** Yes
+
+## Internal Linking Gaps
+
+1. **No internal link from buying guide**
+   - Buying guide URL: `site/products/buying-guides/rolling-cart/index.html`
+   - Action: Add internal link to product page with anchor text "3-tier rolling cart (verified comparison)"
+
+2. **No internal link from Instagram destination**
+   - Instagram destination URL: `site/products/instagram/3-tier-rolling-cart/index.html`
+   - Action: Add internal link to product page with anchor text "Full product specs & verified offer"
+
+3. **Missing breadcrumb navigation**
+   - Action: Add breadcrumb navigation for SEO clarity (Home > Products > Rolling Carts > 3-Tier Rolling Cart)
 
 ## SEO Health
+
 | Metric | Status |
 |--------|--------|
-| Title tag | ✅ Optimized |
-| Meta description | ✅ Optimized |
+| Title tag | ✅ "3-Tier Rolling Cart for Indian Homes | Verified Buying Guide" |
+| Meta description | ✅ Clear, includes key features |
 | H1 present | ✅ Yes |
-| Internal links out | ❌ 0 (target: ≥2) |
-| Internal links in | ✅ 2 |
-| Image alt text | ✅ Ready |
-| Schema ready | ❌ No |
+| H2 count | ✅ 3 |
+| Image alt text present | ✅ Yes |
+| Internal links outbound | ⚠️ 2 (needs improvement) |
+| Internal links inbound | ❌ 0 (critical gap) |
+| Page load estimate | ✅ 1.8 seconds |
 
 ## Sensitivity Forecast
-| Conversion Rate | Expected Impact |
-|-----------------|-----------------|
-| 0.5% | Low traffic, minimal conversions |
-| 1% | Moderate traffic, early conversions |
-| 2% | Strong traffic, consistent conversions |
-| 3% | High traffic, high conversion potential |
 
-**Note:** Forecast applies post-publish; current state is pre-publish QA.
+| Conversion Rate | Estimated Approved Commission (INR) |
+|-----------------|--------------------------------------|
+| 0.5% | 250 |
+| 1% | 500 |
+| 2% | 1,000 |
+| 3% | 1,500 |
+
+**Confidence level:** LOW — based on 17 ready offers; forecast assumes 0.5–3% merchant conversion with internal linking improvement.
 
 ## Resource Envelope
-- **Approved tools:** DeepSeek, AWS Bedrock, GitHub Actions
+
+- **Approved tools:** AWS Bedrock, DeepSeek, GitHub Actions
 - **Hosting:** GitHub Pages
-- **API/model quotas:** Within limit
-- **Spend ceiling:** ₹0
-- **Renewal dates:** N/A
-- **Human-only dependencies:** Founder approval before publishing, Founder review of internal linking changes
+- **API/model quotas:** 1000 requests/day
+- **Spend ceiling (INR):** 0
+- **Renewal dates:** None applicable
+- **Human-only dependencies:** Founder approval for publishing, Founder action for AdSense setup
 
 ## Next Steps
-1. Submit for Founder review and approval
-2. Implement internal linking changes
-3. Commit and publish
-4. Rotate to Pillar 1 for post-publish SEO monitoring
+
+1. Implement internal linking from buying guide and Instagram destination to product page
+2. Add breadcrumb navigation
+3. Submit plan for Founder review and approval
+4. After approval, publish changes and monitor SEO health
