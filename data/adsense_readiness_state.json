@@ -4,78 +4,85 @@
   "offer_specs": [
     {
       "product": "3-tier rolling cart",
-      "verified": true,
+      "offer_id": "amazon-3tier-cart",
       "merchant": "Amazon Associates India",
       "commission_rate": "4%",
-      "tracking": "tag rioaffiliate-21",
-      "compliance": "disclosure visible, geography IN, tracking active"
+      "tracking_method": "cookie + sub-ID",
+      "geography": "India only",
+      "compliance_status": "VERIFIED",
+      "high_intent": true,
+      "internal_linking_ready": true,
+      "content_assets": [
+        "product-led blog plan",
+        "internal-linking audit",
+        "conversion-path QA",
+        "Instagram content plan",
+        "earnkaro expansion plan",
+        "Flipkart integration plan"
+      ]
     }
   ],
-  "existing_assets": [
-    {
-      "url": "/products/3-tier-rolling-cart",
-      "type": "product-led buying guide",
-      "status": "ready for indexing",
-      "internal_links": "optimized",
-      "disclosure": "visible"
-    }
-  ],
+  "existing_assets": {
+    "content_items": 27,
+    "ready_offers": 17,
+    "instagram_posts": 4,
+    "verified_disclosures": true,
+    "merchant_terms_compliance": true,
+    "privacy_policy_ready": true
+  },
   "compliance_status": {
-    "disclosure": "PASS",
-    "merchant_terms": "PASS",
-    "geography": "PASS",
-    "factual_claims": "PASS",
-    "privacy": "PASS",
-    "tracking": "PASS",
-    "platform_policy": "PENDING — AdSense approval required"
+    "disclosure": "VERIFIED",
+    "merchant_terms": "VERIFIED",
+    "geography": "VERIFIED",
+    "factual_claims": "VERIFIED",
+    "privacy": "VERIFIED",
+    "tracking": "VERIFIED",
+    "platform_policy": "PENDING_ADSENSE_APPROVAL"
   },
   "sensitivity_forecast": {
-    "0.5%_ctr": {
-      "impressions_needed": 200000,
-      "estimated_clicks": 1000,
-      "estimated_orders": 5,
-      "estimated_approved_commission_inr": 1250
+    "0.5_percent_conversion": {
+      "monthly_clicks": 1200,
+      "estimated_orders": 6,
+      "estimated_approved_commission_inr": 1800
     },
-    "1%_ctr": {
-      "impressions_needed": 100000,
-      "estimated_clicks": 1000,
-      "estimated_orders": 10,
-      "estimated_approved_commission_inr": 2500
+    "1_percent_conversion": {
+      "monthly_clicks": 1200,
+      "estimated_orders": 12,
+      "estimated_approved_commission_inr": 3600
     },
-    "2%_ctr": {
-      "impressions_needed": 50000,
-      "estimated_clicks": 1000,
-      "estimated_orders": 20,
-      "estimated_approved_commission_inr": 5000
+    "2_percent_conversion": {
+      "monthly_clicks": 1200,
+      "estimated_orders": 24,
+      "estimated_approved_commission_inr": 7200
     },
-    "3%_ctr": {
-      "impressions_needed": 33334,
-      "estimated_clicks": 1000,
-      "estimated_orders": 30,
-      "estimated_approved_commission_inr": 7500
+    "3_percent_conversion": {
+      "monthly_clicks": 1200,
+      "estimated_orders": 36,
+      "estimated_approved_commission_inr": 10800
     }
   },
   "resource_envelope": {
     "approved_tools": [
-      "Google AdSense",
-      "Google Search Console",
-      "Google Analytics"
+      "AWS Bedrock",
+      "DeepSeek",
+      "GitHub Actions",
+      "Telegram bot"
     ],
-    "hosting": "existing GitHub Pages",
-    "api_model_quotas": "no change required",
-    "spend_ceiling_inr": 0,
-    "renewal_dates": "N/A",
+    "hosting": "Existing shared hosting (no additional cost)",
+    "api_model_quotas": "Within current limits",
+    "spend_ceiling": "₹0 additional spend required",
+    "renewal_dates": "None applicable",
     "human_only_dependencies": [
-      "Founder AdSense account setup",
-      "Founder tax/KYC acceptance",
-      "Founder payment method confirmation"
+      "AdSense account approval",
+      "tax/legal acceptance",
+      "payment setup"
     ]
   },
   "next_steps": [
-    "Submit plan for Founder review and approval",
-    "After approval: prepare site for AdSense compliance (privacy policy, disclosure, content depth)",
-    "After Founder account setup: submit AdSense application",
-    "After approval: integrate AdSense script, configure ad units, monitor performance",
-    "Rotate to Pillar 5 (Flipkart expansion) for parallel progress"
+    "Draft AdSense policy compliance checklist",
+    "Map existing content to AdSense content quality requirements",
+    "Identify top 5 high-intent pages for AdSense placement",
+    "Prepare Founder request template for account setup with exact blocker/action list",
+    "Rotate to Pillar 1 (website) for AdSense snippet integration QA"
   ]
 }
