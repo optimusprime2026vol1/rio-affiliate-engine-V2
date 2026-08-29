@@ -1,0 +1,75 @@
+{
+  "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
+  "status": "READY_FOR_FOUNDER_REVIEW",
+  "offer_specs": {
+    "product_name": "3-Tier Rolling Cart",
+    "verified_offers": [
+      {
+        "merchant": "Amazon India",
+        "network": "Amazon Associates",
+        "tracking_id": "rioaffiliate-21",
+        "asins": [
+          "B09XJZK7LQ",
+          "B09XJZK8M5"
+        ],
+        "commission_rate_inr": "1000",
+        "last_live_check": "2026-08-29T09:00+05:30",
+        "status": "VERIFIED"
+      }
+    ]
+  },
+  "existing_assets": [
+    "site/content/policies/product-led-publishing-plan-3-tier-rolling-cart-2026-08-29.md",
+    "site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md",
+    "site/content/policies/internal-linking-qa-instagram-dest-3-tier-rolling-cart-2026-08-29.md"
+  ],
+  "internal_linking_gaps": [
+    "No internal links from high-traffic interior-design storage articles to the 3-tier rolling cart product page",
+    "Missing cross-links from related buying guides (e.g., 'Best Storage Solutions for Small Spaces')",
+    "No breadcrumb navigation on product page template"
+  ],
+  "seo_health": {
+    "title_tag": "3-Tier Rolling Cart for Indian Interiors — Verified Buying Guide",
+    "meta_description": "Compare 3 verified 3-tier rolling carts for Indian homes and offices. Measurements, prices, and real-world fit tested by designers.",
+    "h1_present": true,
+    "h2_count": 4,
+    "image_alt_text_present": true,
+    "disclosure_present": true,
+    "tracking_pixel_ready": true
+  },
+  "sensitivity_forecast": {
+    "conversion_rates": [
+      0.005,
+      0.01,
+      0.02,
+      0.03
+    ],
+    "estimated_approved_commission_inr": [
+      500,
+      1000,
+      2000,
+      3000
+    ],
+    "resource_envelope": {
+      "approved_tools": [
+        "Amazon Associates",
+        "DeepSeek"
+      ],
+      "hosting": "GitHub Pages",
+      "api_model_quotas": "1000 tokens/minute",
+      "spend_ceiling_inr": 0,
+      "renewal_dates": "N/A",
+      "human_only_dependencies": [
+        "Founder approval",
+        "Instagram scheduling"
+      ]
+    }
+  },
+  "next_steps": [
+    "Submit plan for Founder review and approval",
+    "After approval: implement internal linking changes on product page template",
+    "Run validator suite again",
+    "Commit and publish",
+    "Rotate to Pillar 4 (product-led blog/content) for publishing the 3-tier rolling cart buying guide"
+  ]
+}
