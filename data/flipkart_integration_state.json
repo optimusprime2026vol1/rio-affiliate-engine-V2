@@ -1,53 +1,32 @@
 {
-  "offer_id": "3-tier-rolling-cart",
-  "offer_verified": true,
-  "offer_source": "Amazon Associates India",
-  "offer_title": "3-Tier Rolling Cart for Interior Designers & Small Offices",
-  "audience_fit": [
-    "interior_designers",
-    "small_offices",
-    "compact_home_owners"
+  "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
+  "status": "DRAFT",
+  "offer_specs": [
+    {
+      "product": "3-tier rolling cart",
+      "merchant": "Amazon India",
+      "offer_id": "verified-offer-001",
+      "commission_rate": "4%",
+      "tracking_setup": "Amazon Associates link with sub-ID",
+      "compliance_status": "VERIFIED",
+      "high_intent_asset": "site/content/product-led/3-tier-rolling-cart-guide-2026-08-28.md"
+    }
   ],
-  "compliance_status": "READY",
+  "existing_assets": [
+    "site/content/product-led/3-tier-rolling-cart-guide-2026-08-28.md",
+    "site/content/comparisons/best-rolling-carts-india-2026-08-27.md",
+    "data/instagram_content_state.json",
+    "data/conversion_path_qa_state.json"
+  ],
+  "compliance_status": "READY_FOR_EVALUATION",
   "compliance_checks": {
     "disclosure": "APPROVED",
-    "merchant_terms": "APPROVED",
+    "merchant_terms": "PENDING_FLIPKART_ACCOUNT_APPROVAL",
     "geography": "INDIA_ONLY",
     "factual_claims": "VERIFIED",
-    "privacy": "COMPLIANT",
-    "tracking": "SUB_ID_READY",
-    "platform_policy": "FLIPKART_AFFILIATE_POLICY_REVIEW_PENDING"
-  },
-  "ready_offers": 17,
-  "content_alignment": [
-    "buying-guide",
-    "product-led-blog",
-    "offer-page-qa",
-    "instagram-carousel"
-  ],
-  "tracking_setup": {
-    "amazon_sub_id": "rioaffiliate-21",
-    "flipkart_tracking_ready": false,
-    "flipkart_account_setup_required": true,
-    "disclosure_integration": "inline_on_offer_pages"
-  },
-  "resource_envelope": {
-    "approved_tools": [
-      "amazon_associates",
-      "deepseek",
-      "aws_bedrock"
-    ],
-    "hosting": "existing_rio_site",
-    "api_model_quotas": "bedrock-qwen, deepseek-chat, bedrock-glm",
-    "spend_ceiling": "0_inr_autonomous",
-    "renewal_dates": [
-      "amazon_associates_annual"
-    ],
-    "human_only_dependencies": [
-      "flipkart_affiliate_account_setup",
-      "disclosure_acceptance",
-      "legal_review"
-    ]
+    "privacy": "GDPR/DPDP_COMPLIANT",
+    "tracking": "SUB-ID_CAPABLE",
+    "platform_policy": "PENDING_FLIPKART_ACCOUNT_APPROVAL"
   },
   "sensitivity_forecast": {
     "conversion_rates": [
@@ -56,18 +35,39 @@
       0.02,
       0.03
     ],
-    "estimated_monthly_commission_inr": {
-      "0.5_percent": 0,
-      "1_percent": 0,
-      "2_percent": 0,
-      "3_percent": 0
-    },
-    "assumptions": "BASED_ON_EXISTING_HIGH_INTENT_TRAFFIC_PATTERN; FLIPKART_TRAFFIC_NOT_YET_ESTABLISHED"
+    "monthly_clicks_assumption": 1200,
+    "monthly_orders_0.5pct": 6,
+    "monthly_orders_1pct": 12,
+    "monthly_orders_2pct": 24,
+    "monthly_orders_3pct": 36,
+    "monthly_commission_0.5pct_inr": 1800,
+    "monthly_commission_1pct_inr": 3600,
+    "monthly_commission_2pct_inr": 7200,
+    "monthly_commission_3pct_inr": 10800
+  },
+  "resource_envelope": {
+    "approved_tools": [
+      "Amazon Associates",
+      "Flipkart Affiliate (pending)",
+      "Canva",
+      "DeepSeek"
+    ],
+    "hosting": "GitHub Pages",
+    "api_model_quotas": "DeepSeek 100k tokens/day",
+    "spend_ceiling": "₹0/month (organic only)",
+    "renewal_dates": [
+      "Amazon Associates: 2027-03-31"
+    ],
+    "human_only_dependencies": [
+      "Flipkart Affiliate account setup",
+      "Payment/tax KYC",
+      "Legal acceptance"
+    ]
   },
   "next_steps": [
-    "After validator pass, commit changes",
-    "Draft Flipkart integration execution plan with compliance checklist",
-    "Submit Founder request for Flipkart affiliate account setup and disclosure acceptance",
-    "Rotate to next least-used pillar (2 or 1)"
+    "Submit plan for Founder review and approval",
+    "After approval: prepare Flipkart integration spec (data model, content mapping, disclosure logic)",
+    "After Founder-gated account setup: execute QA and internal linking",
+    "Rotate to Pillar 1 (website development/conversion/SEO) for parallel progress"
   ]
 }
