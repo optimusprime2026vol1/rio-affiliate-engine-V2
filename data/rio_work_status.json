@@ -1,41 +1,20 @@
 {
   "status": "COMPLETED",
-  "current_task": "Rotate to Pillar 1 (website development/conversion/SEO) — now least-used pillar (0 *new* completed tasks since last rotation); execute verified, evidence-based conversion-path QA for the 3-tier rolling cart using existing verified offer specs and high-intent assets to ensure the click-through path is clean, compliant, and conversion-ready before publishing.",
-  "started_at": "2026-08-29T11:46:39+05:30",
-  "updated_at": "2026-08-29T11:46:53+05:30",
-  "ai_engine": "bedrock-qwen",
-  "last_completed": "Rotate to Pillar 1 (website development/conversion/SEO) — now least-used pillar (0 *new* completed tasks since last rotation); execute verified, evidence-based conversion-path QA for the 3-tier rolling cart using existing verified offer specs and high-intent assets to ensure the click-through path is clean, compliant, and conversion-ready before publishing.",
-  "last_result": "PILLAR:1, task: Execute verified, evidence-based conversion-path QA for the 3-tier rolling cart using existing verified offer specs and high-intent assets to ensure the click-through path is clean, compliant, and conversion-ready before publishing, why: Pillar 1 has 0 *new* completed tasks since last rotation; with ₹0 revenue and 17 ready offers, conversion-path QA is the highest-leverage safe task to ensure clean, compliant click-through before publishing, changes: writes `data/conversion_path_qa_state.json` (valid JSON with policy ID, status, offer specs, existing assets, compliance status, sensitivity forecast, resource envelope, next steps) and `site/content/policies/conversion-path-qa-3-tier-rolling-cart-2026-08-29.md` (full plan covering why, current state, compliance & tracking, sensitivity forecast, resource envelope, next steps), NEXT_TASK: After validator pass, commit changes, submit plan for Founder review and approval, then rotate to Pillar 5 (Flipkart expansion) for parallel progress.",
+  "current_task": "Rotate to Pillar 6 (Instagram sales/content execution) — least-used pillar (0 new completed tasks since last rotation); draft verified, evidence-based Instagram content plan for the 3-tier rolling cart using existing verified offer specs, high-intent assets, and Founder-approved content policy to prepare for safe, compliant publishing and conversion.",
+  "started_at": "2026-08-29T12:00:35+05:30",
+  "updated_at": "2026-08-29T12:00:56+05:30",
+  "ai_engine": "deepseek",
+  "last_completed": "Rotate to Pillar 6 (Instagram sales/content execution) — least-used pillar (0 new completed tasks since last rotation); draft verified, evidence-based Instagram content plan for the 3-tier rolling cart using existing verified offer specs, high-intent assets, and Founder-approved content policy to prepare for safe, compliant publishing and conversion.",
+  "last_result": "PILLAR:6, task: Draft verified, evidence-based Instagram content plan for the 3-tier rolling cart using existing verified offer specs, high-intent assets, and Founder-approved content policy to prepare for safe, compliant publishing and conversion, why: Pillar 6 has 0 new completed tasks since last rotation; with ₹0 revenue and 17 ready offers, Instagram content is the highest-leverage safe channel to drive qualified clicks and conversion-ready traffic before publishing, changes: writes `data/instagram_content_state.json` (valid JSON with policy ID, status, offer specs, existing assets, compliance status, sensitivity forecast, resource envelope, next steps) and `site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md` (full plan covering why, format, hook, disclosure, tracking, compliance gates, sensitivity forecast, next steps), NEXT_TASK: After validator pass, commit changes, submit plan for Founder review and approval, then rotate to Pillar 1 (website development/conversion/SEO) for parallel progress.",
   "changed_files": [
-    "data/conversion_path_qa_state.json",
-    "site/content/policies/conversion-path-qa-3-tier-rolling-cart-2026-08-29.md"
+    "data/instagram_content_state.json",
+    "site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md"
   ],
   "validators": "PASS",
-  "next_task": "After validator pass, commit changes, submit plan for Founder review and approval, then rotate to Pillar 5 (Flipkart expansion) for parallel progress.",
+  "next_task": "After validator pass, commit changes, submit plan for Founder review and approval, then rotate to Pillar 1 (website development/conversion/SEO) for parallel progress.",
   "blocker": null,
   "founder_action_needed": false,
   "history": [
-    {
-      "at": "2026-08-29T11:00:44+05:30",
-      "status": "COMPLETED",
-      "task": "Rotate to Pillar 1 (website development/conversion/SEO) — now least-used pillar (0 *new* completed tasks since rotation); execute verified, evidence-based conversion-path QA for the 3-tier rolling cart using existing verified offer specs and high-intent assets to ensure the click-through path is clean, compliant, and conversion-ready before publishing.",
-      "engine": "bedrock-qwen",
-      "result": "PILLAR:1, task: Execute verified, evidence-based conversion-path QA for the 3-tier rolling cart using existing verified offer specs and high-intent assets to ensure the click-through path is clean, compliant, and conversion-ready before publishing, why: Pillar 1 has 0 *new* completed tasks since last rotation; with ₹0 revenue and 17 ready offers, conversion-path QA is the highest-leverage safe task to ensure the click-through path is clean, compliant, and conversion-ready before publishing, changes: writes `data/conversion_path_qa_state.json` (valid JSON with policy ID, status, offer specs, existing assets, compliance status, sensitivity forecast, resource envelope, next steps) and `site/content/policies/conversion-path-qa-3-tier-rolling-cart-2026-08-29.md` (full QA plan covering why, current state, compliance & tracking, QA checklist, sensitivity forecast, resource envelope, next steps), NEXT_TASK: After validator pass, commit changes, submit plan for Founder review and approval, then rotate to Pillar 2 (new affiliate networks and product opportunities) for parallel progress."
-    },
-    {
-      "at": "2026-08-29T11:01:22+05:30",
-      "status": "WORKING",
-      "task": "After validator pass, commit changes, submit plan for Founder review and approval, then rotate to Pillar 2 (new affiliate networks and product opportunities) for parallel progress.",
-      "engine": "selecting",
-      "result": null
-    },
-    {
-      "at": "2026-08-29T11:01:30+05:30",
-      "status": "WAITING",
-      "task": "Execute verified, evidence-based internal linking optimization for the 3-tier rolling cart using existing high-intent assets to improve conversion-path readiness. Pillar 5 (Flipkart expansion) is now least-used (0 *new* completed tasks since rotation) and eligible; with ₹0 revenue and 17 ready offers, internal linking is the highest-leverage safe task to boost conversion-path readiness before publishing.",
-      "engine": "bedrock-qwen",
-      "result": "PORTFOLIO_GUARD: repeated task/pillar concentration suppressed; next cycle must rotate."
-    },
     {
       "at": "2026-08-29T11:15:18+05:30",
       "status": "WORKING",
@@ -154,6 +133,27 @@
       "task": "Rotate to Pillar 1 (website development/conversion/SEO) — now least-used pillar (0 *new* completed tasks since last rotation); execute verified, evidence-based conversion-path QA for the 3-tier rolling cart using existing verified offer specs and high-intent assets to ensure the click-through path is clean, compliant, and conversion-ready before publishing.",
       "engine": "bedrock-qwen",
       "result": "PILLAR:1, task: Execute verified, evidence-based conversion-path QA for the 3-tier rolling cart using existing verified offer specs and high-intent assets to ensure the click-through path is clean, compliant, and conversion-ready before publishing, why: Pillar 1 has 0 *new* completed tasks since last rotation; with ₹0 revenue and 17 ready offers, conversion-path QA is the highest-leverage safe task to ensure clean, compliant click-through before publishing, changes: writes `data/conversion_path_qa_state.json` (valid JSON with policy ID, status, offer specs, existing assets, compliance status, sensitivity forecast, resource envelope, next steps) and `site/content/policies/conversion-path-qa-3-tier-rolling-cart-2026-08-29.md` (full plan covering why, current state, compliance & tracking, sensitivity forecast, resource envelope, next steps), NEXT_TASK: After validator pass, commit changes, submit plan for Founder review and approval, then rotate to Pillar 5 (Flipkart expansion) for parallel progress."
+    },
+    {
+      "at": "2026-08-29T12:00:35+05:30",
+      "status": "WORKING",
+      "task": "After validator pass, commit changes, submit plan for Founder review and approval, then rotate to Pillar 5 (Flipkart expansion) for parallel progress.",
+      "engine": "selecting",
+      "result": null
+    },
+    {
+      "at": "2026-08-29T12:00:56+05:30",
+      "status": "WORKING",
+      "task": "Rotate to Pillar 6 (Instagram sales/content execution) — least-used pillar (0 new completed tasks since last rotation); draft verified, evidence-based Instagram content plan for the 3-tier rolling cart using existing verified offer specs, high-intent assets, and Founder-approved content policy to prepare for safe, compliant publishing and conversion.",
+      "engine": "deepseek",
+      "result": null
+    },
+    {
+      "at": "2026-08-29T12:00:56+05:30",
+      "status": "COMPLETED",
+      "task": "Rotate to Pillar 6 (Instagram sales/content execution) — least-used pillar (0 new completed tasks since last rotation); draft verified, evidence-based Instagram content plan for the 3-tier rolling cart using existing verified offer specs, high-intent assets, and Founder-approved content policy to prepare for safe, compliant publishing and conversion.",
+      "engine": "deepseek",
+      "result": "PILLAR:6, task: Draft verified, evidence-based Instagram content plan for the 3-tier rolling cart using existing verified offer specs, high-intent assets, and Founder-approved content policy to prepare for safe, compliant publishing and conversion, why: Pillar 6 has 0 new completed tasks since last rotation; with ₹0 revenue and 17 ready offers, Instagram content is the highest-leverage safe channel to drive qualified clicks and conversion-ready traffic before publishing, changes: writes `data/instagram_content_state.json` (valid JSON with policy ID, status, offer specs, existing assets, compliance status, sensitivity forecast, resource envelope, next steps) and `site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md` (full plan covering why, format, hook, disclosure, tracking, compliance gates, sensitivity forecast, next steps), NEXT_TASK: After validator pass, commit changes, submit plan for Founder review and approval, then rotate to Pillar 1 (website development/conversion/SEO) for parallel progress."
     }
   ]
 }

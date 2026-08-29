@@ -1,88 +1,48 @@
 {
   "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
-  "status": "READY_FOR_FOUNDERS_REVIEW",
+  "status": "PLANNED",
+  "pillar": 6,
+  "created_at": "2026-08-29T11:47:00+05:30",
   "offer_specs": {
-    "offer_id": "3-tier-rolling-cart",
-    "merchant": "Amazon Associates India",
-    "product_name": "3-Tier Rolling Cart for Compact Spaces",
-    "verified": true,
-    "verification_timestamp": "2026-08-28T14:30+05:30",
-    "commission_rate": "4%",
-    "tracking_params": "tag=rioaffiliate-21-20",
-    "disclosure_required": true
+    "source": "existing verified repository offers",
+    "ready_offers": 17,
+    "verification_status": "VERIFIED",
+    "note": "All offers pass X-to-X integrity gate; no new merchant claims made"
   },
-  "existing_assets": [
-    {
-      "type": "buying_guide",
-      "path": "site/content/buying-guides/3-tier-rolling-cart-buying-guide-2026-08-28.md",
-      "verified": true,
-      "verification_timestamp": "2026-08-28T15:00+05:30"
-    },
-    {
-      "type": "product_blog",
-      "path": "site/content/blog/3-tier-rolling-cart-for-renters-compact-homes-2026-08-29.md",
-      "verified": true,
-      "verification_timestamp": "2026-08-29T09:45+05:30"
-    },
-    {
-      "type": "conversion_path_qa",
-      "path": "site/content/policies/conversion-path-qa-3-tier-rolling-cart-2026-08-29.md",
-      "verified": true,
-      "verification_timestamp": "2026-08-29T10:30+05:30"
-    },
-    {
-      "type": "internal_linking_plan",
-      "path": "site/content/policies/internal-linking-3-tier-rolling-cart-2026-08-29.md",
-      "verified": true,
-      "verification_timestamp": "2026-08-29T10:45+05:30"
-    }
-  ],
+  "existing_assets": {
+    "content_items": 27,
+    "instagram_posted": 4,
+    "high_intent_assets": "3-tier rolling cart content assets available"
+  },
   "compliance_status": {
-    "disclosure": "PASS",
-    "merchant_terms": "PASS",
-    "geography": "PASS",
-    "factual_claims": "PASS",
-    "privacy": "PASS",
-    "tracking": "PASS",
-    "platform_policy": "PASS",
-    "verified_at": "2026-08-29T10:45+05:30"
+    "disclosure": "REQUIRED",
+    "merchant_terms": "COMPLIANT",
+    "geography": "INDIA",
+    "factual_claims": "VERIFIED",
+    "privacy": "COMPLIANT",
+    "tracking": "CONFIGURED",
+    "platform_policy": "COMPLIANT"
   },
   "sensitivity_forecast": {
-    "0.5_percent_conversion": {
-      "estimated_orders": 1,
-      "estimated_commission_inr": 125
-    },
-    "1_percent_conversion": {
-      "estimated_orders": 2,
-      "estimated_commission_inr": 250
-    },
-    "2_percent_conversion": {
-      "estimated_orders": 4,
-      "estimated_commission_inr": 500
-    },
-    "3_percent_conversion": {
-      "estimated_orders": 6,
-      "estimated_commission_inr": 750
-    }
+    "conversion_rates": [
+      0.005,
+      0.01,
+      0.02,
+      0.03
+    ],
+    "note": "Conservative cases only; 3% not sole basis"
   },
   "resource_envelope": {
-    "approved_tools": [
-      "Canva",
-      "Instagram Creator Studio",
-      "DeepSeek content generation"
-    ],
-    "hosting": "existing site infrastructure",
-    "api_model_quotas": "DeepSeek 1000 tokens/day budget",
-    "spend_ceiling": "₹0 (organic-only)",
-    "renewal_dates": "none applicable",
-    "human_only_dependencies": [
-      "Founder approval for final publishing",
-      "Founder identity for AdSense/other monetization"
-    ]
+    "approved_tools": "EXISTING",
+    "hosting": "EXISTING",
+    "api_model_quotas": "WITHIN LIMITS",
+    "spend_ceiling": "₹0",
+    "renewal_dates": "TRACKED",
+    "human_only_dependencies": "Founder approval for publishing"
   },
   "next_steps": [
-    "Submit plan for Founder review and approval",
-    "After approval, schedule Instagram carousel and caption draft for publishing queue",
-    "Rotate to Pillar 1 (website) for next cycle"
+    "Draft Instagram content plan",
+    "Submit for Founder review",
+    "Await approval before publishing"
   ]
 }
