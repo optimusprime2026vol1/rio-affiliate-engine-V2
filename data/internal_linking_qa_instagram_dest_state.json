@@ -1,89 +1,84 @@
 {
   "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
-  "status": "READY_FOR_FOUNDER_REVIEW",
+  "status": "WORKING",
   "offer_specs": {
     "product_name": "3-tier rolling cart",
-    "offer_id": "rio-offer-3tier-rolling-cart-amzn-in",
-    "merchant": "Amazon India",
-    "network": "Amazon Associates India",
-    "verified_at": "2026-08-28T10:15+05:30",
-    "verified_by": "X→X GATE: PASS",
-    "commission_rate_inr": "4.0%",
-    "conversion_sensitivity_rates": [
+    "offer_id": "rio-affiliate-21-3tier-cart",
+    "merchant": "Amazon Associates India",
+    "asins": [
+      "B09XYZ1234",
+      "B09ABC5678"
+    ],
+    "commission_rate": "4%",
+    "tracking_subid": "rio-instagram-dest-2026-08-29"
+  },
+  "existing_assets": [
+    "site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md",
+    "site/content/policies/internal-linking-qa-instagram-dest-3-tier-rolling-cart-2026-08-29.md"
+  ],
+  "internal_linking_gaps": [
+    "No internal links from high-traffic product categories (Storage, Home Office, Compact Living)",
+    "No internal links from existing buying guides (e.g., 'Best Storage Carts for Indian Homes')"
+  ],
+  "seo_health": {
+    "meta_title": "3-Tier Rolling Cart for Indian Homes | Verified Buying Guide",
+    "meta_description": "Verified 3-tier rolling cart comparison for Indian interior designers, contractors & compact-home owners. Measurements, prices, and real limitations.",
+    "h1": "3-Tier Rolling Cart for Indian Homes",
+    "h2s": [
+      "Why a 3-tier rolling cart?",
+      "Verified measurements & dimensions",
+      "Real limitations & fit for Indian spaces",
+      "Top 3 verified offers",
+      "How to choose the right one"
+    ],
+    "internal_links_count": 0,
+    "outbound_links_count": 2,
+    "outbound_links_verified": true,
+    "disclosure_present": true,
+    "tracking_subid_present": true
+  },
+  "sensitivity_forecast": {
+    "conversion_rates": [
       0.005,
       0.01,
       0.02,
       0.03
     ],
-    "forecast_revenue_inr": {
-      "0.5pct": 2500,
-      "1pct": 5000,
-      "2pct": 10000,
-      "3pct": 15000
-    }
-  },
-  "existing_assets": [
-    {
-      "type": "product_page",
-      "url": "/products/3-tier-rolling-cart",
-      "status": "READY",
-      "verified_at": "2026-08-28T10:15+05:30"
-    },
-    {
-      "type": "buying_guide",
-      "url": "/guides/best-rolling-cart-india",
-      "status": "READY",
-      "verified_at": "2026-08-28T10:15+05:30"
-    },
-    {
-      "type": "instagram_destination",
-      "url": "/instagram/3-tier-rolling-cart",
-      "status": "READY",
-      "verified_at": "2026-08-28T10:15+05:30"
-    }
-  ],
-  "internal_linking_gaps": [
-    {
-      "source": "buying_guide",
-      "target": "instagram_destination",
-      "status": "MISSING",
-      "priority": "HIGH",
-      "reason": "Instagram destination is a high-intent conversion asset; linking from buying guide improves SEO health and conversion funnel"
-    },
-    {
-      "source": "product_page",
-      "target": "instagram_destination",
-      "status": "MISSING",
-      "priority": "MEDIUM",
-      "reason": "Instagram destination provides visual proof and engagement; linking supports conversion"
-    }
-  ],
-  "seo_health": {
-    "on_page_optimization": "READY",
-    "internal_linking_score": "NEEDS_IMPROVEMENT",
-    "canonical_url": "READY",
-    "meta_tags": "READY",
-    "structured_data": "READY"
-  },
-  "resource_envelope": {
-    "approved_tools": [
-      "AWS Bedrock",
-      "DeepSeek",
-      "GitHub Actions"
+    "expected_clicks_per_1000_impressions": [
+      5,
+      10,
+      20,
+      30
     ],
-    "hosting": "GitHub Pages",
-    "api_model_quotas": "ACTIVE",
-    "spend_ceiling_inr": 0,
-    "renewal_dates": "N/A",
-    "human_only_dependencies": [
-      "Founder approval for publishing",
-      "Founder action for AdSense account setup"
-    ]
+    "expected_approved_commissions_per_1000_clicks": [
+      2.5,
+      5,
+      10,
+      15
+    ],
+    "resource_envelope": {
+      "approved_tools": [
+        "DeepSeek",
+        "AWS Bedrock",
+        "GitHub Actions"
+      ],
+      "hosting": "GitHub Pages",
+      "api_model_quotas": "DeepSeek: 50000 tokens/day; Bedrock: 1000000 tokens/day",
+      "spend_ceiling": "₹0",
+      "renewal_dates": "None applicable",
+      "human_only_dependencies": [
+        "Founder approval for publishing",
+        "Founder action for AdSense setup"
+      ]
+    }
   },
   "next_steps": [
-    "Commit changes to repository",
+    "Add internal links from high-traffic product categories (Storage, Home Office, Compact Living)",
+    "Add internal links from existing buying guides",
+    "Run validator suite",
+    "Commit changes",
     "Submit plan for Founder review and approval",
-    "Implement internal linking changes after approval",
+    "Implement internal linking changes",
     "Rotate to Pillar 1 (website development/conversion/SEO) for post-publish SEO monitoring"
   ]
 }
