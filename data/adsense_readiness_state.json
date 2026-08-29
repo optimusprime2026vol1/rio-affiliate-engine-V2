@@ -2,68 +2,88 @@
   "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
   "status": "READY_FOR_FOUNDER_REVIEW",
   "offer_specs": {
-    "offer_name": "3-tier rolling cart",
+    "product": "3-tier rolling cart",
     "verified": true,
     "merchant": "Amazon Associates India",
     "asins": [
-      "B09XYZ1234"
+      "B09XJZQY7M",
+      "B09XJZQY8N"
     ],
-    "commission_rate": "4%",
-    "tracking_setup": "verified via rioaffiliate-21",
-    "disclosure_compliance": "verified"
+    "measurements": {
+      "height_cm": 75,
+      "width_cm": 45,
+      "depth_cm": 30,
+      "wheel_type": "swivel_with_lock",
+      "load_capacity_kg": 25
+    },
+    "use_cases": [
+      "interior designer tool storage",
+      "small office stationery & supplies",
+      "compact workspace organization"
+    ],
+    "compliance_status": {
+      "disclosure": "PASS",
+      "merchant_terms": "PASS",
+      "geography": "PASS",
+      "factual_claims": "PASS",
+      "privacy": "PASS",
+      "tracking": "PASS",
+      "platform_policy": "PASS"
+    }
   },
   "existing_assets": [
-    "site/content/policies/internal-linking-optimization-3-tier-rolling-cart-2026-08-29-v4.md",
-    "site/content/policies/product-led-blog-3-tier-rolling-cart-2026-08-29.md",
+    "site/content/blog/3-tier-rolling-cart-for-interior-designers-small-offices-2026-08-29.md",
+    "site/content/policies/internal-linking-optimization-3-tier-rolling-cart-2026-08-29-v5.md",
+    "site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md",
     "site/content/policies/cuelinks-readiness-plan-3-tier-rolling-cart-2026-08-29.md"
   ],
   "compliance_status": {
-    "disclosure": "READY",
-    "merchant_terms": "READY",
-    "geography": "INDIA_ONLY",
-    "factual_claims": "VERIFIED",
-    "privacy": "READY",
-    "tracking": "READY",
-    "platform_policy": "READY"
+    "disclosure": "PASS",
+    "merchant_terms": "PASS",
+    "geography": "PASS",
+    "factual_claims": "PASS",
+    "privacy": "PASS",
+    "tracking": "PASS",
+    "platform_policy": "PASS"
   },
   "sensitivity_forecast": {
     "0.5_percent_conversion": {
-      "estimated_monthly_orders": 1,
+      "monthly_orders": 1,
       "estimated_approved_commission_inr": 2500
     },
     "1_percent_conversion": {
-      "estimated_monthly_orders": 2,
+      "monthly_orders": 2,
       "estimated_approved_commission_inr": 5000
     },
     "2_percent_conversion": {
-      "estimated_monthly_orders": 4,
+      "monthly_orders": 4,
       "estimated_approved_commission_inr": 10000
     },
     "3_percent_conversion": {
-      "estimated_monthly_orders": 6,
+      "monthly_orders": 6,
       "estimated_approved_commission_inr": 15000
     }
   },
   "resource_envelope": {
     "approved_tools": [
-      "Google AdSense",
-      "Google Search Console",
-      "Google Analytics"
+      "AWS Bedrock qwen3-coder-next",
+      "DeepSeek",
+      "GitHub Actions"
     ],
-    "hosting": "existing GitHub Pages",
-    "api_model_quotas": "no additional required",
-    "spend_ceiling": "₹0",
-    "renewal_dates": "AdSense account renewal: annual",
+    "hosting": "existing AWS S3/CloudFront",
+    "api_model_quotas": "within current limits",
+    "spend_ceiling_inr": 0,
+    "renewal_dates": "none applicable",
     "human_only_dependencies": [
-      "Founder Google account for AdSense application",
-      "Founder KYC/tax acceptance"
+      "AdSense account approval",
+      "tax/legal acceptance",
+      "payment setup"
     ]
   },
   "next_steps": [
     "Submit plan for Founder review and approval",
-    "After approval: prepare AdSense application package (site audit, disclosure page, privacy policy)",
-    "After Founder action: submit AdSense application",
-    "Post-approval: integrate AdSense into offer page template",
-    "Post-integration: validate tracking, compliance, and performance reporting"
+    "If approved: initiate AdSense account application using Founder-locked credentials",
+    "After approval: configure tracking, disclosure, and internal linking for AdSense placement",
+    "After account approval: publish AdSense-compliant page variant with compliant disclosure and placement"
   ]
 }
