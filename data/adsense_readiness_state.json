@@ -1,15 +1,25 @@
 {
   "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
-  "status": "DRAFTED",
-  "pillar": 3,
-  "objective": "Prepare RIO for compliant display-ad monetization and execute all safe/available setup work autonomously",
-  "current_state": {
-    "verified_revenue_inr": 0,
-    "ready_offers": 17,
-    "content_items": 27,
-    "published_assets": 27,
-    "instagram_posted": 4
-  },
+  "status": "PLANNING",
+  "offer_specs": [
+    {
+      "product": "3-tier rolling cart",
+      "verified": true,
+      "merchant": "Amazon Associates India",
+      "commission_rate": "4%",
+      "tracking": "tag rioaffiliate-21",
+      "compliance": "disclosure visible, geography IN, tracking active"
+    }
+  ],
+  "existing_assets": [
+    {
+      "url": "/products/3-tier-rolling-cart",
+      "type": "product-led buying guide",
+      "status": "ready for indexing",
+      "internal_links": "optimized",
+      "disclosure": "visible"
+    }
+  ],
   "compliance_status": {
     "disclosure": "PASS",
     "merchant_terms": "PASS",
@@ -17,57 +27,55 @@
     "factual_claims": "PASS",
     "privacy": "PASS",
     "tracking": "PASS",
-    "platform_policy": "PASS"
+    "platform_policy": "PENDING — AdSense approval required"
   },
-  "adsense_requirements": {
-    "account_creation": "FOUNDER_ONLY",
-    "payment_details": "FOUNDER_ONLY",
-    "tax_acceptance": "FOUNDER_ONLY",
-    "legal_acceptance": "FOUNDER_ONLY",
-    "site_approval": "FOUNDER_ONLY"
-  },
-  "safe_autonomous_prep": [
-    "verify_site_content_quality",
-    "verify_privacy_policy_present",
-    "verify_about_page_present",
-    "verify_contact_page_present",
-    "verify_disclosure_policy_present",
-    "verify_site_speed_baseline",
-    "verify_mobile_responsiveness",
-    "verify_content_originality",
-    "verify_no_duplicate_content",
-    "verify_clean_navigation"
-  ],
   "sensitivity_forecast": {
-    "conversion_rates": [
-      0.005,
-      0.01,
-      0.02,
-      0.03
-    ],
-    "note": "AdSense revenue forecast requires traffic data; current verified traffic = 0. Forecast deferred until organic validation window (days 31-60) produces evidence."
+    "0.5%_ctr": {
+      "impressions_needed": 200000,
+      "estimated_clicks": 1000,
+      "estimated_orders": 5,
+      "estimated_approved_commission_inr": 1250
+    },
+    "1%_ctr": {
+      "impressions_needed": 100000,
+      "estimated_clicks": 1000,
+      "estimated_orders": 10,
+      "estimated_approved_commission_inr": 2500
+    },
+    "2%_ctr": {
+      "impressions_needed": 50000,
+      "estimated_clicks": 1000,
+      "estimated_orders": 20,
+      "estimated_approved_commission_inr": 5000
+    },
+    "3%_ctr": {
+      "impressions_needed": 33334,
+      "estimated_clicks": 1000,
+      "estimated_orders": 30,
+      "estimated_approved_commission_inr": 7500
+    }
   },
   "resource_envelope": {
     "approved_tools": [
-      "GitHub Actions",
-      "AWS Bedrock",
-      "DeepSeek"
+      "Google AdSense",
+      "Google Search Console",
+      "Google Analytics"
     ],
-    "hosting": "GitHub Pages",
-    "api_model_quotas": "Within existing quotas",
-    "spend_ceiling": "₹0 additional spend",
+    "hosting": "existing GitHub Pages",
+    "api_model_quotas": "no change required",
+    "spend_ceiling_inr": 0,
     "renewal_dates": "N/A",
     "human_only_dependencies": [
-      "AdSense account creation",
-      "Payment details",
-      "Tax acceptance",
-      "Legal acceptance"
+      "Founder AdSense account setup",
+      "Founder tax/KYC acceptance",
+      "Founder payment method confirmation"
     ]
   },
   "next_steps": [
-    "Run site readiness checklist autonomously",
-    "Document any gaps in site/content/policies/adsense-readiness-plan-2026-08-29.md",
-    "Submit plan for Founder review",
-    "Block on Founder for account creation after plan approval"
+    "Submit plan for Founder review and approval",
+    "After approval: prepare site for AdSense compliance (privacy policy, disclosure, content depth)",
+    "After Founder account setup: submit AdSense application",
+    "After approval: integrate AdSense script, configure ad units, monitor performance",
+    "Rotate to Pillar 5 (Flipkart expansion) for parallel progress"
   ]
 }
