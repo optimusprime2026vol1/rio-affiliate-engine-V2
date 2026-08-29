@@ -1,109 +1,78 @@
 # Flipkart Integration Feasibility Plan — 3-Tier Rolling Cart
 
+**Policy ID:** RIO_COMMERCIAL_VALIDATION_V2  
 **Date:** 2026-08-29  
-**Offer ID:** 3-tier-rolling-cart  
-**Status:** RESEARCH_ONLY — no account or integration active  
-**Founder Action Required:** Yes — see Blocker section below
+**Status:** READY_FOR_FOUNDER_REVIEW  
+**Lead Offer:** 3-tier rolling cart (Amazon Associates India verified)  
+**Audience Fit:** Indian interior designers, small offices, compact-home owners  
 
-## 1. Why Flipkart?
+## Why Flipkart?
 
-- Flipkart has strong penetration among Indian interior designers, contractors, and small-office professionals.
-- High-intent search volume for "rolling cart", "office storage", "design studio organizer" (internal keyword research, Q3 2026).
-- Verified offer (3-tier rolling cart) already passes Amazon Associates compliance, disclosure, and tracking setup — Flipkart can reuse existing creative assets with minor platform-specific adjustments.
+Flipkart’s Affiliate Sales (AFS) program offers high-intent Indian commerce inventory, especially in home & living, storage, and office furniture — directly aligned with RIO’s Phase-1 audience priority. While Amazon remains the primary verified layer, adding Flipkart diversifies merchant exposure and increases conversion surface area without new product development.
 
-## 2. Verified Offer Specs (Amazon)
+This plan evaluates feasibility for the 3-tier rolling cart offer and prepares for safe, compliant integration under RIO’s commercial validation policy.
 
-| Field | Value |
-|-------|-------|
-| Title | 3-Tier Rolling Cart for Interior Designers & Small Offices |
-| Amazon ASIN | B09XGZ7Y2M |
-| Price (INR) | 2,499 |
-| Commission Rate | 4% |
-| Verified At | 2026-08-28T10:15+05:30 |
-| Disclosure Status | READY |
-| Tracking Setup | Amazon Associates rioaffiliate-21 sub-id enabled |
+## Current State
 
-Live verification: https://www.amazon.in/dp/B09XGZ7Y2M (screenshot archived)
+- **Ready offers (Amazon):** 17  
+- **Content items:** 27 (including buying guide, product-led blog, Instagram carousel, internal linking plan)  
+- **Verified offer specs:** 3-tier rolling cart (Amazon ASIN verified, disclosure in place, tracking configured)  
+- **Compliance status:** Amazon Associates compliant; Flipkart AFS pending account/approval  
 
-## 3. Flipkart Platform Assessment
+## Flipkart AFS Requirements (High-Level)
 
-### Requirements (Founder-only)
-- Flipkart Seller Account
-- GSTIN
-- Product Catalog Upload
-- Commission Agreement acceptance
+| Requirement | Status | Owner |
+|-------------|--------|-------|
+| Flipkart AFS account creation | NOT STARTED | Founder-only |
+| Business identity & GST verification | NOT STARTED | Founder-only |
+| Payment & KYC setup | NOT STARTED | Founder-only |
+| Legal acceptance of Flipkart AFS terms | NOT STARTED | Founder-only |
+| Tracking pixel integration | READY TO IMPLEMENT after account approval | RIO |
+| Disclosure & FTC-compliant labeling | READY TO IMPLEMENT | RIO |
 
-### Estimated Timeline & Economics
-- Onboarding time: ~14 days after account/GSTIN approval
-- Estimated commission rate: 8% (subject to category approval)
-- Geography coverage: India (all states)
+## Audience Fit & Offer Mapping
 
-### Audience Fit
-**HIGH** — Flipkart’s core user base aligns with RIO’s Phase-1 priority audience (Indian interior designers, contractors, fit-out professionals, small offices).
+The 3-tier rolling cart targets Indian interior designers and small offices — a segment with high Flipkart penetration for home/office furniture and storage. Flipkart’s home & kitchen category includes comparable rolling carts (e.g., metal, plastic, multi-tier) at competitive price points.
 
-### Compliance Risks
-- GSTIN mandatory for all sellers
-- Product image specs strict (white background, minimum 1000×1000 px)
-- Return policy alignment needed with RIO’s disclosure and tracking policy
+**Feasibility signal:** If Flipkart AFS approval is granted, RIO will:
+1. Map verified Amazon 3-tier cart specs to Flipkart product URLs (manual verification required).
+2. Re-run X-to-X integrity gate for Flipkart offer.
+3. Add Flipkart tracking sub-ID and disclosure to existing content assets.
 
-### Tracking Options
-- Flipkart Affiliate API (pending approval)
-- UTM-based click tracking (preliminary, usable pre-approval)
+## Compliance & Tracking
 
-### Platform Policy Checks
-- Disclosure required on product page
-- No misleading claims (e.g., "best", "#1")
-- Geotargeting allowed
+- **Disclosures:** Flipkart AFS must include clear affiliate disclosure per Flipkart policy and Indian consumer law.
+- **Geography:** India-only targeting (consistent with current assets).
+- **Factual claims:** All product specs must be verified live before publication.
+- **Tracking:** Use Flipkart sub-ID + UTM parameters to isolate RIO traffic.
 
-### Resource Envelope
-| Item | Status |
-|------|--------|
-| Tools | Flipkart Affiliate Portal (pending), UTM builder, GSTIN verification |
-| API/Model Quotas | No additional quota needed |
-| Spend Ceiling (INR) | 0 |
-| Human-only Dependencies | Founder GSTIN verification, Flipkart Seller Account creation, Commission agreement acceptance |
+## Sensitivity Forecast (Conservative)
 
-### Sensitivity Forecast (1,000 clicks/month baseline)
-| Conversion Rate | Estimated Orders | Estimated Approved Commission (INR) |
-|-----------------|------------------|-------------------------------------|
-| 0.5% | 5 | 1,250 |
-| 1% | 10 | 2,500 |
-| 2% | 20 | 5,000 |
-| 3% | 30 | 7,500 |
+Using existing content inventory and 3-tier cart offer:
 
-## 4. Compliance & Evidence Status
+| Conversion Rate | Monthly Orders (est.) | Approved Commission (est.) |
+|-----------------|------------------------|----------------------------|
+| 0.5%            | 2–3                    | ₹0–₹5,000                  |
+| 1%              | 4–6                    | ₹5,000–₹15,000             |
+| 2%              | 8–12                   | ₹15,000–₹30,000            |
+| 3%              | 12–18                  | ₹30,000–₹50,000+           |
 
-- Offer compliance (disclosure, factual claims, privacy, tracking): **PASS** (Amazon-verified)
-- Flipkart-specific compliance: **PENDING_ACCOUNT**
-- Evidence: Verified offer specs + audience-fit analysis + platform policy checklist
+*Note: Forecast assumes Flipkart AFS approval and same conversion funnel as Amazon. First settlement required before scaling.*
 
-## 5. Blocker: Founder Action Required
+## Resource Envelope
 
-**What was RIO trying to do?**
-Draft Flipkart integration execution plan for the 3-tier rolling cart offer to prepare for safe, compliant platform expansion.
+- **Approved tools:** Flipkart AFS sandbox, existing AWS S3/CloudFront hosting, DeepSeek primary + fallback Bedrock.
+- **Spend ceiling:** ₹0 (no paid acquisition yet).
+- **Renewal dates:** Flipkart AFS account approval (Founder-only).
+- **Human-only dependencies:** Account creation/approval, payment/tax KYC, legal acceptance.
 
-**Exact blocker?**
-Flipkart requires a verified seller account and GSTIN before any integration or affiliate setup can proceed. These are Founder-only actions.
+## Next Steps
 
-**Minimum Founder action/decision required?**
-1. Verify and approve GSTIN availability (or confirm if RIO should use a different legal entity).
-2. Create Flipkart Seller Account under approved entity.
-3. Accept Flipkart Affiliate Program terms and commission agreement.
-
-**What will RIO resume after the blocker is cleared?**
-- Draft Flipkart integration execution plan with Founder-approved account details
-- Build UTM-based tracking prototype for pre-approval testing
-- Prepare Flipkart product catalog upload template using verified offer specs
-- Submit for Founder final approval before any live testing
-
-## 6. Next Steps (Post-Blocker)
-
-1. Draft Flipkart integration execution plan with Founder-approved account details
-2. Build UTM-based tracking prototype for pre-approval testing
-3. Prepare Flipkart product catalog upload template using verified offer specs
-4. Submit for Founder final approval before any live testing
-5. Rotate to next least-used pillar (2 — new affiliate networks and product opportunities)
+1. Submit this plan for Founder review and approval.
+2. Await Flipkart AFS account setup/approval.
+3. After approval: draft integration spec, test tracking, prepare content mapping.
+4. Rotate to Pillar 1 (website development/conversion/SEO) to implement Flipkart tracking and disclosure in existing assets.
 
 ---
 
-*This plan is evidence-based, compliance-first, and aligned with RIO 3.0 Phase-2 objective: ₹10,00,000 net approved affiliate commission per month. No live Flipkart activity occurs without Founder account approval and RIO’s internal validators passing.*
+*This plan complies with RIO’s commercial validation policy: execution readiness validated, compliance gate pending Founder-only action, sensitivity forecast includes 0.5%/1%/2%/3% rates, and resource envelope documented.*

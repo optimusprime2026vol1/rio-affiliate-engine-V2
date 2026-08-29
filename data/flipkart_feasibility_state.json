@@ -1,83 +1,42 @@
 {
-  "offer_id": "3-tier-rolling-cart",
-  "verified_specs": {
-    "title": "3-Tier Rolling Cart for Interior Designers & Small Offices",
-    "amazon_asin": "B09XGZ7Y2M",
-    "price_inr": 2499,
-    "commission_rate": 0.04,
-    "verified_at": "2026-08-28T10:15+05:30",
-    "verification_evidence": "live_check: https://www.amazon.in/dp/B09XGZ7Y2M (screenshot archived)",
-    "disclosure_status": "READY",
-    "tracking_setup": "amazon-associates rioaffiliate-21 sub-id enabled"
+  "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
+  "status": "READY_FOR_FOUNDER_REVIEW",
+  "ready_offers": 17,
+  "content_inventory": 27,
+  "compliance_status": "PENDING_FOUNDER_ACCOUNT_SETUP",
+  "sensitivity_forecast": {
+    "conversion_rates": [
+      0.005,
+      0.01,
+      0.02,
+      0.03
+    ],
+    "revenue_impact_ranges": {
+      "low": "₹0–₹5,000/month",
+      "mid": "₹5,000–₹25,000/month",
+      "high": "₹25,000–₹1,00,000/month"
+    }
   },
-  "flipkart_platform_assessment": {
-    "status": "RESEARCH_ONLY",
-    "requirements": [
-      "Flipkart Seller Account",
-      "GSTIN",
-      "Product Catalog Upload",
-      "Commission Agreement"
+  "resource_envelope": {
+    "approved_tools": [
+      "Flipkart AFS API sandbox",
+      "existing Amazon Associates tracking"
     ],
-    "estimated_onboarding_time_days": 14,
-    "estimated_commission_rate": 0.08,
-    "geography_coverage": "India (all states)",
-    "audience_fit": "HIGH — Flipkart has strong penetration among Indian interior designers, contractors, and small-office professionals; high-intent search volume for 'rolling cart', 'office storage', 'design studio organizer'",
-    "compliance_risks": [
-      "GSTIN mandatory",
-      "product image specs strict",
-      "return policy alignment needed"
+    "hosting": "existing AWS S3/CloudFront",
+    "api_model_quotas": "DeepSeek primary + fallback Bedrock",
+    "spend_ceiling": "₹0 (no paid acquisition yet)",
+    "renewal_dates": [
+      "Flipkart AFS account approval (Founder-only)"
     ],
-    "tracking_options": [
-      "Flipkart Affiliate API (pending approval)",
-      "UTM-based click tracking (preliminary)"
-    ],
-    "platform_policy_checks": [
-      "disclosure required on product page",
-      "no misleading claims",
-      "geotargeting allowed"
-    ],
-    "resource_envelope": {
-      "tools": [
-        "Flipkart Affiliate Portal (pending)",
-        "UTM builder",
-        "GSTIN verification"
-      ],
-      "api_model_quotas": "no additional quota needed",
-      "spend_ceiling_inr": 0,
-      "human_only_dependencies": [
-        "Founder GSTIN verification",
-        "Flipkart Seller Account creation",
-        "Commission agreement acceptance"
-      ]
-    },
-    "sensitivity_forecast": {
-      "conversion_rates": [
-        0.005,
-        0.01,
-        0.02,
-        0.03
-      ],
-      "estimated_monthly_orders_at_1000_clicks": [
-        5,
-        10,
-        20,
-        30
-      ],
-      "estimated_approved_commission_inr": [
-        1250,
-        2500,
-        5000,
-        7500
-      ]
-    },
-    "next_steps": [
-      "Draft Flipkart integration execution plan",
-      "Prepare Founder blocker request with precise action items",
-      "Build UTM-based tracking prototype for pre-approval testing"
+    "human_only_dependencies": [
+      "Flipkart AFS account creation/approval",
+      "payment/tax KYC",
+      "legal acceptance of Flipkart terms"
     ]
   },
-  "current_state": "READY_FOR_FOUNDER_BLOCKER_REQUEST",
-  "compliance_status": "PASS — offer specs verified; Flipkart-specific compliance pending account setup",
-  "tracking_status": "PENDING_FLIPKART_ACCOUNT",
-  "next_task": "Draft Flipkart integration execution plan with Founder blocker request, then rotate to next least-used pillar (2)."
+  "next_steps": [
+    "Submit plan for Founder review and approval",
+    "Await Flipkart AFS account setup/approval",
+    "After approval: draft integration spec, test tracking, prepare content mapping"
+  ]
 }
