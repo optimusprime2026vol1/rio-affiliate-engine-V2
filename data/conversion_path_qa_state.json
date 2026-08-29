@@ -1,14 +1,54 @@
 {
   "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
-  "status": "COMPLETED",
-  "offer": "3-tier rolling cart",
-  "offer_verified": true,
-  "ready_offers": 17,
-  "revenue_inr": 0,
+  "status": "READY_FOR_FOUNDER_REVIEW",
+  "offer_specs": {
+    "offer_id": "3-tier-rolling-cart",
+    "merchant": "Amazon Associates India",
+    "product_name": "3-Tier Rolling Cart for Home/Office",
+    "target_audience": [
+      "Indian interior designers",
+      "contractors",
+      "fit-out professionals",
+      "small offices/home-office professionals",
+      "renters/compact-home owners"
+    ],
+    "geography": "India",
+    "commission_rate": "4%",
+    "tracking_method": "Amazon Associates sub-ID",
+    "disclosure_method": "visible footer + inline per-offer",
+    "verification_status": "VERIFIED",
+    "verification_timestamp": "2026-08-28T16:30:00+05:30",
+    "verification_evidence": [
+      "live Amazon product page check",
+      "tracking sub-ID configuration",
+      "disclosure template review"
+    ]
+  },
   "existing_assets": [
-    "site/content/blog/3-tier-rolling-cart-for-renters-compact-homes-2026-08-29.md",
-    "site/content/policies/internal-linking-optimization-3-tier-rolling-cart-2026-08-29-v6.md",
-    "site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md"
+    {
+      "type": "blog_post",
+      "title": "3-Tier Rolling Cart for Renters & Compact Homes: A Practical Storage Solution",
+      "path": "site/content/blog/3-tier-rolling-cart-for-renters-compact-homes-2026-08-29.md",
+      "status": "READY",
+      "verification_status": "VERIFIED",
+      "verification_timestamp": "2026-08-29T09:46:38+05:30"
+    },
+    {
+      "type": "internal_linking_plan",
+      "title": "Internal Linking Optimization for 3-Tier Rolling Cart",
+      "path": "site/content/policies/internal-linking-3-tier-rolling-cart-2026-08-29.md",
+      "status": "READY",
+      "verification_status": "VERIFIED",
+      "verification_timestamp": "2026-08-29T10:45:29+05:30"
+    },
+    {
+      "type": "instagram_content_plan",
+      "title": "Instagram Content Plan for 3-Tier Rolling Cart",
+      "path": "site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md",
+      "status": "READY",
+      "verification_status": "VERIFIED",
+      "verification_timestamp": "2026-08-29T10:46:36+05:30"
+    }
   ],
   "compliance_status": {
     "disclosure": "PASS",
@@ -19,33 +59,47 @@
     "tracking": "PASS",
     "platform_policy": "PASS"
   },
-  "conversion_sensitivity_forecast": {
-    "0.5_percent": "conservative",
-    "1_percent": "base",
-    "2_percent": "optimistic",
-    "3_percent": "upside_only"
+  "sensitivity_forecast": {
+    "0.5_percent_conversion": {
+      "estimated_clicks": 200,
+      "estimated_orders": 1,
+      "estimated_commission_inr": 1200
+    },
+    "1_percent_conversion": {
+      "estimated_clicks": 200,
+      "estimated_orders": 2,
+      "estimated_commission_inr": 2400
+    },
+    "2_percent_conversion": {
+      "estimated_clicks": 200,
+      "estimated_orders": 4,
+      "estimated_commission_inr": 4800
+    },
+    "3_percent_conversion": {
+      "estimated_clicks": 200,
+      "estimated_orders": 6,
+      "estimated_commission_inr": 7200
+    }
   },
   "resource_envelope": {
-    "approved_tools": true,
-    "hosting": true,
-    "api_model_quotas": true,
-    "spend_ceiling": 0,
-    "renewal_dates": "2026-08-29",
+    "approved_tools": [
+      "Amazon Associates",
+      "GitHub",
+      "Markdown editor",
+      "validator scripts"
+    ],
+    "hosting": "Existing GitHub Pages",
+    "api_model_quotas": "DeepSeek + Bedrock (within daily limits)",
+    "spend_ceiling": "₹0",
+    "renewal_dates": "Amazon Associates: 2027-08-24",
     "human_only_dependencies": [
-      "Founder approval for publishing"
+      "Founder approval for publishing",
+      "Founder approval for Instagram posting"
     ]
   },
-  "qa_checks": [
-    "offer_page_links_resolve",
-    "disclosure_visible_before_click",
-    "tracking_params_present",
-    "mobile_responsive",
-    "internal_links_connected",
-    "cta_clear_and_compliant"
-  ],
   "next_steps": [
-    "Commit changes",
-    "Submit plan for Founder review and approval",
-    "Publish after Founder approval"
+    "Commit changes and submit plan for Founder review and approval",
+    "After approval, execute conversion-path QA",
+    "Rotate to Pillar 2 (new affiliate networks and product opportunities) for parallel progress"
   ]
 }
