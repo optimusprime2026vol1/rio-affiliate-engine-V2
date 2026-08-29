@@ -1,51 +1,33 @@
 {
   "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
-  "last_updated": "2026-08-29T04:50+05:30",
-  "status": "READY_FOR_PLANNING",
-  "ready_offers": 17,
-  "content_items": 27,
-  "content_inventory": [
-    {
-      "url": "/3-tier-rolling-cart",
-      "type": "offer_page",
-      "verified": true,
-      "last_verified": "2026-08-29T04:10+05:30"
-    },
-    {
-      "url": "/buying-guide-indian-interior-designers",
-      "type": "buying_guide",
-      "verified": true,
-      "last_verified": "2026-08-29T04:10+05:30"
-    },
-    {
-      "url": "/product-led-3-tier-rolling-cart",
-      "type": "product_led_blog",
-      "verified": true,
-      "last_verified": "2026-08-29T04:40+05:30"
-    }
+  "status": "READY_FOR_FOUNDERS_REVIEW",
+  "offer_specs": {
+    "primary_offer": "3-tier rolling cart",
+    "verified": true,
+    "merchant": "Amazon Associates India",
+    "tracking_ready": true,
+    "disclosure_ready": true
+  },
+  "existing_assets": [
+    "site/content/policies/product-led-blog-3-tier-rolling-cart-2026-08-29-v3.md",
+    "site/content/policies/instagram-optimization-3-tier-rolling-cart-2026-08-29.md",
+    "site/content/policies/internal-linking-optimization-3-tier-rolling-cart-2026-08-29.md",
+    "site/content/policies/offer-page-qa-3-tier-rolling-cart-2026-08-29.md"
   ],
   "compliance_status": {
-    "disclosure": "READY",
-    "merchant_terms": "READY",
-    "geography": "INDIA_ONLY",
-    "factual_claims": "VERIFIED",
-    "privacy": "READY",
-    "tracking": "READY",
-    "platform_policy": "READY"
+    "disclosure": "PASS",
+    "merchant_terms": "PASS",
+    "geography": "PASS",
+    "factual_claims": "PASS",
+    "privacy": "PASS",
+    "tracking": "PASS",
+    "platform_policy": "PENDING_FOUNDERS_ACCOUNT_APPROVAL"
   },
   "sensitivity_forecast": {
-    "0.5_percent_conversion": {
-      "estimated_monthly_commission_inr": 25000
-    },
-    "1_percent_conversion": {
-      "estimated_monthly_commission_inr": 50000
-    },
-    "2_percent_conversion": {
-      "estimated_monthly_commission_inr": 100000
-    },
-    "3_percent_conversion": {
-      "estimated_monthly_commission_inr": 150000
-    }
+    "0.5_percent_conversion": "₹2,500–₹5,000/month",
+    "1_percent_conversion": "₹5,000–₹10,000/month",
+    "2_percent_conversion": "₹10,000–₹20,000/month",
+    "3_percent_conversion": "₹15,000–₹30,000/month"
   },
   "resource_envelope": {
     "approved_tools": [
@@ -53,21 +35,23 @@
       "Google Search Console",
       "Google Analytics"
     ],
-    "hosting": "Existing AWS S3/CloudFront setup",
+    "hosting": "GitHub Pages (compliant)",
     "api_model_quotas": "No additional quota required",
-    "spend_ceiling": "₹0 (AdSense approval is free)",
+    "spend_ceiling": "₹0",
     "renewal_dates": "N/A",
     "human_only_dependencies": [
-      "Founder Google account verification",
-      "Founder AdSense application submission",
-      "Founder tax/payment setup"
+      "Founder Google account creation/approval",
+      "AdSense account approval",
+      "Tax/W-8BEN-E submission if applicable"
     ]
   },
   "next_steps": [
-    "Draft AdSense implementation plan",
-    "Identify top 3 high-intent pages for ad placement",
-    "Prepare disclosure and tracking integration plan",
     "Submit for Founder review and approval",
-    "Rotate to Pillar 6 (Instagram sales/content execution)"
+    "Await Founder Google account creation/approval",
+    "Submit AdSense application",
+    "Await AdSense approval",
+    "Implement disclosure and tracking integration",
+    "Submit site for indexing and review",
+    "Begin display-ad monetization post-approval"
   ]
 }
