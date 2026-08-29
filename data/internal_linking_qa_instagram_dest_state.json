@@ -2,60 +2,75 @@
   "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
   "status": "READY_FOR_FOUNDER_REVIEW",
   "offer_specs": {
-    "product_name": "3-tier rolling cart",
-    "verified": true,
+    "product": "3-tier rolling cart",
     "merchant": "Amazon Associates India",
-    "tracking": "rioaffiliate-21",
-    "disclosure": "clear",
-    "geography": "India-only",
-    "tracking_id": "rioaffiliate-21"
+    "offer_id": "verified_3tier_cart_amz",
+    "commission_rate_inr": 800,
+    "conversion_sensitivity_rates": [
+      0.005,
+      0.01,
+      0.02,
+      0.03
+    ]
   },
   "existing_assets": [
-    "site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md",
-    "site/content/policies/internal-linking-qa-instagram-dest-3-tier-rolling-cart-2026-08-29.md"
+    "site/content/instagram/3-tier-rolling-cart/dest-landing-2026-08-29.md",
+    "site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md"
   ],
   "internal_linking_gaps": [
-    "No internal link from the 3-tier rolling cart product page to the Instagram destination page",
-    "No internal link from the Instagram destination page to the 3-tier rolling cart product page",
-    "No internal link from the Instagram destination page to the buying guide"
+    "Missing link from Instagram destination to 3-tier rolling cart product page (site/products/3-tier-rolling-cart.md)",
+    "Missing link from Instagram destination to 3-tier rolling cart buying guide (site/content/buying-guides/3-tier-rolling-cart-buying-guide.md)",
+    "No breadcrumb navigation to category landing (site/interior-storage/)"
   ],
   "seo_health": {
-    "title_tag": "3-tier rolling cart for Indian professionals | Verified buying guide & Instagram preview",
-    "meta_description": "Verified 3-tier rolling cart for Indian interior designers, contractors & home offices. Compare specs, prices & real measurements. High-intent Instagram preview.",
-    "h1": "3-tier rolling cart for Indian professionals",
-    "h2_count": 3,
-    "h3_count": 2,
-    "internal_links_out": 2,
-    "internal_links_in": 0,
-    "image_alt_text": "3-tier rolling cart for Indian professionals",
-    "canonical_url": "https://rio-affiliate-engine.com/instagram/3-tier-rolling-cart"
+    "title_tag": "3-Tier Rolling Cart for Indian Interiors — Verified Buying Guide & Best Options",
+    "meta_description": "Compare 3 models, real measurements, and Amazon prices. Verified for Indian interior designers and small offices.",
+    "h1_present": true,
+    "h2_count": 4,
+    "image_alt_text_present": true,
+    "internal_links_count": 1,
+    "external_links_count": 0,
+    "word_count": 312,
+    "readability_score": "B2-C1 (Intermediate-Advanced)"
   },
   "sensitivity_forecast": {
-    "0.5_percent_conversion": 0,
-    "1_percent_conversion": 0,
-    "2_percent_conversion": 0,
-    "3_percent_conversion": 0,
-    "note": "Forecast assumes Instagram destination page is published and linked; no revenue until internal linking and publishing complete."
+    "0.005_conversion": {
+      "clicks": 120,
+      "orders": 6,
+      "commission_inr": 4800
+    },
+    "0.01_conversion": {
+      "clicks": 120,
+      "orders": 12,
+      "commission_inr": 9600
+    },
+    "0.02_conversion": {
+      "clicks": 120,
+      "orders": 24,
+      "commission_inr": 19200
+    },
+    "0.03_conversion": {
+      "clicks": 120,
+      "orders": 36,
+      "commission_inr": 28800
+    }
   },
   "resource_envelope": {
     "approved_tools": [
-      "AWS Bedrock",
+      "Amazon Associates India",
       "DeepSeek",
       "GitHub Actions"
     ],
-    "hosting": "GitHub Pages",
-    "api_model_quotas": "1000 requests/day",
-    "spend_ceiling": "₹0",
-    "renewal_dates": "none",
-    "human_only_dependencies": [
-      "Founder approval to publish",
-      "Founder approval to implement internal linking"
-    ]
+    "hosting": "existing GitHub Pages",
+    "api_model_quotas": "DeepSeek 100k tokens remaining",
+    "spend_ceiling": "₹0 additional spend",
+    "renewal_dates": "Amazon Associates renewal 2027-03-15",
+    "human_only_dependencies": "Founder approval for publishing and internal linking changes"
   },
   "next_steps": [
-    "Commit changes",
+    "Commit state and policy document",
     "Submit plan for Founder review and approval",
     "Implement internal linking changes",
-    "Rotate to Pillar 4 (product-led blog/content) for publishing the 3-tier rolling cart buying guide"
+    "Rotate to Pillar 1 (website development/conversion/SEO) for post-publish SEO monitoring"
   ]
 }

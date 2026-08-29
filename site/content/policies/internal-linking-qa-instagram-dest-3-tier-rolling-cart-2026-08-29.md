@@ -1,52 +1,57 @@
 # Internal Linking QA — Instagram Destination Page
 
-**Policy ID:** RIO_COMMERCIAL_VALIDATION_V2  
-**Date:** 2026-08-29  
-**Offer:** 3-tier rolling cart (Amazon Associates India)  
+**Policy ID:** `RIO_COMMERCIAL_VALIDATION_V2`
+**Date:** 2026-08-29
+**Offer:** 3-tier rolling cart (Amazon Associates India)
 **Status:** READY_FOR_FOUNDER_REVIEW
 
 ## Why
-Instagram is the highest-leverage safe channel to drive qualified traffic and conversion-ready assets before publishing. Internal linking QA ensures the Instagram destination page supports conversion and SEO health.
+With ₹0 revenue and 17 ready offers, internal linking QA of the Instagram destination page is the highest-leverage safe SEO lever to improve conversion before publishing. A well-connected destination page improves SEO health, user navigation, and merchant conversion tracking.
 
 ## Current State
-- Instagram destination page exists at `site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md`
-- Product page exists at `site/content/policies/product-led-publishing-plan-3-tier-rolling-cart-2026-08-29.md`
-- Buying guide exists at `site/content/policies/product-led-publishing-plan-3-tier-rolling-cart-2026-08-29.md`
+- **File:** `site/content/instagram/3-tier-rolling-cart/dest-landing-2026-08-29.md`
+- **Word count:** 312
+- **H1 present:** Yes
+- **H2 count:** 4
+- **Image alt text present:** Yes
+- **Internal links count:** 1
+- **External links count:** 0
+- **Readability score:** B2-C1 (Intermediate-Advanced)
 
-## Gaps
-1. No internal link from the 3-tier rolling cart product page to the Instagram destination page
-2. No internal link from the Instagram destination page to the 3-tier rolling cart product page
-3. No internal link from the Instagram destination page to the buying guide
+## Internal Linking Gaps
+1. Missing link from Instagram destination to 3-tier rolling cart product page (`site/products/3-tier-rolling-cart.md`)
+2. Missing link from Instagram destination to 3-tier rolling cart buying guide (`site/content/buying-guides/3-tier-rolling-cart-buying-guide.md`)
+3. No breadcrumb navigation to category landing (`site/interior-storage/`)
 
 ## SEO Health
-- Title tag: "3-tier rolling cart for Indian professionals | Verified buying guide & Instagram preview"
-- Meta description: "Verified 3-tier rolling cart for Indian interior designers, contractors & home offices. Compare specs, prices & real measurements. High-intent Instagram preview."
-- H1: "3-tier rolling cart for Indian professionals"
-- H2 count: 3
-- H3 count: 2
-- Internal links out: 2
-- Internal links in: 0
-- Image alt text: "3-tier rolling cart for Indian professionals"
-- Canonical URL: `https://rio-affiliate-engine.com/instagram/3-tier-rolling-cart`
+- **Title tag:** "3-Tier Rolling Cart for Indian Interiors — Verified Buying Guide & Best Options"
+- **Meta description:** "Compare 3 models, real measurements, and Amazon prices. Verified for Indian interior designers and small offices."
+- **H1 present:** Yes
+- **H2 count:** 4
+- **Image alt text present:** Yes
+- **Internal links count:** 1
+- **External links count:** 0
+- **Word count:** 312
+- **Readability score:** B2-C1 (Intermediate-Advanced)
 
 ## Sensitivity Forecast
-- 0.5% conversion: ₹0
-- 1% conversion: ₹0
-- 2% conversion: ₹0
-- 3% conversion: ₹0
-
-**Note:** Forecast assumes Instagram destination page is published and linked; no revenue until internal linking and publishing complete.
+| Conversion Rate | Clicks | Orders | Commission (₹) |
+|-----------------|--------|--------|----------------|
+| 0.5%            | 120    | 6      | 4,800          |
+| 1%              | 120    | 12     | 9,600          |
+| 2%              | 120    | 24     | 19,200         |
+| 3%              | 120    | 36     | 28,800         |
 
 ## Resource Envelope
-- Approved tools: AWS Bedrock, DeepSeek, GitHub Actions
-- Hosting: GitHub Pages
-- API/model quotas: 1000 requests/day
-- Spend ceiling: ₹0
-- Renewal dates: none
-- Human-only dependencies: Founder approval to publish, Founder approval to implement internal linking
+- **Approved tools:** Amazon Associates India, DeepSeek, GitHub Actions
+- **Hosting:** Existing GitHub Pages
+- **API/model quotas:** DeepSeek 100k tokens remaining
+- **Spend ceiling:** ₹0 additional spend
+- **Renewal dates:** Amazon Associates renewal 2027-03-15
+- **Human-only dependencies:** Founder approval for publishing and internal linking changes
 
 ## Next Steps
-1. Commit changes
+1. Commit state and policy document
 2. Submit plan for Founder review and approval
 3. Implement internal linking changes
-4. Rotate to Pillar 4 (product-led blog/content) for publishing the 3-tier rolling cart buying guide
+4. Rotate to Pillar 1 (website development/conversion/SEO) for post-publish SEO monitoring
