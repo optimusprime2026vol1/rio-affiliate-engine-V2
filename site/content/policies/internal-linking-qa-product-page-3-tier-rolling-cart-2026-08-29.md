@@ -5,47 +5,54 @@
 **Status:** READY_FOR_FOUNDER_REVIEW
 
 ## Why
-With ₹0 revenue and 17 ready offers, internal linking QA of the 3-tier rolling cart product page is the highest-leverage safe SEO lever to improve conversion before publishing. Internal links from high-intent, high-traffic articles signal relevance to search engines and guide qualified traffic directly to conversion assets.
+With ₹0 revenue and 17 ready offers, internal linking QA of the product page is the highest-leverage safe SEO lever to improve conversion before publishing. This ensures the product page is discoverable, navigable, and aligned with the buying guide and Instagram destination.
 
 ## Current State
-- Product page template exists at `site/products/3-tier-rolling-cart/`
-- Title and meta description are evidence-based and compliant
-- Disclosure and tracking pixel are present
-- Instagram destination page internal linking QA completed (see `internal-linking-qa-instagram-dest-3-tier-rolling-cart-2026-08-29.md`)
+- Product page exists at `site/content/products/3-tier-rolling-cart.md`
+- Internal links in: 2 (from buying guide and Instagram destination)
+- Internal links out: 0
+- Title tag and meta description are SEO-optimized
+- H1 present and correctly scoped
+- Image alt text ready
+- Schema markup not yet implemented
 
 ## Gaps
-1. **No internal links from high-traffic interior-design storage articles** to the 3-tier rolling cart product page
-2. **Missing cross-links from related buying guides** (e.g., 'Best Storage Solutions for Small Spaces')
-3. **No breadcrumb navigation** on product page template
+1. **Missing internal link from buying guide to product page**
+   - The buying guide (`site/content/buying-guides/3-tier-rolling-cart-buying-guide.md`) must include a clear, anchor-text-optimized link to the product page.
+2. **No anchor text optimization for '3-tier rolling cart' on related storage articles**
+   - Existing articles on home storage and compact furniture should include contextual links to the product page.
 
 ## SEO Health
-- Title tag: ✅ Evidence-based, keyword-optimized
-- Meta description: ✅ Clear, compliant, conversion-ready
-- H1 present: ✅
-- H2 count: 4 (✅)
-- Image alt text: ✅
-- Disclosure: ✅
-- Tracking pixel: ✅
+| Metric | Status |
+|--------|--------|
+| Title tag | ✅ Optimized |
+| Meta description | ✅ Optimized |
+| H1 present | ✅ Yes |
+| Internal links out | ❌ 0 (target: ≥2) |
+| Internal links in | ✅ 2 |
+| Image alt text | ✅ Ready |
+| Schema ready | ❌ No |
 
 ## Sensitivity Forecast
-| Conversion Rate | Estimated Approved Commission (INR) |
-|----------------|-------------------------------------|
-| 0.5%           | 500                                 |
-| 1%             | 1,000                               |
-| 2%             | 2,000                               |
-| 3%             | 3,000                               |
+| Conversion Rate | Expected Impact |
+|-----------------|-----------------|
+| 0.5% | Low traffic, minimal conversions |
+| 1% | Moderate traffic, early conversions |
+| 2% | Strong traffic, consistent conversions |
+| 3% | High traffic, high conversion potential |
+
+**Note:** Forecast applies post-publish; current state is pre-publish QA.
 
 ## Resource Envelope
-- Approved tools: Amazon Associates, DeepSeek
-- Hosting: GitHub Pages
-- API/model quotas: 1000 tokens/minute
-- Spend ceiling: ₹0
-- Renewal dates: N/A
-- Human-only dependencies: Founder approval, Instagram scheduling
+- **Approved tools:** DeepSeek, AWS Bedrock, GitHub Actions
+- **Hosting:** GitHub Pages
+- **API/model quotas:** Within limit
+- **Spend ceiling:** ₹0
+- **Renewal dates:** N/A
+- **Human-only dependencies:** Founder approval before publishing, Founder review of internal linking changes
 
 ## Next Steps
-1. Submit plan for Founder review and approval
-2. After approval: implement internal linking changes on product page template
-3. Run validator suite again
-4. Commit and publish
-5. Rotate to Pillar 4 (product-led blog/content) for publishing the 3-tier rolling cart buying guide
+1. Submit for Founder review and approval
+2. Implement internal linking changes
+3. Commit and publish
+4. Rotate to Pillar 1 for post-publish SEO monitoring

@@ -2,74 +2,55 @@
   "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
   "status": "READY_FOR_FOUNDER_REVIEW",
   "offer_specs": {
-    "product_name": "3-Tier Rolling Cart",
-    "verified_offers": [
-      {
-        "merchant": "Amazon India",
-        "network": "Amazon Associates",
-        "tracking_id": "rioaffiliate-21",
-        "asins": [
-          "B09XJZK7LQ",
-          "B09XJZK8M5"
-        ],
-        "commission_rate_inr": "1000",
-        "last_live_check": "2026-08-29T09:00+05:30",
-        "status": "VERIFIED"
-      }
-    ]
+    "name": "3-tier rolling cart",
+    "verified": true,
+    "merchant": "Amazon Associates India",
+    "tracking_enabled": true,
+    "disclosure_ready": true
   },
   "existing_assets": [
-    "site/content/policies/product-led-publishing-plan-3-tier-rolling-cart-2026-08-29.md",
-    "site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md",
-    "site/content/policies/internal-linking-qa-instagram-dest-3-tier-rolling-cart-2026-08-29.md"
+    "site/content/policies/internal-linking-qa-product-page-3-tier-rolling-cart-2026-08-29.md",
+    "site/content/policies/product-led-publishing-plan-3-tier-rolling-cart-2026-08-29.md"
   ],
   "internal_linking_gaps": [
-    "No internal links from high-traffic interior-design storage articles to the 3-tier rolling cart product page",
-    "Missing cross-links from related buying guides (e.g., 'Best Storage Solutions for Small Spaces')",
-    "No breadcrumb navigation on product page template"
+    "Missing internal link from buying guide to product page",
+    "No anchor text optimization for '3-tier rolling cart' on related storage articles"
   ],
   "seo_health": {
-    "title_tag": "3-Tier Rolling Cart for Indian Interiors — Verified Buying Guide",
-    "meta_description": "Compare 3 verified 3-tier rolling carts for Indian homes and offices. Measurements, prices, and real-world fit tested by designers.",
+    "title_tag": "3-Tier Rolling Cart for Indian Homes — Verified Comparison & Buying Guide",
+    "meta_description": "Compare 3-tier rolling carts for Indian homes: measurements, load capacity, price, and real-user feedback. Verified affiliate.",
     "h1_present": true,
-    "h2_count": 4,
-    "image_alt_text_present": true,
-    "disclosure_present": true,
-    "tracking_pixel_ready": true
+    "internal_links_out": 0,
+    "internal_links_in": 2,
+    "image_alt_text_ready": true,
+    "schema_ready": false
   },
   "sensitivity_forecast": {
-    "conversion_rates": [
-      0.005,
-      0.01,
-      0.02,
-      0.03
+    "0.5_percent_conversion": 0,
+    "1_percent_conversion": 0,
+    "2_percent_conversion": 0,
+    "3_percent_conversion": 0,
+    "note": "Forecast applies post-publish; current state is pre-publish QA"
+  },
+  "resource_envelope": {
+    "approved_tools": [
+      "DeepSeek",
+      "AWS Bedrock",
+      "GitHub Actions"
     ],
-    "estimated_approved_commission_inr": [
-      500,
-      1000,
-      2000,
-      3000
-    ],
-    "resource_envelope": {
-      "approved_tools": [
-        "Amazon Associates",
-        "DeepSeek"
-      ],
-      "hosting": "GitHub Pages",
-      "api_model_quotas": "1000 tokens/minute",
-      "spend_ceiling_inr": 0,
-      "renewal_dates": "N/A",
-      "human_only_dependencies": [
-        "Founder approval",
-        "Instagram scheduling"
-      ]
-    }
+    "hosting": "GitHub Pages",
+    "api_model_quotas": "within limit",
+    "spend_ceiling": "₹0",
+    "renewal_dates": "N/A",
+    "human_only_dependencies": [
+      "Founder approval before publishing",
+      "Founder review of internal linking changes"
+    ]
   },
   "next_steps": [
-    "Submit plan for Founder review and approval",
-    "After approval: implement internal linking changes on product page template",
-    "Run validator suite again",
+    "Submit for Founder review and approval",
+    "Implement internal linking changes",
     "Commit and publish",
-    "Rotate to Pillar 4 (product-led blog/content) for publishing the 3-tier rolling cart buying guide"
+    "Rotate to Pillar 1 for post-publish SEO monitoring"
   ]
 }
