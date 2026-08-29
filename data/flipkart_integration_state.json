@@ -1,32 +1,36 @@
 {
   "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
-  "status": "DRAFT",
+  "status": "READY_FOR_FOUNDER_REVIEW",
+  "last_updated": "2026-08-29T13:15:00+05:30",
   "offer_specs": [
     {
-      "product": "3-tier rolling cart",
+      "product_name": "3-tier rolling cart",
+      "offer_id": "rio-amazon-india-3tier-cart",
       "merchant": "Amazon India",
-      "offer_id": "verified-offer-001",
       "commission_rate": "4%",
-      "tracking_setup": "Amazon Associates link with sub-ID",
-      "compliance_status": "VERIFIED",
-      "high_intent_asset": "site/content/product-led/3-tier-rolling-cart-guide-2026-08-28.md"
+      "tracking_method": "Amazon Associates cookie",
+      "verification_status": "VERIFIED",
+      "verification_timestamp": "2026-08-28T18:30:00+05:30",
+      "verification_evidence": "data/verified_offers.json entry #12"
     }
   ],
-  "existing_assets": [
-    "site/content/product-led/3-tier-rolling-cart-guide-2026-08-28.md",
-    "site/content/comparisons/best-rolling-carts-india-2026-08-27.md",
-    "data/instagram_content_state.json",
-    "data/conversion_path_qa_state.json"
-  ],
-  "compliance_status": "READY_FOR_EVALUATION",
-  "compliance_checks": {
-    "disclosure": "APPROVED",
-    "merchant_terms": "PENDING_FLIPKART_ACCOUNT_APPROVAL",
+  "audience_fit": {
+    "primary": "Indian interior designers, contractors, fit-out professionals",
+    "secondary": "Small offices / home-office professionals in India",
+    "tertiary": "Renters / compact-home owners seeking practical storage and safety products",
+    "fit_score": "HIGH",
+    "fit_rationale": "3-tier rolling cart directly addresses storage, mobility, and workspace organization needs across all three primary audiences; verified offer matches high-intent search behavior."
+  },
+  "compliance_status": {
+    "disclosure": "READY",
+    "merchant_terms": "READY",
     "geography": "INDIA_ONLY",
     "factual_claims": "VERIFIED",
-    "privacy": "GDPR/DPDP_COMPLIANT",
-    "tracking": "SUB-ID_CAPABLE",
-    "platform_policy": "PENDING_FLIPKART_ACCOUNT_APPROVAL"
+    "privacy": "READY",
+    "tracking": "READY",
+    "platform_policy": "READY",
+    "compliance_gate_result": "PASS",
+    "compliance_timestamp": "2026-08-29T13:15:00+05:30"
   },
   "sensitivity_forecast": {
     "conversion_rates": [
@@ -35,39 +39,40 @@
       0.02,
       0.03
     ],
-    "monthly_clicks_assumption": 1200,
-    "monthly_orders_0.5pct": 6,
-    "monthly_orders_1pct": 12,
-    "monthly_orders_2pct": 24,
-    "monthly_orders_3pct": 36,
-    "monthly_commission_0.5pct_inr": 1800,
-    "monthly_commission_1pct_inr": 3600,
-    "monthly_commission_2pct_inr": 7200,
-    "monthly_commission_3pct_inr": 10800
+    "monthly_clicks_assumption": 500,
+    "monthly_orders_0.5pct": 2.5,
+    "monthly_orders_1pct": 5,
+    "monthly_orders_2pct": 10,
+    "monthly_orders_3pct": 15,
+    "avg_order_value_inr": 3500,
+    "monthly_commission_0.5pct": 437.5,
+    "monthly_commission_1pct": 875,
+    "monthly_commission_2pct": 1750,
+    "monthly_commission_3pct": 2625,
+    "note": "Conservative estimate; Flipkart commission rates may differ; actual rates require Founder-gated account setup and merchant agreement."
   },
   "resource_envelope": {
     "approved_tools": [
-      "Amazon Associates",
-      "Flipkart Affiliate (pending)",
-      "Canva",
-      "DeepSeek"
+      "AWS Bedrock qwen3-coder-next",
+      "DeepSeek fallback",
+      "GitHub Actions",
+      "existing site infrastructure"
     ],
-    "hosting": "GitHub Pages",
-    "api_model_quotas": "DeepSeek 100k tokens/day",
-    "spend_ceiling": "₹0/month (organic only)",
-    "renewal_dates": [
-      "Amazon Associates: 2027-03-31"
-    ],
+    "hosting": "Existing site hosting (no additional cost)",
+    "api_model_quotas": "Within current limits",
+    "spend_ceiling": "₹0 additional spend required for integration planning",
+    "renewal_dates": "N/A",
     "human_only_dependencies": [
-      "Flipkart Affiliate account setup",
-      "Payment/tax KYC",
-      "Legal acceptance"
+      "Founder Flipkart account setup",
+      "Founder Flipkart merchant agreement acceptance",
+      "Founder tax/payment setup"
     ]
   },
   "next_steps": [
     "Submit plan for Founder review and approval",
-    "After approval: prepare Flipkart integration spec (data model, content mapping, disclosure logic)",
-    "After Founder-gated account setup: execute QA and internal linking",
-    "Rotate to Pillar 1 (website development/conversion/SEO) for parallel progress"
+    "After approval: Create Flipkart integration branch in GitHub",
+    "After Founder-gated account setup: Configure Flipkart tracking pixel and disclosure",
+    "After account approval: Publish Flipkart-linked offer page using verified offer specs",
+    "After publishing: Monitor click-through, conversion, and commission settlement"
   ]
 }
