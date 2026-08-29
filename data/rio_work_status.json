@@ -1,41 +1,20 @@
 {
   "status": "COMPLETED",
-  "current_task": "Rotate to Pillar 4 (product-led blog/content) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based product-led blog/content plan for the 3-tier rolling cart using existing verified offer specs, high-intent assets, and content policy to prepare for safe, compliant publishing and conversion.",
-  "started_at": "2026-08-29T12:16:38+05:30",
-  "updated_at": "2026-08-29T12:16:52+05:30",
+  "current_task": "Rotate to Pillar 2 (new affiliate networks and product opportunities) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based expansion plan for EarnKaro using existing verified offer specs, audience fit, and compliance status to prepare for safe, compliant platform integration before Founder-gated account setup.",
+  "started_at": "2026-08-29T12:30:37+05:30",
+  "updated_at": "2026-08-29T12:30:51+05:30",
   "ai_engine": "bedrock-qwen",
-  "last_completed": "Rotate to Pillar 4 (product-led blog/content) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based product-led blog/content plan for the 3-tier rolling cart using existing verified offer specs, high-intent assets, and content policy to prepare for safe, compliant publishing and conversion.",
-  "last_result": "PILLAR:4, task: Draft verified, evidence-based product-led blog/content plan for the 3-tier rolling cart using existing verified offer specs, high-intent assets, and Founder-approved content policy to prepare for safe, compliant publishing and conversion, why: Pillar 4 has 0 *new* completed tasks since last rotation; with ₹0 revenue and 17 ready offers, product-led content is the highest-leverage safe task to drive qualified organic traffic and conversion-ready assets before publishing, changes: writes `data/product_led_content_state.json` (valid JSON with policy ID, status, offer specs, existing assets, compliance status, sensitivity forecast, resource envelope, next steps) and `site/content/policies/product-led-content-plan-3-tier-rolling-cart-2026-08-29.md` (full plan covering why, current state, compliance & tracking, sensitivity forecast, resource envelope, next steps), NEXT_TASK: After validator pass, commit changes, submit plan for Founder review and approval, then rotate to Pillar 2 (new affiliate networks) for parallel progress.",
+  "last_completed": "Rotate to Pillar 2 (new affiliate networks and product opportunities) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based expansion plan for EarnKaro using existing verified offer specs, audience fit, and compliance status to prepare for safe, compliant platform integration before Founder-gated account setup.",
+  "last_result": "PILLAR:2, task: Draft verified, evidence-based EarnKaro expansion plan using existing verified offer specs, audience fit, and compliance status to prepare for safe, compliant platform integration before Founder-gated account setup, why: Pillar 2 has 0 *new* completed tasks since last rotation; with ₹0 revenue and 17 ready offers, preparing EarnKaro integration is the highest-leverage safe task to diversify merchant mix and increase commission potential before publishing, changes: writes `data/earnkaro_expansion_state.json` (valid JSON with policy ID, status, offer specs, audience fit, compliance status, sensitivity forecast, resource envelope, next steps) and `site/content/policies/earnkaro-expansion-plan-2026-08-29.md` (full plan covering why, current state, compliance & tracking, sensitivity forecast, resource envelope, next steps), NEXT_TASK: After validator pass, commit changes, submit plan for Founder review and approval, then rotate to Pillar 1 (website development/conversion/SEO) for internal linking and SEO optimization of new offer pages.",
   "changed_files": [
-    "data/product_led_content_state.json",
-    "site/content/policies/product-led-content-plan-3-tier-rolling-cart-2026-08-29.md"
+    "data/earnkaro_expansion_state.json",
+    "site/content/policies/earnkaro-expansion-plan-2026-08-29.md"
   ],
   "validators": "PASS",
-  "next_task": "After validator pass, commit changes, submit plan for Founder review and approval, then rotate to Pillar 2 (new affiliate networks) for parallel progress.",
+  "next_task": "After validator pass, commit changes, submit plan for Founder review and approval, then rotate to Pillar 1 (website development/conversion/SEO) for internal linking and SEO optimization of new offer pages.",
   "blocker": null,
   "founder_action_needed": false,
   "history": [
-    {
-      "at": "2026-08-29T11:32:21+05:30",
-      "status": "WORKING",
-      "task": "Rotate to Pillar 2 (new affiliate networks and product opportunities) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based expansion plan for Flipkart and EarnKaro using existing verified offer specs, audience fit, and compliance status to prepare for safe, compliant platform integration before Founder-gated account setup.",
-      "engine": "bedrock-qwen",
-      "result": null
-    },
-    {
-      "at": "2026-08-29T11:32:21+05:30",
-      "status": "COMPLETED",
-      "task": "Rotate to Pillar 2 (new affiliate networks and product opportunities) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based expansion plan for Flipkart and EarnKaro using existing verified offer specs, audience fit, and compliance status to prepare for safe, compliant platform integration before Founder-gated account setup.",
-      "engine": "bedrock-qwen",
-      "result": "PILLAR:2, task: Draft verified, evidence-based expansion plan for Flipkart and EarnKaro using existing verified offer specs, audience fit, and compliance status to prepare for safe, compliant platform integration before Founder-gated account setup, why: Pillar 2 has 0 *new* completed tasks since last rotation; with ₹0 revenue and 17 ready offers, preparing platform expansion is the highest-leverage safe task to increase merchant diversity, reduce concentration risk, and expand commission potential before publishing, changes: writes `data/affiliate_network_expansion_state.json` (valid JSON with policy ID, status, offer specs, existing assets, compliance status, sensitivity forecast, resource envelope, next steps) and `site/content/policies/affiliate-network-expansion-plan-2026-08-29.md` (full plan covering why, current state, compliance & tracking, platform evaluation criteria, sensitivity forecast, resource envelope, next steps), NEXT_TASK: After validator pass, commit changes, submit plan for Founder review and approval, then rotate to Pillar 3 (AdSense readiness and monetization) for parallel progress."
-    },
-    {
-      "at": "2026-08-29T11:45:33+05:30",
-      "status": "WORKING",
-      "task": "After validator pass, commit changes, submit plan for Founder review and approval, then rotate to Pillar 3 (AdSense readiness and monetization) for parallel progress.",
-      "engine": "selecting",
-      "result": null
-    },
     {
       "at": "2026-08-29T11:45:45+05:30",
       "status": "WORKING",
@@ -154,6 +133,27 @@
       "task": "Rotate to Pillar 4 (product-led blog/content) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based product-led blog/content plan for the 3-tier rolling cart using existing verified offer specs, high-intent assets, and content policy to prepare for safe, compliant publishing and conversion.",
       "engine": "bedrock-qwen",
       "result": "PILLAR:4, task: Draft verified, evidence-based product-led blog/content plan for the 3-tier rolling cart using existing verified offer specs, high-intent assets, and Founder-approved content policy to prepare for safe, compliant publishing and conversion, why: Pillar 4 has 0 *new* completed tasks since last rotation; with ₹0 revenue and 17 ready offers, product-led content is the highest-leverage safe task to drive qualified organic traffic and conversion-ready assets before publishing, changes: writes `data/product_led_content_state.json` (valid JSON with policy ID, status, offer specs, existing assets, compliance status, sensitivity forecast, resource envelope, next steps) and `site/content/policies/product-led-content-plan-3-tier-rolling-cart-2026-08-29.md` (full plan covering why, current state, compliance & tracking, sensitivity forecast, resource envelope, next steps), NEXT_TASK: After validator pass, commit changes, submit plan for Founder review and approval, then rotate to Pillar 2 (new affiliate networks) for parallel progress."
+    },
+    {
+      "at": "2026-08-29T12:30:37+05:30",
+      "status": "WORKING",
+      "task": "After validator pass, commit changes, submit plan for Founder review and approval, then rotate to Pillar 2 (new affiliate networks) for parallel progress.",
+      "engine": "selecting",
+      "result": null
+    },
+    {
+      "at": "2026-08-29T12:30:51+05:30",
+      "status": "WORKING",
+      "task": "Rotate to Pillar 2 (new affiliate networks and product opportunities) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based expansion plan for EarnKaro using existing verified offer specs, audience fit, and compliance status to prepare for safe, compliant platform integration before Founder-gated account setup.",
+      "engine": "bedrock-qwen",
+      "result": null
+    },
+    {
+      "at": "2026-08-29T12:30:51+05:30",
+      "status": "COMPLETED",
+      "task": "Rotate to Pillar 2 (new affiliate networks and product opportunities) — now least-used pillar (0 *new* completed tasks since last rotation); draft verified, evidence-based expansion plan for EarnKaro using existing verified offer specs, audience fit, and compliance status to prepare for safe, compliant platform integration before Founder-gated account setup.",
+      "engine": "bedrock-qwen",
+      "result": "PILLAR:2, task: Draft verified, evidence-based EarnKaro expansion plan using existing verified offer specs, audience fit, and compliance status to prepare for safe, compliant platform integration before Founder-gated account setup, why: Pillar 2 has 0 *new* completed tasks since last rotation; with ₹0 revenue and 17 ready offers, preparing EarnKaro integration is the highest-leverage safe task to diversify merchant mix and increase commission potential before publishing, changes: writes `data/earnkaro_expansion_state.json` (valid JSON with policy ID, status, offer specs, audience fit, compliance status, sensitivity forecast, resource envelope, next steps) and `site/content/policies/earnkaro-expansion-plan-2026-08-29.md` (full plan covering why, current state, compliance & tracking, sensitivity forecast, resource envelope, next steps), NEXT_TASK: After validator pass, commit changes, submit plan for Founder review and approval, then rotate to Pillar 1 (website development/conversion/SEO) for internal linking and SEO optimization of new offer pages."
     }
   ]
 }
