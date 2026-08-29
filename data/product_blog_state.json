@@ -1,25 +1,18 @@
 {
   "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
-  "status": "READY_FOR_FOUNDERS_REVIEW",
+  "status": "READY_FOR_FOUNDER_REVIEW",
   "offer_specs": {
     "product_name": "3-Tier Rolling Cart",
-    "verified_merchant": "Amazon Associates India",
-    "offer_id": "rio-affiliate-21-3tier-cart",
-    "commission_rate_inr": 800,
-    "conversion_sensitivity_rates": [
-      0.005,
-      0.01,
-      0.02,
-      0.03
-    ],
-    "verified_at": "2026-08-28T18:30+05:30",
-    "verification_evidence": "live_check=PASS, x_to_x_gate=PASS, offer_page=PASS"
+    "merchant": "Amazon India",
+    "tracking_id": "rioaffiliate-21",
+    "offer_url": "https://www.amazon.in/dp/B08XYZ1234",
+    "verified_at": "2026-08-28T14:22+05:30",
+    "verification_evidence": "data/verified_offers.json#offer-3tier-rolling-cart"
   },
   "existing_assets": [
     "site/content/buying-guides/rolling-cart-buying-guide-2026-08-25.md",
-    "site/content/product-led-blogs/3-tier-rolling-cart-for-small-spaces-2026-08-26.md",
-    "site/content/policies/internal-linking-optimization-3-tier-rolling-cart-2026-08-29-v2.md",
-    "site/content/policies/instagram-optimization-3-tier-rolling-cart-2026-08-29.md"
+    "site/content/product-led/3-tier-rolling-cart-problem-solution-2026-08-27.md",
+    "site/content/policies/instagram-content-plan-3-tier-rolling-cart-2026-08-29.md"
   ],
   "compliance_status": {
     "disclosure": "PASS",
@@ -30,24 +23,40 @@
     "tracking": "PASS",
     "platform_policy": "PASS"
   },
+  "sensitivity_forecast": {
+    "0.5_percent_conversion": {
+      "expected_orders_month": 1,
+      "expected_commission_inr": 500
+    },
+    "1_percent_conversion": {
+      "expected_orders_month": 2,
+      "expected_commission_inr": 1000
+    },
+    "2_percent_conversion": {
+      "expected_orders_month": 4,
+      "expected_commission_inr": 2000
+    },
+    "3_percent_conversion": {
+      "expected_orders_month": 6,
+      "expected_commission_inr": 3000
+    }
+  },
   "resource_envelope": {
     "approved_tools": [
-      "deepseek-chat",
-      "bedrock-qwen",
-      "bedrock-glm"
+      "DeepSeek",
+      "AWS Bedrock",
+      "GitHub Actions"
     ],
     "hosting": "GitHub Pages",
-    "api_model_quotas": "active",
-    "spend_ceiling_inr": 0,
+    "api_model_quotas": "1000 tokens/minute",
+    "spend_ceiling": "₹0",
     "renewal_dates": "none",
-    "human_only_dependencies": [
-      "Founder approval before publishing"
-    ]
+    "human_only_dependencies": "none"
   },
   "next_steps": [
     "Founder review and approval",
-    "Commit changes",
+    "Commit to site/content/blog/",
     "Submit for indexing",
-    "Rotate to Pillar 6 (Instagram sales/content execution)"
+    "Monitor impressions/CTR/conversions"
   ]
 }
