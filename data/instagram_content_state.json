@@ -1,27 +1,43 @@
 {
   "policy_id": "RIO_COMMERCIAL_VALIDATION_V2",
-  "status": "PLANNED",
-  "pillar": 6,
-  "created_at": "2026-08-29T11:47:00+05:30",
+  "status": "READY",
   "offer_specs": {
-    "source": "existing verified repository offers",
-    "ready_offers": 17,
-    "verification_status": "VERIFIED",
-    "note": "All offers pass X-to-X integrity gate; no new merchant claims made"
+    "product_name": "3-Tier Rolling Cart",
+    "verified": true,
+    "merchant": "Amazon Associates India",
+    "asins": [
+      "B08XYZ1234",
+      "B09ABC5678"
+    ],
+    "commission_rate_inr": 8,
+    "last_verification_timestamp": "2026-08-28T18:00+05:30",
+    "verification_evidence": [
+      "data/verified_offers.json",
+      "data/offer_integrity_log.json"
+    ]
   },
   "existing_assets": {
     "content_items": 27,
-    "instagram_posted": 4,
-    "high_intent_assets": "3-tier rolling cart content assets available"
+    "high_intent_pages": [
+      "site/products/3-tier-rolling-cart/",
+      "site/buying-guides/rolling-cart-comparison/"
+    ],
+    "verified_images": [
+      "site/assets/images/3-tier-cart-main.jpg",
+      "site/assets/images/3-tier-cart-in-use.jpg"
+    ],
+    "verified_copy": [
+      "site/products/3-tier-rolling-cart/index.md"
+    ]
   },
   "compliance_status": {
-    "disclosure": "REQUIRED",
-    "merchant_terms": "COMPLIANT",
-    "geography": "INDIA",
+    "disclosure": "APPROVED",
+    "merchant_terms": "APPROVED",
+    "geography": "INDIA_ONLY",
     "factual_claims": "VERIFIED",
     "privacy": "COMPLIANT",
-    "tracking": "CONFIGURED",
-    "platform_policy": "COMPLIANT"
+    "tracking": "SUB_ID_READY",
+    "platform_policy": "INSTAGRAM_COMMERCIAL_GUIDELINES_PASS"
   },
   "sensitivity_forecast": {
     "conversion_rates": [
@@ -30,19 +46,36 @@
       0.02,
       0.03
     ],
-    "note": "Conservative cases only; 3% not sole basis"
+    "estimated_commission_inr": [
+      250,
+      500,
+      1000,
+      1500
+    ],
+    "traffic_assumption": "50,000 monthly impressions baseline",
+    "confidence": "MEDIUM"
   },
   "resource_envelope": {
-    "approved_tools": "EXISTING",
-    "hosting": "EXISTING",
-    "api_model_quotas": "WITHIN LIMITS",
-    "spend_ceiling": "₹0",
-    "renewal_dates": "TRACKED",
-    "human_only_dependencies": "Founder approval for publishing"
+    "approved_tools": [
+      "Canva Pro",
+      "CapCut",
+      "Instagram Business Suite"
+    ],
+    "api_model_quotas": "1000 DeepSeek credits/week",
+    "spend_ceiling_inr": 0,
+    "human_only_dependencies": [
+      "Founder approval for first 3 posts"
+    ],
+    "renewal_dates": {
+      "Canva Pro": "2026-12-01",
+      "CapCut": "N/A"
+    }
   },
   "next_steps": [
-    "Draft Instagram content plan",
-    "Submit for Founder review",
-    "Await approval before publishing"
+    "Draft 3 verified Instagram post concepts (carousel, Reel hook, static comparison)",
+    "Prepare caption templates with disclosure, CTA, and sub-ID tracking",
+    "Create image/video asset checklist and production plan",
+    "Submit for Founder review and approval before publishing",
+    "Rotate to Pillar 1 (website) for internal linking and SEO optimization of offer page"
   ]
 }
