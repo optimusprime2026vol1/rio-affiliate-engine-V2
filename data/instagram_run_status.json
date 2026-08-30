@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-08-29T04:40+05:30",
- "status": "INSTAGRAM_POSTED",
- "offer_id": "CONTAINER_001",
- "detail": "Successfully posted to Instagram as Meta media 17980069911095536.",
- "posted_count": 4,
+ "updated_at": "2026-08-30T19:04+05:30",
+ "status": "BLOCKED_CREDENTIALS",
+ "offer_id": null,
+ "detail": "IG_USER_ID_RIO / IG_ACCESS_TOKEN_RIO is missing from GitHub Actions secrets.",
+ "posted_count": 0,
  "pending_count": 0
 }
