@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-02T19:09+05:30",
+ "updated_at": "2026-09-04T19:09+05:30",
  "status": "BLOCKED_CREDENTIALS",
  "offer_id": null,
  "detail": "IG_USER_ID_RIO / IG_ACCESS_TOKEN_RIO is missing from GitHub Actions secrets.",
