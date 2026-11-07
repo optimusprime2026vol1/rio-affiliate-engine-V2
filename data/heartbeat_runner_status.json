@@ -1,8 +1,8 @@
 {
-  "started_at_utc": "2026-11-07T11:50:28+00:00",
+  "started_at_utc": "2026-11-07T14:02:09+00:00",
   "event": "schedule",
-  "schedule": "30 5 * * *",
-  "run_id": "42369850275",
+  "schedule": "*/5 * * * *",
+  "run_id": "42379662044",
   "state": "COMPLETED",
-  "finished_at_utc": "2026-11-07T11:50:30+00:00"
+  "finished_at_utc": "2026-11-07T14:02:11+00:00"
 }
